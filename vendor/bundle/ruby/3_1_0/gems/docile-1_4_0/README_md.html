@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../../../";
+  var index_rel_prefix = "../../../../../../";
+</script>
+
+<script src="../../../../../../js/navigation.js" defer></script>
+<script src="../../../../../../js/search.js" defer></script>
+<script src="../../../../../../js/search_index.js" defer></script>
+<script src="../../../../../../js/searcher.js" defer></script>
+<script src="../../../../../../js/darkfish.js" defer></script>
+
+<link href="../../../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../../../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Docile">Docile</a>
+    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Basic-3A+Ruby+Array+as+DSL">Basic: Ruby <a href="http://ruby-doc.org/core-3.0.0/Array.html">Array</a> as DSL</a>
+    <li><a href="#label-Next+step-3A+Allow+helper+methods+to+call+DSL+methods">Next step: Allow helper methods to call DSL methods</a>
+    <li><a href="#label-Wait-21+Can-27t+I+do+that+with+just+instance_eval+or+instance_exec-3F">Wait! Can’t I do that with just <code>instance_eval</code> or <code>instance_exec</code>?</a>
+    <li><a href="#label-Build+a+Pizza">Build a Pizza</a>
+    <li><a href="#label-Multi-level+and+Recursive+DSLs">Multi-level and Recursive DSLs</a>
+    <li><a href="#label-Block+parameters">Block parameters</a>
+    <li><a href="#label-Functional-Style+Immutable+DSL+Objects">Functional-Style Immutable DSL Objects</a>
+    <li><a href="#label-Accessing+the+block-27s+return+value">Accessing the block’s return value</a>
+    <li><a href="#label-Features">Features</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Links">Links</a>
+    <li><a href="#label-Status">Status</a>
+    <li><a href="#label-Release+Policy">Release Policy</a>
+    <li><a href="#label-Note+on+Patches-2FPull+Requests">Note on Patches/Pull Requests</a>
+    <li><a href="#label-Releasing">Releasing</a>
+    <li><a href="#label-Copyright+-26+License">Copyright &amp; License</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="../../../../../../CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
+    <li><a href="../../../../../../Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../Gemfile_lock.html">Gemfile.lock</a>
+    <li><a href="../../../../../../LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../README_md.html">README</a>
+    <li><a href="../../../../../../Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../bin/setup.html">setup</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/bin/stackprof-flamegraph_pl.html">stackprof-flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/bin/stackprof-gprof2dot_py.html">stackprof-gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/gem_build_complete.html">gem.build_complete</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/gem_make_out.html">gem_make.out</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/mkmf_log.html">mkmf.log</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ast-2_4_2/LICENSE_MIT.html">LICENSE.MIT</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ast-2_4_2/README_YARD_md.html">README.YARD</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/History_md.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/HISTORY_md.html">HISTORY</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/SECURITY_md.html">SECURITY</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/parser-3_1_1_0/LICENSE_txt.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/MIT-LICENSE.html">MIT-LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/command_line_usage_rdoc.html">command_line_usage</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/example/Rakefile1.html">Rakefile1</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/example/Rakefile2.html">Rakefile2</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/glossary_rdoc.html">glossary</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/proto_rake_rdoc.html">proto_rake</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rake_1.html">rake.1</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rakefile_rdoc.html">rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rational_rdoc.html">rational</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/debugging_md.html">debugging</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/gauntlet_md.html">gauntlet</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/alternate-formatters_md.html">alternate-formatters</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/commercial-services_md.html">commercial-services</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/editor-integration_md.html">editor-integration</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-html-0_12_3/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov_json_formatter-0_1_3/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov_json_formatter-0_1_3/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/bin/stackprof-flamegraph_pl.html">stackprof-flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/bin/stackprof-gprof2dot_py.html">stackprof-gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/ext/stackprof/Makefile.html">Makefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/lib/stackprof/flamegraph/flamegraph_js.html">flamegraph.js</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/lib/stackprof/flamegraph/viewer_html.html">viewer.html</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/FlameGraph/README.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/FlameGraph/flamegraph_pl.html">flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/gprof2dot/gprof2dot_py.html">gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/gprof2dot/hotshotmain_py.html">hotshotmain.py</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page vendor/bundle/ruby/3.1.0/gems/docile-1.4.0/README.md">
+
+<h1 id="label-Docile"><a href="../../../../../../Docile.html"><code>Docile</code></a><span><a href="#label-Docile">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="https://rubygems.org/gems/docile"><img src="https://img.shields.io/gem/v/docile.svg"></a> <a href="https://rubygems.org/gems/docile"><img src="https://img.shields.io/gem/dt/docile.svg"></a></p>
+
+<p><a href="https://gitter.im/ms-ati/docile?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg"></a> <a href="http://rubydoc.info/github/ms-ati/docile"><img src="http://img.shields.io/badge/yard-docs-blue.svg"></a> <a href="http://inch-ci.org/github/ms-ati/docile"><img src="http://inch-ci.org/github/ms-ati/docile.png"></a></p>
+
+<p><a href="https://github.com/ms-ati/docile/actions/workflows/main.yml"><img src="https://github.com/ms-ati/docile/actions/workflows/main.yml/badge.svg"></a> <a href="https://codecov.io/github/ms-ati/docile"><img src="https://img.shields.io/codecov/c/github/ms-ati/docile.svg"></a> <a href="https://codeclimate.com/github/ms-ati/docile/maintainability"><img src="https://api.codeclimate.com/v1/badges/79ca631bc123f7b83b34/maintainability"></a></p>
+
+<p>Ruby makes it possible to create very expressive <strong>Domain Specific Languages</strong>, or <strong>DSL</strong>’s for short. However, it requires some deep knowledge and somewhat hairy meta-programming to get the interface just right.</p>
+
+<p>“Docile” means <em>Ready to accept control or instruction; submissive</em> [<a href="http://www.google.com/search?q=docile+definition">1</a>]</p>
+
+<p>Instead of each Ruby project reinventing this wheel, let’s make our Ruby DSL coding a bit more docile…</p>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Basic-3A+Ruby+Array+as+DSL">Basic: Ruby <a href="http://ruby-doc.org/core-3.0.0/Array.html">Array</a> as DSL<span><a href="#label-Basic-3A+Ruby+Array+as+DSL">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Let’s say that we want to make a DSL for modifying <a href="../../../../../../Array.html"><code>Array</code></a> objects. Wouldn’t it be great if we could just treat the methods of <a href="../../../../../../Array.html"><code>Array</code></a> as a DSL?</p>
+
+<pre class="ruby"><span class="ruby-identifier">with_array</span>([]) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-value">3</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment">#=&gt; [1, 3]</span>
+</pre>
+
+<p>No problem, just define the method <code>with_array</code> like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_array</span>(<span class="ruby-identifier">arr</span>=[], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval</span>(<span class="ruby-identifier">arr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Easy!</p>
+
+<h3 id="label-Next+step-3A+Allow+helper+methods+to+call+DSL+methods">Next step: Allow helper methods to call DSL methods<span><a href="#label-Next+step-3A+Allow+helper+methods+to+call+DSL+methods">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>What if, in our use of the methods of <a href="../../../../../../Array.html"><code>Array</code></a> as a DSL, we want to extract helper methods which in turn call DSL methods?</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pop_sum_and_push</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">n</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">pop</span> }
+  <span class="ruby-identifier">push</span> <span class="ruby-identifier">sum</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval</span>([]) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-value">5</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-value">6</span>
+  <span class="ruby-identifier">pop_sum_and_push</span>(<span class="ruby-value">2</span>)
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment">#=&gt; [11]</span>
+</pre>
+
+<p>Without <a href="../../../../../../Docile.html"><code>Docile</code></a>, you may find this sort of code extraction to be more challenging.</p>
+
+<h3 id="label-Wait-21+Can-27t+I+do+that+with+just+instance_eval+or+instance_exec-3F">Wait! Can’t I do that with just <code>instance_eval</code> or <code>instance_exec</code>?<span><a href="#label-Wait-21+Can-27t+I+do+that+with+just+instance_eval+or+instance_exec-3F">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Good question!</p>
+
+<p>In short: <strong>No</strong>.</p>
+
+<p>Not if you want the code in the block to be able to refer to anything the block would normally have access to from the surrounding context.</p>
+
+<p>Let’s be very specific. <a href="../../../../../../Docile.html"><code>Docile</code></a> internally uses <code>instance_exec</code> (see <a href="lib/docile/execution_rb.html#L26">execution.rb#26</a>), adding a small layer to support referencing <em>local variables</em>, <em>instance variables</em>, and <em>methods</em> from the <em>block’s context</em> <strong>or</strong> the target <em>object’s context</em>, interchangeably. This is “<strong>the hard part</strong>”, where most folks making a DSL in Ruby throw up their hands.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ContextOfBlock</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">example_of_contexts</span>
+    <span class="ruby-ivar">@block_instance_var</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">block_local_var</span> = <span class="ruby-value">2</span>
+
+    <span class="ruby-identifier">with_array</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">push</span> <span class="ruby-ivar">@block_instance_var</span>
+      <span class="ruby-identifier">push</span> <span class="ruby-identifier">block_local_var</span>
+      <span class="ruby-identifier">pop</span>
+      <span class="ruby-identifier">push</span> <span class="ruby-identifier">block_sees_this_method</span> 
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">block_sees_this_method</span>
+    <span class="ruby-value">3</span>
+  <span class="ruby-keyword">end</span>  
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_array</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    {
+      <span class="ruby-value">docile:</span> <span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval</span>([], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>),
+      <span class="ruby-value">instance_eval:</span> ([].<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">$!</span>),
+      <span class="ruby-value">instance_exec:</span> ([].<span class="ruby-identifier">instance_exec</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">$!</span>)
+    }  
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">ContextOfBlock</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">example_of_contexts</span>
+<span class="ruby-comment">#=&gt; {</span>
+      <span class="ruby-value">:docile</span><span class="ruby-operator">=&gt;</span>[<span class="ruby-value">1</span>, <span class="ruby-value">3</span>],
+      <span class="ruby-value">:instance_eval</span><span class="ruby-operator">=&gt;</span><span class="ruby-comment">#&lt;NameError: undefined local variable or method `block_sees_this_method&#39; for [nil]:Array&gt;,</span>
+      <span class="ruby-value">:instance_exec</span><span class="ruby-operator">=&gt;</span><span class="ruby-comment">#&lt;NameError: undefined local variable or method `block_sees_this_method&#39; for [nil]:Array&gt;</span>
+    }
+</pre>
+
+<p>As you can see, it won’t be possible to call methods or access instance variables defined in the block’s context using just the raw <code>instance_eval</code> or <code>instance_exec</code> methods. And in fact, <a href="../../../../../../Docile.html"><code>Docile</code></a> goes further, making it easy to maintain this support even in multi-layered DSLs.</p>
+
+<h3 id="label-Build+a+Pizza">Build a Pizza<span><a href="#label-Build+a+Pizza">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Mutating (changing) an <a href="../../../../../../Array.html"><code>Array</code></a> instance is fine, but what usually makes a good DSL is a <a href="http://stackoverflow.com/questions/328496/when-would-you-use-the-builder-pattern">Builder Pattern</a>.</p>
+
+<p>For example, let’s say you want a DSL to specify how you want to build a Pizza:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@sauce_level</span> = <span class="ruby-value">:extra</span>
+
+<span class="ruby-identifier">pizza</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">cheese</span>
+  <span class="ruby-identifier">pepperoni</span>
+  <span class="ruby-identifier">sauce</span> <span class="ruby-ivar">@sauce_level</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment">#=&gt; #&lt;Pizza:0x00001009dc398 @cheese=true, @pepperoni=true, @bacon=false, @sauce=:extra&gt;</span>
+</pre>
+
+<p>And let’s say we have a PizzaBuilder, which builds a Pizza like this:</p>
+
+<pre class="ruby"><span class="ruby-constant">Pizza</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:cheese</span>, <span class="ruby-value">:pepperoni</span>, <span class="ruby-value">:bacon</span>, <span class="ruby-value">:sauce</span>)
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">PizzaBuilder</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cheese</span>(<span class="ruby-identifier">v</span>=<span class="ruby-keyword">true</span>); <span class="ruby-ivar">@cheese</span> = <span class="ruby-identifier">v</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pepperoni</span>(<span class="ruby-identifier">v</span>=<span class="ruby-keyword">true</span>); <span class="ruby-ivar">@pepperoni</span> = <span class="ruby-identifier">v</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bacon</span>(<span class="ruby-identifier">v</span>=<span class="ruby-keyword">true</span>); <span class="ruby-ivar">@bacon</span> = <span class="ruby-identifier">v</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sauce</span>(<span class="ruby-identifier">v</span>=<span class="ruby-keyword">nil</span>); <span class="ruby-ivar">@sauce</span> = <span class="ruby-identifier">v</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build</span>
+    <span class="ruby-constant">Pizza</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@cheese</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@pepperoni</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@bacon</span>, <span class="ruby-ivar">@sauce</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">PizzaBuilder</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">cheese</span>.<span class="ruby-identifier">pepperoni</span>.<span class="ruby-identifier">sauce</span>(<span class="ruby-value">:extra</span>).<span class="ruby-identifier">build</span>
+<span class="ruby-comment">#=&gt; #&lt;Pizza:0x00001009dc398 @cheese=true, @pepperoni=true, @bacon=false, @sauce=:extra&gt;</span>
+</pre>
+
+<p>Then implement your DSL like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pizza</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval</span>(<span class="ruby-constant">PizzaBuilder</span>.<span class="ruby-identifier">new</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>).<span class="ruby-identifier">build</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>It’s just that easy!</p>
+
+<h3 id="label-Multi-level+and+Recursive+DSLs">Multi-level and Recursive DSLs<span><a href="#label-Multi-level+and+Recursive+DSLs">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><a href="../../../../../../Docile.html"><code>Docile</code></a> is a very easy way to write a multi-level DSL in Ruby, even for a <a href="https://gist.github.com/ms-ati/2bb17bdf10a430faba98">recursive data structure such as a tree</a>:</p>
+
+<pre class="ruby"><span class="ruby-constant">Person</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span>, <span class="ruby-value">:mother</span>, <span class="ruby-value">:father</span>)
+
+<span class="ruby-identifier">person</span> {
+  <span class="ruby-identifier">name</span> <span class="ruby-string">&#39;John Smith&#39;</span>
+  <span class="ruby-identifier">mother</span> {
+    <span class="ruby-identifier">name</span> <span class="ruby-string">&#39;Mary Smith&#39;</span>
+  }
+  <span class="ruby-identifier">father</span> {
+    <span class="ruby-identifier">name</span> <span class="ruby-string">&#39;Tom Smith&#39;</span>
+    <span class="ruby-identifier">mother</span> {
+      <span class="ruby-identifier">name</span> <span class="ruby-string">&#39;Jane Smith&#39;</span>
+    }
+  }
+}
+
+<span class="ruby-comment">#=&gt; #&lt;struct Person name=&quot;John Smith&quot;,</span>
+<span class="ruby-comment">#                   mother=#&lt;struct Person name=&quot;Mary Smith&quot;, mother=nil, father=nil&gt;,</span>
+<span class="ruby-comment">#                   father=#&lt;struct Person name=&quot;Tom Smith&quot;,</span>
+<span class="ruby-comment">#                                          mother=#&lt;struct Person name=&quot;Jane Smith&quot;, mother=nil, father=nil&gt;,</span>
+<span class="ruby-comment">#                                          father=nil&gt;&gt;</span>
+</pre>
+
+<p>See the full <a href="https://gist.github.com/ms-ati/2bb17bdf10a430faba98">person tree example</a> for details.</p>
+
+<h3 id="label-Block+parameters">Block parameters<span><a href="#label-Block+parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Parameters can be passed to the DSL block.</p>
+
+<p>Supposing you want to make some sort of cheap <a href="http://www.sinatrarb.com">Sinatra</a> knockoff:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@last_request</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-identifier">respond</span> <span class="ruby-string">&#39;/path&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">request</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Request received: #{request}&quot;</span>
+  <span class="ruby-ivar">@last_request</span> = <span class="ruby-identifier">request</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ride</span> <span class="ruby-identifier">bike</span>
+  <span class="ruby-comment"># Play with your new bike</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">respond</span> <span class="ruby-string">&#39;/new_bike&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">bike</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">ride</span>(<span class="ruby-identifier">bike</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>You’d put together a dispatcher something like this:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;singleton&#39;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">DispatchScope</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">a_method_you_can_call_from_inside_the_block</span>
+    <span class="ruby-value">:useful_huh?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MessageDispatch</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Singleton</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
+    <span class="ruby-ivar">@responders</span> = {}
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_responder</span> <span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+    <span class="ruby-ivar">@responders</span>[<span class="ruby-identifier">path</span>] = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dispatch</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>
+    <span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval</span>(<span class="ruby-constant">DispatchScope</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">request</span>, <span class="ruby-operator">&amp;</span><span class="ruby-ivar">@responders</span>[<span class="ruby-identifier">path</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond</span> <span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">handler</span>
+  <span class="ruby-constant">MessageDispatch</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">add_responder</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">handler</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_request</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>
+  <span class="ruby-constant">MessageDispatch</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">dispatch</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="label-Functional-Style+Immutable+DSL+Objects">Functional-Style Immutable DSL Objects<span><a href="#label-Functional-Style+Immutable+DSL+Objects">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Sometimes, you want to use an object as a DSL, but it doesn’t quite fit the <a href="http://en.wikipedia.org/wiki/Imperative_programming">imperative</a> pattern shown above.</p>
+
+<p>Instead of methods like <a href="http://www.ruby-doc.org/core-3.0.0/Array.html#method-i-push">Array#push</a>, which modifies the object at hand, it has methods like <a href="http://www.ruby-doc.org/core-3.0.0/String.html#method-i-reverse">String#reverse</a>, which returns a new object without touching the original. Perhaps it’s even <a href="http://www.ruby-doc.org/core-3.0.0/Object.html#method-i-freeze">frozen</a> in order to enforce <a href="http://en.wikipedia.org/wiki/Immutable_object">immutability</a>.</p>
+
+<p>Wouldn’t it be great if we could just treat these methods as a DSL as well?</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;I&#39;m immutable!&quot;</span>.<span class="ruby-identifier">freeze</span>
+
+<span class="ruby-identifier">with_immutable_string</span>(<span class="ruby-identifier">s</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">reverse</span>
+  <span class="ruby-identifier">upcase</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment">#=&gt; &quot;!ELBATUMMI M&#39;I&quot;</span>
+
+<span class="ruby-identifier">s</span>
+<span class="ruby-comment">#=&gt; &quot;I&#39;m immutable!&quot;</span>
+</pre>
+
+<p>No problem, just define the method <code>with_immutable_string</code> like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_immutable_string</span>(<span class="ruby-identifier">str</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval_immutable</span>(<span class="ruby-identifier">str</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>All set!</p>
+
+<h3 id="label-Accessing+the+block-27s+return+value">Accessing the block’s return value<span><a href="#label-Accessing+the+block-27s+return+value">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Sometimes you might want to access the return value of your provided block, as opposed to the DSL object itself. In these cases, use <code>dsl_eval_with_block_return</code>. It behaves exactly like <code>dsl_eval</code>, but returns the output from executing the block, rather than the DSL object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">arr</span> = []
+<span class="ruby-identifier">with_array</span>(<span class="ruby-identifier">arr</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-string">&quot;a&quot;</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-string">&quot;b&quot;</span>
+  <span class="ruby-identifier">push</span> <span class="ruby-string">&quot;c&quot;</span>
+  <span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment">#=&gt; 3</span>
+
+<span class="ruby-identifier">arr</span>
+<span class="ruby-comment">#=&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span>
+</pre>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_array</span>(<span class="ruby-identifier">arr</span>=[], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Docile</span>.<span class="ruby-identifier">dsl_eval_with_block_return</span>(<span class="ruby-identifier">arr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Features">Features<span><a href="#label-Features">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ol><li>
+<p>Method lookup falls back from the DSL object to the block’s context</p>
+</li><li>
+<p>Local variable lookup falls back from the DSL object to the block’s  context</p>
+</li><li>
+<p>Instance variables are from the block’s context only</p>
+</li><li>
+<p>Nested DSL evaluation, correctly chaining method and variable handling  from the inner to the outer DSL scopes</p>
+</li><li>
+<p>Alternatives for both imperative and functional styles of DSL objects</p>
+</li></ol>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre>$ gem install docile</pre>
+
+<h2 id="label-Links">Links<span><a href="#label-Links">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><a href="https://github.com/ms-ati/docile">Source</a></p>
+</li><li>
+<p><a href="http://rubydoc.info/gems/docile">Documentation</a></p>
+</li><li>
+<p><a href="https://github.com/ms-ati/docile/issues">Bug Tracker</a></p>
+</li></ul>
+
+<h2 id="label-Status">Status<span><a href="#label-Status">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Works on <a href="https://github.com/ms-ati/docile/blob/master/.github/workflows/main.yml">all currently supported ruby versions</a>, or so <a href="https://github.com/ms-ati/docile/actions">Github Actions</a> tells us.</p>
+
+<p>Used by some pretty cool gems to implement their DSLs, notably including <a href="https://github.com/colszowka/simplecov">SimpleCov</a>. Keep an eye out for new gems using <a href="../../../../../../Docile.html"><code>Docile</code></a> at the <a href="https://www.ruby-toolbox.com/projects/docile">Ruby Toolbox</a>.</p>
+
+<h2 id="label-Release+Policy">Release Policy<span><a href="#label-Release+Policy">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="../../../../../../Docile.html"><code>Docile</code></a> releases follow <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning 2.0.0</a>.</p>
+
+<h2 id="label-Note+on+Patches-2FPull+Requests">Note on Patches/Pull Requests<span><a href="#label-Note+on+Patches-2FPull+Requests">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fork the project.</p>
+</li><li>
+<p>Setup your development environment with:  <code>gem install bundler; bundle install</code></p>
+</li><li>
+<p>Make your feature addition or bug fix.</p>
+</li><li>
+<p>Add tests for it. This is important so I don’t break it in a future version  unintentionally.</p>
+</li><li>
+<p>Commit, do not mess with rakefile, version, or history.  (if you want to have your own version, that is fine but bump version in a  commit by itself I can ignore when I pull)</p>
+</li><li>
+<p>Send me a pull request. Bonus points for topic branches.</p>
+</li></ul>
+
+<h2 id="label-Releasing">Releasing<span><a href="#label-Releasing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>To make a new release of <code>Dile</code> to <a href="https://rubygems.org/gems/docile">RubyGems</a>, first install the release dependencies (e.g. <code>rake</code>) as follows:</p>
+
+<pre>bundle config set --local with &#39;release&#39;
+bundle install</pre>
+
+<p>Then carry out these steps:</p>
+<ol><li>
+<p>Update <code>HISTORY.md</code>:</p>
+<ul><li>
+<p>Add an entry for the upcoming version <em>x.y.z</em></p>
+</li><li>
+<p>Move content from <em>Unreleased</em> to the upcoming version <em>x.y.z</em></p>
+</li><li>
+<p>Commit with title <code>Update HISTORY.md for x.y.z</code></p>
+</li><li>
+<p>Add an entry for the upcoming version <em>x.y.z</em></p>
+</li><li>
+<p>Move content from <em>Unreleased</em> to the upcoming version <em>x.y.z</em></p>
+</li><li>
+<p>Commit with title <code>Update HISTORY.md for x.y.z</code></p>
+</li></ul>
+</li><li>
+<p>Update <code>lib/docile/version.rb</code></p>
+<ul><li>
+<p>Replace with upcoming version <em>x.y.z</em></p>
+</li><li>
+<p>Commit with title <code>Bump version to x.y.z</code></p>
+</li></ul>
+</li><li>
+<p><code>bundle exec rake release</code></p>
+</li></ol>
+
+<h2 id="label-Copyright+-26+License">Copyright &amp; License<span><a href="#label-Copyright+-26+License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Copyright © 2012-2021 Marc Siegel.</p>
+
+<p>Licensed under the <a href="http://choosealicense.com/licenses/mit/">MIT License</a>, see <a href="LICENSE">LICENSE</a> for details.</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

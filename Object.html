@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Object - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">BasicObject
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-_count">#_count</a>
+    <li ><a href="#method-i-assert_success">#assert_success</a>
+    <li ><a href="#method-i-assert_triggered">#assert_triggered</a>
+    <li ><a href="#method-i-compare">#compare</a>
+    <li ><a href="#method-i-expand">#expand</a>
+    <li ><a href="#method-i-foo">#foo</a>
+    <li ><a href="#method-i-if">#if</a>
+    <li ><a href="#method-i-munge">#munge</a>
+    <li ><a href="#method-i-process">#process</a>
+    <li ><a href="#method-i-process_error">#process_error</a>
+    <li ><a href="#method-i-pyramid_sexp">#pyramid_sexp</a>
+    <li ><a href="#method-i-s">#s</a>
+    <li class="calls-super" ><a href="#method-i-stub">#stub</a>
+    <li ><a href="#method-i-stub5">#stub5</a>
+    <li ><a href="#method-i-stub6">#stub6</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Object">
+  <h1 id="class-Object" class="class">
+    class Object
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Object.html"><code>Object</code></a> extensions for <a href="Minitest/Mock.html"><code>Minitest::Mock</code></a>.</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="Int">Int
+        <dd><p>helps to deal with 2.4 deprecation of Fixnum for Integer</p>
+        <dt id="STUB6">STUB6
+        <dd>
+        <dt id="SomeError">SomeError
+        <dd>
+      </dl>
+    </section>
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-_count" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="_count-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_spec.rb, line 675</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_count</span>
+  <span class="ruby-identifier">$let_count</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-assert_success" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_success</span><span
+            class="method-args">(spec)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_success-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_spec.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_success</span> <span class="ruby-identifier">spec</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">spec</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-assert_triggered" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_triggered</span><span
+            class="method-args">(expected = &quot;blah&quot;, klass = Minitest::Assertion) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>do not parallelize this suite… it just can“t handle it.</p>
+
+          <div class="method-source-code" id="assert_triggered-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_spec.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_triggered</span> <span class="ruby-identifier">expected</span> = <span class="ruby-string">&quot;blah&quot;</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Assertion</span>
+  <span class="ruby-ivar">@assertion_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">assert_raises</span>(<span class="ruby-identifier">klass</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/(---Backtrace---).*/m</span>, <span class="ruby-string">&#39;\1&#39;</span>)
+  <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\(oid=[-0-9]+\)/</span>, <span class="ruby-string">&quot;(oid=N)&quot;</span>)
+  <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(\d\.\d{6})\d+/</span>, <span class="ruby-string">&#39;\1xxx&#39;</span>) <span class="ruby-comment"># normalize: ruby version, impl, platform</span>
+  <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/:0x[Xa-fA-F0-9]{4,}[ @].+?&gt;/</span>, <span class="ruby-string">&quot;:0xXXXXXX@PATH&gt;&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">expected</span>
+    <span class="ruby-ivar">@assertion_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">expected</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Regexp</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@assertion_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">assert_match</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">flunk</span> <span class="ruby-node">&quot;Unknown: #{expected.inspect}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-compare" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">compare</span><span
+            class="method-args">(filepath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="compare-source">
+            <pre><span class="ruby-comment"># File bin/bench, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">compare</span>(<span class="ruby-identifier">filepath</span>)
+  <span class="ruby-identifier">prefix</span> = <span class="ruby-node">&quot;#{File.expand_path(&quot;..&quot;, __dir__)}/&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;=== #{filepath.delete_prefix(prefix)} ===&quot;</span>
+
+  <span class="ruby-identifier">source</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filepath</span>)
+
+  <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">ips</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">report</span>(<span class="ruby-string">&quot;syntax_tree&quot;</span>) { <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">parse</span> }
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">report</span>(<span class="ruby-string">&quot;parser&quot;</span>) { <span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">CurrentRuby</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>) }
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">report</span>(<span class="ruby-string">&quot;ruby_parser&quot;</span>) { <span class="ruby-constant">RubyParser</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>) }
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">compare!</span>
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-expand" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">expand</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="expand-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/bin/ruby_parse_extract_error, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">expand</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;find&#39;</span>
+
+    <span class="ruby-identifier">files</span> = []
+
+    <span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span>(<span class="ruby-operator">*</span><span class="ruby-constant">Dir</span>[<span class="ruby-identifier">path</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">f</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">f</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-foo" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">foo</span><span
+            class="method-args">(&amp;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="foo-source">
+            <pre><span class="ruby-comment"># File test/fixtures/arg_block.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">foo</span>(<span class="ruby-operator">&amp;</span>)
+  <span class="ruby-identifier">bar</span>(<span class="ruby-operator">&amp;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-if" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">if</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="if-source">
+            <pre><span class="ruby-comment"># File test/fixtures/kw.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">if</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-munge" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">munge</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="munge-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/compare/normalize.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">munge</span> <span class="ruby-identifier">s</span>
+  <span class="ruby-identifier">renames</span> = [
+             <span class="ruby-comment"># unquote... wtf?</span>
+             <span class="ruby-regexp">/`(.+?)&#39;/</span>,          <span class="ruby-identifier">proc</span> { <span class="ruby-node">$1</span> },
+             <span class="ruby-regexp">/&quot;&#39;(.+?)&#39;&quot;/</span>,        <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;\&quot;#{$1}\&quot;&quot;</span> },
+
+             <span class="ruby-string">&quot;&#39;=&#39;&quot;</span>,             <span class="ruby-string">&quot;tEQL&quot;</span>,
+             <span class="ruby-string">&quot;&#39;!&#39;&quot;</span>,             <span class="ruby-string">&quot;tBANG&quot;</span>,
+             <span class="ruby-string">&quot;&#39;%&#39;&quot;</span>,             <span class="ruby-string">&quot;tPERCENT&quot;</span>,
+             <span class="ruby-string">&quot;&#39;&amp;&#39;&quot;</span>,             <span class="ruby-string">&quot;tAMPER2&quot;</span>,
+             <span class="ruby-string">&quot;&#39;(&#39;&quot;</span>,             <span class="ruby-string">&quot;tLPAREN2&quot;</span>,
+             <span class="ruby-string">&quot;&#39;)&#39;&quot;</span>,             <span class="ruby-string">&quot;tRPAREN&quot;</span>,
+             <span class="ruby-string">&quot;&#39;*&#39;&quot;</span>,             <span class="ruby-string">&quot;tSTAR2&quot;</span>,
+             <span class="ruby-string">&quot;&#39;+&#39;&quot;</span>,             <span class="ruby-string">&quot;tPLUS&quot;</span>,
+             <span class="ruby-string">&quot;&#39;,&#39;&quot;</span>,             <span class="ruby-string">&quot;tCOMMA&quot;</span>,
+             <span class="ruby-string">&quot;&#39;-&#39;&quot;</span>,             <span class="ruby-string">&quot;tMINUS&quot;</span>,
+             <span class="ruby-string">&quot;&#39;.&#39;&quot;</span>,             <span class="ruby-string">&quot;tDOT&quot;</span>,
+             <span class="ruby-string">&quot;&#39;/&#39;&quot;</span>,             <span class="ruby-string">&quot;tDIVIDE&quot;</span>,
+             <span class="ruby-string">&quot;&#39;;&#39;&quot;</span>,             <span class="ruby-string">&quot;tSEMI&quot;</span>,
+             <span class="ruby-string">&quot;&#39;:&#39;&quot;</span>,             <span class="ruby-string">&quot;tCOLON&quot;</span>,
+             <span class="ruby-string">&quot;&#39;&lt;&#39;&quot;</span>,             <span class="ruby-string">&quot;tLT&quot;</span>,
+             <span class="ruby-string">&quot;&#39;&gt;&#39;&quot;</span>,             <span class="ruby-string">&quot;tGT&quot;</span>,
+             <span class="ruby-string">&quot;&#39;?&#39;&quot;</span>,             <span class="ruby-string">&quot;tEH&quot;</span>,
+             <span class="ruby-string">&quot;&#39;[&#39;&quot;</span>,             <span class="ruby-string">&quot;tLBRACK&quot;</span>,
+             <span class="ruby-string">&quot;&#39;\\n&#39;&quot;</span>,           <span class="ruby-string">&quot;tNL&quot;</span>,
+             <span class="ruby-string">&quot;&#39;]&#39;&quot;</span>,             <span class="ruby-string">&quot;tRBRACK&quot;</span>,
+             <span class="ruby-string">&quot;&#39;^&#39;&quot;</span>,             <span class="ruby-string">&quot;tCARET&quot;</span>,
+             <span class="ruby-string">&quot;&#39;`&#39;&quot;</span>,             <span class="ruby-string">&quot;tBACK_REF2&quot;</span>,
+             <span class="ruby-string">&quot;&#39;{&#39;&quot;</span>,             <span class="ruby-string">&quot;tLCURLY&quot;</span>,
+             <span class="ruby-string">&quot;&#39;|&#39;&quot;</span>,             <span class="ruby-string">&quot;tPIPE&quot;</span>,
+             <span class="ruby-string">&quot;&#39;}&#39;&quot;</span>,             <span class="ruby-string">&quot;tRCURLY&quot;</span>,
+             <span class="ruby-string">&quot;&#39;~&#39;&quot;</span>,             <span class="ruby-string">&quot;tTILDE&quot;</span>,
+             <span class="ruby-string">&#39;&quot;[&quot;&#39;</span>,             <span class="ruby-string">&quot;tLBRACK&quot;</span>,
+
+             <span class="ruby-comment"># 2.0 changes?</span>
+             <span class="ruby-string">&#39;&quot;&lt;=&gt;&quot;&#39;</span>,            <span class="ruby-string">&quot;tCMP&quot;</span>,
+             <span class="ruby-string">&#39;&quot;==&quot;&#39;</span>,             <span class="ruby-string">&quot;tEQ&quot;</span>,
+             <span class="ruby-string">&#39;&quot;===&quot;&#39;</span>,            <span class="ruby-string">&quot;tEQQ&quot;</span>,
+             <span class="ruby-string">&#39;&quot;!~&quot;&#39;</span>,             <span class="ruby-string">&quot;tNMATCH&quot;</span>,
+             <span class="ruby-string">&#39;&quot;=~&quot;&#39;</span>,             <span class="ruby-string">&quot;tMATCH&quot;</span>,
+             <span class="ruby-string">&#39;&quot;&gt;=&quot;&#39;</span>,             <span class="ruby-string">&quot;tGEQ&quot;</span>,
+             <span class="ruby-string">&#39;&quot;&lt;=&quot;&#39;</span>,             <span class="ruby-string">&quot;tLEQ&quot;</span>,
+             <span class="ruby-string">&#39;&quot;!=&quot;&#39;</span>,             <span class="ruby-string">&quot;tNEQ&quot;</span>,
+             <span class="ruby-string">&#39;&quot;&lt;&lt;&quot;&#39;</span>,             <span class="ruby-string">&quot;tLSHFT&quot;</span>,
+             <span class="ruby-string">&#39;&quot;&gt;&gt;&quot;&#39;</span>,             <span class="ruby-string">&quot;tRSHFT&quot;</span>,
+             <span class="ruby-string">&#39;&quot;*&quot;&#39;</span>,              <span class="ruby-string">&quot;tSTAR&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;..&quot;&#39;</span>,             <span class="ruby-string">&quot;tDOT2&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;&amp;&quot;&#39;</span>,              <span class="ruby-string">&quot;tAMPER&quot;</span>,
+             <span class="ruby-string">&#39;&quot;&amp;&amp;&quot;&#39;</span>,             <span class="ruby-string">&quot;tANDOP&quot;</span>,
+             <span class="ruby-string">&#39;&quot;&amp;.&quot;&#39;</span>,             <span class="ruby-string">&quot;tLONELY&quot;</span>,
+             <span class="ruby-string">&#39;&quot;||&quot;&#39;</span>,             <span class="ruby-string">&quot;tOROP&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;...&quot;&#39;</span>,            <span class="ruby-string">&quot;tDOT3&quot;</span>,
+             <span class="ruby-string">&#39;&quot;**&quot;&#39;</span>,             <span class="ruby-string">&quot;tPOW&quot;</span>,
+             <span class="ruby-string">&#39;&quot;unary+&quot;&#39;</span>,         <span class="ruby-string">&quot;tUPLUS&quot;</span>,
+             <span class="ruby-string">&#39;&quot;unary-&quot;&#39;</span>,         <span class="ruby-string">&quot;tUMINUS&quot;</span>,
+             <span class="ruby-string">&#39;&quot;[]&quot;&#39;</span>,             <span class="ruby-string">&quot;tAREF&quot;</span>,
+             <span class="ruby-string">&#39;&quot;[]=&quot;&#39;</span>,            <span class="ruby-string">&quot;tASET&quot;</span>,
+             <span class="ruby-string">&#39;&quot;::&quot;&#39;</span>,             <span class="ruby-string">&quot;tCOLON2&quot;</span>,
+             <span class="ruby-string">&#39;&quot;{ arg&quot;&#39;</span>,          <span class="ruby-string">&quot;tLBRACE_ARG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;( arg&quot;&#39;</span>,          <span class="ruby-string">&quot;tLPAREN_ARG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;(&quot;&#39;</span>,              <span class="ruby-string">&quot;tLPAREN&quot;</span>,
+             <span class="ruby-string">&#39;rparen&#39;</span>,           <span class="ruby-string">&quot;tRPAREN&quot;</span>,
+             <span class="ruby-string">&#39;&quot;{&quot;&#39;</span>,              <span class="ruby-string">&quot;tLBRACE&quot;</span>,
+             <span class="ruby-string">&#39;&quot;=&gt;&quot;&#39;</span>,             <span class="ruby-string">&quot;tASSOC&quot;</span>,
+             <span class="ruby-string">&#39;&quot;-&gt;&quot;&#39;</span>,             <span class="ruby-string">&quot;tLAMBDA&quot;</span>,
+             <span class="ruby-string">&#39;&quot;:: at EXPR_BEG&quot;&#39;</span>, <span class="ruby-string">&quot;tCOLON3&quot;</span>,
+             <span class="ruby-string">&#39;&quot;**arg&quot;&#39;</span>,          <span class="ruby-string">&quot;tDSTAR&quot;</span>,
+             <span class="ruby-string">&#39;&quot;,&quot;&#39;</span>,              <span class="ruby-string">&quot;tCOMMA&quot;</span>,
+
+             <span class="ruby-comment"># other</span>
+
+             <span class="ruby-string">&#39;tLBRACK2&#39;</span>,        <span class="ruby-string">&quot;tLBRACK&quot;</span>, <span class="ruby-comment"># HACK</span>
+
+             <span class="ruby-string">&quot;&#39; &#39;&quot;</span>,             <span class="ruby-string">&quot;tSPACE&quot;</span>, <span class="ruby-comment"># needs to be later to avoid bad hits</span>
+
+             <span class="ruby-string">&quot;%empty&quot;</span>,          <span class="ruby-string">&quot;none&quot;</span>, <span class="ruby-comment"># newer bison</span>
+             <span class="ruby-string">&quot;/* empty */&quot;</span>,     <span class="ruby-string">&quot;none&quot;</span>,
+             <span class="ruby-regexp">/^\s*$/</span>,           <span class="ruby-string">&quot;none&quot;</span>,
+
+             <span class="ruby-string">&quot;keyword_BEGIN&quot;</span>,   <span class="ruby-string">&quot;klBEGIN&quot;</span>,
+             <span class="ruby-string">&quot;keyword_END&quot;</span>,     <span class="ruby-string">&quot;klEND&quot;</span>,
+             <span class="ruby-regexp">/keyword_(\w+)/</span>,   <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;k#{$1.upcase}&quot;</span> },
+             <span class="ruby-regexp">/\bk_([a-z_]+)/</span>,   <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;k#{$1.upcase}&quot;</span> },
+             <span class="ruby-regexp">/modifier_(\w+)/</span>,  <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;k#{$1.upcase}_MOD&quot;</span> },
+             <span class="ruby-string">&quot;kVARIABLE&quot;</span>,       <span class="ruby-string">&quot;keyword_variable&quot;</span>, <span class="ruby-comment"># ugh</span>
+
+             <span class="ruby-comment"># 2.6 collapses klBEGIN to kBEGIN</span>
+             <span class="ruby-string">&quot;klBEGIN&quot;</span>,   <span class="ruby-string">&quot;kBEGIN&quot;</span>,
+             <span class="ruby-string">&quot;klEND&quot;</span>,     <span class="ruby-string">&quot;kEND&quot;</span>,
+
+             <span class="ruby-regexp">/keyword_(\w+)/</span>,          <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;k#{$1.upcase}&quot;</span> },
+             <span class="ruby-regexp">/\bk_([^_][a-z_]+)/</span>,      <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;k#{$1.upcase}&quot;</span> },
+             <span class="ruby-regexp">/modifier_(\w+)/</span>,         <span class="ruby-identifier">proc</span> { <span class="ruby-node">&quot;k#{$1.upcase}_MOD&quot;</span> },
+
+             <span class="ruby-string">&quot;kVARIABLE&quot;</span>,       <span class="ruby-string">&quot;keyword_variable&quot;</span>, <span class="ruby-comment"># ugh: this is a rule name</span>
+
+             <span class="ruby-comment"># 2.7 changes:</span>
+
+             <span class="ruby-string">&#39;&quot;global variable&quot;&#39;</span>,          <span class="ruby-string">&quot;tGVAR&quot;</span>,
+             <span class="ruby-string">&#39;&quot;operator-assignment&quot;&#39;</span>,      <span class="ruby-string">&quot;tOP_ASGN&quot;</span>,
+             <span class="ruby-string">&#39;&quot;back reference&quot;&#39;</span>,           <span class="ruby-string">&quot;tBACK_REF&quot;</span>,
+             <span class="ruby-string">&#39;&quot;numbered reference&quot;&#39;</span>,       <span class="ruby-string">&quot;tNTH_REF&quot;</span>,
+             <span class="ruby-string">&#39;&quot;local variable or method&quot;&#39;</span>, <span class="ruby-string">&quot;tIDENTIFIER&quot;</span>,
+             <span class="ruby-string">&#39;&quot;constant&quot;&#39;</span>,                 <span class="ruby-string">&quot;tCONSTANT&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;(..&quot;&#39;</span>,                  <span class="ruby-string">&quot;tBDOT2&quot;</span>,
+             <span class="ruby-string">&#39;&quot;(...&quot;&#39;</span>,                 <span class="ruby-string">&quot;tBDOT3&quot;</span>,
+             <span class="ruby-string">&#39;&quot;char literal&quot;&#39;</span>,         <span class="ruby-string">&quot;tCHAR&quot;</span>,
+             <span class="ruby-string">&#39;&quot;literal content&quot;&#39;</span>,      <span class="ruby-string">&quot;tSTRING_CONTENT&quot;</span>,
+             <span class="ruby-string">&#39;&quot;string literal&quot;&#39;</span>,       <span class="ruby-string">&quot;tSTRING_BEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;symbol literal&quot;&#39;</span>,       <span class="ruby-string">&quot;tSYMBEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;backtick literal&quot;&#39;</span>,     <span class="ruby-string">&quot;tXSTRING_BEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;regexp literal&quot;&#39;</span>,       <span class="ruby-string">&quot;tREGEXP_BEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;word list&quot;&#39;</span>,            <span class="ruby-string">&quot;tWORDS_BEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;verbatim word list&quot;&#39;</span>,   <span class="ruby-string">&quot;tQWORDS_BEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;symbol list&quot;&#39;</span>,          <span class="ruby-string">&quot;tSYMBOLS_BEG&quot;</span>,
+             <span class="ruby-string">&#39;&quot;verbatim symbol list&quot;&#39;</span>, <span class="ruby-string">&quot;tQSYMBOLS_BEG&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;float literal&quot;&#39;</span>,        <span class="ruby-string">&quot;tFLOAT&quot;</span>,
+             <span class="ruby-string">&#39;&quot;imaginary literal&quot;&#39;</span>,    <span class="ruby-string">&quot;tIMAGINARY&quot;</span>,
+             <span class="ruby-string">&#39;&quot;integer literal&quot;&#39;</span>,      <span class="ruby-string">&quot;tINTEGER&quot;</span>,
+             <span class="ruby-string">&#39;&quot;rational literal&quot;&#39;</span>,     <span class="ruby-string">&quot;tRATIONAL&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;instance variable&quot;&#39;</span>,  <span class="ruby-string">&quot;tIVAR&quot;</span>,
+             <span class="ruby-string">&#39;&quot;class variable&quot;&#39;</span>,     <span class="ruby-string">&quot;tCVAR&quot;</span>,
+             <span class="ruby-string">&#39;&quot;terminator&quot;&#39;</span>,         <span class="ruby-string">&quot;tSTRING_END&quot;</span>, <span class="ruby-comment"># TODO: switch this?</span>
+             <span class="ruby-string">&#39;&quot;method&quot;&#39;</span>,             <span class="ruby-string">&quot;tFID&quot;</span>,
+             <span class="ruby-string">&#39;&quot;}&quot;&#39;</span>,                  <span class="ruby-string">&quot;tSTRING_DEND&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;do for block&quot;&#39;</span>,     <span class="ruby-string">&quot;kDO_BLOCK&quot;</span>,
+             <span class="ruby-string">&#39;&quot;do for condition&quot;&#39;</span>, <span class="ruby-string">&quot;kDO_COND&quot;</span>,
+             <span class="ruby-string">&#39;&quot;do for lambda&quot;&#39;</span>,    <span class="ruby-string">&quot;kDO_LAMBDA&quot;</span>,
+             <span class="ruby-string">&quot;tLABEL&quot;</span>,             <span class="ruby-string">&quot;kLABEL&quot;</span>,
+
+             <span class="ruby-comment"># UGH</span>
+             <span class="ruby-string">&quot;k_LINE__&quot;</span>,       <span class="ruby-string">&quot;k__LINE__&quot;</span>,
+             <span class="ruby-string">&quot;k_FILE__&quot;</span>,       <span class="ruby-string">&quot;k__FILE__&quot;</span>,
+             <span class="ruby-string">&quot;k_ENCODING__&quot;</span>,   <span class="ruby-string">&quot;k__ENCODING__&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;defined?&quot;&#39;</span>,     <span class="ruby-string">&quot;kDEFINED&quot;</span>,
+
+             <span class="ruby-string">&#39;&quot;do (for condition)&quot;&#39;</span>, <span class="ruby-string">&quot;kDO_COND&quot;</span>,
+             <span class="ruby-string">&#39;&quot;do (for lambda)&quot;&#39;</span>,    <span class="ruby-string">&quot;kDO_LAMBDA&quot;</span>,
+             <span class="ruby-string">&#39;&quot;do (for block)&quot;&#39;</span>,     <span class="ruby-string">&quot;kDO_BLOCK&quot;</span>,
+
+             <span class="ruby-regexp">/\&quot;(\w+) \(?modifier\)?\&quot;/</span>, <span class="ruby-identifier">proc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;k#{$1.upcase}_MOD&quot;</span> },
+             <span class="ruby-regexp">/\&quot;(\w+)\&quot;/</span>,                <span class="ruby-identifier">proc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;k#{$1.upcase}&quot;</span> },
+
+             <span class="ruby-regexp">/\$?@(\d+)(\s+|$)/</span>,    <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-comment"># newer bison</span>
+
+             <span class="ruby-comment"># TODO: remove for 3.0 work:</span>
+             <span class="ruby-string">&quot;lex_ctxt &quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-comment"># 3.0 production that&#39;s mostly noise right now</span>
+            ]
+
+  <span class="ruby-identifier">renames</span>.<span class="ruby-identifier">each_slice</span>(<span class="ruby-value">2</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)<span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Proc</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">b</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">a</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-process" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">process</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="process-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/bin/ruby_parse_extract_error, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process</span> <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">ruby</span> = <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;-&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">binread</span> <span class="ruby-operator">:</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">time</span> = (<span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;RP_TIMEOUT&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-value">10</span>).<span class="ruby-identifier">to_i</span>
+
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;# Validating #{file}: &quot;</span>
+  <span class="ruby-identifier">parser</span> = <span class="ruby-constant">RubyParser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$s</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">time</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$s</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;good: #{Time.now - t0}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;good&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$d</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+  <span class="ruby-identifier">$exit</span> = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;TIMEOUT parsing #{file}. Skipping.&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$m</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">base_dir</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)
+    <span class="ruby-identifier">base_dir</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/\.slow\.?.*/</span>, <span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-identifier">base_dir</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;.slow.#{time}&quot;</span>
+
+    <span class="ruby-identifier">new_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">base_dir</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>)
+
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">new_file</span>)
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">move</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">new_file</span>, <span class="ruby-value">verbose:</span><span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">$t</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-constant">SyntaxError</span>, <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">$exit</span> = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;# error: #{e.message.strip}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">$q</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#   #{e.backtrace.first}&quot;</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$q</span>
+
+  <span class="ruby-identifier">process_error</span> <span class="ruby-identifier">parser</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-process_error" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">process_error</span><span
+            class="method-args">(parser)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="process_error-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/bin/ruby_parse_extract_error, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process_error</span> <span class="ruby-identifier">parser</span>
+  <span class="ruby-identifier">defs</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">extract_defs</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">retest_for_errors</span> <span class="ruby-identifier">defs</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;Can&#39;t reproduce error with just methods, punting...&quot;</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">catch</span> <span class="ruby-value">:extract_done</span> <span class="ruby-keyword">do</span>
+    (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">defs</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">perm_size</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">defs</span>.<span class="ruby-identifier">combination</span>(<span class="ruby-identifier">perm_size</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">trial</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">retest_for_errors</span> <span class="ruby-identifier">trial</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">trial</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;\n&quot;</span>
+          <span class="ruby-identifier">throw</span> <span class="ruby-value">:extract_done</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;# process error: #{e.message.strip}&quot;</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#   #{e.backtrace.first}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-pyramid_sexp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">pyramid_sexp</span><span
+            class="method-args">(max)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="pyramid_sexp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pyramid_sexp</span> <span class="ruby-identifier">max</span>
+  <span class="ruby-comment"># s(:array,</span>
+  <span class="ruby-comment">#   s(:array, s(:s, 1)),</span>
+  <span class="ruby-comment">#   s(:array, s(:s, 1), s(:s, 2)),</span>
+  <span class="ruby-comment">#   ...</span>
+  <span class="ruby-comment">#   s(:array, s(:s, 1), s(:s, 2), ... s(:s, max-1)))</span>
+
+  <span class="ruby-identifier">s</span>(<span class="ruby-value">:array</span>,
+    <span class="ruby-operator">*</span>(<span class="ruby-value">1</span><span class="ruby-operator">...</span><span class="ruby-identifier">max</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">s</span>(<span class="ruby-value">:array</span>, <span class="ruby-operator">*</span>(<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">n</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">s</span>(<span class="ruby-value">:s</span>, <span class="ruby-identifier">m</span>) })})
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-s" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">s</span><span
+            class="method-args">(*args, &amp;blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>This is a very important shortcut to make using Sexps much more awesome.</p>
+
+<p>In its normal form +s(…)+, creates a Sexp instance. If passed a block, it creates a <a href="Sexp/Matcher.html"><code>Sexp::Matcher</code></a> using the factory methods on Sexp.</p>
+
+<p>See Matcher and other factory class methods on Sexp.</p>
+
+          <div class="method-source-code" id="s-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/lib/sexp.rb, line 385</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">s</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Sexp</span>.<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+  <span class="ruby-constant">Sexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-stub" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">stub</span><span
+            class="method-args">(name, val_or_callable, *block_args) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Add a temporary stubbed method replacing <code>name</code> for the duration of the <code>block</code>. If <code>val_or_callable</code> responds to call, then it returns the result of calling it, otherwise returns the value as-is. If stubbed method yields a block, <code>block_args</code> will be passed along. Cleans up the stub at the end of the <code>block</code>. The method <code>name</code> must exist before stubbing.</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_stale_eh</span>
+  <span class="ruby-identifier">obj_under_test</span> = <span class="ruby-constant">Something</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">obj_under_test</span>.<span class="ruby-identifier">stale?</span>
+
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">stub</span> <span class="ruby-value">:now</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">obj_under_test</span>.<span class="ruby-identifier">stale?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="stub-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/lib/minitest/mock.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stub</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">val_or_callable</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">block_args</span>
+  <span class="ruby-identifier">new_name</span> = <span class="ruby-node">&quot;__minitest_stub__#{name}&quot;</span>
+
+  <span class="ruby-identifier">metaclass</span> = <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:define_method</span>, <span class="ruby-identifier">name</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:alias_method</span>, <span class="ruby-identifier">new_name</span>, <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:define_method</span>, <span class="ruby-identifier">name</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">val_or_callable</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:call</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">val_or_callable</span>.<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">block_args</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+      <span class="ruby-identifier">val_or_callable</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:ruby2_keywords</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:ruby2_keywords</span>, <span class="ruby-keyword">true</span>)
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:undef_method</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:alias_method</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">new_name</span>
+  <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:undef_method</span>, <span class="ruby-identifier">new_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+        <div class="aliases">
+          Also aliased as: <a href="Object.html#method-i-stub5">stub5</a>, <a href="Object.html#method-i-stub6">stub6</a>
+        </div>
+
+      </div>
+
+      <div id="method-i-stub5" class="method-detail method-alias">
+        <div class="method-heading">
+          <span class="method-name">stub5</span><span
+            class="method-args">(name, val_or_callable, *block_args)</span>
+        </div>
+
+        <div class="method-description">
+          
+
+        </div>
+
+
+        <div class="aliases">
+          Alias for: <a href="Object.html#method-i-stub">stub</a>
+        </div>
+      </div>
+
+      <div id="method-i-stub6" class="method-detail method-alias">
+        <div class="method-heading">
+          <span class="method-name">stub6</span><span
+            class="method-args">(name, val_or_callable, *block_args)</span>
+        </div>
+
+        <div class="method-description">
+          
+
+        </div>
+
+
+        <div class="aliases">
+          Alias for: <a href="Object.html#method-i-stub">stub</a>
+        </div>
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

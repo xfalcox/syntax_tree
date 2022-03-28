@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestSexpProcessor - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Minitest/Test.html">Minitest::Test</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-setup">#setup</a>
+    <li ><a href="#method-i-test_assert_type_hit">#test_assert_type_hit</a>
+    <li ><a href="#method-i-test_assert_type_miss">#test_assert_type_miss</a>
+    <li ><a href="#method-i-test_auto_shift_type">#test_auto_shift_type</a>
+    <li ><a href="#method-i-test_auto_shift_type_equal">#test_auto_shift_type_equal</a>
+    <li ><a href="#method-i-test_debug">#test_debug</a>
+    <li ><a href="#method-i-test_debug-3D">#test_debug=</a>
+    <li ><a href="#method-i-test_default_method">#test_default_method</a>
+    <li ><a href="#method-i-test_default_method-3D">#test_default_method=</a>
+    <li ><a href="#method-i-test_expected">#test_expected</a>
+    <li ><a href="#method-i-test_expected-3D">#test_expected=</a>
+    <li ><a href="#method-i-test_generate">#test_generate</a>
+    <li ><a href="#method-i-test_process_default">#test_process_default</a>
+    <li ><a href="#method-i-test_process_generic">#test_process_generic</a>
+    <li ><a href="#method-i-test_process_not_sexp">#test_process_not_sexp</a>
+    <li ><a href="#method-i-test_process_rewrite">#test_process_rewrite</a>
+    <li ><a href="#method-i-test_process_rewrite_deep">#test_process_rewrite_deep</a>
+    <li ><a href="#method-i-test_process_rewrite_depth_first">#test_process_rewrite_depth_first</a>
+    <li ><a href="#method-i-test_process_specific">#test_process_specific</a>
+    <li ><a href="#method-i-test_process_strip">#test_process_strip</a>
+    <li ><a href="#method-i-test_process_unsupported_wrong">#test_process_unsupported_wrong</a>
+    <li ><a href="#method-i-test_require_empty-3D">#test_require_empty=</a>
+    <li ><a href="#method-i-test_require_empty_false">#test_require_empty_false</a>
+    <li ><a href="#method-i-test_require_empty_true">#test_require_empty_true</a>
+    <li ><a href="#method-i-test_rewrite">#test_rewrite</a>
+    <li ><a href="#method-i-test_rewrite_deep">#test_rewrite_deep</a>
+    <li ><a href="#method-i-test_rewrite_depth_first">#test_rewrite_depth_first</a>
+    <li ><a href="#method-i-test_rewrite_different_type">#test_rewrite_different_type</a>
+    <li ><a href="#method-i-test_rewrite_not_empty">#test_rewrite_not_empty</a>
+    <li ><a href="#method-i-test_strict">#test_strict</a>
+    <li ><a href="#method-i-test_strict-3D">#test_strict=</a>
+    <li ><a href="#method-i-test_unsupported_equal">#test_unsupported_equal</a>
+    <li ><a href="#method-i-test_warn_on_default">#test_warn_on_default</a>
+    <li ><a href="#method-i-test_warn_on_default-3D">#test_warn_on_default=</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestSexpProcessor">
+  <h1 id="class-TestSexpProcessor" class="class">
+    class TestSexpProcessor
+  </h1>
+
+  <section class="description">
+    
+<p>Real test classes:</p>
+
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-setup" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@processor</span> = <span class="ruby-constant">TestProcessor</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_assert_type_hit" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_assert_type_hit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_assert_type_hit-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_assert_type_hit</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">assert_type</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>), <span class="ruby-value">:blah</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_assert_type_miss" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_assert_type_miss</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_assert_type_miss-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_assert_type_miss</span>
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">SexpTypeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">assert_type</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:thingy</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>), <span class="ruby-value">:blah</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_auto_shift_type" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_auto_shift_type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_auto_shift_type-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_auto_shift_type</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">auto_shift_type</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">false</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">auto_shift_type</span>)
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">auto_shift_type</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">auto_shift_type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_auto_shift_type_equal" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_auto_shift_type_equal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_auto_shift_type_equal-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_auto_shift_type_equal</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_debug" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_debug</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Not Testing:</p>
+
+          <div class="method-source-code" id="test_debug-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_debug</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_debug-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_debug=</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_debug-3D-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_debug=</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_default_method" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_default_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_default_method-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 272</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_default_method</span>
+  <span class="ruby-comment"># default functionality tested in process_default</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">default_method</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">default_method</span> = <span class="ruby-value">:something</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:something</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">default_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_default_method-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_default_method=</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_default_method-3D-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_default_method=</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_expected" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_expected</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_expected-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_expected</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Sexp</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">expected</span>
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">SexpTypeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:expected</span>))           <span class="ruby-comment"># should raise</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;string&quot;</span>))       <span class="ruby-comment"># shouldn&#39;t raise</span>
+
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">expected</span> = <span class="ruby-constant">Hash</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Hash</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">expected</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">s</span>()), <span class="ruby-string">&quot;Hash === s() should not be true&quot;</span>
+
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">SexpTypeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:string</span>, <span class="ruby-string">&quot;string&quot;</span>))     <span class="ruby-comment"># should raise</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:expected</span>))        <span class="ruby-comment"># shouldn&#39;t raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_expected-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_expected=</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_expected-3D-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_expected=</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_generate" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_generate</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_generate-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_generate</span>
+  <span class="ruby-identifier">skip</span> <span class="ruby-string">&quot;nothing to test at this time... soon.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_default" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_default</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_default-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_default</span>
+  <span class="ruby-ivar">@processor</span> = <span class="ruby-constant">TestProcessorDefault</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">warn_on_default</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">expected</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">42</span>), <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">a</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_generic" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_generic</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_generic-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_generic</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">deep_clone</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">a</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_not_sexp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_not_sexp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_not_sexp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_not_sexp</span>
+  <span class="ruby-ivar">@processor</span> = <span class="ruby-constant">TestProcessor</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">warn_on_default</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">SexpTypeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:broken</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_rewrite" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_rewrite</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_rewrite-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_rewrite</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritten</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:y</span>, <span class="ruby-value">2</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:x</span>, <span class="ruby-value">1</span>), <span class="ruby-value">0</span>),
+               <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:x</span>, <span class="ruby-value">1</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:y</span>, <span class="ruby-value">2</span>))))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_rewrite_deep" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_rewrite_deep</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_rewrite_deep-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_rewrite_deep</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritten</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-value">0</span>)),
+               <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)))))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_rewrite_depth_first" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_rewrite_depth_first</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_rewrite_depth_first-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_rewrite_depth_first</span>
+  <span class="ruby-identifier">inn</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>,
+          <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>,
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>,
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)),
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:d</span>))))
+  <span class="ruby-identifier">out</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>,
+          <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritten</span>,
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritten</span>,
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:d</span>),
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritten</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">0</span>), <span class="ruby-value">1</span>),
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-value">2</span>))
+
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">out</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">inn</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_specific" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_specific</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_specific-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_specific</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:x</span>, <span class="ruby-value">1</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:y</span>, <span class="ruby-value">2</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:z</span>, <span class="ruby-value">3</span>))
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:x</span>, <span class="ruby-value">1</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:y</span>, <span class="ruby-value">2</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:z</span>, <span class="ruby-value">3</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">a</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_strip" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_strip</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_strip-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_strip</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">auto_shift_type</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:strip</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_process_unsupported_wrong" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_process_unsupported_wrong</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_process_unsupported_wrong-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_process_unsupported_wrong</span>
+  <span class="ruby-ivar">@processor</span> = <span class="ruby-constant">TestProcessor</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">unsupported</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:strip</span>
+
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">UnsupportedNodeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:whatever</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_require_empty-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_require_empty=</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_require_empty-3D-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_require_empty=</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_require_empty_false" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_require_empty_false</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_require_empty_false-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_require_empty_false</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">require_empty</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:nonempty</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>), <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:nonempty</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_require_empty_true" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_require_empty_true</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_require_empty_true-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_require_empty_true</span>
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">NotEmptyError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">require_empty</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:nonempty</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_rewrite" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_rewrite</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_rewrite-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_rewrite</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>),
+               <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_rewrite_deep" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_rewrite_deep</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_rewrite_deep-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_rewrite_deep</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>)),
+               <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>))))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_rewrite_depth_first" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_rewrite_depth_first</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_rewrite_depth_first-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_rewrite_depth_first</span>
+  <span class="ruby-identifier">inn</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>,
+          <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>,
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>,
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)),
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:d</span>))))
+  <span class="ruby-identifier">out</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:specific</span>,
+          <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>,
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>,
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:d</span>),
+              <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))),
+            <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)))
+
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">out</span>, <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">inn</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_rewrite_different_type" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_rewrite_different_type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_rewrite_different_type-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_rewrite_different_type</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>),
+               <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:major_rewrite</span>, <span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_rewrite_not_empty" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_rewrite_not_empty</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_rewrite_not_empty-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_rewrite_not_empty</span>
+  <span class="ruby-identifier">insert</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">2</span>)
+  <span class="ruby-identifier">expect</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:rewritable</span>, <span class="ruby-value">2</span>, <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">insert</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expect</span>, <span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_strict" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_strict</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_strict-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_strict</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">strict</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">UnknownNodeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_strict-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_strict=</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_strict-3D-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_strict=</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_unsupported_equal" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_unsupported_equal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_unsupported_equal-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_unsupported_equal</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">strict</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">unsupported</span> = [ <span class="ruby-value">:unsupported</span> ]
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">UnsupportedNodeError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@processor</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:unsupported</span>, <span class="ruby-value">42</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_warn_on_default" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_warn_on_default</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_warn_on_default-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_warn_on_default</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_warn_on_default-3D" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_warn_on_default=</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_warn_on_default-3D-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp_processor.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_warn_on_default=</span>; <span class="ruby-identifier">skip</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

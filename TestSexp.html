@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestSexp - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="SexpTestCase.html">SexpTestCase</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-assert_from_array">#assert_from_array</a>
+    <li ><a href="#method-i-assert_gsub">#assert_gsub</a>
+    <li ><a href="#method-i-assert_sub">#assert_sub</a>
+    <li class="calls-super" ><a href="#method-i-setup">#setup</a>
+    <li ><a href="#method-i-test_array_type_eh">#test_array_type_eh</a>
+    <li ><a href="#method-i-test_class_from_array">#test_class_from_array</a>
+    <li ><a href="#method-i-test_compact">#test_compact</a>
+    <li ><a href="#method-i-test_deep_clone">#test_deep_clone</a>
+    <li ><a href="#method-i-test_deep_each">#test_deep_each</a>
+    <li ><a href="#method-i-test_deep_each_sexp_recursive">#test_deep_each_sexp_recursive</a>
+    <li ><a href="#method-i-test_deep_each_skip">#test_deep_each_skip</a>
+    <li ><a href="#method-i-test_deep_each_without_block">#test_deep_each_without_block</a>
+    <li ><a href="#method-i-test_depth">#test_depth</a>
+    <li ><a href="#method-i-test_each_of_type">#test_each_of_type</a>
+    <li ><a href="#method-i-test_each_of_type_no_block">#test_each_of_type_no_block</a>
+    <li ><a href="#method-i-test_each_sexp">#test_each_sexp</a>
+    <li ><a href="#method-i-test_each_sexp_without_block">#test_each_sexp_without_block</a>
+    <li ><a href="#method-i-test_equal3_full_match">#test_equal3_full_match</a>
+    <li ><a href="#method-i-test_equal3_mismatch">#test_equal3_mismatch</a>
+    <li ><a href="#method-i-test_equal3_subset_match">#test_equal3_subset_match</a>
+    <li ><a href="#method-i-test_equals2_array">#test_equals2_array</a>
+    <li ><a href="#method-i-test_equals2_not_body">#test_equals2_not_body</a>
+    <li ><a href="#method-i-test_equals2_sexp">#test_equals2_sexp</a>
+    <li ><a href="#method-i-test_equalstilde_fancy">#test_equalstilde_fancy</a>
+    <li ><a href="#method-i-test_equalstilde_plain">#test_equalstilde_plain</a>
+    <li ><a href="#method-i-test_find_and_replace_all">#test_find_and_replace_all</a>
+    <li ><a href="#method-i-test_gsub">#test_gsub</a>
+    <li ><a href="#method-i-test_gsub_empty">#test_gsub_empty</a>
+    <li ><a href="#method-i-test_gsub_matcher">#test_gsub_matcher</a>
+    <li ><a href="#method-i-test_gsub_multiple">#test_gsub_multiple</a>
+    <li ><a href="#method-i-test_inspect">#test_inspect</a>
+    <li ><a href="#method-i-test_line">#test_line</a>
+    <li ><a href="#method-i-test_line_max">#test_line_max</a>
+    <li ><a href="#method-i-test_map">#test_map</a>
+    <li ><a href="#method-i-test_mass">#test_mass</a>
+    <li ><a href="#method-i-test_mass_auto_shift">#test_mass_auto_shift</a>
+    <li ><a href="#method-i-test_mass_huge">#test_mass_huge</a>
+    <li ><a href="#method-i-test_method_missing">#test_method_missing</a>
+    <li ><a href="#method-i-test_method_missing_ambigious">#test_method_missing_ambigious</a>
+    <li ><a href="#method-i-test_method_missing_deep">#test_method_missing_deep</a>
+    <li ><a href="#method-i-test_method_missing_delete">#test_method_missing_delete</a>
+    <li ><a href="#method-i-test_method_missing_hit_debug_verbose">#test_method_missing_hit_debug_verbose</a>
+    <li ><a href="#method-i-test_method_missing_missing">#test_method_missing_missing</a>
+    <li ><a href="#method-i-test_method_missing_missing_debug">#test_method_missing_missing_debug</a>
+    <li ><a href="#method-i-test_new">#test_new</a>
+    <li ><a href="#method-i-test_pretty_print">#test_pretty_print</a>
+    <li ><a href="#method-i-test_sexp_body">#test_sexp_body</a>
+    <li ><a href="#method-i-test_sexp_body_eq">#test_sexp_body_eq</a>
+    <li ><a href="#method-i-test_sexp_type_eq">#test_sexp_type_eq</a>
+    <li ><a href="#method-i-test_shift">#test_shift</a>
+    <li ><a href="#method-i-test_structure">#test_structure</a>
+    <li ><a href="#method-i-test_structure_deprecated">#test_structure_deprecated</a>
+    <li ><a href="#method-i-test_sub">#test_sub</a>
+    <li ><a href="#method-i-test_sub_empty">#test_sub_empty</a>
+    <li ><a href="#method-i-test_sub_matcher">#test_sub_matcher</a>
+    <li ><a href="#method-i-test_sub_miss">#test_sub_miss</a>
+    <li ><a href="#method-i-test_sub_structure">#test_sub_structure</a>
+    <li ><a href="#method-i-test_to_a">#test_to_a</a>
+    <li ><a href="#method-i-test_to_s">#test_to_s</a>
+    <li ><a href="#method-i-test_unary_not">#test_unary_not</a>
+    <li ><a href="#method-i-test_unary_not_outside">#test_unary_not_outside</a>
+    <li ><a href="#method-i-with_debug">#with_debug</a>
+    <li ><a href="#method-i-with_env">#with_env</a>
+    <li ><a href="#method-i-with_verbose">#with_verbose</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestSexp">
+  <h1 id="class-TestSexp" class="class">
+    class TestSexp
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="DEEP_EXP">DEEP_EXP
+        <dd>
+      </dl>
+    </section>
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-assert_from_array" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_from_array</span><span
+            class="method-args">(exp, input)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_from_array-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_from_array</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">input</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-constant">Sexp</span>.<span class="ruby-identifier">from_array</span>(<span class="ruby-identifier">input</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-assert_gsub" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_gsub</span><span
+            class="method-args">(exp, sexp, from, to)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_gsub-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_gsub</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">sexp</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-assert_sub" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_sub</span><span
+            class="method-args">(exp, sexp, from, to)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_sub-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 591</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_sub</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">sexp</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-setup" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Minitest/Test/LifecycleHooks.html#method-i-setup"><code>Minitest::Test::LifecycleHooks#setup</code></a>
+            </div>
+
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@sexp_class</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>[<span class="ruby-value">4</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+  <span class="ruby-ivar">@sexp</span> = <span class="ruby-ivar">@sexp_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+  <span class="ruby-ivar">@basic_sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:var</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>)
+  <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">each_sexp</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">file</span> = <span class="ruby-string">&quot;file.rb&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@complex_sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:block</span>,
+                    <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:foo</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;foo&quot;</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>),
+                    <span class="ruby-identifier">s</span>(<span class="ruby-value">:if</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:and</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:true</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>),
+                      <span class="ruby-identifier">s</span>(<span class="ruby-value">:if</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lvar</span>, <span class="ruby-value">:foo</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">3</span>),
+                        <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;bar&quot;</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">3</span>),
+                        <span class="ruby-keyword">nil</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">3</span>),
+                      <span class="ruby-identifier">s</span>(<span class="ruby-value">:true</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">5</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>)
+
+  <span class="ruby-ivar">@re</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>)
+  <span class="ruby-ivar">@bad1</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">24</span>)
+  <span class="ruby-ivar">@bad1</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-value">42</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_array_type_eh" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_array_type_eh</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_array_type_eh-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_array_type_eh</span>
+  <span class="ruby-identifier">capture_io</span> <span class="ruby-keyword">do</span> <span class="ruby-comment"># HACK</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>).<span class="ruby-identifier">array_type?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:array</span>, <span class="ruby-value">42</span>).<span class="ruby-identifier">array_type?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_class_from_array" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_class_from_array</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_class_from_array-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_class_from_array</span>
+  <span class="ruby-identifier">assert_from_array</span> <span class="ruby-identifier">s</span>(),                            []
+  <span class="ruby-identifier">assert_from_array</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:s</span>),                          [<span class="ruby-value">:s</span>]
+  <span class="ruby-identifier">assert_from_array</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:s</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:m</span>)),                   [<span class="ruby-value">:s</span>, [<span class="ruby-value">:m</span>]]
+  <span class="ruby-identifier">assert_from_array</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:s</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:m</span>)),                   [<span class="ruby-value">:s</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:m</span>)]
+  <span class="ruby-identifier">assert_from_array</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:s</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:m</span>, [<span class="ruby-value">:not_converted</span>])), [<span class="ruby-value">:s</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:m</span>, [<span class="ruby-value">:not_converted</span>])]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_compact" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_compact</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_compact-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_compact</span>
+  <span class="ruby-identifier">input</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:b</span>)
+
+  <span class="ruby-identifier">actual</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">compact</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>), <span class="ruby-identifier">actual</span>
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">input</span>, <span class="ruby-identifier">actual</span> <span class="ruby-comment"># returns mutated result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_deep_clone" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_deep_clone</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_deep_clone-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 547</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_deep_clone</span>
+  <span class="ruby-ivar">@sexp</span>    = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>), <span class="ruby-value">5</span>, <span class="ruby-value">6</span>)
+  <span class="ruby-identifier">backup</span> = <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">deep_clone</span>
+  <span class="ruby-identifier">refute_same</span> <span class="ruby-ivar">@sexp</span>, <span class="ruby-identifier">backup</span>, <span class="ruby-string">&quot;deep clone is broken again?&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@sexp</span>, <span class="ruby-identifier">backup</span>, <span class="ruby-string">&quot;deep clone is broken again?&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_deep_each" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_deep_each</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_deep_each-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 656</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_deep_each</span>
+  <span class="ruby-identifier">act</span> = []
+
+  <span class="ruby-ivar">@complex_sexp</span>.<span class="ruby-identifier">deep_each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">act</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">DEEP_EXP</span>, <span class="ruby-identifier">act</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_deep_each_sexp_recursive" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_deep_each_sexp_recursive</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_deep_each_sexp_recursive-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 663</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_deep_each_sexp_recursive</span>
+  <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:array</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>), <span class="ruby-keyword">nil</span>, <span class="ruby-value">42</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:array</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">2</span>)))
+
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">deep_each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">last</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:lit</span> }
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>], <span class="ruby-identifier">result</span>
+
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">each_of_type</span>(<span class="ruby-value">:lit</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">last</span> }
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>], <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_deep_each_skip" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_deep_each_skip</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_deep_each_skip-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 675</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_deep_each_skip</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-constant">DEEP_EXP</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">3</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">DEEP_EXP</span>.<span class="ruby-identifier">last</span>(<span class="ruby-value">4</span>)
+  <span class="ruby-identifier">act</span> = []
+
+  <span class="ruby-ivar">@complex_sexp</span>.<span class="ruby-identifier">deep_each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword">next</span> <span class="ruby-value">:skip</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:and</span>; <span class="ruby-identifier">act</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_deep_each_without_block" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_deep_each_without_block</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_deep_each_without_block-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 683</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_deep_each_without_block</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Enumerator</span>, <span class="ruby-ivar">@complex_sexp</span>.<span class="ruby-identifier">deep_each</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">DEEP_EXP</span>, <span class="ruby-ivar">@complex_sexp</span>.<span class="ruby-identifier">deep_each</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:sexp_type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_depth" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_depth</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_depth-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 645</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_depth</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>).<span class="ruby-identifier">depth</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)).<span class="ruby-identifier">depth</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">3</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b1</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b2</span>)).<span class="ruby-identifier">depth</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">5</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:d</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:e</span>))))).<span class="ruby-identifier">depth</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_each_of_type" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_each_of_type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_each_of_type-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_each_of_type</span>
+  <span class="ruby-comment"># TODO: huh... this tests fails if top level sexp :b is removed</span>
+  <span class="ruby-ivar">@sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)))))
+  <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">each_of_type</span> <span class="ruby-value">:a</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">3</span>, <span class="ruby-identifier">count</span>, <span class="ruby-node">&quot;must find 3 a&#39;s in #{@sexp.inspect}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_each_of_type_no_block" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_each_of_type_no_block</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_each_of_type_no_block-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_each_of_type_no_block</span>
+  <span class="ruby-ivar">@sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-value">:d</span>)
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)], <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">each_of_type</span>(<span class="ruby-value">:b</span>).<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_each_sexp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_each_sexp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_each_sexp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 634</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_each_sexp</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">each_sexp</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span> }
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">42</span>], <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_each_sexp_without_block" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_each_sexp_without_block</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_each_sexp_without_block-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 640</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_each_sexp_without_block</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Enumerator</span>, <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">each_sexp</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">42</span>], <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">each_sexp</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equal3_full_match" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equal3_full_match</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equal3_full_match-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equal3_full_match</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>(),         <span class="ruby-identifier">s</span>()             <span class="ruby-comment"># 0</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>),    <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>)        <span class="ruby-comment"># 1</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>),   <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>)       <span class="ruby-comment"># 2</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-ivar">@basic_sexp</span>, <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">dup</span> <span class="ruby-comment"># deeper structure</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equal3_mismatch" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equal3_mismatch</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equal3_mismatch-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equal3_mismatch</span>
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(),                      <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),                    <span class="ruby-identifier">s</span>()
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah1</span>),                <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah2</span>)
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),                    <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>)
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>),                <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a1</span>, <span class="ruby-value">:b</span>),               <span class="ruby-identifier">s</span>(<span class="ruby-value">:a2</span>, <span class="ruby-value">:b</span>)
+  <span class="ruby-identifier">refute_equal3</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b1</span>),               <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b2</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equal3_subset_match" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equal3_subset_match</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equal3_subset_match-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equal3_subset_match</span>
+  <span class="ruby-identifier">assert_match</span>  <span class="ruby-identifier">s</span>{<span class="ruby-identifier">q</span>(<span class="ruby-value">:a</span>)},      <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))                  <span class="ruby-comment"># left - =~</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>{<span class="ruby-identifier">q</span>(<span class="ruby-value">:a</span>)},      <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))                  <span class="ruby-comment"># left - ===</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>{<span class="ruby-identifier">q</span>(<span class="ruby-value">:a</span>)},      <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>   ), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))        <span class="ruby-comment"># mid 1</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>{<span class="ruby-identifier">q</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">1</span>)},   <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">1</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))        <span class="ruby-comment"># mid 2</span>
+  <span class="ruby-identifier">assert_equal3</span> <span class="ruby-identifier">s</span>{<span class="ruby-identifier">q</span>(<span class="ruby-value">:a</span>)},      <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)))        <span class="ruby-comment"># left deeper</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equals2_array" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equals2_array</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equals2_array-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equals2_array</span>
+  <span class="ruby-identifier">refute_equal</span> <span class="ruby-ivar">@sexp</span>, [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]        <span class="ruby-comment"># Sexp == Array</span>
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Assertion</span> <span class="ruby-keyword">do</span> <span class="ruby-comment"># Array == Sexp.</span>
+    <span class="ruby-identifier">refute_equal</span> [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-ivar">@sexp</span>      <span class="ruby-comment"># This is a bug in ruby:</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># TODO: test if it is calling to_ary first? seems not to</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equals2_not_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equals2_not_body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equals2_not_body-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equals2_not_body</span>
+  <span class="ruby-identifier">sexp2</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">5</span>)
+  <span class="ruby-identifier">refute_equal</span>(<span class="ruby-ivar">@sexp</span>, <span class="ruby-identifier">sexp2</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equals2_sexp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equals2_sexp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equals2_sexp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equals2_sexp</span>
+  <span class="ruby-identifier">sexp2</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Sexp</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">skip</span> <span class="ruby-string">&quot;Not applicable to this target.&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">refute_equal</span>(<span class="ruby-ivar">@sexp</span>, <span class="ruby-identifier">sexp2</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equalstilde_fancy" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equalstilde_fancy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equalstilde_fancy-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equalstilde_fancy</span>
+  <span class="ruby-identifier">assert_match</span> <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>) }, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>)
+  <span class="ruby-identifier">assert_match</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>) }
+
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>) <span class="ruby-operator">=~</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Not a pattern: s(:a, s(:b), :c)&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>) <span class="ruby-operator">=~</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Not a pattern: s(:b)&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_equalstilde_plain" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_equalstilde_plain</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_equalstilde_plain-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_equalstilde_plain</span>
+  <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:re</span>) } <span class="ruby-operator">=~</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:data</span>) <span class="ruby-comment"># pattern on LHS</span>
+  <span class="ruby-identifier">s</span>(<span class="ruby-value">:data</span>) <span class="ruby-operator">=~</span> <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:re</span>) } <span class="ruby-comment"># pattern on RHS</span>
+
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">s</span>(<span class="ruby-value">:re</span>) <span class="ruby-operator">=~</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:data</span>)    <span class="ruby-comment"># no pattern</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Not a pattern: s(:data)&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_find_and_replace_all" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_find_and_replace_all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_find_and_replace_all-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_find_and_replace_all</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">2</span>
+
+  <span class="ruby-ivar">@sexp</span>    = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>))))
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>), <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>))))
+
+  <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">find_and_replace_all</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">:a</span>)
+
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@sexp</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_gsub" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_gsub</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_gsub-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_gsub</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_gsub_empty" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_gsub_empty</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_gsub_empty-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_gsub_empty</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(), <span class="ruby-identifier">s</span>(), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_gsub_matcher" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_gsub_matcher</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_gsub_matcher-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_gsub_matcher</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:c</span>),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">42</span>), <span class="ruby-value">:c</span>),        <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>),     <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>),            <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-value">:b</span>), <span class="ruby-value">:d</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">42</span>)), <span class="ruby-value">:d</span>), <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:q</span>), <span class="ruby-value">:c</span>),     <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:q</span>), <span class="ruby-value">:c</span>),            <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_gsub_multiple" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_gsub_multiple</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_gsub_multiple-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_gsub_multiple</span>
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+  <span class="ruby-identifier">assert_gsub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_inspect" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_inspect-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_inspect</span>
+  <span class="ruby-identifier">k</span> = <span class="ruby-ivar">@sexp_class</span>
+  <span class="ruby-identifier">n</span> = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">name</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chr</span>.<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}()&quot;</span>,
+               <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>().<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a)&quot;</span>,
+               <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:a</span>).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a, :b)&quot;</span>,
+               <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a, #{n}(:b))&quot;</span>,
+               <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:b</span>)).<span class="ruby-identifier">inspect</span>)
+
+  <span class="ruby-identifier">with_verbose</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}().line(42)&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>().<span class="ruby-identifier">line</span>(<span class="ruby-value">42</span>).<span class="ruby-identifier">inspect</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a).line(42)&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:a</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">42</span>).<span class="ruby-identifier">inspect</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a, :b).line(42)&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">42</span>).<span class="ruby-identifier">inspect</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a, #{n}(:b).line(43)).line(42)&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:b</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">43</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">42</span>).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_line" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_line</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_line-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_line</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-ivar">@complex_sexp</span>.<span class="ruby-identifier">line</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_line_max" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_line_max</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_line_max-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_line_max</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">line_max</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">line_max</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">5</span>, <span class="ruby-ivar">@complex_sexp</span>.<span class="ruby-identifier">line_max</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_map" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_map</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_map-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_map</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-string">&quot;file.rb&quot;</span>
+
+  <span class="ruby-identifier">old</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:var</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>)
+  <span class="ruby-identifier">old</span>.<span class="ruby-identifier">file</span> = <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">old</span>.<span class="ruby-identifier">each_sexp</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">file</span> = <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">old</span>.<span class="ruby-identifier">comments</span> = <span class="ruby-string">&quot;do the thing&quot;</span>
+
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">line</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-identifier">old</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> }
+
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>,         <span class="ruby-identifier">new</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>,           <span class="ruby-identifier">new</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>,         <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>,           <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">old</span>.<span class="ruby-identifier">comments</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">comments</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mass" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mass</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mass-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 411</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mass</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>).<span class="ruby-identifier">mass</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">3</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)).<span class="ruby-identifier">mass</span>
+
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:iter</span>,
+        <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:arglist</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))),
+        <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:c</span>),
+        <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:d</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:arglist</span>)))
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">7</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">mass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mass_auto_shift" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mass_auto_shift</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mass_auto_shift-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 423</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mass_auto_shift</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>).<span class="ruby-identifier">mass</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">3</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)).<span class="ruby-identifier">mass</span>
+
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:arglist</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))),
+        <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:c</span>),
+        <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:d</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:arglist</span>)))
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">7</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">mass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mass_huge" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mass_huge</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mass_huge-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 434</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mass_huge</span>
+  <span class="ruby-identifier">max</span> = <span class="ruby-value">100</span>
+  <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">pyramid_sexp</span> <span class="ruby-identifier">max</span>
+
+  <span class="ruby-identifier">exp</span> = (<span class="ruby-identifier">max</span><span class="ruby-operator">*</span><span class="ruby-identifier">max</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">max</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-comment"># pyramid number 1+2+3+...+m</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">mass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 443</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+
+  <span class="ruby-identifier">capture_io</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">not_there</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>), <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">lit</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing_ambigious" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing_ambigious</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing_ambigious-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 487</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing_ambigious</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">NoMethodError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">pirate</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:says</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:arrr!</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:arrr!</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:arrr!</span>))
+    <span class="ruby-identifier">pirate</span>.<span class="ruby-identifier">arrr!</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing_deep" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing_deep</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing_deep-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 496</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing_deep</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+
+  <span class="ruby-identifier">capture_io</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-value">:yay!</span>))))
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-value">:yay!</span>), <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">a</span>.<span class="ruby-identifier">b</span>.<span class="ruby-identifier">c</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing_delete" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing_delete</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing_delete-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 505</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing_delete</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+
+  <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-value">:yay!</span>))))
+
+  <span class="ruby-identifier">capture_io</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-value">:yay!</span>), <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">a</span>.<span class="ruby-identifier">b</span>.<span class="ruby-identifier">c</span>(<span class="ruby-keyword">true</span>))
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))), <span class="ruby-identifier">sexp</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing_hit_debug_verbose" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing_hit_debug_verbose</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing_hit_debug_verbose-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 473</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing_hit_debug_verbose</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+
+  <span class="ruby-identifier">with_debug</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">with_verbose</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">exp</span> = <span class="ruby-regexp">/#{Regexp.escape @basic_sexp.to_s}.method_missing\(:lit\) from/</span>
+
+      <span class="ruby-identifier">assert_output</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">exp</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>), <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">lit</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing_missing" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing_missing</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing_missing-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing_missing</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+  <span class="ruby-identifier">skip</span> <span class="ruby-string">&quot;debugging for now&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;DEBUG&quot;</span>]
+
+  <span class="ruby-identifier">assert_silent</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">missing</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_method_missing_missing_debug" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_method_missing_missing_debug</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_method_missing_missing_debug-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 461</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_method_missing_missing_debug</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">3</span>
+
+  <span class="ruby-identifier">exp</span> = <span class="ruby-regexp">/#{Regexp.escape @basic_sexp.to_s}.method_missing\(:missing\) =&gt; nil from/</span>
+
+  <span class="ruby-identifier">with_debug</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_output</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">exp</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">missing</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_new-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_new</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-string">&quot;file.rb&quot;</span>
+
+  <span class="ruby-identifier">old</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:var</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">1</span>)
+  <span class="ruby-identifier">old</span>.<span class="ruby-identifier">file</span> = <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">old</span>.<span class="ruby-identifier">each_sexp</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">file</span> = <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">old</span>.<span class="ruby-identifier">comments</span> = <span class="ruby-string">&quot;do the thing&quot;</span>
+
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">old</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">line</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-identifier">old</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>), <span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">line</span>
+  <span class="ruby-identifier">assert_same</span> <span class="ruby-identifier">old</span>.<span class="ruby-identifier">comments</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">comments</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_pretty_print" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_pretty_print</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_pretty_print-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_pretty_print</span>
+  <span class="ruby-identifier">assert_pretty_print</span>(<span class="ruby-string">&quot;s()&quot;</span>,
+                      <span class="ruby-identifier">s</span>())
+  <span class="ruby-identifier">assert_pretty_print</span>(<span class="ruby-string">&quot;s(:a)&quot;</span>,
+                      <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>))
+  <span class="ruby-identifier">assert_pretty_print</span>(<span class="ruby-string">&quot;s(:a, :b)&quot;</span>,
+                      <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>))
+  <span class="ruby-identifier">assert_pretty_print</span>(<span class="ruby-string">&quot;s(:a, s(:b))&quot;</span>,
+                      <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sexp_body" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sexp_body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sexp_body-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 527</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sexp_body</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">2</span>, <span class="ruby-value">3</span>), <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">sexp_body</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(),     <span class="ruby-identifier">s</span>(<span class="ruby-value">:x</span>).<span class="ruby-identifier">sexp_body</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(),     <span class="ruby-identifier">s</span>().<span class="ruby-identifier">sexp_body</span>
+
+  <span class="ruby-identifier">assert_instance_of</span> <span class="ruby-constant">Sexp</span>, <span class="ruby-identifier">s</span>().<span class="ruby-identifier">sexp_body</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sexp_body_eq" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sexp_body_eq</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sexp_body_eq-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 618</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sexp_body_eq</span>
+  <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:type</span>, <span class="ruby-value">42</span>)
+
+  <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">sexp_body</span> = [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:type</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>), <span class="ruby-identifier">sexp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sexp_type_eq" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sexp_type_eq</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sexp_type_eq-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 610</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sexp_type_eq</span>
+  <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:bad_type</span>, <span class="ruby-value">42</span>)
+
+  <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">sexp_type</span> = <span class="ruby-value">:good_type</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:good_type</span>, <span class="ruby-value">42</span>), <span class="ruby-identifier">sexp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_shift" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_shift</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_shift-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 535</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_shift</span>
+  <span class="ruby-identifier">skip_if_strict</span> <span class="ruby-value">5</span>
+
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">2</span>, <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">3</span>, <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">shift</span>)
+
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">RuntimeError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_structure" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_structure</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_structure-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 554</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_structure</span>
+  <span class="ruby-ivar">@sexp</span>    = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>), <span class="ruby-value">5</span>, <span class="ruby-value">6</span>)
+  <span class="ruby-identifier">backup</span> = <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">deep_clone</span>
+  <span class="ruby-identifier">refute_same</span> <span class="ruby-ivar">@sexp</span>, <span class="ruby-identifier">backup</span>, <span class="ruby-string">&quot;deep clone is broken again?&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@sexp</span>, <span class="ruby-identifier">backup</span>, <span class="ruby-string">&quot;deep clone is broken again?&quot;</span>
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))
+
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">structure</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">backup</span>, <span class="ruby-ivar">@sexp</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_structure_deprecated" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_structure_deprecated</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_structure_deprecated-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 565</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_structure_deprecated</span>
+  <span class="ruby-identifier">exp_err</span> = <span class="ruby-string">&quot;NOTE: form s(s(:subsexp)).structure is deprecated. Removing in 5.0\n&quot;</span>
+
+  <span class="ruby-identifier">assert_output</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">exp_err</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:subsexp</span>))
+    <span class="ruby-identifier">act</span> = <span class="ruby-identifier">sexp</span>.<span class="ruby-identifier">structure</span>
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:bogus</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:subsexp</span>)), <span class="ruby-identifier">act</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sub" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sub</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sub-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 576</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sub</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>),               <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>).               <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)). <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)). <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sub_empty" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sub_empty</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sub_empty-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 587</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sub_empty</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>),               <span class="ruby-identifier">s</span>().          <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">s</span>(), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sub_matcher" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sub_matcher</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sub_matcher-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 595</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sub_matcher</span>
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>),               <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>),               <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>) }, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)), <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>) }, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)), <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>) }, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)
+
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>, <span class="ruby-value">:c</span>),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">42</span>), <span class="ruby-value">:c</span>),        <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>),     <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>),            <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-value">:b</span>), <span class="ruby-value">:d</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>, <span class="ruby-value">42</span>)), <span class="ruby-value">:d</span>), <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:q</span>), <span class="ruby-value">:c</span>),     <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:q</span>), <span class="ruby-value">:c</span>),            <span class="ruby-identifier">s</span>{ <span class="ruby-identifier">q</span>(<span class="ruby-value">:b</span>, <span class="ruby-identifier">_</span>) }, <span class="ruby-value">:b</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sub_miss" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sub_miss</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sub_miss-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 582</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sub_miss</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>),               <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>).        <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)),        <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>)). <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_sub_structure" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_sub_structure</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_sub_structure-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 606</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_sub_structure</span>
+  <span class="ruby-identifier">assert_sub</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))), <span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:b</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_to_a" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_to_a</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_to_a-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 626</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_to_a</span>
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-ivar">@sexp</span>.<span class="ruby-identifier">to_a</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_to_s" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_to_s-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 630</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_to_s</span>
+  <span class="ruby-identifier">test_inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_unary_not" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_unary_not</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_unary_not-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 688</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_unary_not</span>
+  <span class="ruby-identifier">skip</span> <span class="ruby-string">&quot;TODO?&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">M</span><span class="ruby-operator">::</span><span class="ruby-constant">Not</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">M</span>.<span class="ruby-identifier">q</span>(<span class="ruby-value">:a</span>)), <span class="ruby-identifier">s</span>{ <span class="ruby-operator">!</span><span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_unary_not_outside" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_unary_not_outside</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_unary_not_outside-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 693</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_unary_not_outside</span>
+  <span class="ruby-identifier">skip</span> <span class="ruby-string">&quot;TODO?&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">M</span><span class="ruby-operator">::</span><span class="ruby-constant">Not</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)), <span class="ruby-operator">!</span><span class="ruby-identifier">s</span>(<span class="ruby-value">:a</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-with_debug" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">with_debug</span><span
+            class="method-args">(&amp;block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="with_debug-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 323</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_debug</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">with_env</span> <span class="ruby-string">&quot;DEBUG&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-with_env" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">with_env</span><span
+            class="method-args">(key) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="with_env-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 312</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_env</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">old_val</span>, <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>], <span class="ruby-string">&quot;1&quot;</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">old_val</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-with_verbose" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">with_verbose</span><span
+            class="method-args">(&amp;block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="with_verbose-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_sexp.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_verbose</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">with_env</span> <span class="ruby-string">&quot;VERBOSE&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

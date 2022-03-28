@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestStackState - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Minitest/Test.html">Minitest::Test</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-assert_encoding">#assert_encoding</a>
+    <li ><a href="#method-i-setup">#setup</a>
+    <li ><a href="#method-i-test_handle_encoding_bom">#test_handle_encoding_bom</a>
+    <li ><a href="#method-i-test_handle_encoding_default">#test_handle_encoding_default</a>
+    <li ><a href="#method-i-test_handle_encoding_emacs">#test_handle_encoding_emacs</a>
+    <li ><a href="#method-i-test_handle_encoding_normal">#test_handle_encoding_normal</a>
+    <li ><a href="#method-i-test_handle_encoding_vim">#test_handle_encoding_vim</a>
+    <li ><a href="#method-i-test_handle_encoding_wtf">#test_handle_encoding_wtf</a>
+    <li ><a href="#method-i-test_is_in_state">#test_is_in_state</a>
+    <li ><a href="#method-i-test_lexpop">#test_lexpop</a>
+    <li ><a href="#method-i-test_pop">#test_pop</a>
+    <li ><a href="#method-i-test_push">#test_push</a>
+    <li ><a href="#method-i-test_stack_state">#test_stack_state</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestStackState">
+  <h1 id="class-TestStackState" class="class">
+    class TestStackState
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-s" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">s</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-assert_encoding" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_encoding</span><span
+            class="method-args">(str, default = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_encoding-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_encoding</span> <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">orig_str</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">p</span> = <span class="ruby-constant">RubyParser</span>.<span class="ruby-identifier">latest</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span> = <span class="ruby-identifier">capture_io</span> {
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">handle_encoding</span> <span class="ruby-identifier">str</span>
+  }
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">orig_str</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\357\273\277/</span>, <span class="ruby-string">&quot;&quot;</span>), <span class="ruby-identifier">s</span>
+
+  <span class="ruby-identifier">exp_err</span> = <span class="ruby-string">&quot;&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Encoding</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;UTF-8&quot;</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">inspect</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">exp_err</span> = <span class="ruby-string">&quot;Skipping magic encoding comment\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">default</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">out</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp_err</span>, <span class="ruby-identifier">err</span>, <span class="ruby-identifier">str</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-comment"># HACK</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-setup" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@s</span> = <span class="ruby-constant">RubyParserStuff</span><span class="ruby-operator">::</span><span class="ruby-constant">StackState</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">:test</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_handle_encoding_bom" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_handle_encoding_bom</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_handle_encoding_bom-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_handle_encoding_bom</span>
+  <span class="ruby-comment"># bom support, default to utf-8</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;\xEF\xBB\xBF# blah&quot;</span>
+  <span class="ruby-comment"># we force_encode to US-ASCII, then encode to UTF-8 so our lexer will work</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;\xEF\xBB\xBF# encoding: US-ASCII&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_handle_encoding_default" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_handle_encoding_default</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_handle_encoding_default-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_handle_encoding_default</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;blah&quot;</span>, <span class="ruby-value">:default</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_handle_encoding_emacs" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_handle_encoding_emacs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_handle_encoding_emacs-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_handle_encoding_emacs</span>
+  <span class="ruby-comment"># Q: how many different ways can we screw these up? A: ALL OF THEM</span>
+
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# - encoding: utf-8 -&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# - encoding:utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -* coding: UTF-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- coding: UTF-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- coding: utf-8 -*&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- coding: utf-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- coding: utf-8; mode: ruby -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- coding: utf-8; mode: ruby; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- coding:utf-8; mode:ruby; -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- encoding: UTF-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- encoding: utf-8 -*&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- encoding: utf-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- mode:ruby; coding:utf-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -*- ruby encoding: utf-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# -- encoding: utf-8 --&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# ~*~ encoding: utf-8 ~*~&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#-*- coding: utf-8 -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#-*- coding:utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#--  -*- mode: ruby; encoding: utf-8 -*-\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_handle_encoding_normal" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_handle_encoding_normal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_handle_encoding_normal-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_handle_encoding_normal</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: UTF-8\r\n&quot;</span> <span class="ruby-comment"># UGH I hate windoze</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# coding: UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding = UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# coding = UTF-8&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_handle_encoding_vim" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_handle_encoding_vim</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_handle_encoding_vim-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_handle_encoding_vim</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#  vim: set fileencoding=utf-8 filetype=ruby ts=2 : &quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim: fileencoding=UTF-8 ft=ruby syn=ruby ts=2 sw=2 ai eol et si&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim: fileencoding=UTF-8 nobomb sw=2 ts=2 et&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim: filetype=ruby, fileencoding=UTF-8, tabsize=2, shiftwidth=2&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim: set fileencoding=utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim:encoding=UTF-8:&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim:fileencoding=UTF-8:&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim:set fileencoding=utf-8 filetype=ruby&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# vim:set fileencoding=utf-8:&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_handle_encoding_wtf" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_handle_encoding_wtf</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_handle_encoding_wtf-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_handle_encoding_wtf</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# coding : utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# Ruby 1.9: encoding: utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# Encoding: UTF-8 &lt;-- required, please leave this in.&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# Encoding: UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# coding: utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# coding:utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# coding=utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: ASCII&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: ASCII-8BIT&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: ISO-8859-1&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: ascii-8bit&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: cp1252&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: euc-jp -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: utf-8 # -*- ruby -*-&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: utf-8 require &#39;github_api/utils/url&#39;&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: utf-8!&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;# encoding: utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#&lt;Encoding:UTF-8&gt;&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#Encoding: UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#coding:utf-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#encoding: UTF-8!&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#encoding: UTF-8&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#encoding: cp1252&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#encoding: sjis&quot;</span>
+  <span class="ruby-identifier">assert_encoding</span> <span class="ruby-string">&quot;#encoding: utf-8&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_is_in_state" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_is_in_state</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_is_in_state-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_is_in_state</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_in_state</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_in_state</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_in_state</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_in_state</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_lexpop" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_lexpop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_lexpop-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_lexpop</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">lexpop</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_pop" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_pop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_pop-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_pop</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_push" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_push</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_push-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_push</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_stack_state" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_stack_state</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_stack_state-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_stack_state</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">push</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">lexpop</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-keyword">false</span>, <span class="ruby-keyword">true</span>], <span class="ruby-identifier">s</span>.<span class="ruby-identifier">stack</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

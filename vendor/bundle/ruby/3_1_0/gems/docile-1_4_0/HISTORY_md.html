@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>HISTORY - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../../../";
+  var index_rel_prefix = "../../../../../../";
+</script>
+
+<script src="../../../../../../js/navigation.js" defer></script>
+<script src="../../../../../../js/search.js" defer></script>
+<script src="../../../../../../js/search_index.js" defer></script>
+<script src="../../../../../../js/searcher.js" defer></script>
+<script src="../../../../../../js/darkfish.js" defer></script>
+
+<link href="../../../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../../../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-HISTORY">HISTORY</a>
+    <li><a href="#label-Unreleased+changes"><a href="http://github.com/ms-ati/docile/compare/v1.4.0...main">Unreleased changes</a></a>
+    <li><a href="#label-v1.4.0+-28May+12-2C+2021-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.5...v1.4.0">v1.4.0 (May 12, 2021)</a></a>
+    <li><a href="#label-v1.3.5+-28Jan+13-2C+2021-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.4...v1.3.5">v1.3.5 (Jan 13, 2021)</a></a>
+    <li><a href="#label-v1.3.4+-28Dec+22-2C+2020-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.3...v1.3.4">v1.3.4 (Dec 22, 2020)</a></a>
+    <li><a href="#label-v1.3.3+-28Dec+18-2C+2020-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.2...v1.3.3">v1.3.3 (Dec 18, 2020)</a></a>
+    <li><a href="#label-v1.3.2+-28Jun+12-2C+2019-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.1...v1.3.2">v1.3.2 (Jun 12, 2019)</a></a>
+    <li><a href="#label-v1.3.1+-28May+24-2C+2018-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.0...v1.3.1">v1.3.1 (May 24, 2018)</a></a>
+    <li><a href="#label-v1.3.0+-28Feb+7-2C+2018-29"><a href="http://github.com/ms-ati/docile/compare/v1.2.0...v1.3.0">v1.3.0 (Feb 7, 2018)</a></a>
+    <li><a href="#label-v1.2.0+-28Jan+11-2C+2018-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.5...v1.2.0">v1.2.0 (Jan 11, 2018)</a></a>
+    <li><a href="#label-v1.1.5+-28Jun+15-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.4...v1.1.5">v1.1.5 (Jun 15, 2014)</a></a>
+    <li><a href="#label-v1.1.4+-28Jun+11-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.3...v1.1.4">v1.1.4 (Jun 11, 2014)</a></a>
+    <li><a href="#label-v1.1.3+-28Feb+4-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.2...v1.1.3">v1.1.3 (Feb 4, 2014)</a></a>
+    <li><a href="#label-v1.1.2+-28Jan+10-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.1...v1.1.2">v1.1.2 (Jan 10, 2014)</a></a>
+    <li><a href="#label-v1.1.1+-28Nov+26-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.0...v1.1.1">v1.1.1 (Nov 26, 2013)</a></a>
+    <li><a href="#label-v1.1.0+-28Jul+29-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.5...v1.1.0">v1.1.0 (Jul 29, 2013)</a></a>
+    <li><a href="#label-v1.0.5+-28Jul+28-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.4...v1.0.5">v1.0.5 (Jul 28, 2013)</a></a>
+    <li><a href="#label-v1.0.4+-28Jul+25-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.3...v1.0.4">v1.0.4 (Jul 25, 2013)</a></a>
+    <li><a href="#label-v1.0.3+-28Jul+6-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.2...v1.0.3">v1.0.3 (Jul 6, 2013)</a></a>
+    <li><a href="#label-v1.0.2+-28Apr+1-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.1...v1.0.2">v1.0.2 (Apr 1, 2013)</a></a>
+    <li><a href="#label-v1.0.1+-28Nov+29-2C+2012-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.0...v1.0.1">v1.0.1 (Nov 29, 2012)</a></a>
+    <li><a href="#label-v1.0.0+-28Oct+29-2C+2012-29"><a href="http://github.com/ms-ati/docile/compare/1b225c8a27...v1.0.0">v1.0.0 (Oct 29, 2012)</a></a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="../../../../../../CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
+    <li><a href="../../../../../../Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../Gemfile_lock.html">Gemfile.lock</a>
+    <li><a href="../../../../../../LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../README_md.html">README</a>
+    <li><a href="../../../../../../Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../bin/setup.html">setup</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/bin/stackprof-flamegraph_pl.html">stackprof-flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/bin/stackprof-gprof2dot_py.html">stackprof-gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/gem_build_complete.html">gem.build_complete</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/gem_make_out.html">gem_make.out</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/mkmf_log.html">mkmf.log</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ast-2_4_2/LICENSE_MIT.html">LICENSE.MIT</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ast-2_4_2/README_YARD_md.html">README.YARD</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/History_md.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/HISTORY_md.html">HISTORY</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/SECURITY_md.html">SECURITY</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/parser-3_1_1_0/LICENSE_txt.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/MIT-LICENSE.html">MIT-LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/command_line_usage_rdoc.html">command_line_usage</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/example/Rakefile1.html">Rakefile1</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/example/Rakefile2.html">Rakefile2</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/glossary_rdoc.html">glossary</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/proto_rake_rdoc.html">proto_rake</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rake_1.html">rake.1</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rakefile_rdoc.html">rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rational_rdoc.html">rational</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/debugging_md.html">debugging</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/gauntlet_md.html">gauntlet</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/alternate-formatters_md.html">alternate-formatters</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/commercial-services_md.html">commercial-services</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/editor-integration_md.html">editor-integration</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-html-0_12_3/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov_json_formatter-0_1_3/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov_json_formatter-0_1_3/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/bin/stackprof-flamegraph_pl.html">stackprof-flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/bin/stackprof-gprof2dot_py.html">stackprof-gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/ext/stackprof/Makefile.html">Makefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/lib/stackprof/flamegraph/flamegraph_js.html">flamegraph.js</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/lib/stackprof/flamegraph/viewer_html.html">viewer.html</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/FlameGraph/README.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/FlameGraph/flamegraph_pl.html">flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/gprof2dot/gprof2dot_py.html">gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/gprof2dot/hotshotmain_py.html">hotshotmain.py</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page vendor/bundle/ruby/3.1.0/gems/docile-1.4.0/HISTORY.md">
+
+<h1 id="label-HISTORY"><a href="HISTORY_md.html">HISTORY</a><span><a href="#label-HISTORY">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Unreleased+changes"><a href="http://github.com/ms-ati/docile/compare/v1.4.0...main">Unreleased changes</a><span><a href="#label-Unreleased+changes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-v1.4.0+-28May+12-2C+2021-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.5...v1.4.0">v1.4.0 (May 12, 2021)</a><span><a href="#label-v1.4.0+-28May+12-2C+2021-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Matt Schreiber (@tomeon):</p>
+<ul><li>
+<p>Short-circuit to calling instance_exec directly on the DSL object (prior to  constructing a proxy object) when the DSL object and block context object are  identical (<em>Sorry it took over a year to review and merge this!</em>)</p>
+</li></ul>
+</li><li>
+<p>Renamed default branch from master to main, see: <a href="https://github.com/github/renaming">github.com/github/renaming</a></p>
+</li><li>
+<p>Temporarily removed YARD doc configuration, to replace after migration to Github Actions</p>
+</li><li>
+<p>Removed support for all EOL Rubies &lt; 2.6</p>
+</li><li>
+<p>Migrated CI from Travis to Github Actions</p>
+</li><li>
+<p>Special thanks (again!) to Taichi Ishitani (@taichi-ishitani):</p>
+<ul><li>
+<p>Use more reliable codecov github action (via simplecov-cobertura)  rather than less reliable codecov gem</p>
+</li><li>
+<p>Enable bundle caching in github action setup-ruby</p>
+</li></ul>
+</li><li>
+<p>Added Rubocop, and configured it to run in CI</p>
+</li><li>
+<p>Added Dependabot, and configured it to run daily</p>
+</li><li>
+<p>Added <a href="SECURITY_md.html">SECURITY.md</a> for vulnerability reporting policy</p>
+</li></ul>
+
+<h2 id="label-v1.3.5+-28Jan+13-2C+2021-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.4...v1.3.5">v1.3.5 (Jan 13, 2021)</a><span><a href="#label-v1.3.5+-28Jan+13-2C+2021-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Jochen Seeber (@jochenseeber):</p>
+<ul><li>
+<p>Fix remaining delegation on Ruby 2.7 (PR #62)</p>
+</li></ul>
+</li><li>
+<p>Remove support for Ruby 1.8.7 and REE, because they <a href="https://travis-ci.community/t/ruby-1-8-7-and-ree-builds-broken-by-ssl-certificate-failure/10866">are no longer runnable on Travis CI</a></p>
+</li><li>
+<p>Announce that continued support for any EOL Ruby versions (that is, versions prior to Ruby 2.5 as of Jan 13 2021) will be decided on <strong>Feb 1, 2021</strong> based on comments to <a href="https://github.com/ms-ati/docile/issues/58">issue #58</a></p>
+</li></ul>
+
+<h2 id="label-v1.3.4+-28Dec+22-2C+2020-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.3...v1.3.4">v1.3.4 (Dec 22, 2020)</a><span><a href="#label-v1.3.4+-28Dec+22-2C+2020-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Benoit Daloze (@eregon):</p>
+<ul><li>
+<p>Fix delegation on Ruby 2.7 (issues #45 and #44, PR #52)</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-v1.3.3+-28Dec+18-2C+2020-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.2...v1.3.3">v1.3.3 (Dec 18, 2020)</a><span><a href="#label-v1.3.3+-28Dec+18-2C+2020-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks (again!) to Taichi Ishitani (@taichi-ishitani):</p>
+<ul><li>
+<p>Fix keyword arg warnings on Ruby 2.7 (issue #44, PR #45)</p>
+</li><li>
+<p>Filter Docile’s source files from backtrace (issue #35, PR #36)</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-v1.3.2+-28Jun+12-2C+2019-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.1...v1.3.2">v1.3.2 (Jun 12, 2019)</a><span><a href="#label-v1.3.2+-28Jun+12-2C+2019-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks (again!) to Taichi Ishitani (@taichi-ishitani):</p>
+<ul><li>
+<p>Fix for DSL object is replaced when dsl_eval is nested (#33, PR #34)</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-v1.3.1+-28May+24-2C+2018-29"><a href="http://github.com/ms-ati/docile/compare/v1.3.0...v1.3.1">v1.3.1 (May 24, 2018)</a><span><a href="#label-v1.3.1+-28May+24-2C+2018-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Taichi Ishitani (@taichi-ishitani):</p>
+<ul><li>
+<p>Fix for when DSL object is also the block’s context (#30)</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-v1.3.0+-28Feb+7-2C+2018-29"><a href="http://github.com/ms-ati/docile/compare/v1.2.0...v1.3.0">v1.3.0 (Feb 7, 2018)</a><span><a href="#label-v1.3.0+-28Feb+7-2C+2018-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Allow helper methods in block’s context to call DSL methods</p>
+</li><li>
+<p>Add SemVer release policy explicitly</p>
+</li><li>
+<p>Standardize on double-quoted string literals</p>
+</li><li>
+<p>Workaround some more Travis CI shenanigans</p>
+</li></ul>
+
+<h2 id="label-v1.2.0+-28Jan+11-2C+2018-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.5...v1.2.0">v1.2.0 (Jan 11, 2018)</a><span><a href="#label-v1.2.0+-28Jan+11-2C+2018-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Christina Koller (@cmkoller)</p>
+<ul><li>
+<p>add DSL evaluation returning <em>return value of the block</em> (see <code>.dsl_eval_with_block_return</code>)</p>
+</li></ul>
+</li><li>
+<p>add an example to <a href="../../../../../../README_md.html">README</a></p>
+</li><li>
+<p>keep travis builds passing on old ruby versions</p>
+</li></ul>
+
+<h2 id="label-v1.1.5+-28Jun+15-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.4...v1.1.5">v1.1.5 (Jun 15, 2014)</a><span><a href="#label-v1.1.5+-28Jun+15-2C+2014-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>as much as possible, loosen version restrictions on development dependencies</p>
+</li><li>
+<p>clarify gemspec settings as much as possible</p>
+</li><li>
+<p>bump rspec dependency to 3.0.x</p>
+</li></ul>
+
+<h2 id="label-v1.1.4+-28Jun+11-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.3...v1.1.4">v1.1.4 (Jun 11, 2014)</a><span><a href="#label-v1.1.4+-28Jun+11-2C+2014-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Ken Dreyer (@ktdreyer):</p>
+<ul><li>
+<p>make simplecov/coveralls optional for running tests [<a href="https://github.com/ms-ati/docile/commit/33834852c7849912b97e109e8c5c193579cc5e98">33834852c7</a>]</p>
+</li><li>
+<p>update URL in gemspec [<a href="https://github.com/ms-ati/docile/commit/174e654a075c8350b3411b212cfb409bc605348a">174e654a07</a>]</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-v1.1.3+-28Feb+4-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.2...v1.1.3">v1.1.3 (Feb 4, 2014)</a><span><a href="#label-v1.1.3+-28Feb+4-2C+2014-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Special thanks to Alexey Vasiliev (@le0pard):</p>
+<ul><li>
+<p>fix problem to catch NoMethodError from non receiver object</p>
+</li><li>
+<p>upgrade rspec format to new “expect” syntax</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-v1.1.2+-28Jan+10-2C+2014-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.1...v1.1.2">v1.1.2 (Jan 10, 2014)</a><span><a href="#label-v1.1.2+-28Jan+10-2C+2014-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>remove unnecessarily nested proxy objects (thanks @Ajedi32)!</p>
+</li><li>
+<p>documentation updates and corrections</p>
+</li></ul>
+
+<h2 id="label-v1.1.1+-28Nov+26-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.1.0...v1.1.1">v1.1.1 (Nov 26, 2013)</a><span><a href="#label-v1.1.1+-28Nov+26-2C+2013-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>documentation updates and corrections</p>
+</li><li>
+<p>fix Rubinius build in Travis CI</p>
+</li></ul>
+
+<h2 id="label-v1.1.0+-28Jul+29-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.5...v1.1.0">v1.1.0 (Jul 29, 2013)</a><span><a href="#label-v1.1.0+-28Jul+29-2C+2013-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>add functional-style DSL objects via <code>Docile#dsl_eval_immutable</code></p>
+</li></ul>
+
+<h2 id="label-v1.0.5+-28Jul+28-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.4...v1.0.5">v1.0.5 (Jul 28, 2013)</a><span><a href="#label-v1.0.5+-28Jul+28-2C+2013-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>achieve 100% yard docs coverage</p>
+</li><li>
+<p>fix rendering of docs at <a href="http://rubydoc.info/gems/docile">rubydoc.info/gems/docile</a></p>
+</li></ul>
+
+<h2 id="label-v1.0.4+-28Jul+25-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.3...v1.0.4">v1.0.4 (Jul 25, 2013)</a><span><a href="#label-v1.0.4+-28Jul+25-2C+2013-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>simplify and clarify code</p>
+</li><li>
+<p>fix a minor bug where FallbackContextProxy#instance_variables would return symbols rather than strings on Ruby 1.8.x</p>
+</li></ul>
+
+<h2 id="label-v1.0.3+-28Jul+6-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.2...v1.0.3">v1.0.3 (Jul 6, 2013)</a><span><a href="#label-v1.0.3+-28Jul+6-2C+2013-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>instrument code coverage via <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> and publish to Coveralls.io</p>
+</li></ul>
+
+<h2 id="label-v1.0.2+-28Apr+1-2C+2013-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.1...v1.0.2">v1.0.2 (Apr 1, 2013)</a><span><a href="#label-v1.0.2+-28Apr+1-2C+2013-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>allow passing parameters to DSL blocks (thanks @dslh!)</p>
+</li></ul>
+
+<h2 id="label-v1.0.1+-28Nov+29-2C+2012-29"><a href="http://github.com/ms-ati/docile/compare/v1.0.0...v1.0.1">v1.0.1 (Nov 29, 2012)</a><span><a href="#label-v1.0.1+-28Nov+29-2C+2012-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>relaxed rspec and rake dependencies to allow newer versions</p>
+</li><li>
+<p>fixes to documentation</p>
+</li></ul>
+
+<h2 id="label-v1.0.0+-28Oct+29-2C+2012-29"><a href="http://github.com/ms-ati/docile/compare/1b225c8a27...v1.0.0">v1.0.0 (Oct 29, 2012)</a><span><a href="#label-v1.0.0+-28Oct+29-2C+2012-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Initial Feature Set</p>
+</li></ul>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

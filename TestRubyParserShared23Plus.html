@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module TestRubyParserShared23Plus - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+<div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+    <li><a class="include" href="TestRubyParserShared22Plus.html">TestRubyParserShared22Plus</a>
+  </ul>
+</div>
+
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-test_bug_215">#test_bug_215</a>
+    <li ><a href="#method-i-test_const_2_op_asgn_or2">#test_const_2_op_asgn_or2</a>
+    <li ><a href="#method-i-test_const_3_op_asgn_or">#test_const_3_op_asgn_or</a>
+    <li ><a href="#method-i-test_const_op_asgn_and1">#test_const_op_asgn_and1</a>
+    <li ><a href="#method-i-test_const_op_asgn_and2">#test_const_op_asgn_and2</a>
+    <li ><a href="#method-i-test_const_op_asgn_or">#test_const_op_asgn_or</a>
+    <li ><a href="#method-i-test_float_with_if_modifier">#test_float_with_if_modifier</a>
+    <li ><a href="#method-i-test_heredoc__backslash_dos_format">#test_heredoc__backslash_dos_format</a>
+    <li ><a href="#method-i-test_heredoc_squiggly">#test_heredoc_squiggly</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_blank_lines">#test_heredoc_squiggly_blank_lines</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_empty">#test_heredoc_squiggly_empty</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_interp">#test_heredoc_squiggly_interp</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_no_indent">#test_heredoc_squiggly_no_indent</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_tabs">#test_heredoc_squiggly_tabs</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_tabs_extra">#test_heredoc_squiggly_tabs_extra</a>
+    <li ><a href="#method-i-test_heredoc_squiggly_visually_blank_lines">#test_heredoc_squiggly_visually_blank_lines</a>
+    <li ><a href="#method-i-test_integer_with_if_modifier">#test_integer_with_if_modifier</a>
+    <li ><a href="#method-i-test_required_kwarg_no_value">#test_required_kwarg_no_value</a>
+    <li ><a href="#method-i-test_ruby21_numbers">#test_ruby21_numbers</a>
+    <li ><a href="#method-i-test_safe_attrasgn">#test_safe_attrasgn</a>
+    <li ><a href="#method-i-test_safe_attrasgn_constant">#test_safe_attrasgn_constant</a>
+    <li ><a href="#method-i-test_safe_call">#test_safe_call</a>
+    <li ><a href="#method-i-test_safe_call_after_newline">#test_safe_call_after_newline</a>
+    <li ><a href="#method-i-test_safe_call_dot_parens">#test_safe_call_dot_parens</a>
+    <li ><a href="#method-i-test_safe_call_newline">#test_safe_call_newline</a>
+    <li ><a href="#method-i-test_safe_call_operator">#test_safe_call_operator</a>
+    <li ><a href="#method-i-test_safe_call_rhs_newline">#test_safe_call_rhs_newline</a>
+    <li ><a href="#method-i-test_safe_calls">#test_safe_calls</a>
+    <li ><a href="#method-i-test_safe_op_asgn">#test_safe_op_asgn</a>
+    <li ><a href="#method-i-test_safe_op_asgn2">#test_safe_op_asgn2</a>
+    <li ><a href="#method-i-test_slashy_newlines_within_string">#test_slashy_newlines_within_string</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-TestRubyParserShared23Plus">
+  <h1 id="module-TestRubyParserShared23Plus" class="module">
+    module TestRubyParserShared23Plus
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-test_bug_215" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_bug_215</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_bug_215-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_bug_215</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;undef %s(foo)&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:undef</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">:foo</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_const_2_op_asgn_or2" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_const_2_op_asgn_or2</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_const_2_op_asgn_or2-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_const_2_op_asgn_or2</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;::X::Y ||= 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:op_asgn_or</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:colon2</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:colon3</span>, <span class="ruby-value">:X</span>), <span class="ruby-value">:Y</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_const_3_op_asgn_or" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_const_3_op_asgn_or</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_const_3_op_asgn_or-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_const_3_op_asgn_or</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;::X ||= 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:op_asgn_or</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:colon3</span>, <span class="ruby-value">:X</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_const_op_asgn_and1" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_const_op_asgn_and1</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_const_op_asgn_and1-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_const_op_asgn_and1</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;::X &amp;= 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:op_asgn</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:colon3</span>, <span class="ruby-value">:X</span>), <span class="ruby-value">:&quot;&amp;&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_const_op_asgn_and2" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_const_op_asgn_and2</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_const_op_asgn_and2-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_const_op_asgn_and2</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;::X &amp;&amp;= 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:op_asgn_and</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:colon3</span>, <span class="ruby-value">:X</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_const_op_asgn_or" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_const_op_asgn_or</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_const_op_asgn_or-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_const_op_asgn_or</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;X::Y ||= 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:op_asgn_or</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:colon2</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:const</span>, <span class="ruby-value">:X</span>), <span class="ruby-value">:Y</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_float_with_if_modifier" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_float_with_if_modifier</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_float_with_if_modifier-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_float_with_if_modifier</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;1.0if true&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:if</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:true</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1.0</span>), <span class="ruby-keyword">nil</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc__backslash_dos_format" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc__backslash_dos_format</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc__backslash_dos_format-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc__backslash_dos_format</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;str = &lt;&lt;-XXX\r\nbefore\\\r\nafter\r\nXXX\r\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:str</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;before\nafter\n&quot;</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a = &lt;&lt;~\&quot;EOF\&quot;\n  x\n  y\n  z\n  EOF\n\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;x\ny\nz\n&quot;</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_blank_lines" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_blank_lines</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly_blank_lines-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_blank_lines</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a = &lt;&lt;~EOF\n  x\n\n  z\nEOF\n\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;x\n\nz\n&quot;</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_empty" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_empty</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly_empty-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_empty</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;&lt;&lt;~A\nA&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;&quot;</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_interp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_interp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly_interp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_interp</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a = &lt;&lt;~EOF\n      w\n  x#\{42} y\n    z\n  EOF&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:dstr</span>, <span class="ruby-string">&quot;    w\nx&quot;</span>,
+                       <span class="ruby-identifier">s</span>(<span class="ruby-value">:evstr</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">42</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">3</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">3</span>),
+                       <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot; y\n  z\n&quot;</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">3</span>)))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_no_indent" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_no_indent</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly_no_indent-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_no_indent</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;&lt;&lt;~A\na\nA&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;a\n&quot;</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_tabs" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_tabs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly_tabs-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_tabs</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a = &lt;&lt;~\&quot;EOF\&quot;\n        blah blah\n\t blah blah\n  EOF\n\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;blah blah\n blah blah\n&quot;</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_tabs_extra" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_tabs_extra</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>mri handles tabs in a pretty specific way: <a href="https://github.com/ruby/ruby/blob/trunk/parse.y#L5925">github.com/ruby/ruby/blob/trunk/parse.y#L5925</a></p>
+
+          <div class="method-source-code" id="test_heredoc_squiggly_tabs_extra-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_tabs_extra</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a = &lt;&lt;~\&quot;EOF\&quot;\n  blah blah\n \tblah blah\n  EOF\n\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;blah blah\n\tblah blah\n&quot;</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_heredoc_squiggly_visually_blank_lines" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_heredoc_squiggly_visually_blank_lines</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_heredoc_squiggly_visually_blank_lines-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_heredoc_squiggly_visually_blank_lines</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a = &lt;&lt;~EOF\n  x\n \n  z\nEOF\n\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:a</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;x\n\nz\n&quot;</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_integer_with_if_modifier" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_integer_with_if_modifier</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_integer_with_if_modifier-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_integer_with_if_modifier</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;1_234if true&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:if</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:true</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1234</span>), <span class="ruby-keyword">nil</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_required_kwarg_no_value" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_required_kwarg_no_value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_required_kwarg_no_value-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_required_kwarg_no_value</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;def x a:, b:\nend&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:defn</span>, <span class="ruby-value">:x</span>,
+         <span class="ruby-identifier">s</span>(<span class="ruby-value">:args</span>,
+           <span class="ruby-identifier">s</span>(<span class="ruby-value">:kwarg</span>, <span class="ruby-value">:a</span>),
+           <span class="ruby-identifier">s</span>(<span class="ruby-value">:kwarg</span>, <span class="ruby-value">:b</span>)),
+         <span class="ruby-identifier">s</span>(<span class="ruby-value">:nil</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_ruby21_numbers" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_ruby21_numbers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_ruby21_numbers-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_ruby21_numbers</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;[1i, 2r, 3ri]&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:array</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-constant">Complex</span>(<span class="ruby-value">0</span>, <span class="ruby-value">1</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-constant">Rational</span>(<span class="ruby-value">2</span>)), <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-constant">Complex</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">Rational</span>(<span class="ruby-value">3</span>))))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_attrasgn" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_attrasgn</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_attrasgn-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_attrasgn</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.b = 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_attrasgn</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:&quot;b=&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_attrasgn_constant" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_attrasgn_constant</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_attrasgn_constant-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_attrasgn_constant</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.B = 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_attrasgn</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:&quot;B=&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_call" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_call-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_call</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.b&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:b</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_call_after_newline" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_call_after_newline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_call_after_newline-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_call_after_newline</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a\n&amp;.b&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:b</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_call_dot_parens" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_call_dot_parens</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_call_dot_parens-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_call_dot_parens</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.()&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:call</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_call_newline" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_call_newline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_call_newline-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_call_newline</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.b\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:b</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_call_operator" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_call_operator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_call_operator-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_call_operator</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.&gt; 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:&gt;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_call_rhs_newline" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_call_rhs_newline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_call_rhs_newline-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_call_rhs_newline</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;c = a&amp;.b\n&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:lasgn</span>, <span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:b</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_calls" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_calls</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_calls-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_calls</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.b&amp;.c(1)&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:b</span>), <span class="ruby-value">:c</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_op_asgn" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_op_asgn</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_op_asgn-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4359</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_op_asgn</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.b += x 1&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_op_asgn</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:x</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:lit</span>, <span class="ruby-value">1</span>)), <span class="ruby-value">:b</span>, <span class="ruby-value">:+</span>)
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_safe_op_asgn2" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_safe_op_asgn2</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_safe_op_asgn2-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_safe_op_asgn2</span>
+  <span class="ruby-identifier">rb</span> = <span class="ruby-string">&quot;a&amp;.b ||=\nx;&quot;</span>
+  <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:safe_op_asgn2</span>,
+         <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>), <span class="ruby-value">:b=</span>, <span class="ruby-value">:&quot;||&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:x</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">2</span>))
+
+  <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_slashy_newlines_within_string" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_slashy_newlines_within_string</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_slashy_newlines_within_string-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser.rb, line 4374</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_slashy_newlines_within_string</span>
+    <span class="ruby-identifier">rb</span> = <span class="ruby-string">%(puts &quot;hello\\
+ my\\
+ dear\\
+ friend&quot;
+
+a + b
+    )</span>
+
+    <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:block</span>,
+           <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:puts</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:str</span>, <span class="ruby-string">&quot;hello my dear friend&quot;</span>)),
+           <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:a</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">6</span>),
+             <span class="ruby-value">:+</span>,
+             <span class="ruby-identifier">s</span>(<span class="ruby-value">:call</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:b</span>).<span class="ruby-identifier">line</span>(<span class="ruby-value">6</span>)).<span class="ruby-identifier">line</span>(<span class="ruby-value">6</span>)
+          )
+
+    <span class="ruby-identifier">assert_parse</span> <span class="ruby-identifier">rb</span>, <span class="ruby-identifier">pt</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

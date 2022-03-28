@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class StackProfTest - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">MiniTest::Test
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-foo">#foo</a>
+    <li ><a href="#method-i-idle">#idle</a>
+    <li ><a href="#method-i-math">#math</a>
+    <li ><a href="#method-i-test_cputime">#test_cputime</a>
+    <li ><a href="#method-i-test_custom">#test_custom</a>
+    <li ><a href="#method-i-test_empty_metadata">#test_empty_metadata</a>
+    <li ><a href="#method-i-test_fork">#test_fork</a>
+    <li ><a href="#method-i-test_gc">#test_gc</a>
+    <li ><a href="#method-i-test_info">#test_info</a>
+    <li ><a href="#method-i-test_metadata">#test_metadata</a>
+    <li ><a href="#method-i-test_min_max_interval">#test_min_max_interval</a>
+    <li ><a href="#method-i-test_object_allocation">#test_object_allocation</a>
+    <li ><a href="#method-i-test_object_allocation_interval">#test_object_allocation_interval</a>
+    <li ><a href="#method-i-test_out">#test_out</a>
+    <li ><a href="#method-i-test_out_to_path_string">#test_out_to_path_string</a>
+    <li ><a href="#method-i-test_pathname_out">#test_pathname_out</a>
+    <li ><a href="#method-i-test_raises_if_metadata_is_not_a_hash">#test_raises_if_metadata_is_not_a_hash</a>
+    <li ><a href="#method-i-test_raw">#test_raw</a>
+    <li ><a href="#method-i-test_recursive_total_samples">#test_recursive_total_samples</a>
+    <li ><a href="#method-i-test_running">#test_running</a>
+    <li ><a href="#method-i-test_start_stop_results">#test_start_stop_results</a>
+    <li ><a href="#method-i-test_walltime">#test_walltime</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-StackProfTest">
+  <h1 id="class-StackProfTest" class="class">
+    class StackProfTest
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-foo" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">foo</span><span
+            class="method-args">(n = 10)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="foo-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">foo</span>(<span class="ruby-identifier">n</span> = <span class="ruby-value">10</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">sample</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">foo</span>(<span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-idle" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">idle</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="idle-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">idle</span>
+  <span class="ruby-identifier">r</span>, <span class="ruby-identifier">w</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span>
+  <span class="ruby-constant">IO</span>.<span class="ruby-identifier">select</span>([<span class="ruby-identifier">r</span>], <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">0.2</span>)
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-identifier">w</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-math" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">math</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="math-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">math</span>
+  <span class="ruby-value">250_000</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-value">2</span> <span class="ruby-operator">**</span> <span class="ruby-value">10</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_cputime" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_cputime</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_cputime-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_cputime</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:cpu</span>, <span class="ruby-value">interval:</span> <span class="ruby-value">500</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">math</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:samples</span>], <span class="ruby-value">:&gt;=</span>, <span class="ruby-value">1</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">take</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>[<span class="ruby-value">:name</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;StackProfTest#math&quot;</span>
+    }.<span class="ruby-identifier">any?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">assert_includes</span> <span class="ruby-identifier">frame</span>[<span class="ruby-value">:name</span>], <span class="ruby-string">&quot;StackProfTest#math&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_custom" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_custom</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_custom-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_custom</span>
+  <span class="ruby-identifier">profile_base_line</span> = <span class="ruby-keyword">__LINE__</span><span class="ruby-value">+1</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:custom</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-value">10</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">sample</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:custom</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:mode</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:samples</span>]
+
+  <span class="ruby-identifier">offset</span> = <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>[<span class="ruby-identifier">offset</span>]
+  <span class="ruby-identifier">assert_includes</span> <span class="ruby-identifier">frame</span>[<span class="ruby-value">:name</span>], <span class="ruby-string">&quot;StackProfTest#test_custom&quot;</span>
+  <span class="ruby-identifier">assert_includes</span> [<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">-2</span>, <span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+1</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:line</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">10</span>, <span class="ruby-value">0</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+2</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">10</span>, <span class="ruby-value">10</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+2</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_empty_metadata" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_empty_metadata</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_empty_metadata-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_empty_metadata</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:cpu</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">math</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span>({}, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:metadata</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_fork" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_fork</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_fork-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fork</span>
+  <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">pid</span> = <span class="ruby-identifier">fork</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">exit!</span> <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">running?</span><span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">Process</span>.<span class="ruby-identifier">wait</span>(<span class="ruby-identifier">pid</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">$?</span>.<span class="ruby-identifier">exitstatus</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">running?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_gc" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_gc</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_gc-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_gc</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">interval:</span> <span class="ruby-value">100</span>, <span class="ruby-value">raw:</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-value">5</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">gc_frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">find</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;(garbage collection)&quot;</span> }
+  <span class="ruby-identifier">marking_frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">find</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;(marking)&quot;</span> }
+  <span class="ruby-identifier">sweeping_frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">find</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;(sweeping)&quot;</span> }
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">gc_frame</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">marking_frame</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">sweeping_frame</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">gc_frame</span>[<span class="ruby-value">:total_samples</span>], <span class="ruby-identifier">profile</span>[<span class="ruby-value">:gc_samples</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:gc_samples</span>], [<span class="ruby-identifier">gc_frame</span>, <span class="ruby-identifier">marking_frame</span>, <span class="ruby-identifier">sweeping_frame</span>].<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:samples</span>] }.<span class="ruby-identifier">inject</span>(<span class="ruby-value">:+</span>)
+
+  <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:gc_samples</span>], <span class="ruby-value">:&gt;</span>, <span class="ruby-value">0</span>
+  <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:missed_samples</span>], <span class="ruby-value">:&lt;=</span>, <span class="ruby-value">25</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_info" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_info-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_info</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>{}
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1.2</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:version</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:wall</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:mode</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1000</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:interval</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:samples</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_metadata" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_metadata</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_metadata-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_metadata</span>
+  <span class="ruby-identifier">metadata</span> = {
+    <span class="ruby-value">path:</span> <span class="ruby-string">&#39;/foo/bar&#39;</span>,
+    <span class="ruby-value">revision:</span> <span class="ruby-string">&#39;5c0b01f1522ae8c194510977ae29377296dd236b&#39;</span>,
+  }
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:cpu</span>, <span class="ruby-value">metadata:</span> <span class="ruby-identifier">metadata</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">math</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">metadata</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:metadata</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_min_max_interval" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_min_max_interval</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_min_max_interval-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_min_max_interval</span>
+  [<span class="ruby-value">-1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1_000_000</span>, <span class="ruby-value">1_000_001</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">invalid_interval</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">err</span> = <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;invalid interval #{invalid_interval}&quot;</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">interval:</span> <span class="ruby-identifier">invalid_interval</span>, <span class="ruby-value">debug:</span> <span class="ruby-keyword">true</span>) {}
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_match</span>(<span class="ruby-regexp">/microseconds/</span>, <span class="ruby-identifier">err</span>.<span class="ruby-identifier">message</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_object_allocation" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_object_allocation</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_object_allocation-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_object_allocation</span>
+  <span class="ruby-identifier">profile_base_line</span> = <span class="ruby-keyword">__LINE__</span><span class="ruby-value">+1</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:object</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:object</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:mode</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:interval</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">4</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:samples</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:samples</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">assert_includes</span> <span class="ruby-identifier">frame</span>[<span class="ruby-value">:name</span>], <span class="ruby-string">&quot;StackProfTest#test_object_allocation&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">frame</span>[<span class="ruby-value">:samples</span>]
+  <span class="ruby-identifier">assert_includes</span> [<span class="ruby-identifier">profile_base_line</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">profile_base_line</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:line</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">2</span>, <span class="ruby-value">1</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+1</span>]
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">2</span>, <span class="ruby-value">1</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+2</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+1</span>]
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">1</span>, <span class="ruby-value">1</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span><span class="ruby-value">+2</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>[<span class="ruby-value">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">&#39;2.3&#39;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">4</span>, <span class="ruby-value">0</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">2</span>, <span class="ruby-value">0</span>], <span class="ruby-identifier">frame</span>[<span class="ruby-value">:lines</span>][<span class="ruby-identifier">profile_base_line</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_object_allocation_interval" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_object_allocation_interval</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_object_allocation_interval-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_object_allocation_interval</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:object</span>, <span class="ruby-value">interval:</span> <span class="ruby-value">10</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-value">100</span>.<span class="ruby-identifier">times</span> { <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:samples</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_out" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_out</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_out-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_out</span>
+  <span class="ruby-identifier">tmpfile</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;stackprof-out&#39;</span>)
+  <span class="ruby-identifier">ret</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:custom</span>, <span class="ruby-value">out:</span> <span class="ruby-identifier">tmpfile</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">sample</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">tmpfile</span>, <span class="ruby-identifier">ret</span>
+  <span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">rewind</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">read</span>)
+  <span class="ruby-identifier">refute_empty</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_out_to_path_string" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_out_to_path_string</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_out_to_path_string-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_out_to_path_string</span>
+  <span class="ruby-identifier">tmpfile</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;stackprof-out&#39;</span>)
+  <span class="ruby-identifier">ret</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:custom</span>, <span class="ruby-value">out:</span> <span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">path</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">sample</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">refute_equal</span> <span class="ruby-identifier">tmpfile</span>, <span class="ruby-identifier">ret</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">path</span>, <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">rewind</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">read</span>)
+  <span class="ruby-identifier">refute_empty</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_pathname_out" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_pathname_out</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_pathname_out-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 272</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_pathname_out</span>
+  <span class="ruby-identifier">tmpfile</span>  = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;stackprof-out&#39;</span>)
+  <span class="ruby-identifier">pathname</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">ret</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:custom</span>, <span class="ruby-value">out:</span> <span class="ruby-identifier">pathname</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">sample</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">path</span>, <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">rewind</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">tmpfile</span>.<span class="ruby-identifier">read</span>)
+  <span class="ruby-identifier">refute_empty</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_raises_if_metadata_is_not_a_hash" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_raises_if_metadata_is_not_a_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_raises_if_metadata_is_not_a_hash-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_raises_if_metadata_is_not_a_hash</span>
+  <span class="ruby-identifier">exception</span> = <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:cpu</span>, <span class="ruby-value">metadata:</span> <span class="ruby-string">&#39;foobar&#39;</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">math</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;metadata should be a hash&#39;</span>, <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_raw" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_raw</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_raw-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_raw</span>
+  <span class="ruby-identifier">before_monotonic</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">clock_gettime</span>(<span class="ruby-constant">Process</span><span class="ruby-operator">::</span><span class="ruby-constant">CLOCK_MONOTONIC</span>, <span class="ruby-value">:microsecond</span>)
+
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:custom</span>, <span class="ruby-value">raw:</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-value">10</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">sample</span>
+      <span class="ruby-identifier">sleep</span> <span class="ruby-value">0.0001</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">after_monotonic</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">clock_gettime</span>(<span class="ruby-constant">Process</span><span class="ruby-operator">::</span><span class="ruby-constant">CLOCK_MONOTONIC</span>, <span class="ruby-value">:microsecond</span>)
+
+  <span class="ruby-identifier">raw</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:raw</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">raw</span>[<span class="ruby-value">-1</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">raw</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">offset</span> = <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span> <span class="ruby-operator">?</span> <span class="ruby-value">-3</span> <span class="ruby-operator">:</span> <span class="ruby-value">-2</span>
+  <span class="ruby-identifier">assert_includes</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>][<span class="ruby-identifier">raw</span>[<span class="ruby-identifier">offset</span>]][<span class="ruby-value">:name</span>], <span class="ruby-string">&#39;StackProfTest#test_raw&#39;</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:raw_sample_timestamps</span>].<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">profile</span>[<span class="ruby-value">:raw_sample_timestamps</span>].<span class="ruby-identifier">each_cons</span>(<span class="ruby-value">2</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">t1</span>, <span class="ruby-value">:&gt;</span>, <span class="ruby-identifier">before_monotonic</span>
+    <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">t2</span>, <span class="ruby-value">:&gt;=</span>, <span class="ruby-identifier">t1</span>
+    <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">t2</span>, <span class="ruby-value">:&lt;</span>, <span class="ruby-identifier">after_monotonic</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">profile</span>[<span class="ruby-value">:raw_timestamp_deltas</span>].<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">total_duration</span> = <span class="ruby-identifier">after_monotonic</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">before_monotonic</span>
+  <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">profile</span>[<span class="ruby-value">:raw_timestamp_deltas</span>].<span class="ruby-identifier">inject</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:+</span>), <span class="ruby-value">:&lt;</span>, <span class="ruby-identifier">total_duration</span>
+
+  <span class="ruby-identifier">profile</span>[<span class="ruby-value">:raw_timestamp_deltas</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">delta</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">delta</span>, <span class="ruby-value">:&gt;</span>, <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_recursive_total_samples" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_recursive_total_samples</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_recursive_total_samples-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_recursive_total_samples</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:cpu</span>, <span class="ruby-value">raw:</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-value">10</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">foo</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">frame</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">frame</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;StackProfTest#foo&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">10</span>, <span class="ruby-identifier">frame</span>[<span class="ruby-value">:total_samples</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_running" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_running</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_running-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_running</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">running?</span>
+  <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>{ <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">running?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_start_stop_results" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_start_stop_results</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_start_stop_results-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_start_stop_results</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">results</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">running?</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">results</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">stop</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">stop</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">running?</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Hash</span>, <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">results</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">results</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_walltime" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_walltime</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_walltime-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/stackprof-0.2.19/test/test_stackprof.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_walltime</span>
+  <span class="ruby-identifier">profile</span> = <span class="ruby-constant">StackProf</span>.<span class="ruby-identifier">run</span>(<span class="ruby-value">mode:</span> <span class="ruby-value">:wall</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">idle</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">profile</span>[<span class="ruby-value">:frames</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&#39;3&#39;</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;IO.select&quot;</span>, <span class="ruby-identifier">frame</span>[<span class="ruby-value">:name</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;StackProfTest#idle&quot;</span>, <span class="ruby-identifier">frame</span>[<span class="ruby-value">:name</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_in_delta</span> <span class="ruby-value">200</span>, <span class="ruby-identifier">frame</span>[<span class="ruby-value">:samples</span>], <span class="ruby-value">25</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>CHANGELOG - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../../../";
+  var index_rel_prefix = "../../../../../../";
+</script>
+
+<script src="../../../../../../js/navigation.js" defer></script>
+<script src="../../../../../../js/search.js" defer></script>
+<script src="../../../../../../js/search_index.js" defer></script>
+<script src="../../../../../../js/searcher.js" defer></script>
+<script src="../../../../../../js/darkfish.js" defer></script>
+
+<link href="../../../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../../../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-0.21.2+-282021-01-09-29">0.21.2 (2021-01-09)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.21.1+-282021-01-04-29">0.21.1 (2021-01-04)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.21.0+-282021-01-03-29">0.21.0 (2021-01-03)</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Misc">Misc</a>
+    <li><a href="#label-0.20.0+-282020-11-29-29">0.20.0 (2020-11-29)</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-0.19.1+-282020-10-25-29">0.19.1 (2020-10-25)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.19.0+-282020-08-16-29">0.19.0 (2020-08-16)</a>
+    <li><a href="#label-Breaking+Changes">Breaking Changes</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-Noteworthy">Noteworthy</a>
+    <li><a href="#label-0.18.5+-282020-02-25-29">0.18.5 (2020-02-25)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.18.4+-282020-02-24-29">0.18.4 (2020-02-24)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.18.3+-282020-02-23-29">0.18.3 (2020-02-23)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.18.2+-282020-02-12-29">0.18.2 (2020-02-12)</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-0.18.1+-282020-01-31-29">0.18.1 (2020-01-31)</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.18.0+-282020-01-28-29">0.18.0 (2020-01-28)</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-Noteworthy">Noteworthy</a>
+    <li><a href="#label-0.18.0.beta3+-282020-01-20-29">0.18.0.beta3 (2020-01-20)</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.18.0.beta2+-282020-01-19-29">0.18.0.beta2 (2020-01-19)</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-0.18.0.beta1+-282020-01-05-29">0.18.0.beta1 (2020-01-05)</a>
+    <li><a href="#label-Breaking">Breaking</a>
+    <li><a href="#label-Enhancements">Enhancements</a>
+    <li><a href="#label-Bugfixes">Bugfixes</a>
+    <li><a href="#label-Older+Changelogs">Older Changelogs</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="../../../../../../CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
+    <li><a href="../../../../../../Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../Gemfile_lock.html">Gemfile.lock</a>
+    <li><a href="../../../../../../LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../README_md.html">README</a>
+    <li><a href="../../../../../../Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../bin/setup.html">setup</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/bin/stackprof-flamegraph_pl.html">stackprof-flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/bin/stackprof-gprof2dot_py.html">stackprof-gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/gem_build_complete.html">gem.build_complete</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/gem_make_out.html">gem_make.out</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/extensions/x86_64-linux/3_1_0/stackprof-0_2_19/mkmf_log.html">mkmf.log</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ast-2_4_2/LICENSE_MIT.html">LICENSE.MIT</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ast-2_4_2/README_YARD_md.html">README.YARD</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/History_md.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/benchmark-ips-2_10_0/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/HISTORY_md.html">HISTORY</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/docile-1_4_0/SECURITY_md.html">SECURITY</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/minitest-5_15_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/parser-3_1_1_0/LICENSE_txt.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/MIT-LICENSE.html">MIT-LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/command_line_usage_rdoc.html">command_line_usage</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/example/Rakefile1.html">Rakefile1</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/example/Rakefile2.html">Rakefile2</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/glossary_rdoc.html">glossary</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/proto_rake_rdoc.html">proto_rake</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rake_1.html">rake.1</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rakefile_rdoc.html">rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/rake-13_0_6/doc/rational_rdoc.html">rational</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/debugging_md.html">debugging</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/ruby_parser-3_18_1/gauntlet_md.html">gauntlet</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/History_rdoc.html">History</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/Manifest_txt.html">Manifest</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/README_rdoc.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/sexp_processor-4_16_0/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/alternate-formatters_md.html">alternate-formatters</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/commercial-services_md.html">commercial-services</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-0_21_2/doc/editor-integration_md.html">editor-integration</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov-html-0_12_3/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov_json_formatter-0_1_3/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/simplecov_json_formatter-0_1_3/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/CHANGELOG_md.html">CHANGELOG</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/Gemfile.html">Gemfile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/LICENSE.html">LICENSE</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/README_md.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/Rakefile.html">Rakefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/bin/stackprof-flamegraph_pl.html">stackprof-flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/bin/stackprof-gprof2dot_py.html">stackprof-gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/ext/stackprof/Makefile.html">Makefile</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/lib/stackprof/flamegraph/flamegraph_js.html">flamegraph.js</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/lib/stackprof/flamegraph/viewer_html.html">viewer.html</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/FlameGraph/README.html">README</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/FlameGraph/flamegraph_pl.html">flamegraph.pl</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/gprof2dot/gprof2dot_py.html">gprof2dot.py</a>
+    <li><a href="../../../../../../vendor/bundle/ruby/3_1_0/gems/stackprof-0_2_19/vendor/gprof2dot/hotshotmain_py.html">hotshotmain.py</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page vendor/bundle/ruby/3.1.0/gems/simplecov-0.21.2/CHANGELOG.md">
+
+<h1 id="label-0.21.2+-282021-01-09-29">0.21.2 (2021-01-09)<span><a href="#label-0.21.2+-282021-01-09-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><code>maximum_coverage_drop</code> won’t fail any more if <code>.last_run.json</code> is still in the old format. Thanks <a href="https://github.com/petertellgren">@petertellgren</a></p>
+</li><li>
+<p><code>maximum_coverage_drop</code> won’t fail if an expectation is specified for a previous unrecorded criterion, it will just pass (there’s nothing, so nothing to drop)</p>
+</li><li>
+<p>fixed bug in <code>maximum_coverage_drop</code> calculation that could falsely report it had dropped for minimal differences</p>
+</li></ul>
+
+<h1 id="label-0.21.1+-282021-01-04-29">0.21.1 (2021-01-04)<span><a href="#label-0.21.1+-282021-01-04-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><code>minimum_coverage_by_file</code> works again as expected (errored out before 😱)</p>
+</li></ul>
+
+<h1 id="label-0.21.0+-282021-01-03-29">0.21.0 (2021-01-03)<span><a href="#label-0.21.0+-282021-01-03-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>The “Collate++” release making it more viable for big CI setups by limiting memory consumption. Also includes some nice new additions for branch coverage settings.</p>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Performance of <code>SimpleCov.collate</code> improved - it should both run faster and consume much less memory esp. when run with many files (memory consumption should not increase with number of files any more)</p>
+</li><li>
+<p>Can now define the minimum_coverage_by_file, maximum_coverage_drop and refuse_coverage_drop by branch as well as line coverage. Thanks to <a href="https://github.com/jemmaissroff">@jemmaissroff</a></p>
+</li><li>
+<p>Can set primary coverage to something other than line by setting <code>primary_coverage :branch</code> in <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> Configuration. Thanks to <a href="https://github.com/jemmaissroff">@jemmaissroff</a></p>
+</li></ul>
+
+<h2 id="label-Misc">Misc<span><a href="#label-Misc">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>reduce gem size by splitting Changelog into <code>Changelog.md</code> and a pre 0.18 <code>Changelog.old.md</code>, the latter of which is not included in the gem</p>
+</li><li>
+<p>The interface of <code>ResultMeger.merge_and_store</code> is changed to support the <code>collate</code> performance improvements mentioned above. It’s not considered an official API, hence this is not in the breaking section. For people using it to merge results from different machines, it’s recommended to migrate to <a href="https://github.com/simplecov-ruby/simplecov#merging-test-runs-under-different-execution-environments">collate</a>.</p>
+</li></ul>
+
+<h1 id="label-0.20.0+-282020-11-29-29">0.20.0 (2020-11-29)<span><a href="#label-0.20.0+-282020-11-29-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>The “JSON formatter” release. Starting now a JSON formatter is included by default in the release. This is mostly done for Code Climate reasons, you can find more details <a href="https://github.com/codeclimate/test-reporter/issues/413">in this issue</a>. Shipping with so much by default is sub-optimal, we know. It’s the long term plan to also provide <code>simplecov-core</code> without the HTML or JSON formatters for those who don’t need them/for other formatters to rely on.</p>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><code>simplecov_json_formatter</code> included by default (<a href="https://github.com/simplecov-ruby/simplecov#json-formatter">docs</a>), this should enable the Code Climate test reporter to work again once it’s updated</p>
+</li><li>
+<p>invalidate internal cache after switching <code>SimpleCov.root</code>, should help with some bugs</p>
+</li></ul>
+
+<h1 id="label-0.19.1+-282020-10-25-29">0.19.1 (2020-10-25)<span><a href="#label-0.19.1+-282020-10-25-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>No more warnings triggered by <code>enable_for_subprocesses</code>. Thanks to <a href="https://github.com/mame">@mame</a></p>
+</li><li>
+<p>Avoid trying to patch <code>Process.fork</code> when it isn’t available. Thanks to <a href="https://github.com/MSP-Greg">@MSP-Greg</a></p>
+</li></ul>
+
+<h1 id="label-0.19.0+-282020-08-16-29">0.19.0 (2020-08-16)<span><a href="#label-0.19.0+-282020-08-16-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Breaking+Changes">Breaking Changes<span><a href="#label-Breaking+Changes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Dropped support for Ruby 2.4, it reached EOL</p>
+</li></ul>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>observe forked processes (enable with SimpleCov.enable_for_subprocesses). See <a href="https://github.com/simplecov-ruby/simplecov/pull/881">#881</a>, thanks to <a href="https://github.com/robotdana">@robotdana</a></p>
+</li><li>
+<p><a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> distinguishes better that it stopped processing because of a previous error vs. <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> is the originator of said error due to coverage requirements.</p>
+</li></ul>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Changing the <code>SimpleCov.root</code> combined with the root filtering didn’t work. Now they do! Thanks to <a href="https://github.com/deivid-rodriguez">@deivid-rodriguez</a> and see <a href="https://github.com/simplecov-ruby/simplecov/pull/894">#894</a></p>
+</li><li>
+<p>in parallel test execution it could happen that the last coverage result was written to disk when it didn’t complete yet, changed to only write it once it’s the final result</p>
+</li><li>
+<p>if you run parallel tests only the final process will report violations of the configured test coverage, not all previous processes</p>
+</li><li>
+<p>changed the parallel_tests merging mechanisms to do the waiting always in the last process, should reduce race conditions</p>
+</li></ul>
+
+<h2 id="label-Noteworthy">Noteworthy<span><a href="#label-Noteworthy">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>The repo has moved to <a href="https://github.com/simplecov-ruby/simplecov">github.com/simplecov-ruby/simplecov</a> - everything stays the same, redirects should work but you might wanna update anyhow</p>
+</li><li>
+<p>The primary development branch is now <code>main</code>, not <code>master</code> anymore. If you get simplecov directly from github change your reference. For a while <code>master</code> will still be occasionally updated but that’s no long term solion.</p>
+</li></ul>
+
+<h1 id="label-0.18.5+-282020-02-25-29">0.18.5 (2020-02-25)<span><a href="#label-0.18.5+-282020-02-25-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Can you guess? Another bugfix release!</p>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>minitest won’t crash if <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> isn’t loaded - aka don’t execute <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> code in the minitest plugin if <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> isn’t loaded. Thanks to <a href="https://github.com/edariedl">@edariedl</a> for the report of the peculiar problem in <a href="https://github.com/simplecov-ruby/simplecov/issues/877">#877</a>.</p>
+</li></ul>
+
+<h1 id="label-0.18.4+-282020-02-24-29">0.18.4 (2020-02-24)<span><a href="#label-0.18.4+-282020-02-24-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Another small bugfix release 🙈 Fixes <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> running with rspec-rails, which was broken due to our fixed minitest integration.</p>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> will run again correctly when used with rspec-rails. The excellent bug report <a href="https://github.com/simplecov-ruby/simplecov/issues/873">#873</a> by <a href="https://github.com/odlp">@odlp</a> perfectly details what went wrong. Thanks to <a href="https://github.com/adam12">@adam12</a> for the fix <a href="https://github.com/simplecov-ruby/simplecov/pull/874">#874</a>.</p>
+</li></ul>
+
+<h1 id="label-0.18.3+-282020-02-23-29">0.18.3 (2020-02-23)<span><a href="#label-0.18.3+-282020-02-23-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Small bugfix release. It’s especially recommended to upgrade simplecov-html as well because of bugs in the 0.12.0 release.</p>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix a regression related to file encodings as special characters were missing. Furthermore we now respect the magic <code># encoding: ...</code> comment and read files in the right encoding. Thanks (<a href="https://github.com/Tietew">@Tietew</a>) - see <a href="https://github.com/simplecov-ruby/simplecov/pull/866">#866</a></p>
+</li><li>
+<p>Use <code>Minitest.after_run</code> hook to trigger post-run hooks if <code>Minitest</code> is present. See <a href="https://github.com/simplecov-ruby/simplecov/pull/756">#756</a> and <a href="https://github.com/simplecov-ruby/simplecov/pull/855">#855</a> thanks (<a href="https://github.com/adam12">@adam12</a>)</p>
+</li></ul>
+
+<h1 id="label-0.18.2+-282020-02-12-29">0.18.2 (2020-02-12)<span><a href="#label-0.18.2+-282020-02-12-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Small release just to allow you to use the new simplecov-html.</p>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Relax simplecov-html requirement so that you’re able to use <a href="https://github.com/simplecov-ruby/simplecov-html/blob/main/CHANGELOG.md#0120-2020-02-12">0.12.0</a></p>
+</li></ul>
+
+<h1 id="label-0.18.1+-282020-01-31-29">0.18.1 (2020-01-31)<span><a href="#label-0.18.1+-282020-01-31-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Small Bugfix release.</p>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Just putting <code># :nocov:</code> on top of a file or having an uneven number of them in general works again and acts as if ignoring until the end of the file. See <a href="https://github.com/simplecov-ruby/simplecov/issues/846">#846</a> and thanks <a href="https://github.com/DannyBen">@DannyBen</a> for the report.</p>
+</li></ul>
+
+<h1 id="label-0.18.0+-282020-01-28-29">0.18.0 (2020-01-28)<span><a href="#label-0.18.0+-282020-01-28-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Huge release! Highlights are support for branch coverage (Ruby 2.5+) and dropping support for EOL’ed Ruby versions (&lt; 2.4). Please also read the other beta patch notes.</p>
+
+<p>You can run with branch coverage by putting <code>enable_coverage :branch</code> into your <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> configuration (like the <code>SimpleCov.start do .. end</code> block)</p>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>You can now define the minimum expected coverage by criterion like <code>minimum_coverage line: 90, branch: 80</code></p>
+</li><li>
+<p>Memoized some internal data structures that didn’t change to reduce <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> overhead</p>
+</li><li>
+<p>Both <code>FileList</code> and <code>SourceFile</code> now have a <code>coverage</code> method that returns a hash that points from a coverage criterion to a <code>CoverageStatistics</code> object for uniform access to overall coverage statistics for both line and branch coverage</p>
+</li></ul>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>we were losing precision by rounding the covered strength early, that has been removed. <strong>For Formatters</strong> this also means that you may need to round it yourself now.</p>
+</li><li>
+<p>Removed an inconsistency in how we treat skipped vs. irrelevant lines (see <a href="https://github.com/simplecov-ruby/simplecov/issues/565">#565</a>) - SimpleCov’s definition of 100% is now “You covered everything that you could” so if coverage is 0/0 that’s counted as a 100% no matter if the lines were irrelevant or ignored/skipped</p>
+</li></ul>
+
+<h2 id="label-Noteworthy">Noteworthy<span><a href="#label-Noteworthy">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><code>FileList</code> stopped inheriting from <a href="../../../../../../Array.html"><code>Array</code></a>, it includes Enumerable so if you didn’t use <a href="../../../../../../Array.html"><code>Array</code></a> specific methods on it in formatters you should be fine</p>
+</li><li>
+<p>We needed to change an internal file format, which we use for merging across processes, to accommodate branch coverage. Sadly CodeClimate chose to use this file to report test coverage. Until a resolution is found the code climate test reporter won’t work with <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> for 0.18+, see <a href="https://github.com/codeclimate/test-reporter/issues/413">this issue on the test reporter</a>.</p>
+</li></ul>
+
+<h1 id="label-0.18.0.beta3+-282020-01-20-29">0.18.0.beta3 (2020-01-20)<span><a href="#label-0.18.0.beta3+-282020-01-20-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Instead of ignoring old <code>.resultset.json</code>s that are inside the merge timeout, adapt and respect them</p>
+</li></ul>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Remove the constant warning printing if you still have a <code>.resultset.json</code> in pre 0.18 layout that is within your merge timeout</p>
+</li></ul>
+
+<h1 id="label-0.18.0.beta2+-282020-01-19-29">0.18.0.beta2 (2020-01-19)<span><a href="#label-0.18.0.beta2+-282020-01-19-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>only turn on the requested coverage criteria (when activating branch coverage before <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> would also instruct Ruby to take Method coverage)</p>
+</li><li>
+<p>Change how branch coverage is displayed, now it’s <code>branch_type: hit_count</code> which should be more self explanatory. See <a href="https://github.com/simplecov-ruby/simplecov/pull/830">#830</a> for an example and feel free to give feedback!</p>
+</li><li>
+<p>Allow early running exit tasks and avoid the <code>at_exit</code> hook through the <code>SimpleCov.run_exit_tasks!</code> method. (thanks <a href="https://github.com/macumber">@macumber</a>)</p>
+</li><li>
+<p>Allow manual collation of result sets through the <code>SimpleCov.collate</code> entrypoint. See the <a href="../../../../../../README_md.html">README</a> for more details (thanks <a href="https://github.com/ticky">@ticky</a>)</p>
+</li><li>
+<p>Within <code>case</code>, even if there is no <code>else</code> branch declared show missing coverage for it (aka no branch of it). See <a href="https://github.com/simplecov-ruby/simplecov/pull/825">#825</a></p>
+</li><li>
+<p>Stop symbolizing all keys when loading cache (should lead to be faster and consume less memory)</p>
+</li><li>
+<p>Cache whether we can use/are using branch coverage (should be slightly faster)</p>
+</li></ul>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix a crash that happened when an old version of our internal cache file <code>.resultset.json</code> was still present</p>
+</li></ul>
+
+<h1 id="label-0.18.0.beta1+-282020-01-05-29">0.18.0.beta1 (2020-01-05)<span><a href="#label-0.18.0.beta1+-282020-01-05-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This is a huge release highlighted by changing our support for ruby versions to 2.4+ (so things that aren’t EOL’ed) and finally adding branch coverage support!</p>
+
+<p>This release is still beta because we’d love for you to test out branch coverage and get your feedback before doing a full release.</p>
+
+<p>On a personal note from <a href="https://github.com/PragTob/">@PragTob</a> thanks to <a href="https://rubytogether.org/">ruby together</a> for sponsoring this work on <a href="../../../../../../SimpleCov.html"><code>SimpleCov</code></a> making it possible to deliver this and subsequent releases.</p>
+
+<h2 id="label-Breaking">Breaking<span><a href="#label-Breaking">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Dropped support for all EOL’ed rubies meaning we only support 2.4+. Simplecov can no longer be installed on older rubies, but older simplecov releases should still work. (thanks <a href="https://github.com/deivid-rodriguez">@deivid-rodriguez</a>)</p>
+</li><li>
+<p>Dropped the <code>rake simplecov</code> task that “magically” integreated with rails. It was always undocumented, caused some issues and <a href="https://github.com/simplecov-ruby/simplecov/issues/689#issuecomment-561572327">had some issues</a>. Use the integration as described in the <a href="../../../../../../README_md.html">README</a> please :)</p>
+</li></ul>
+
+<h2 id="label-Enhancements">Enhancements<span><a href="#label-Enhancements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Branch coverage is here! Please try it out and test it! You can activate it with <code>enable_coverage :branch</code>. See the <a href="../../../../../../README_md.html">README</a> for more details. This is thanks to a bunch of people most notably <a href="https://github.com/som4ik">@som4ik</a>, <a href="https://github.com/tycooon">@tycooon</a>, <a href="https://github.com/stepozer">@stepozer</a>, <a href="https://github.com/klyonrad">@klyonrad</a> and your humble maintainers also contributed ;)</p>
+</li><li>
+<p>If the minimum coverage is set to be greater than 100, a warning will be shown. See <a href="https://github.com/simplecov-ruby/simplecov/pull/737">#737</a> (thanks <a href="https://github.com/belfazt">@belfazt</a>)</p>
+</li><li>
+<p>Add a configuration option to disable the printing of non-successful exit statuses. See <a href="https://github.com/simplecov-ruby/simplecov/pull/746">#747</a> (thanks <a href="https://github.com/JacobEvelyn">@JacobEvelyn</a>)</p>
+</li><li>
+<p>Calculating 100% coverage is now stricter, so 100% means 100%. See <a href="https://github.com/simplecov-ruby/simplecov/pull/680">#680</a> thanks <a href="https://github.com/gleseur">@gleseur</a></p>
+</li></ul>
+
+<h2 id="label-Bugfixes">Bugfixes<span><a href="#label-Bugfixes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Add new instance of <code>Minitest</code> constant. The <code>MiniTest</code> constant (with the capital T) will be removed in the next major release of Minitest. See <a href="https://github.com/simplecov-ruby/simplecov/pull/757">#757</a> (thanks <a href="https://github.com/adam12">@adam12</a>)</p>
+</li></ul>
+
+<h1 id="label-Older+Changelogs">Older Changelogs<span><a href="#label-Older+Changelogs">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Looking for older changelogs? Please check the <a href="https://github.com/simplecov-ruby/simplecov/blob/main/CHANGELOG.old.md">old Changelog</a></p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

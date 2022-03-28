@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestEnvironment - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Minitest/Test.html">Minitest::Test</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-deny">#deny</a>
+    <li ><a href="#method-i-setup">#setup</a>
+    <li ><a href="#method-i-test_all">#test_all</a>
+    <li ><a href="#method-i-test_all_dynamic">#test_all_dynamic</a>
+    <li ><a href="#method-i-test_all_static">#test_all_static</a>
+    <li ><a href="#method-i-test_all_static_deeper">#test_all_static_deeper</a>
+    <li ><a href="#method-i-test_current_shadow">#test_current_shadow</a>
+    <li ><a href="#method-i-test_depth">#test_depth</a>
+    <li ><a href="#method-i-test_index">#test_index</a>
+    <li ><a href="#method-i-test_index_equals">#test_index_equals</a>
+    <li ><a href="#method-i-test_index_out_of_scope">#test_index_out_of_scope</a>
+    <li ><a href="#method-i-test_index_unknown">#test_index_unknown</a>
+    <li ><a href="#method-i-test_lookup_scope">#test_lookup_scope</a>
+    <li ><a href="#method-i-test_scope">#test_scope</a>
+    <li ><a href="#method-i-test_var_scope_dynamic">#test_var_scope_dynamic</a>
+    <li ><a href="#method-i-test_var_scope_static">#test_var_scope_static</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestEnvironment">
+  <h1 id="class-TestEnvironment" class="class">
+    class TestEnvironment
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-deny" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">deny</span><span
+            class="method-args">(t)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="deny-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deny</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">t</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-setup" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@env</span> = <span class="ruby-constant">RubyParserStuff</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>] = <span class="ruby-value">42</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_all" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_all-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_all</span>
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-value">:x</span>] = <span class="ruby-value">42</span>
+
+    <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-ivar">@env</span>[<span class="ruby-value">:y</span>] = <span class="ruby-value">3</span>
+      <span class="ruby-ivar">@env</span>[<span class="ruby-value">:x</span>] = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+
+      <span class="ruby-identifier">expected</span> = { <span class="ruby-value">:x</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>, <span class="ruby-value">:y</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">3</span> }
+      <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">expected</span> = { <span class="ruby-value">:x</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> }
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_all_dynamic" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_all_dynamic</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_all_dynamic-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_all_dynamic</span>
+  <span class="ruby-identifier">expected</span> = { <span class="ruby-value">:blah</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">42</span> }
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">extend</span> <span class="ruby-value">:dynamic</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">unextend</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_all_static" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_all_static</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_all_static-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_all_static</span>
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">extend</span>
+  <span class="ruby-identifier">expected</span> = { }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">unextend</span>
+  <span class="ruby-identifier">expected</span> = { <span class="ruby-value">:blah</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">42</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_all_static_deeper" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_all_static_deeper</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_all_static_deeper-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_all_static_deeper</span>
+  <span class="ruby-identifier">expected0</span> = { <span class="ruby-value">:blah</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">42</span> }
+  <span class="ruby-identifier">expected1</span> = { <span class="ruby-value">:blah</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">42</span>, <span class="ruby-value">:blah2</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">24</span> }
+  <span class="ruby-identifier">expected2</span> = { <span class="ruby-value">:blah</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">27</span> }
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">extend</span> <span class="ruby-value">:dynamic</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah2</span>] = <span class="ruby-value">24</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected1</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">extend</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>] = <span class="ruby-value">27</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected2</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">unextend</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected1</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">unextend</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected0</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_current_shadow" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_current_shadow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_current_shadow-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_current_shadow</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>] = <span class="ruby-value">42</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:var</span>] = <span class="ruby-value">23</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">23</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_depth" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_depth</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_depth-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_depth</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">depth</span>
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">2</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">depth</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">1</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">depth</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_index" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_index-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_index</span>
+  <span class="ruby-identifier">test_index_equals</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_index_equals" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_index_equals</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_index_equals-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_index_equals</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>] = <span class="ruby-value">42</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_index_out_of_scope" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_index_out_of_scope</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_index_out_of_scope-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_index_out_of_scope</span>
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>] = <span class="ruby-value">42</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_index_unknown" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_index_unknown</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_index_unknown-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_index_unknown</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@env</span>[<span class="ruby-value">:unknown</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_lookup_scope" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_lookup_scope</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_lookup_scope-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_lookup_scope</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>] = <span class="ruby-value">42</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_scope" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_scope</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_scope-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/sexp_processor-4.16.0/test/test_environment.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_scope</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>] = <span class="ruby-value">42</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>] = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+    <span class="ruby-identifier">assert_in_epsilon</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_in_epsilon</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:var</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_var_scope_dynamic" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_var_scope_dynamic</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_var_scope_dynamic-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_var_scope_dynamic</span>
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">extend</span> <span class="ruby-value">:dynamic</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>]
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">unextend</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_var_scope_static" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_var_scope_static</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_var_scope_static-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/ruby_parser-3.18.1/test/test_ruby_parser_extras.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_var_scope_static</span>
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">extend</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>]
+  <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">unextend</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">42</span>, <span class="ruby-ivar">@env</span>[<span class="ruby-value">:blah</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

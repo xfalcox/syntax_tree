@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TestMinitestAssertionHelpers - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link"><a href="Minitest/Test.html">Minitest::Test</a>
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li ><a href="#method-i-assert_mu_pp">#assert_mu_pp</a>
+    <li ><a href="#method-i-assert_mu_pp_for_diff">#assert_mu_pp_for_diff</a>
+    <li ><a href="#method-i-test_diff_equal">#test_diff_equal</a>
+    <li ><a href="#method-i-test_diff_str_mixed">#test_diff_str_mixed</a>
+    <li ><a href="#method-i-test_diff_str_multiline">#test_diff_str_multiline</a>
+    <li ><a href="#method-i-test_diff_str_simple">#test_diff_str_simple</a>
+    <li ><a href="#method-i-test_message">#test_message</a>
+    <li ><a href="#method-i-test_message_deferred">#test_message_deferred</a>
+    <li ><a href="#method-i-test_mu_pp">#test_mu_pp</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff">#test_mu_pp_for_diff</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff_str_bad_encoding">#test_mu_pp_for_diff_str_bad_encoding</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff_str_bad_encoding_both">#test_mu_pp_for_diff_str_bad_encoding_both</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff_str_encoding">#test_mu_pp_for_diff_str_encoding</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff_str_encoding_both">#test_mu_pp_for_diff_str_encoding_both</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff_str_nerd">#test_mu_pp_for_diff_str_nerd</a>
+    <li ><a href="#method-i-test_mu_pp_for_diff_str_normal">#test_mu_pp_for_diff_str_normal</a>
+    <li ><a href="#method-i-test_mu_pp_str_bad_encoding">#test_mu_pp_str_bad_encoding</a>
+    <li ><a href="#method-i-test_mu_pp_str_encoding">#test_mu_pp_str_encoding</a>
+    <li ><a href="#method-i-test_mu_pp_str_immutable">#test_mu_pp_str_immutable</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TestMinitestAssertionHelpers">
+  <h1 id="class-TestMinitestAssertionHelpers" class="class">
+    class TestMinitestAssertionHelpers
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-assert_mu_pp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_mu_pp</span><span
+            class="method-args">(exp, input, raw = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_mu_pp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_mu_pp</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">input</span>, <span class="ruby-identifier">raw</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">act</span> = <span class="ruby-identifier">mu_pp</span> <span class="ruby-identifier">input</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">raw</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">&quot;\&quot;#{exp}\&quot;&quot;</span>, <span class="ruby-identifier">act</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-assert_mu_pp_for_diff" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">assert_mu_pp_for_diff</span><span
+            class="method-args">(exp, input, raw = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="assert_mu_pp_for_diff-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1408</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_mu_pp_for_diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">input</span>, <span class="ruby-identifier">raw</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">act</span> = <span class="ruby-identifier">mu_pp_for_diff</span> <span class="ruby-identifier">input</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">raw</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">&quot;\&quot;#{exp}\&quot;&quot;</span>, <span class="ruby-identifier">act</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_diff_equal" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_diff_equal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_diff_equal-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1418</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diff_equal</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-string">&quot;No visible difference in the String#inspect output.
+         You should look at the implementation of #== on String or its members.
+         \&quot;blahblahblahblahblahblahblahblahblahblah\&quot;&quot;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^ +/</span>, <span class="ruby-string">&quot;&quot;</span>)
+
+  <span class="ruby-identifier">o1</span> = <span class="ruby-string">&quot;blah&quot;</span> <span class="ruby-operator">*</span> <span class="ruby-value">10</span>
+  <span class="ruby-identifier">o2</span> = <span class="ruby-string">&quot;blah&quot;</span> <span class="ruby-operator">*</span> <span class="ruby-value">10</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">o1</span>.<span class="ruby-identifier">==</span> <span class="ruby-identifier">_</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">o1</span>, <span class="ruby-identifier">o2</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_diff_str_mixed" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_diff_str_mixed</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_diff_str_mixed-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1432</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diff_str_mixed</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">&lt;&lt;-&#39;EOM&#39;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^ {10}/</span>, <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-comment"># NOTE single quotes on heredoc</span>
+<span class="ruby-value">          --- expected
+          +++ actual
+          @@ -1 +1 @@
+          -&quot;A\\n\nB&quot;
+          +&quot;A\n\\nB&quot;
+</span><span class="ruby-identifier">          EOM</span>
+
+    <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;A\\n\nB&quot;</span>
+    <span class="ruby-identifier">act</span> = <span class="ruby-string">&quot;A\n\\nB&quot;</span>
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>)
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_diff_str_multiline" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_diff_str_multiline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_diff_str_multiline-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1447</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diff_str_multiline</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">&lt;&lt;-&#39;EOM&#39;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^ {10}/</span>, <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-comment"># NOTE single quotes on heredoc</span>
+<span class="ruby-value">          --- expected
+          +++ actual
+          @@ -1,2 +1,2 @@
+           &quot;A
+          -B&quot;
+          +C&quot;
+</span><span class="ruby-identifier">          EOM</span>
+
+    <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;A\nB&quot;</span>
+    <span class="ruby-identifier">act</span> = <span class="ruby-string">&quot;A\nC&quot;</span>
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>)
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_diff_str_simple" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_diff_str_simple</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_diff_str_simple-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1463</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_diff_str_simple</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">&lt;&lt;-&#39;EOM&#39;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^ {10}/</span>, <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">chomp</span> <span class="ruby-comment"># NOTE single quotes on heredoc</span>
+<span class="ruby-value">          Expected: &quot;A&quot;
+            Actual: &quot;B&quot;
+</span><span class="ruby-identifier">          EOM</span>
+
+    <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;A&quot;</span>
+    <span class="ruby-identifier">act</span> = <span class="ruby-string">&quot;B&quot;</span>
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>)
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_message" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_message</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_message-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1475</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_message</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah2.&quot;</span>,         <span class="ruby-identifier">message</span>          { <span class="ruby-string">&quot;blah2&quot;</span> }.<span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah2.&quot;</span>,         <span class="ruby-identifier">message</span>(<span class="ruby-string">&quot;&quot;</span>)      { <span class="ruby-string">&quot;blah2&quot;</span> }.<span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah1.\nblah2.&quot;</span>, <span class="ruby-identifier">message</span>(<span class="ruby-value">:blah1</span>)  { <span class="ruby-string">&quot;blah2&quot;</span> }.<span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah1.\nblah2.&quot;</span>, <span class="ruby-identifier">message</span>(<span class="ruby-string">&quot;blah1&quot;</span>) { <span class="ruby-string">&quot;blah2&quot;</span> }.<span class="ruby-identifier">call</span>
+
+  <span class="ruby-identifier">message</span> = <span class="ruby-identifier">proc</span> { <span class="ruby-string">&quot;blah1&quot;</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah1.\nblah2.&quot;</span>, <span class="ruby-identifier">message</span>(<span class="ruby-identifier">message</span>) { <span class="ruby-string">&quot;blah2&quot;</span> }.<span class="ruby-identifier">call</span>
+
+  <span class="ruby-identifier">message</span> = <span class="ruby-identifier">message</span> { <span class="ruby-string">&quot;blah1&quot;</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah1.\nblah2.&quot;</span>, <span class="ruby-identifier">message</span>(<span class="ruby-identifier">message</span>) { <span class="ruby-string">&quot;blah2&quot;</span> }.<span class="ruby-identifier">call</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_message_deferred" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_message_deferred</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_message_deferred-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1488</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_message_deferred</span>
+  <span class="ruby-identifier">var</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span> { <span class="ruby-identifier">var</span> = <span class="ruby-string">&quot;blah&quot;</span> }
+
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">var</span>
+
+  <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">call</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;blah&quot;</span>, <span class="ruby-identifier">var</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1500</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp</span>
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-value">42</span>.<span class="ruby-identifier">inspect</span>,            <span class="ruby-value">42</span>
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-node">%w[a b c]</span>.<span class="ruby-identifier">inspect</span>,     <span class="ruby-node">%w[a b c]</span>
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-string">&quot;A B&quot;</span>,     <span class="ruby-string">&quot;A B&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-string">&quot;A\\nB&quot;</span>,   <span class="ruby-string">&quot;A\nB&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-string">&quot;A\\\\nB&quot;</span>, <span class="ruby-string">&#39;A\nB&#39;</span> <span class="ruby-comment"># notice single quotes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1508</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;#&lt;Object:0xXXXXXX&gt;&quot;</span>, <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A B&quot;</span>,                <span class="ruby-string">&quot;A B&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>].<span class="ruby-identifier">inspect</span>,    [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\nB&quot;</span>,               <span class="ruby-string">&quot;A\nB&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff_str_bad_encoding" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff_str_bad_encoding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff_str_bad_encoding-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1515</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff_str_bad_encoding</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;\666&quot;</span>.<span class="ruby-identifier">force_encoding</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;# encoding: UTF-8\n#    valid: false\n\&quot;\\xB6\&quot;&quot;</span>
+
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">str</span>, <span class="ruby-value">:raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff_str_bad_encoding_both" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff_str_bad_encoding_both</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff_str_bad_encoding_both-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1522</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff_str_bad_encoding_both</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;\666A\\n\nB&quot;</span>.<span class="ruby-identifier">force_encoding</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;# encoding: UTF-8\n#    valid: false\n\&quot;\\xB6A\\\\n\\nB\&quot;&quot;</span>
+
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">str</span>, <span class="ruby-value">:raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff_str_encoding" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff_str_encoding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff_str_encoding-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1529</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff_str_encoding</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;A\nB&quot;</span>.<span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;# encoding: ASCII-8BIT\n#    valid: true\n\&quot;A\nB\&quot;&quot;</span>
+
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">str</span>, <span class="ruby-value">:raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff_str_encoding_both" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff_str_encoding_both</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff_str_encoding_both-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1536</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff_str_encoding_both</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;A\\n\nB&quot;</span>.<span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;# encoding: ASCII-8BIT\n#    valid: true\n\&quot;A\\\\n\\nB\&quot;&quot;</span>
+
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">str</span>, <span class="ruby-value">:raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff_str_nerd" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff_str_nerd</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff_str_nerd-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1543</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff_str_nerd</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\\nB\\\\nC&quot;</span>, <span class="ruby-string">&quot;A\nB\\nC&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\nB\\\\nC&quot;</span>,  <span class="ruby-string">&quot;\nB\\nC&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\nB\\\\n&quot;</span>,   <span class="ruby-string">&quot;\nB\\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\n\\\\n&quot;</span>,    <span class="ruby-string">&quot;\n\\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\\\n\\n&quot;</span>,    <span class="ruby-string">&quot;\\n\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\\\nB\\n&quot;</span>,   <span class="ruby-string">&quot;\\nB\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\\\nB\\nC&quot;</span>,  <span class="ruby-string">&quot;\\nB\nC&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\\\\n\\nB&quot;</span>,  <span class="ruby-string">&quot;A\\n\nB&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\\n\\\\nB&quot;</span>,  <span class="ruby-string">&quot;A\n\\nB&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\\\n\\n&quot;</span>,    <span class="ruby-string">&quot;\\n\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\n\\\\n&quot;</span>,    <span class="ruby-string">&quot;\n\\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_for_diff_str_normal" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_for_diff_str_normal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_for_diff_str_normal-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1557</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_for_diff_str_normal</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;&quot;</span>,        <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\\n\n&quot;</span>,  <span class="ruby-string">&quot;A\\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\\n\nB&quot;</span>, <span class="ruby-string">&quot;A\\nB&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\n&quot;</span>,     <span class="ruby-string">&quot;A\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;A\nB&quot;</span>,    <span class="ruby-string">&quot;A\nB&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\n\n&quot;</span>,   <span class="ruby-string">&quot;\\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\n&quot;</span>,      <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\\n\nA&quot;</span>,  <span class="ruby-string">&quot;\\nA&quot;</span>
+  <span class="ruby-identifier">assert_mu_pp_for_diff</span> <span class="ruby-string">&quot;\nA&quot;</span>,     <span class="ruby-string">&quot;\nA&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_str_bad_encoding" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_str_bad_encoding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_str_bad_encoding-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1569</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_str_bad_encoding</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;\666&quot;</span>.<span class="ruby-identifier">force_encoding</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;# encoding: UTF-8\n#    valid: false\n\&quot;\\xB6\&quot;&quot;</span>
+
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">str</span>, <span class="ruby-value">:raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_str_encoding" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_str_encoding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_str_encoding-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1576</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_str_encoding</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;A\nB&quot;</span>.<span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">exp</span> = <span class="ruby-string">&quot;# encoding: ASCII-8BIT\n#    valid: true\n\&quot;A\\nB\&quot;&quot;</span>
+
+  <span class="ruby-identifier">assert_mu_pp</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">str</span>, <span class="ruby-value">:raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-test_mu_pp_str_immutable" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">test_mu_pp_str_immutable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="test_mu_pp_str_immutable-source">
+            <pre><span class="ruby-comment"># File vendor/bundle/ruby/3.1.0/gems/minitest-5.15.0/test/minitest/test_minitest_assertions.rb, line 1583</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_mu_pp_str_immutable</span>
+  <span class="ruby-identifier">printer</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> { <span class="ruby-identifier">extend</span> <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Assertions</span> }
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;test&quot;</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;&quot;test&quot;&#39;</span>, <span class="ruby-identifier">printer</span>.<span class="ruby-identifier">mu_pp</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
