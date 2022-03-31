@@ -163,19 +163,6 @@
 <p>optional default values</p>
         </div>
       </div>
-      <div id="attribute-i-location" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">location</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt><a href="Location.html"><code>Location</code></a>
-<dd>
-<p>the location of this node</p>
-</dd></dl>
-        </div>
-      </div>
       <div id="attribute-i-optionals" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">optionals</span><span
@@ -253,7 +240,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7870</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7594</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">requireds:</span> [],
   <span class="ruby-value">optionals:</span> [],
@@ -299,7 +286,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7901</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7625</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [
     <span class="ruby-operator">*</span><span class="ruby-identifier">requireds</span>,
@@ -348,7 +335,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7915</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7639</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>,
@@ -379,7 +366,7 @@
           <p><a href="Params.html"><code>Params</code></a> nodes are the most complicated in the tree. Occasionally you want to know if they are “empty”, which means not having any parameters declared. This logic accesses every kind of parameter and determines if it’s missing.</p>
 
           <div class="method-source-code" id="empty-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7896</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7620</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span>
   <span class="ruby-identifier">requireds</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">optionals</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">rest</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">keyword_rest</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
@@ -401,7 +388,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7929</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7653</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">parts</span> = [
     <span class="ruby-operator">*</span><span class="ruby-identifier">requireds</span>,
@@ -452,7 +439,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7963</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7687</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;params&quot;</span>)
@@ -533,7 +520,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8027</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7751</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:params</span>,

@@ -148,19 +148,6 @@
 </dd></dl>
         </div>
       </div>
-      <div id="attribute-i-location" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">location</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt><a href="Location.html"><code>Location</code></a>
-<dd>
-<p>the location of this node</p>
-</dd></dl>
-        </div>
-      </div>
     </section>
 
 
@@ -180,7 +167,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5524</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5335</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">lbrace:</span>, <span class="ruby-value">assocs:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@lbrace</span> = <span class="ruby-identifier">lbrace</span>
   <span class="ruby-ivar">@assocs</span> = <span class="ruby-identifier">assocs</span>
@@ -211,7 +198,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5531</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5342</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">lbrace</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">assocs</span>
 <span class="ruby-keyword">end</span></pre>
@@ -252,7 +239,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5537</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5348</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">lbrace:</span> <span class="ruby-identifier">lbrace</span>, <span class="ruby-value">assocs:</span> <span class="ruby-identifier">assocs</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -273,7 +260,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5541</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5352</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Assoc</span>)
     <span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>)
@@ -298,7 +285,7 @@
           
 
           <div class="method-source-code" id="format_key-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5549</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5360</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_key</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">key</span>)
   (<span class="ruby-ivar">@key_formatter</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">HashKeyFormatter</span>.<span class="ruby-identifier">for</span>(<span class="ruby-keyword">self</span>)).<span class="ruby-identifier">format_key</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">key</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -319,7 +306,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5553</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5364</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;hash&quot;</span>)
@@ -349,7 +336,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5566</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5377</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   { <span class="ruby-value">type:</span> <span class="ruby-value">:hash</span>, <span class="ruby-value">assocs:</span> <span class="ruby-identifier">assocs</span>, <span class="ruby-value">loc:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">cmts:</span> <span class="ruby-identifier">comments</span> }.<span class="ruby-identifier">to_json</span>(
     <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>

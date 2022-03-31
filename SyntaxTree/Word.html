@@ -124,19 +124,6 @@
 </dd></dl>
         </div>
       </div>
-      <div id="attribute-i-location" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">location</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt><a href="Location.html"><code>Location</code></a>
-<dd>
-<p>the location of this node</p>
-</dd></dl>
-        </div>
-      </div>
       <div id="attribute-i-parts" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">parts</span><span
@@ -171,7 +158,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11595</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">parts:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@parts</span> = <span class="ruby-identifier">parts</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -201,7 +188,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11605</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">parts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -242,7 +229,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11611</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11158</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">parts:</span> <span class="ruby-identifier">parts</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -263,7 +250,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11615</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11162</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format_each</span>(<span class="ruby-identifier">parts</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -284,7 +271,7 @@
           
 
           <div class="method-source-code" id="match-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11601</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11148</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">match?</span>(<span class="ruby-identifier">pattern</span>)
   <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">TStringContent</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-identifier">pattern</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -305,7 +292,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11619</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11166</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;word&quot;</span>)
@@ -333,7 +320,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11630</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11177</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   { <span class="ruby-value">type:</span> <span class="ruby-value">:word</span>, <span class="ruby-value">parts:</span> <span class="ruby-identifier">parts</span>, <span class="ruby-value">loc:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">cmts:</span> <span class="ruby-identifier">comments</span> }.<span class="ruby-identifier">to_json</span>(
     <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>
