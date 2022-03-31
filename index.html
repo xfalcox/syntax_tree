@@ -305,7 +305,77 @@
 </nav>
 
 <main role="main">
-<p>This is the API documentation for RDoc Documentation.
+
+<div align="center">
+  <img alt="Syntax Tree" height="400px" src="./doc/logo.svg">
+</div>
+<h1 id="label-SyntaxTree"><a href="SyntaxTree.html"><code>SyntaxTree</code></a><span><a href="#label-SyntaxTree">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="https://github.com/kddnewton/syntax_tree/actions"><img src="https://github.com/kddnewton/syntax_tree/workflows/Main/badge.svg"></a> <a href="https://rubygems.org/gems/syntax_tree"><img src="https://img.shields.io/gem/v/syntax_tree.svg"></a></p>
+
+<p>A fast Ruby parser and formatter with only standard library dependencies.</p>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Add this line to your application’s Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;syntax_tree&quot;</span>
+</pre>
+
+<p>And then execute:</p>
+
+<pre>$ bundle install</pre>
+
+<p>Or install it yourself as:</p>
+
+<pre>$ gem install syntax_tree</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>From code:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;syntax_tree&quot;</span>
+
+<span class="ruby-identifier">pp</span> <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>) <span class="ruby-comment"># print out the AST</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>) <span class="ruby-comment"># format the AST</span>
+</pre>
+
+<p>From the CLI:</p>
+
+<pre>$ stree ast program.rb
+(program
+  (statements
+    ...</pre>
+
+<p>or</p>
+
+<pre>$ stree format program.rb
+class MyClass
+  ...</pre>
+
+<p>or</p>
+
+<pre>$ stree write program.rb
+program.rb 1ms</pre>
+
+<h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake test</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/kddnewton/syntax_tree">github.com/kddnewton/syntax_tree</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="https://github.com/kddnewton/syntax_tree/blob/main/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+<h2 id="label-Code+of+Conduct">Code of Conduct<span><a href="#label-Code+of+Conduct">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Everyone interacting in the syntax_tree project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the <a href="https://github.com/kddnewton/syntax_tree/blob/main/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
+
 </main>
 
 
