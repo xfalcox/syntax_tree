@@ -1,15 +1,16 @@
-Thu, 31 Mar 2022 17:14:01 +0000
-CHANGELOG.md	Thu, 31 Mar 2022 17:13:57 +0000
-CODE_OF_CONDUCT.md	Thu, 31 Mar 2022 17:13:57 +0000
-LICENSE	Thu, 31 Mar 2022 17:13:57 +0000
-README.md	Thu, 31 Mar 2022 17:13:57 +0000
-exe/stree	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/cli.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/formatter.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/language_server/inlay_hints.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/language_server.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/node.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/parser.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/prettyprint.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree/version.rb	Thu, 31 Mar 2022 17:13:57 +0000
-lib/syntax_tree.rb	Thu, 31 Mar 2022 17:13:57 +0000
+Thu, 31 Mar 2022 22:58:55 +0000
+CHANGELOG.md	Thu, 31 Mar 2022 22:58:51 +0000
+CODE_OF_CONDUCT.md	Thu, 31 Mar 2022 22:58:51 +0000
+LICENSE	Thu, 31 Mar 2022 22:58:51 +0000
+README.md	Thu, 31 Mar 2022 22:58:51 +0000
+exe/stree	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/cli.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/formatter.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/language_server/inlay_hints.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/language_server.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/node.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/parser.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/prettyprint.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/version.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree/visitor.rb	Thu, 31 Mar 2022 22:58:51 +0000
+lib/syntax_tree.rb	Thu, 31 Mar 2022 22:58:51 +0000

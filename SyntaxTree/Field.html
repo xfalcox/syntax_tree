@@ -179,7 +179,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4971</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4996</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">parent:</span>, <span class="ruby-value">operator:</span>, <span class="ruby-value">name:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
   <span class="ruby-ivar">@operator</span> = <span class="ruby-identifier">operator</span>
@@ -211,7 +211,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4979</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5004</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">parent</span>, (<span class="ruby-identifier">operator</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">operator</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:&quot;::&quot;</span>), <span class="ruby-identifier">name</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -252,7 +252,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4985</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5010</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">parent:</span> <span class="ruby-identifier">parent</span>,
@@ -279,7 +279,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4995</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5020</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">parent</span>)
@@ -304,7 +304,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5003</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5028</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;field&quot;</span>)
@@ -338,7 +338,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5020</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5045</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:field</span>,
