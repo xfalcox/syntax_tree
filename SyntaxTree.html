@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree - RDoc Documentation</title>
+<title>module SyntaxTree - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -21,7 +21,7 @@
 <link href="./css/rdoc.css" rel="stylesheet">
 
 
-<body id="top" role="document" class="class">
+<body id="top" role="document" class="module">
 <nav role="navigation">
   <div id="project-navigation">
     <div id="home-section" role="region" title="Quick navigation" class="nav-section">
@@ -57,23 +57,7 @@
 
   <div id="class-metadata">
     
-<div id="sections-section" class="nav-section">
-  <h3>Sections</h3>
-
-  <ul class="link-list" role="directory">
-      <li><a href="#5Buntitled-5D"></a></li>
-      <li><a href="#Helper+methods">Helper methods</a></li>
-      <li><a href="#Ripper+event+handlers">Ripper event handlers</a></li>
-  </ul>
-</div>
-
     
-<div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  <p class="link">Ripper
-</div>
-
     
     
     
@@ -83,7 +67,6 @@
 
   <ul class="link-list" role="directory">
     <li ><a href="#method-c-format">::format</a>
-    <li class="calls-super" ><a href="#method-c-new">::new</a>
     <li ><a href="#method-c-parse">::parse</a>
     <li ><a href="#method-c-read">::read</a>
   </ul>
@@ -92,9 +75,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree">
-  <h1 id="class-SyntaxTree" class="class">
-    class SyntaxTree
+<main role="main" aria-labelledby="module-SyntaxTree">
+  <h1 id="module-SyntaxTree" class="module">
+    module SyntaxTree
   </h1>
 
   <section class="description">
@@ -104,84 +87,18 @@
   <section id="5Buntitled-5D" class="documentation-section">
 
 
-
-    <section class="attribute-method-details" class="method-section">
+    <section class="constants-list">
       <header>
-        <h3>Attributes</h3>
+        <h3>Constants</h3>
       </header>
-
-      <div id="attribute-i-comments" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">comments</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>Array[ <a href="SyntaxTree/Comment.html"><code>Comment</code></a> | <a href="SyntaxTree/EmbDoc.html"><code>EmbDoc</code></a> ]
-<dd>
-<p>the list of comments that have been found while</p>
-</dd></dl>
-
-<p>parsing the source.</p>
-        </div>
-      </div>
-      <div id="attribute-i-line_counts" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">line_counts</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>Array[ <a href="SyntaxTree/SingleByteString.html"><code>SingleByteString</code></a> | <a href="SyntaxTree/MultiByteString.html"><code>MultiByteString</code></a> ]
-<dd>
-<p>the list of objects that</p>
-</dd></dl>
-
-<p>represent the start of each line in character offsets</p>
-        </div>
-      </div>
-      <div id="attribute-i-lines" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">lines</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>Array[ String ]
-<dd>
-<p>the list of lines in the source</p>
-</dd></dl>
-        </div>
-      </div>
-      <div id="attribute-i-source" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">source</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>String
-<dd>
-<p>the source being parsed</p>
-</dd></dl>
-        </div>
-      </div>
-      <div id="attribute-i-tokens" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">tokens</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>Array[ untyped ]
-<dd>
-<p>a running list of tokens that have been found in the</p>
-</dd></dl>
-
-<p>source. This list changes a lot as certain nodes will “consume” these tokens to determine their bounds.</p>
-        </div>
-      </div>
+      <dl>
+        <dt id="PATTERNS">PATTERNS
+        <dd><p>The list of nodes that represent patterns inside of pattern matching so that when a pattern is being printed it knows if it’s nested.</p>
+        <dt id="VERSION">VERSION
+        <dd>
+      </dl>
     </section>
+
 
 
      <section id="public-class-5Buntitled-5D-method-details" class="method-section">
@@ -197,113 +114,16 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Parses the given source and returns the formatted source.</p>
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 291</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">source</span>)
-  <span class="ruby-identifier">output</span> = []
-
-  <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">output</span>)
+  <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, [])
   <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatter</span>)
 
   <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">flush</span>
-  <span class="ruby-identifier">output</span>.<span class="ruby-identifier">join</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">new</span><span
-            class="method-args">(source, *)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-            <div class="method-calls-super">
-              Calls superclass method
-              
-            </div>
-
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 211</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span>)
-  <span class="ruby-keyword">super</span>
-
-  <span class="ruby-comment"># We keep the source around so that we can refer back to it when we&#39;re</span>
-  <span class="ruby-comment"># generating the AST. Sometimes it&#39;s easier to just reference the source</span>
-  <span class="ruby-comment"># string when you want to check if it contains a certain character, for</span>
-  <span class="ruby-comment"># example.</span>
-  <span class="ruby-ivar">@source</span> = <span class="ruby-identifier">source</span>
-
-  <span class="ruby-comment"># Similarly, we keep the lines of the source string around to be able to</span>
-  <span class="ruby-comment"># check if certain lines contain certain characters. For example, we&#39;ll use</span>
-  <span class="ruby-comment"># this to generate the content that goes after the __END__ keyword. Or we&#39;ll</span>
-  <span class="ruby-comment"># use this to check if a comment has other content on its line.</span>
-  <span class="ruby-ivar">@lines</span> = <span class="ruby-identifier">source</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\r?\n/</span>)
-
-  <span class="ruby-comment"># This is the full set of comments that have been found by the parser. It&#39;s</span>
-  <span class="ruby-comment"># a running list. At the end of every block of statements, they will go in</span>
-  <span class="ruby-comment"># and attempt to grab any comments that are on their own line and turn them</span>
-  <span class="ruby-comment"># into regular statements. So at the end of parsing the only comments left</span>
-  <span class="ruby-comment"># in here will be comments on lines that also contain code.</span>
-  <span class="ruby-ivar">@comments</span> = []
-
-  <span class="ruby-comment"># This is the current embdoc (comments that start with =begin and end with</span>
-  <span class="ruby-comment"># =end). Since they can&#39;t be nested, there&#39;s no need for a stack here, as</span>
-  <span class="ruby-comment"># there can only be one active. These end up getting dumped into the</span>
-  <span class="ruby-comment"># comments list before getting picked up by the statements that surround</span>
-  <span class="ruby-comment"># them.</span>
-  <span class="ruby-ivar">@embdoc</span> = <span class="ruby-keyword">nil</span>
-
-  <span class="ruby-comment"># This is an optional node that can be present if the __END__ keyword is</span>
-  <span class="ruby-comment"># used in the file. In that case, this will represent the content after that</span>
-  <span class="ruby-comment"># keyword.</span>
-  <span class="ruby-ivar">@__end__</span> = <span class="ruby-keyword">nil</span>
-
-  <span class="ruby-comment"># Heredocs can actually be nested together if you&#39;re using interpolation, so</span>
-  <span class="ruby-comment"># this is a stack of heredoc nodes that are currently being created. When we</span>
-  <span class="ruby-comment"># get to the token that finishes off a heredoc node, we pop the top</span>
-  <span class="ruby-comment"># one off. If there are others surrounding it, then the body events will now</span>
-  <span class="ruby-comment"># be added to the correct nodes.</span>
-  <span class="ruby-ivar">@heredocs</span> = []
-
-  <span class="ruby-comment"># This is a running list of tokens that have fired. It&#39;s useful</span>
-  <span class="ruby-comment"># mostly for maintaining location information. For example, if you&#39;re inside</span>
-  <span class="ruby-comment"># the handle of a def event, then in order to determine where the AST node</span>
-  <span class="ruby-comment"># started, you need to look backward in the tokens to find a def</span>
-  <span class="ruby-comment"># keyword. Most of the time, when a parser event consumes one of these</span>
-  <span class="ruby-comment"># events, it will be deleted from the list. So ideally, this list stays</span>
-  <span class="ruby-comment"># pretty short over the course of parsing a source string.</span>
-  <span class="ruby-ivar">@tokens</span> = []
-
-  <span class="ruby-comment"># Here we&#39;re going to build up a list of SingleByteString or MultiByteString</span>
-  <span class="ruby-comment"># objects. They&#39;re each going to represent a string in the source. They are</span>
-  <span class="ruby-comment"># used by the `char_pos` method to determine where we are in the source</span>
-  <span class="ruby-comment"># string.</span>
-  <span class="ruby-ivar">@line_counts</span> = []
-  <span class="ruby-identifier">last_index</span> = <span class="ruby-value">0</span>
-
-  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">bytesize</span>
-      <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>)
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MultiByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>, <span class="ruby-identifier">line</span>)
-    <span class="ruby-keyword">end</span>
-
-    <span class="ruby-identifier">last_index</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span>
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-comment"># Make sure line counts is filled out with the first and last line at</span>
-  <span class="ruby-comment"># minimum so that it has something to compare against if the parser is in a</span>
-  <span class="ruby-comment"># lineno=2 state for an empty file.</span>
-  <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@line_counts</span>.<span class="ruby-identifier">empty?</span>
-  <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>)
+  <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">output</span>.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -319,12 +139,12 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Parses the given source and returns the syntax tree.</p>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 285</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">source</span>)
-  <span class="ruby-identifier">parser</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>
   <span class="ruby-identifier">response</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">error?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -345,7 +165,7 @@
           <p>Returns the source from the given filepath taking into account any potential magic encoding comments.</p>
 
           <div class="method-source-code" id="read-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 303</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">read</span>(<span class="ruby-identifier">filepath</span>)
   <span class="ruby-identifier">encoding</span> =
     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filepath</span>, <span class="ruby-string">&quot;r&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
@@ -363,47 +183,6 @@
       </div>
 
     </section>
-
-  </section>
-  <section id="Helper+methods" class="documentation-section">
-    <header class="documentation-section-title">
-      <h2>
-        Helper methods
-      </h2>
-      <span class="section-click-top">
-        <a href="#top">&uarr; top</a>
-      </span>
-    </header>
-
-
-
-
-
-  </section>
-  <section id="Ripper+event+handlers" class="documentation-section">
-    <header class="documentation-section-title">
-      <h2>
-        Ripper event handlers
-      </h2>
-      <span class="section-click-top">
-        <a href="#top">&uarr; top</a>
-      </span>
-    </header>
-
-
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-        <dt id="PATTERNS">PATTERNS
-        <dd><p>The list of nodes that represent patterns inside of pattern matching so that when a pattern is being printed it knows if it’s nested.</p>
-        <dt id="VERSION">VERSION
-        <dd>
-      </dl>
-    </section>
-
-
 
   </section>
 </main>

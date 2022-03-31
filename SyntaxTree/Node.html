@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::Period - RDoc Documentation</title>
+<title>class SyntaxTree::Node - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
+  <p class="link">Object
 </div>
 
     
@@ -72,7 +72,6 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-new">::new</a>
     <li ><a href="#method-i-child_nodes">#child_nodes</a>
     <li ><a href="#method-i-deconstruct">#deconstruct</a>
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
@@ -85,14 +84,14 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::Period">
-  <h1 id="class-SyntaxTree::Period" class="class">
-    class SyntaxTree::Period
+<main role="main" aria-labelledby="class-SyntaxTree::Node">
+  <h1 id="class-SyntaxTree::Node" class="class">
+    class SyntaxTree::Node
   </h1>
 
   <section class="description">
     
-<p><a href="Period.html"><code>Period</code></a> represents the use of the <code>.</code> operator. It is usually found in method calls.</p>
+<p>This is the parent node of all of the syntax tree nodes. It’s pretty much exclusively here to make it easier to operate with the tree in cases where you’re trying to monkey-patch or strictly type.</p>
 
   </section>
 
@@ -100,82 +99,7 @@
 
 
 
-    <section class="attribute-method-details" class="method-section">
-      <header>
-        <h3>Attributes</h3>
-      </header>
 
-      <div id="attribute-i-comments" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">comments</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>Array[ <a href="Comment.html"><code>Comment</code></a> | <a href="EmbDoc.html"><code>EmbDoc</code></a> ]
-<dd>
-<p>the comments attached to this node</p>
-</dd></dl>
-        </div>
-      </div>
-      <div id="attribute-i-location" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">location</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt><a href="Location.html"><code>Location</code></a>
-<dd>
-<p>the location of this node</p>
-</dd></dl>
-        </div>
-      </div>
-      <div id="attribute-i-value" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">value</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>String
-<dd>
-<p>the period</p>
-</dd></dl>
-        </div>
-      </div>
-    </section>
-
-
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Class Methods</h3>
-       </header>
-
-      <div id="method-c-new" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">new</span><span
-            class="method-args">(value:, location:, comments: [])</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8134</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">value:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
-  <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
-  <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
-  <span class="ruby-ivar">@comments</span> = <span class="ruby-identifier">comments</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-    </section>
 
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
@@ -193,34 +117,35 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8140</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
-  []
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
 
-        <div class="aliases">
-          Also aliased as: <a href="Period.html#method-i-deconstruct">deconstruct</a>
-        </div>
 
       </div>
 
-      <div id="method-i-deconstruct" class="method-detail method-alias">
+      <div id="method-i-deconstruct" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">deconstruct</span><span
             class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
           
 
+          <div class="method-source-code" id="deconstruct-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
         </div>
 
 
-        <div class="aliases">
-          Alias for: <a href="Period.html#method-i-child_nodes">child_nodes</a>
-        </div>
       </div>
 
       <div id="method-i-deconstruct_keys" class="method-detail ">
@@ -234,9 +159,9 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8146</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
-  { <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -255,9 +180,9 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8150</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -276,16 +201,9 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8154</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 72</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;period&quot;</span>)
-
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">value</span>)
-
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-constant">Comment</span><span class="ruby-operator">::</span><span class="ruby-constant">List</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">comments</span>))
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -304,11 +222,9 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8165</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
-  { <span class="ruby-value">type:</span> <span class="ruby-value">:period</span>, <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">loc:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">cmts:</span> <span class="ruby-identifier">comments</span> }.<span class="ruby-identifier">to_json</span>(
-    <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>
-  )
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

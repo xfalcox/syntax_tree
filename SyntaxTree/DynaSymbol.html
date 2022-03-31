@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -186,7 +186,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 5700</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4530</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">parts:</span>, <span class="ruby-value">quote:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@parts</span> = <span class="ruby-identifier">parts</span>
   <span class="ruby-ivar">@quote</span> = <span class="ruby-identifier">quote</span>
@@ -217,7 +217,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 5707</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4537</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">parts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -258,7 +258,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 5713</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4543</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">parts:</span> <span class="ruby-identifier">parts</span>, <span class="ruby-value">quote:</span> <span class="ruby-identifier">quote</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -279,7 +279,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 5717</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4547</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">opening_quote</span>, <span class="ruby-identifier">closing_quote</span> = <span class="ruby-identifier">quotes</span>(<span class="ruby-identifier">q</span>)
 
@@ -314,7 +314,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 5735</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4565</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;dyna_symbol&quot;</span>)
@@ -342,7 +342,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 5746</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4576</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:dyna_symbol</span>,

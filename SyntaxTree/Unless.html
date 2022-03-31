@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -193,7 +193,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13461</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10602</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">predicate:</span>,
   <span class="ruby-value">statements:</span>,
@@ -231,7 +231,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13475</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10616</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">predicate</span>, <span class="ruby-identifier">statements</span>, <span class="ruby-identifier">consequent</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -272,7 +272,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13481</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10622</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">predicate:</span> <span class="ruby-identifier">predicate</span>,
@@ -299,7 +299,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13491</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10632</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-constant">ConditionalFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;unless&quot;</span>, <span class="ruby-keyword">self</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -320,7 +320,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13495</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10636</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;unless&quot;</span>)
@@ -356,7 +356,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13514</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10655</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:unless</span>,

@@ -137,7 +137,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">input:</span> <span class="ruby-constant">STDIN</span>, <span class="ruby-value">output:</span> <span class="ruby-constant">STDOUT</span>)
   <span class="ruby-ivar">@input</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">binmode</span>
   <span class="ruby-ivar">@output</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">binmode</span>
@@ -166,7 +166,7 @@
           
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 19</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>
   <span class="ruby-identifier">store</span> =
     <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">uri</span><span class="ruby-operator">|</span>
@@ -186,8 +186,6 @@
     <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;shutdown&quot;</span> }
       <span class="ruby-identifier">store</span>.<span class="ruby-identifier">clear</span>
       <span class="ruby-keyword">return</span>
-    <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;textDocument/codeAction&quot;</span>, <span class="ruby-value">id:</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span> }, <span class="ruby-value">range:</span> { <span class="ruby-value">start:</span> { <span class="ruby-value">line:</span> } } } }
-      <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">result:</span> <span class="ruby-identifier">code_actions</span>(<span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>], <span class="ruby-identifier">line</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>))
     <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;textDocument/didChange&quot;</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span> }, <span class="ruby-value">contentChanges:</span> [{ <span class="ruby-value">text:</span> }, <span class="ruby-operator">*</span>] } }
       <span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>] = <span class="ruby-identifier">text</span>
     <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;textDocument/didOpen&quot;</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span>, <span class="ruby-value">text:</span> } } }
@@ -196,10 +194,8 @@
       <span class="ruby-identifier">store</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">uri</span>)
     <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;textDocument/formatting&quot;</span>, <span class="ruby-value">id:</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span> } } }
       <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">result:</span> [<span class="ruby-identifier">format</span>(<span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>])])
-    <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;syntaxTree/disasm&quot;</span>, <span class="ruby-value">id:</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span>, <span class="ruby-value">query:</span> { <span class="ruby-value">line:</span>, <span class="ruby-value">name:</span> } } } }
-      <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">result:</span> <span class="ruby-identifier">disasm</span>(<span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>], <span class="ruby-identifier">line</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">name</span>))
-    <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;syntaxTree/implicits&quot;</span>, <span class="ruby-value">id:</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span> } } }
-      <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">result:</span> <span class="ruby-identifier">implicits</span>(<span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>]))
+    <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;textDocument/inlayHints&quot;</span>, <span class="ruby-value">id:</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span> } } }
+      <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">result:</span> <span class="ruby-identifier">inlay_hints</span>(<span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>]))
     <span class="ruby-keyword">in</span> { <span class="ruby-value">method:</span> <span class="ruby-string">&quot;syntaxTree/visualizing&quot;</span>, <span class="ruby-value">id:</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">textDocument:</span> { <span class="ruby-value">uri:</span> } } }
       <span class="ruby-identifier">output</span> = []
       <span class="ruby-constant">PP</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">store</span>[<span class="ruby-identifier">uri</span>]), <span class="ruby-identifier">output</span>)

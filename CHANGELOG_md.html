@@ -60,6 +60,10 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Changelog">Changelog</a>
     <li><a href="#label-5BUnreleased-5D">[Unreleased]</a>
+    <li><a href="#label-5B2.0.0-5D+-+2022-03-31">[2.0.0] - 2022-03-31</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Removed">Removed</a>
     <li><a href="#label-1.2.0+-+2022-01-09"><a href="https://github.com/kddnewton/syntax_tree/compare/v1.1.1...v1.2.0">1.2.0</a> - 2022-01-09</a>
     <li><a href="#label-Added">Added</a>
     <li><a href="#label-1.1.1+-+2021-12-09"><a href="https://github.com/kddnewton/syntax_tree/compare/v1.1.0...v1.1.1">1.1.1</a> - 2021-12-09</a>
@@ -101,6 +105,29 @@
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
 <h2 id="label-5BUnreleased-5D">[Unreleased]<span><a href="#label-5BUnreleased-5D">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-5B2.0.0-5D+-+2022-03-31">[2.0.0] - 2022-03-31<span><a href="#label-5B2.0.0-5D+-+2022-03-31">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The new <code>SyntaxTree.register_handler</code> hook for plugins.</p>
+</li><li>
+<p>The new <code>--plugins=</code> option on the CLI.</p>
+</li></ul>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Changed <code>SyntaxTree</code> from being a class to being a module. The parser functionality is moved into <code>SyntaxTree::Parser</code>.</p>
+</li><li>
+<p>There is now a parent class for all of the nodes named <code>SyntaxTree::Node</code>.</p>
+</li><li>
+<p>The <code>Implicits</code> class has been renamed to <code>InlayHints</code> to match the new LSP spec.</p>
+</li></ul>
+
+<h3 id="label-Removed">Removed<span><a href="#label-Removed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The disassembly code action has been removed to limit the scope of this project overall.</p>
+</li></ul>
 
 <h2 id="label-1.2.0+-+2022-01-09"><a href="https://github.com/kddnewton/syntax_tree/compare/v1.1.1...v1.2.0">1.2.0</a> - 2022-01-09<span><a href="#label-1.2.0+-+2022-01-09">&para;</a> <a href="#top">&uarr;</a></span></h2>
 

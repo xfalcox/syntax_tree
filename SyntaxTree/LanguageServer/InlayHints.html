@@ -4,21 +4,21 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::Implicits - RDoc Documentation</title>
+<title>class SyntaxTree::LanguageServer::InlayHints - RDoc Documentation</title>
 
 <script type="text/javascript">
-  var rdoc_rel_prefix = "../";
-  var index_rel_prefix = "../";
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
 </script>
 
-<script src="../js/navigation.js" defer></script>
-<script src="../js/search.js" defer></script>
-<script src="../js/search_index.js" defer></script>
-<script src="../js/searcher.js" defer></script>
-<script src="../js/darkfish.js" defer></script>
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
 
-<link href="../css/fonts.css" rel="stylesheet">
-<link href="../css/rdoc.css" rel="stylesheet">
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
 
 
 <body id="top" role="document" class="class">
@@ -26,13 +26,13 @@
   <div id="project-navigation">
     <div id="home-section" role="region" title="Quick navigation" class="nav-section">
   <h2>
-    <a href="../index.html" rel="home">Home</a>
+    <a href="../../index.html" rel="home">Home</a>
   </h2>
 
   <div id="table-of-contents-navigation">
-    <a href="../table_of_contents.html#pages">Pages</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
   </div>
 </div>
 
@@ -83,9 +83,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::Implicits">
-  <h1 id="class-SyntaxTree::Implicits" class="class">
-    class SyntaxTree::Implicits
+<main role="main" aria-labelledby="class-SyntaxTree::LanguageServer::InlayHints">
+  <h1 id="class-SyntaxTree::LanguageServer::InlayHints" class="class">
+    class SyntaxTree::LanguageServer::InlayHints
   </h1>
 
   <section class="description">
@@ -140,9 +140,9 @@
           
 
           <div class="method-source-code" id="find-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/implicits.rb, line 57</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">find</span>(<span class="ruby-identifier">program</span>)
-  <span class="ruby-identifier">implicits</span> = <span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">inlay_hints</span> = <span class="ruby-identifier">new</span>
   <span class="ruby-identifier">queue</span> = [[<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">program</span>]]
 
   <span class="ruby-keyword">until</span> <span class="ruby-identifier">queue</span>.<span class="ruby-identifier">empty?</span>
@@ -154,25 +154,25 @@
 
     <span class="ruby-keyword">case</span> [<span class="ruby-identifier">parent_node</span>, <span class="ruby-identifier">child_node</span>]
     <span class="ruby-keyword">in</span> <span class="ruby-identifier">_</span>, <span class="ruby-constant">Rescue</span>[<span class="ruby-value">exception:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">bare_rescue</span>(<span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">bare_rescue</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-identifier">_</span>, <span class="ruby-constant">Assoc</span>[<span class="ruby-value">key:</span> <span class="ruby-constant">Label</span>[<span class="ruby-value">value:</span> <span class="ruby-identifier">key</span>], <span class="ruby-value">value:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">missing_hash_value</span>(<span class="ruby-identifier">key</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-1</span>], <span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">missing_hash_value</span>(<span class="ruby-identifier">key</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-1</span>], <span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Binary</span> <span class="ruby-operator">|</span> <span class="ruby-constant">IfOp</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>, <span class="ruby-constant">IfOp</span>[<span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>, <span class="ruby-constant">Binary</span>[<span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Binary</span>[<span class="ruby-value">operator:</span> <span class="ruby-identifier">parent_oper</span>], <span class="ruby-constant">Binary</span>[<span class="ruby-value">operator:</span> <span class="ruby-identifier">child_oper</span>, <span class="ruby-value">location:</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent_oper</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">child_oper</span>
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Binary</span>, <span class="ruby-constant">Unary</span>[<span class="ruby-value">operator:</span> <span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Params</span>, <span class="ruby-constant">Assign</span>[<span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">implicits</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
+      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">else</span>
       <span class="ruby-comment"># do nothing</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-identifier">implicits</span>
+  <span class="ruby-identifier">inlay_hints</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -191,7 +191,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/implicits.rb, line 7</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
   <span class="ruby-ivar">@before</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-string">+&quot;&quot;</span> }
   <span class="ruby-ivar">@after</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-string">+&quot;&quot;</span> }
@@ -217,7 +217,7 @@
         </div>
 
         <div class="method-description">
-          <p>Adds the implicitly rescued StandardError into a bare rescue clause. <a href="For.html"><code>For</code></a> example,</p>
+          <p>Adds the implicitly rescued StandardError into a bare rescue clause. <a href="../For.html"><code>For</code></a> example,</p>
 
 <pre class="ruby"><span class="ruby-keyword">begin</span>
 <span class="ruby-keyword">rescue</span>
@@ -232,7 +232,7 @@
 </pre>
 
           <div class="method-source-code" id="bare_rescue-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/implicits.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bare_rescue</span>(<span class="ruby-identifier">location</span>)
   <span class="ruby-identifier">after</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;rescue&quot;</span>.<span class="ruby-identifier">length</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; StandardError&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -250,7 +250,7 @@
         </div>
 
         <div class="method-description">
-          <p>Adds the implicitly referenced value (local variable or method call) that is added into a hash when the value of a key-value pair is omitted. <a href="For.html"><code>For</code></a> example,</p>
+          <p>Adds the implicitly referenced value (local variable or method call) that is added into a hash when the value of a key-value pair is omitted. <a href="../For.html"><code>For</code></a> example,</p>
 
 <pre class="ruby">{ <span class="ruby-value">value:</span> }
 </pre>
@@ -261,7 +261,7 @@
 </pre>
 
           <div class="method-source-code" id="missing_hash_value-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/implicits.rb, line 39</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">missing_hash_value</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">location</span>)
   <span class="ruby-identifier">after</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_char</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{key}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -279,7 +279,7 @@
         </div>
 
         <div class="method-description">
-          <p>Adds implicit parentheses around certain expressions to make it clear which subexpression will be evaluated first. <a href="For.html"><code>For</code></a> example,</p>
+          <p>Adds implicit parentheses around certain expressions to make it clear which subexpression will be evaluated first. <a href="../For.html"><code>For</code></a> example,</p>
 
 <pre class="ruby"><span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">c</span>
 </pre>
@@ -290,7 +290,7 @@
 </pre>
 
           <div class="method-source-code" id="precedence_parentheses-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/implicits.rb, line 52</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
   <span class="ruby-identifier">before</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;₍&quot;</span>
   <span class="ruby-identifier">after</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_char</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;₎&quot;</span>

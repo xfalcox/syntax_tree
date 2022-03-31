@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -166,7 +166,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 12255</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9689</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">statements:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@statements</span> = <span class="ruby-identifier">statements</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -196,7 +196,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 12261</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9695</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">statements</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -237,7 +237,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 12267</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9701</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">statements:</span> <span class="ruby-identifier">statements</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -258,7 +258,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 12271</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9705</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_line</span>
     <span class="ruby-comment"># If the contents of this embedded expression were originally on the</span>
@@ -296,7 +296,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 12292</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9726</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;string_embexpr&quot;</span>)
@@ -324,7 +324,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 12303</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9737</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:string_embexpr</span>,

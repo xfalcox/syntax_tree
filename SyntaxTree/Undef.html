@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -166,7 +166,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13383</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10535</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">symbols:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@symbols</span> = <span class="ruby-identifier">symbols</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -196,7 +196,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13389</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10541</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">symbols</span>
 <span class="ruby-keyword">end</span></pre>
@@ -237,7 +237,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13395</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10547</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">symbols:</span> <span class="ruby-identifier">symbols</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -258,7 +258,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13399</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10551</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">keyword</span> = <span class="ruby-string">&quot;undef &quot;</span>
   <span class="ruby-identifier">formatters</span> = <span class="ruby-identifier">symbols</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">symbol</span><span class="ruby-operator">|</span> <span class="ruby-constant">UndefArgumentFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">symbol</span>) }
@@ -287,7 +287,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13411</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10563</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;undef&quot;</span>)
@@ -315,7 +315,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 13422</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10574</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   { <span class="ruby-value">type:</span> <span class="ruby-value">:undef</span>, <span class="ruby-value">syms:</span> <span class="ruby-identifier">symbols</span>, <span class="ruby-value">loc:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">cmts:</span> <span class="ruby-identifier">comments</span> }.<span class="ruby-identifier">to_json</span>(
     <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>

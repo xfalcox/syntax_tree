@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -196,7 +196,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7073</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5614</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">beginning:</span>, <span class="ruby-value">ending:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">parts:</span> [], <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@beginning</span> = <span class="ruby-identifier">beginning</span>
   <span class="ruby-ivar">@ending</span> = <span class="ruby-identifier">ending</span>
@@ -228,7 +228,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7081</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5622</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">beginning</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">parts</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -269,7 +269,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7087</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5628</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">beginning:</span> <span class="ruby-identifier">beginning</span>,
@@ -296,7 +296,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7097</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5638</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-comment"># This is a very specific behavior that should probably be included in the</span>
   <span class="ruby-comment"># prettyprint module. It&#39;s when you want to force a newline, but don&#39;t</span>
@@ -344,7 +344,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7128</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5669</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;heredoc&quot;</span>)
@@ -372,7 +372,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7139</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5680</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:heredoc</span>,

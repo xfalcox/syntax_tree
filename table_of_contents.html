@@ -33,6 +33,10 @@
     <ul>
       <li><a href="CHANGELOG_md.html#label-Changelog">Changelog</a>
       <li><a href="CHANGELOG_md.html#label-5BUnreleased-5D">[Unreleased]</a>
+      <li><a href="CHANGELOG_md.html#label-5B2.0.0-5D+-+2022-03-31">[2.0.0] - 2022-03-31</a>
+      <li><a href="CHANGELOG_md.html#label-Added">Added</a>
+      <li><a href="CHANGELOG_md.html#label-Changed">Changed</a>
+      <li><a href="CHANGELOG_md.html#label-Removed">Removed</a>
       <li><a href="CHANGELOG_md.html#label-1.2.0+-+2022-01-09"><a href="https://github.com/kddnewton/syntax_tree/compare/v1.1.1...v1.2.0">1.2.0</a> - 2022-01-09</a>
       <li><a href="CHANGELOG_md.html#label-Added">Added</a>
       <li><a href="CHANGELOG_md.html#label-1.1.1+-+2021-12-09"><a href="https://github.com/kddnewton/syntax_tree/compare/v1.1.0...v1.1.1">1.1.1</a> - 2021-12-09</a>
@@ -141,7 +145,7 @@
   <li class="class">
     <a href="PrettyPrint/Trim.html">PrettyPrint::Trim</a>
   </li>
-  <li class="class">
+  <li class="module">
     <a href="SyntaxTree.html">SyntaxTree</a>
   </li>
   <li class="class">
@@ -290,12 +294,6 @@
   </li>
   <li class="class">
     <a href="SyntaxTree/ClassDeclaration.html">SyntaxTree::ClassDeclaration</a>
-  </li>
-  <li class="class">
-    <a href="SyntaxTree/CodeActions.html">SyntaxTree::CodeActions</a>
-  </li>
-  <li class="class">
-    <a href="SyntaxTree/CodeActions/DisasmAction.html">SyntaxTree::CodeActions::DisasmAction</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/Comma.html">SyntaxTree::Comma</a>
@@ -460,9 +458,6 @@
     <a href="SyntaxTree/Imaginary.html">SyntaxTree::Imaginary</a>
   </li>
   <li class="class">
-    <a href="SyntaxTree/Implicits.html">SyntaxTree::Implicits</a>
-  </li>
-  <li class="class">
     <a href="SyntaxTree/In.html">SyntaxTree::In</a>
   </li>
   <li class="class">
@@ -496,6 +491,9 @@
     <a href="SyntaxTree/LanguageServer.html">SyntaxTree::LanguageServer</a>
   </li>
   <li class="class">
+    <a href="SyntaxTree/LanguageServer/InlayHints.html">SyntaxTree::LanguageServer::InlayHints</a>
+  </li>
+  <li class="class">
     <a href="SyntaxTree/Location.html">SyntaxTree::Location</a>
   </li>
   <li class="class">
@@ -520,10 +518,10 @@
     <a href="SyntaxTree/ModuleDeclaration.html">SyntaxTree::ModuleDeclaration</a>
   </li>
   <li class="class">
-    <a href="SyntaxTree/MultiByteString.html">SyntaxTree::MultiByteString</a>
+    <a href="SyntaxTree/Next.html">SyntaxTree::Next</a>
   </li>
   <li class="class">
-    <a href="SyntaxTree/Next.html">SyntaxTree::Next</a>
+    <a href="SyntaxTree/Node.html">SyntaxTree::Node</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/Not.html">SyntaxTree::Not</a>
@@ -553,7 +551,16 @@
     <a href="SyntaxTree/Parentheses.html">SyntaxTree::Parentheses</a>
   </li>
   <li class="class">
-    <a href="SyntaxTree/ParseError.html">SyntaxTree::ParseError</a>
+    <a href="SyntaxTree/Parser.html">SyntaxTree::Parser</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/Parser/MultiByteString.html">SyntaxTree::Parser::MultiByteString</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/Parser/ParseError.html">SyntaxTree::Parser::ParseError</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/Parser/SingleByteString.html">SyntaxTree::Parser::SingleByteString</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/Period.html">SyntaxTree::Period</a>
@@ -638,9 +645,6 @@
   </li>
   <li class="class">
     <a href="SyntaxTree/SClass.html">SyntaxTree::SClass</a>
-  </li>
-  <li class="class">
-    <a href="SyntaxTree/SingleByteString.html">SyntaxTree::SingleByteString</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/Statements.html">SyntaxTree::Statements</a>
@@ -794,14 +798,9 @@
     <span class="container">SyntaxTree::ContainsAssignment</span>
 
   <li class="method">
-    <a href="SyntaxTree/CodeActions.html#method-c-find">::find</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-c-find">::find</a>
     &mdash;
-    <span class="container">SyntaxTree::CodeActions</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Implicits.html#method-c-find">::find</a>
-    &mdash;
-    <span class="container">SyntaxTree::Implicits</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/Location.html#method-c-fixed">::fixed</a>
@@ -824,14 +823,14 @@
     <span class="container">PrettyPrint::Buffer</span>
 
   <li class="method">
-    <a href="SyntaxTree.html#method-c-format">::format</a>
-    &mdash;
-    <span class="container">SyntaxTree</span>
-
-  <li class="method">
     <a href="PrettyPrint.html#method-c-format">::format</a>
     &mdash;
     <span class="container">PrettyPrint</span>
+
+  <li class="method">
+    <a href="SyntaxTree.html#method-c-format">::format</a>
+    &mdash;
+    <span class="container">SyntaxTree</span>
 
   <li class="method">
     <a href="SyntaxTree/CLI/Color.html#method-c-gray">::gray</a>
@@ -849,34 +848,29 @@
     <span class="container">SyntaxTree::Quotes</span>
 
   <li class="method">
-    <a href="SyntaxTree.html#method-c-new">::new</a>
+    <a href="SyntaxTree/CLI/Color.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">SyntaxTree</span>
-
-  <li class="method">
-    <a href="SyntaxTree/SingleByteString.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">SyntaxTree::SingleByteString</span>
-
-  <li class="method">
-    <a href="SyntaxTree/MultiByteString.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">SyntaxTree::MultiByteString</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Location.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">SyntaxTree::Location</span>
-
-  <li class="method">
-    <a href="SyntaxTree/ParseError.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">SyntaxTree::ParseError</span>
+    <span class="container">SyntaxTree::CLI::Color</span>
 
   <li class="method">
     <a href="SyntaxTree/Formatter.html#method-c-new">::new</a>
     &mdash;
     <span class="container">SyntaxTree::Formatter</span>
+
+  <li class="method">
+    <a href="SyntaxTree/LanguageServer.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::LanguageServer</span>
+
+  <li class="method">
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Location.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::Location</span>
 
   <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-c-new">::new</a>
@@ -1779,29 +1773,24 @@
     <span class="container">SyntaxTree::ZSuper</span>
 
   <li class="method">
-    <a href="SyntaxTree/CLI/Color.html#method-c-new">::new</a>
+    <a href="SyntaxTree/Parser.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">SyntaxTree::CLI::Color</span>
+    <span class="container">SyntaxTree::Parser</span>
 
   <li class="method">
-    <a href="SyntaxTree/CodeActions.html#method-c-new">::new</a>
+    <a href="SyntaxTree/Parser/ParseError.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">SyntaxTree::CodeActions</span>
+    <span class="container">SyntaxTree::Parser::ParseError</span>
 
   <li class="method">
-    <a href="SyntaxTree/CodeActions/DisasmAction.html#method-c-new">::new</a>
+    <a href="SyntaxTree/Parser/SingleByteString.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">SyntaxTree::CodeActions::DisasmAction</span>
+    <span class="container">SyntaxTree::Parser::SingleByteString</span>
 
   <li class="method">
-    <a href="SyntaxTree/Implicits.html#method-c-new">::new</a>
+    <a href="SyntaxTree/Parser/MultiByteString.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">SyntaxTree::Implicits</span>
-
-  <li class="method">
-    <a href="SyntaxTree/LanguageServer.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">SyntaxTree::LanguageServer</span>
+    <span class="container">SyntaxTree::Parser::MultiByteString</span>
 
   <li class="method">
     <a href="PrettyPrint.html#method-c-new">::new</a>
@@ -1894,6 +1883,11 @@
     <span class="container">SyntaxTree::CLI::Color</span>
 
   <li class="method">
+    <a href="SyntaxTree/CLI.html#method-c-register_handler">::register_handler</a>
+    &mdash;
+    <span class="container">SyntaxTree::CLI</span>
+
+  <li class="method">
     <a href="SyntaxTree/CLI.html#method-c-run">::run</a>
     &mdash;
     <span class="container">SyntaxTree::CLI</span>
@@ -1929,14 +1923,14 @@
     <span class="container">SyntaxTree::Location</span>
 
   <li class="method">
-    <a href="SyntaxTree/SingleByteString.html#method-i-5B-5D">#[]</a>
+    <a href="SyntaxTree/Parser/SingleByteString.html#method-i-5B-5D">#[]</a>
     &mdash;
-    <span class="container">SyntaxTree::SingleByteString</span>
+    <span class="container">SyntaxTree::Parser::SingleByteString</span>
 
   <li class="method">
-    <a href="SyntaxTree/MultiByteString.html#method-i-5B-5D">#[]</a>
+    <a href="SyntaxTree/Parser/MultiByteString.html#method-i-5B-5D">#[]</a>
     &mdash;
-    <span class="container">SyntaxTree::MultiByteString</span>
+    <span class="container">SyntaxTree::Parser::MultiByteString</span>
 
   <li class="method">
     <a href="PrettyPrint/Text.html#method-i-add">#add</a>
@@ -1949,14 +1943,9 @@
     <span class="container">PrettyPrint::IndentLevel</span>
 
   <li class="method">
-    <a href="SyntaxTree/CodeActions/DisasmAction.html#method-i-as_json">#as_json</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-bare_rescue">#bare_rescue</a>
     &mdash;
-    <span class="container">SyntaxTree::CodeActions::DisasmAction</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Implicits.html#method-i-bare_rescue">#bare_rescue</a>
-    &mdash;
-    <span class="container">SyntaxTree::Implicits</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/BodyStmt.html#method-i-bind">#bind</a>
@@ -2007,6 +1996,11 @@
     <a href="PrettyPrint/SingleLine.html#method-i-breakable">#breakable</a>
     &mdash;
     <span class="container">PrettyPrint::SingleLine</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Node.html#method-i-child_nodes">#child_nodes</a>
+    &mdash;
+    <span class="container">SyntaxTree::Node</span>
 
   <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-i-child_nodes">#child_nodes</a>
@@ -2759,6 +2753,11 @@
     <span class="container">PrettyPrint</span>
 
   <li class="method">
+    <a href="SyntaxTree/Node.html#method-i-deconstruct">#deconstruct</a>
+    &mdash;
+    <span class="container">SyntaxTree::Node</span>
+
+  <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-i-deconstruct">#deconstruct</a>
     &mdash;
     <span class="container">SyntaxTree::BEGINBlock</span>
@@ -3442,6 +3441,11 @@
     <a href="SyntaxTree/ZSuper.html#method-i-deconstruct">#deconstruct</a>
     &mdash;
     <span class="container">SyntaxTree::ZSuper</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Node.html#method-i-deconstruct_keys">#deconstruct_keys</a>
+    &mdash;
+    <span class="container">SyntaxTree::Node</span>
 
   <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-i-deconstruct_keys">#deconstruct_keys</a>
@@ -4129,11 +4133,6 @@
     <span class="container">SyntaxTree::ZSuper</span>
 
   <li class="method">
-    <a href="SyntaxTree/CodeActions.html#method-i-disasm">#disasm</a>
-    &mdash;
-    <span class="container">SyntaxTree::CodeActions</span>
-
-  <li class="method">
     <a href="SyntaxTree/BodyStmt.html#method-i-empty-3F">#empty?</a>
     &mdash;
     <span class="container">SyntaxTree::BodyStmt</span>
@@ -4192,6 +4191,11 @@
     <a href="SyntaxTree/Formatter.html#method-i-format">#format</a>
     &mdash;
     <span class="container">SyntaxTree::Formatter</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Node.html#method-i-format">#format</a>
+    &mdash;
+    <span class="container">SyntaxTree::Node</span>
 
   <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-i-format">#format</a>
@@ -5099,9 +5103,9 @@
     <span class="container">SyntaxTree::Word</span>
 
   <li class="method">
-    <a href="SyntaxTree/Implicits.html#method-i-missing_hash_value">#missing_hash_value</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-missing_hash_value">#missing_hash_value</a>
     &mdash;
-    <span class="container">SyntaxTree::Implicits</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="PrettyPrint.html#method-i-nest">#nest</a>
@@ -5124,9 +5128,14 @@
     <span class="container">SyntaxTree::Formatter</span>
 
   <li class="method">
-    <a href="SyntaxTree/Implicits.html#method-i-precedence_parentheses">#precedence_parentheses</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-precedence_parentheses">#precedence_parentheses</a>
     &mdash;
-    <span class="container">SyntaxTree::Implicits</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Node.html#method-i-pretty_print">#pretty_print</a>
+    &mdash;
+    <span class="container">SyntaxTree::Node</span>
 
   <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-i-pretty_print">#pretty_print</a>
@@ -5937,6 +5946,11 @@
     <a href="SyntaxTree/Location.html#method-i-to_json">#to_json</a>
     &mdash;
     <span class="container">SyntaxTree::Location</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Node.html#method-i-to_json">#to_json</a>
+    &mdash;
+    <span class="container">SyntaxTree::Node</span>
 
   <li class="method">
     <a href="SyntaxTree/BEGINBlock.html#method-i-to_json">#to_json</a>

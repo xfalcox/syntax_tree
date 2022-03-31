@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -192,7 +192,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 3293</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2520</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">lbrace:</span>, <span class="ruby-value">block_var:</span>, <span class="ruby-value">statements:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@lbrace</span> = <span class="ruby-identifier">lbrace</span>
   <span class="ruby-ivar">@block_var</span> = <span class="ruby-identifier">block_var</span>
@@ -224,7 +224,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 3301</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2528</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">lbrace</span>, <span class="ruby-identifier">block_var</span>, <span class="ruby-identifier">statements</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -265,7 +265,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 3307</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2534</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">lbrace:</span> <span class="ruby-identifier">lbrace</span>,
@@ -292,7 +292,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 3317</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2544</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-constant">BlockFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">lbrace</span>, <span class="ruby-string">&quot;}&quot;</span>, <span class="ruby-identifier">statements</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -313,7 +313,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 3321</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2548</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;brace_block&quot;</span>)
@@ -346,7 +346,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 3337</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2564</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:brace_block</span>,

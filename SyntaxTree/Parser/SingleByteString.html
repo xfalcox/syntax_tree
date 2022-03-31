@@ -4,21 +4,21 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::SingleByteString - RDoc Documentation</title>
+<title>class SyntaxTree::Parser::SingleByteString - RDoc Documentation</title>
 
 <script type="text/javascript">
-  var rdoc_rel_prefix = "../";
-  var index_rel_prefix = "../";
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
 </script>
 
-<script src="../js/navigation.js" defer></script>
-<script src="../js/search.js" defer></script>
-<script src="../js/search_index.js" defer></script>
-<script src="../js/searcher.js" defer></script>
-<script src="../js/darkfish.js" defer></script>
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
 
-<link href="../css/fonts.css" rel="stylesheet">
-<link href="../css/rdoc.css" rel="stylesheet">
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
 
 
 <body id="top" role="document" class="class">
@@ -26,13 +26,13 @@
   <div id="project-navigation">
     <div id="home-section" role="region" title="Quick navigation" class="nav-section">
   <h2>
-    <a href="../index.html" rel="home">Home</a>
+    <a href="../../index.html" rel="home">Home</a>
   </h2>
 
   <div id="table-of-contents-navigation">
-    <a href="../table_of_contents.html#pages">Pages</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
   </div>
 </div>
 
@@ -80,14 +80,14 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::SingleByteString">
-  <h1 id="class-SyntaxTree::SingleByteString" class="class">
-    class SyntaxTree::SingleByteString
+<main role="main" aria-labelledby="class-SyntaxTree::Parser::SingleByteString">
+  <h1 id="class-SyntaxTree::Parser::SingleByteString" class="class">
+    class SyntaxTree::Parser::SingleByteString
   </h1>
 
   <section class="description">
     
-<p>Represents a line in the source. <a href="If.html"><code>If</code></a> this class is being used, it means that every character in the string is 1 byte in length, so we can just return the start of the line + the index.</p>
+<p>Represents a line in the source. <a href="../If.html"><code>If</code></a> this class is being used, it means that every character in the string is 1 byte in length, so we can just return the start of the line + the index.</p>
 
   </section>
 
@@ -129,7 +129,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/parser.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">start</span>)
   <span class="ruby-ivar">@start</span> = <span class="ruby-identifier">start</span>
 <span class="ruby-keyword">end</span></pre>
@@ -157,7 +157,7 @@
           
 
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 35</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/parser.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">byteindex</span>)
   <span class="ruby-identifier">start</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">byteindex</span>
 <span class="ruby-keyword">end</span></pre>

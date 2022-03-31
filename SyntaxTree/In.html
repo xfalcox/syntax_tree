@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -194,7 +194,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 8038</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6447</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">pattern:</span>, <span class="ruby-value">statements:</span>, <span class="ruby-value">consequent:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@pattern</span> = <span class="ruby-identifier">pattern</span>
   <span class="ruby-ivar">@statements</span> = <span class="ruby-identifier">statements</span>
@@ -226,7 +226,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 8046</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6455</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">statements</span>, <span class="ruby-identifier">consequent</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -267,7 +267,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 8052</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6461</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">pattern:</span> <span class="ruby-identifier">pattern</span>,
@@ -294,7 +294,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 8062</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6471</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">keyword</span> = <span class="ruby-string">&quot;in &quot;</span>
 
@@ -332,7 +332,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 8083</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6492</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;in&quot;</span>)
@@ -368,7 +368,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 8102</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6511</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:in</span>,

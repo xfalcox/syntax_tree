@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class SyntaxTree::Parser - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+<div id="sections-section" class="nav-section">
+  <h3>Sections</h3>
+
+  <ul class="link-list" role="directory">
+      <li><a href="#5Buntitled-5D"></a></li>
+      <li><a href="#Helper+methods">Helper methods</a></li>
+      <li><a href="#Ripper+event+handlers">Ripper event handlers</a></li>
+  </ul>
+</div>
+
+    
+<div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  <p class="link">Ripper
+</div>
+
+    
+    
+    
+<!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-SyntaxTree::Parser">
+  <h1 id="class-SyntaxTree::Parser" class="class">
+    class SyntaxTree::Parser
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  <section id="5Buntitled-5D" class="documentation-section">
+
+
+
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      <div id="attribute-i-comments" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">comments</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>Array[ <a href="Comment.html"><code>Comment</code></a> | <a href="EmbDoc.html"><code>EmbDoc</code></a> ]
+<dd>
+<p>the list of comments that have been found</p>
+</dd></dl>
+
+<p>while parsing the source.</p>
+        </div>
+      </div>
+      <div id="attribute-i-line_counts" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">line_counts</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>Array[ <a href="Parser/SingleByteString.html"><code>SingleByteString</code></a> | <a href="Parser/MultiByteString.html"><code>MultiByteString</code></a> ]
+<dd>
+<p>the list of objects that</p>
+</dd></dl>
+
+<p>represent the start of each line in character offsets</p>
+        </div>
+      </div>
+      <div id="attribute-i-lines" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">lines</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>Array[ String ]
+<dd>
+<p>the list of lines in the source</p>
+</dd></dl>
+        </div>
+      </div>
+      <div id="attribute-i-source" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">source</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>the source being parsed</p>
+</dd></dl>
+        </div>
+      </div>
+      <div id="attribute-i-tokens" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tokens</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>Array[ untyped ]
+<dd>
+<p>a running list of tokens that have been found in the</p>
+</dd></dl>
+
+<p>source. This list changes a lot as certain nodes will “consume” these tokens to determine their bounds.</p>
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(source, *)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/parser.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span>)
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-comment"># We keep the source around so that we can refer back to it when we&#39;re</span>
+  <span class="ruby-comment"># generating the AST. Sometimes it&#39;s easier to just reference the source</span>
+  <span class="ruby-comment"># string when you want to check if it contains a certain character, for</span>
+  <span class="ruby-comment"># example.</span>
+  <span class="ruby-ivar">@source</span> = <span class="ruby-identifier">source</span>
+
+  <span class="ruby-comment"># Similarly, we keep the lines of the source string around to be able to</span>
+  <span class="ruby-comment"># check if certain lines contain certain characters. For example, we&#39;ll</span>
+  <span class="ruby-comment"># use this to generate the content that goes after the __END__ keyword.</span>
+  <span class="ruby-comment"># Or we&#39;ll use this to check if a comment has other content on its line.</span>
+  <span class="ruby-ivar">@lines</span> = <span class="ruby-identifier">source</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\r?\n/</span>)
+
+  <span class="ruby-comment"># This is the full set of comments that have been found by the parser.</span>
+  <span class="ruby-comment"># It&#39;s a running list. At the end of every block of statements, they will</span>
+  <span class="ruby-comment"># go in and attempt to grab any comments that are on their own line and</span>
+  <span class="ruby-comment"># turn them into regular statements. So at the end of parsing the only</span>
+  <span class="ruby-comment"># comments left in here will be comments on lines that also contain code.</span>
+  <span class="ruby-ivar">@comments</span> = []
+
+  <span class="ruby-comment"># This is the current embdoc (comments that start with =begin and end with</span>
+  <span class="ruby-comment"># =end). Since they can&#39;t be nested, there&#39;s no need for a stack here, as</span>
+  <span class="ruby-comment"># there can only be one active. These end up getting dumped into the</span>
+  <span class="ruby-comment"># comments list before getting picked up by the statements that surround</span>
+  <span class="ruby-comment"># them.</span>
+  <span class="ruby-ivar">@embdoc</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-comment"># This is an optional node that can be present if the __END__ keyword is</span>
+  <span class="ruby-comment"># used in the file. In that case, this will represent the content after</span>
+  <span class="ruby-comment"># that keyword.</span>
+  <span class="ruby-ivar">@__end__</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-comment"># Heredocs can actually be nested together if you&#39;re using interpolation,</span>
+  <span class="ruby-comment"># so this is a stack of heredoc nodes that are currently being created.</span>
+  <span class="ruby-comment"># When we get to the token that finishes off a heredoc node, we pop the</span>
+  <span class="ruby-comment"># top one off. If there are others surrounding it, then the body events</span>
+  <span class="ruby-comment"># will now be added to the correct nodes.</span>
+  <span class="ruby-ivar">@heredocs</span> = []
+
+  <span class="ruby-comment"># This is a running list of tokens that have fired. It&#39;s useful mostly for</span>
+  <span class="ruby-comment"># maintaining location information. For example, if you&#39;re inside the</span>
+  <span class="ruby-comment"># handle of a def event, then in order to determine where the AST node</span>
+  <span class="ruby-comment"># started, you need to look backward in the tokens to find a def keyword.</span>
+  <span class="ruby-comment"># Most of the time, when a parser event consumes one of these events, it</span>
+  <span class="ruby-comment"># will be deleted from the list. So ideally, this list stays pretty short</span>
+  <span class="ruby-comment"># over the course of parsing a source string.</span>
+  <span class="ruby-ivar">@tokens</span> = []
+
+  <span class="ruby-comment"># Here we&#39;re going to build up a list of SingleByteString or</span>
+  <span class="ruby-comment"># MultiByteString objects. They&#39;re each going to represent a string in the</span>
+  <span class="ruby-comment"># source. They are used by the `char_pos` method to determine where we are</span>
+  <span class="ruby-comment"># in the source string.</span>
+  <span class="ruby-ivar">@line_counts</span> = []
+  <span class="ruby-identifier">last_index</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">bytesize</span>
+      <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MultiByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>, <span class="ruby-identifier">line</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">last_index</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Make sure line counts is filled out with the first and last line at</span>
+  <span class="ruby-comment"># minimum so that it has something to compare against if the parser is in</span>
+  <span class="ruby-comment"># a lineno=2 state for an empty file.</span>
+  <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@line_counts</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </section>
+  <section id="Helper+methods" class="documentation-section">
+    <header class="documentation-section-title">
+      <h2>
+        Helper methods
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">&uarr; top</a>
+      </span>
+    </header>
+
+
+
+
+
+  </section>
+  <section id="Ripper+event+handlers" class="documentation-section">
+    <header class="documentation-section-title">
+      <h2>
+        Ripper event handlers
+      </h2>
+      <span class="section-click-top">
+        <a href="#top">&uarr; top</a>
+      </span>
+    </header>
+
+
+
+
+
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link"><a href="Node.html">SyntaxTree::Node</a>
 </div>
 
     
@@ -179,7 +179,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7883</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6321</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">statement:</span>, <span class="ruby-value">predicate:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@statement</span> = <span class="ruby-identifier">statement</span>
   <span class="ruby-ivar">@predicate</span> = <span class="ruby-identifier">predicate</span>
@@ -210,7 +210,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7890</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6328</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">predicate</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -251,7 +251,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7896</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6334</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">statement:</span> <span class="ruby-identifier">statement</span>,
@@ -277,7 +277,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7905</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6343</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-constant">ConditionalModFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;if&quot;</span>, <span class="ruby-keyword">self</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -298,7 +298,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7909</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6347</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;if_mod&quot;</span>)
@@ -329,7 +329,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 7923</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6361</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:if_mod</span>,

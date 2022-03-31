@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::CodeActions::DisasmAction - RDoc Documentation</title>
+<title>class SyntaxTree::Parser::ParseError - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link">StandardError
 </div>
 
     
@@ -72,21 +72,22 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-new">::new</a>
-    <li ><a href="#method-i-as_json">#as_json</a>
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::CodeActions::DisasmAction">
-  <h1 id="class-SyntaxTree::CodeActions::DisasmAction" class="class">
-    class SyntaxTree::CodeActions::DisasmAction
+<main role="main" aria-labelledby="class-SyntaxTree::Parser::ParseError">
+  <h1 id="class-SyntaxTree::Parser::ParseError" class="class">
+    class SyntaxTree::Parser::ParseError
   </h1>
 
   <section class="description">
     
+<p>A special parser error so that we can get nice syntax displays on the error message when prettier prints out the results.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -98,9 +99,9 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-line" class="method-detail">
+      <div id="attribute-i-column" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">line</span><span
+          <span class="method-name">column</span><span
             class="attribute-access-type">[R]</span>
         </div>
 
@@ -108,9 +109,9 @@
         
         </div>
       </div>
-      <div id="attribute-i-node" class="method-detail">
+      <div id="attribute-i-lineno" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">node</span><span
+          <span class="method-name">lineno</span><span
             class="attribute-access-type">[R]</span>
         </div>
 
@@ -129,50 +130,23 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(line, node)</span>
+            class="method-args">(error, lineno, column)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
           
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/code_actions.rb, line 8</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">node</span>)
-  <span class="ruby-ivar">@line</span> = <span class="ruby-identifier">line</span>
-  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-    </section>
-
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-      <div id="method-i-as_json" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">as_json</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="as_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/code_actions.rb, line 13</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_json</span>
-  {
-    <span class="ruby-value">title:</span> <span class="ruby-node">&quot;Disasm #{node.name.value}&quot;</span>,
-    <span class="ruby-value">command:</span> <span class="ruby-string">&quot;syntaxTree.disasm&quot;</span>,
-    <span class="ruby-value">arguments:</span> [<span class="ruby-identifier">line</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">value</span>]
-  }
+            <pre><span class="ruby-comment"># File lib/syntax_tree/parser.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">error</span>, <span class="ruby-identifier">lineno</span>, <span class="ruby-identifier">column</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">error</span>)
+  <span class="ruby-ivar">@lineno</span> = <span class="ruby-identifier">lineno</span>
+  <span class="ruby-ivar">@column</span> = <span class="ruby-identifier">column</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
