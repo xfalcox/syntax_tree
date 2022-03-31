@@ -66,7 +66,6 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-register_handler">::register_handler</a>
     <li ><a href="#method-c-run">::run</a>
   </ul>
 </div>
@@ -91,8 +90,6 @@
         <h3>Constants</h3>
       </header>
       <dl>
-        <dt id="HANDLERS">HANDLERS
-        <dd><p>This holds references to objects that respond to both parse and format so that we can use them in the <a href="CLI.html"><code>CLI</code></a>.</p>
         <dt id="HELP">HELP
         <dd><p>The help message displayed if the input arguments are not correctly ordered or formatted.</p>
       </dl>
@@ -105,27 +102,6 @@
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-register_handler" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">register_handler</span><span
-            class="method-args">(extension, handler)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>This is a hook provided so that plugins can register themselves as the handler for a particular file type.</p>
-
-          <div class="method-source-code" id="register_handler-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 12</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">register_handler</span>(<span class="ruby-identifier">extension</span>, <span class="ruby-identifier">handler</span>)
-  <span class="ruby-constant">HANDLERS</span>[<span class="ruby-identifier">extension</span>] = <span class="ruby-identifier">handler</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
       <div id="method-c-run" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">run</span><span
@@ -137,7 +113,7 @@
           <p>Run the <a href="CLI.html"><code>CLI</code></a> over the given array of strings that make up the arguments passed to the invocation.</p>
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 189</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 178</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">argv</span>)
   <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">argv</span>
 

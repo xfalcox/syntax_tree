@@ -143,7 +143,7 @@
           
 
           <div class="method-source-code" id="bold-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">bold</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;1&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -164,7 +164,7 @@
           
 
           <div class="method-source-code" id="gray-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">gray</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;38;5;102&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -185,7 +185,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 20</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">code</span>)
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
   <span class="ruby-ivar">@code</span> = <span class="ruby-identifier">code</span>
@@ -207,7 +207,7 @@
           
 
           <div class="method-source-code" id="red-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">red</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;1;31&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -228,7 +228,7 @@
           
 
           <div class="method-source-code" id="yellow-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">yellow</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;33&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -256,7 +256,7 @@
           
 
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-node">&quot;\033[#{code}m#{value}\033[0m&quot;</span>
 <span class="ruby-keyword">end</span></pre>

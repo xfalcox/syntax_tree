@@ -114,7 +114,7 @@
           
 
           <div class="method-source-code" id="failure-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 82</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">failure</span>
   <span class="ruby-identifier">warn</span>(<span class="ruby-string">&quot;The listed files did not match the expected format.&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -135,7 +135,7 @@
           
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnformattedError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">source</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>)
 <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span>
@@ -159,7 +159,7 @@
           
 
           <div class="method-source-code" id="success-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 78</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">success</span>
   <span class="ruby-identifier">puts</span>(<span class="ruby-string">&quot;All files matched expected format.&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
