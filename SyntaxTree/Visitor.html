@@ -331,7 +331,7 @@
           <div class="method-source-code" id="visit-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit</span>(<span class="ruby-identifier">node</span>)
-  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">accept</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">node</span>&amp;.<span class="ruby-identifier">accept</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -845,7 +845,7 @@
           <div class="method-source-code" id="visit_child_nodes-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_child_nodes</span>(<span class="ruby-identifier">node</span>)
-  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">child_nodes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child_node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">child_node</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">child_node</span> }
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">child_nodes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child_node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">child_node</span>) }
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
