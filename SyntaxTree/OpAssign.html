@@ -73,6 +73,7 @@
 
   <ul class="link-list" role="directory">
     <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-accept">#accept</a>
     <li ><a href="#method-i-child_nodes">#child_nodes</a>
     <li ><a href="#method-i-deconstruct">#deconstruct</a>
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
@@ -181,7 +182,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7392</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7736</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">target:</span>, <span class="ruby-value">operator:</span>, <span class="ruby-value">value:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@target</span> = <span class="ruby-identifier">target</span>
   <span class="ruby-ivar">@operator</span> = <span class="ruby-identifier">operator</span>
@@ -202,6 +203,27 @@
          <h3>Public Instance Methods</h3>
        </header>
 
+      <div id="method-i-accept" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">accept</span><span
+            class="method-args">(visitor)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="accept-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7744</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
+  <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_op_assign</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-i-child_nodes" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">child_nodes</span><span
@@ -213,7 +235,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7400</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7748</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">target</span>, <span class="ruby-identifier">operator</span>, <span class="ruby-identifier">value</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -254,7 +276,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7406</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7754</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">target:</span> <span class="ruby-identifier">target</span>,
@@ -281,7 +303,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7416</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7764</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">target</span>)
@@ -310,7 +332,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7428</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7776</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;opassign&quot;</span>)
@@ -344,7 +366,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7445</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7793</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:opassign</span>,

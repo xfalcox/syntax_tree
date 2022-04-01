@@ -72,8 +72,7 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-inherited">::inherited</a>
-    <li ><a href="#method-c-visit_method_name">::visit_method_name</a>
+    <li ><a href="#method-i-accept">#accept</a>
     <li ><a href="#method-i-child_nodes">#child_nodes</a>
     <li ><a href="#method-i-deconstruct">#deconstruct</a>
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
@@ -122,74 +121,31 @@
     </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
-         <h3>Public Class Methods</h3>
+         <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-c-inherited" class="method-detail ">
+      <div id="method-i-accept" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">inherited</span><span
-            class="method-args">(child)</span>
+          <span class="method-name">accept</span><span
+            class="method-args">(visitor)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
           
 
-          <div class="method-source-code" id="inherited-source">
+          <div class="method-source-code" id="accept-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 61</span>
-    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">inherited</span>(<span class="ruby-identifier">child</span>)
-      <span class="ruby-identifier">child</span>.<span class="ruby-identifier">class_eval</span>(<span class="ruby-identifier">&lt;&lt;~EOS</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__LINE__</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
-<span class="ruby-value">        def accept(visitor)
-          visitor.#{child.visit_method_name}(self)
-        end
-</span><span class="ruby-identifier">      EOS</span>
-
-      <span class="ruby-constant">Visitor</span>.<span class="ruby-identifier">class_eval</span>(<span class="ruby-identifier">&lt;&lt;~EOS</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__LINE__</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
-<span class="ruby-value">        def #{child.visit_method_name}(node)
-          visit_all(node.child_nodes)
-        end
-</span><span class="ruby-identifier">      EOS</span>
-    <span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-c-visit_method_name" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">visit_method_name</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="visit_method_name-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 75</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">visit_method_name</span>
-  <span class="ruby-identifier">method_suffix</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;::&quot;</span>).<span class="ruby-identifier">last</span>
-  <span class="ruby-identifier">method_suffix</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([A-Z\d]+)([A-Z][a-z])/</span>, <span class="ruby-string">&#39;\1_\2&#39;</span>)
-  <span class="ruby-identifier">method_suffix</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([a-z\d])([A-Z])/</span>, <span class="ruby-string">&#39;\1_\2&#39;</span>)
-  <span class="ruby-identifier">method_suffix</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-string">&quot;_&quot;</span>)
-  <span class="ruby-identifier">method_suffix</span>.<span class="ruby-identifier">downcase!</span>
-  <span class="ruby-node">&quot;visit_#{method_suffix}&quot;</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
 
 
       </div>
-
-    </section>
-
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
 
       <div id="method-i-child_nodes" class="method-detail ">
         <div class="method-heading">
@@ -202,7 +158,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 84</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -223,7 +179,7 @@
           
 
           <div class="method-source-code" id="deconstruct-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 88</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -244,7 +200,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 92</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -265,7 +221,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 96</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -286,7 +242,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 100</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -307,7 +263,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 104</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>

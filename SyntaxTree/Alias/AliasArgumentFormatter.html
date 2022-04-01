@@ -131,7 +131,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 392</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 389</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">argument</span>)
   <span class="ruby-ivar">@argument</span> = <span class="ruby-identifier">argument</span>
 <span class="ruby-keyword">end</span></pre>
@@ -159,7 +159,7 @@
           
 
           <div class="method-source-code" id="comments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 396</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 393</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comments</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SymbolLiteral</span>)
     <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">comments</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">comments</span>
@@ -184,7 +184,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 404</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 401</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SymbolLiteral</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">argument</span>.<span class="ruby-identifier">value</span>)
