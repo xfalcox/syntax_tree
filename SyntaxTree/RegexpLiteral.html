@@ -182,7 +182,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8759</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8795</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">beginning:</span>, <span class="ruby-value">ending:</span>, <span class="ruby-value">parts:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@beginning</span> = <span class="ruby-identifier">beginning</span>
   <span class="ruby-ivar">@ending</span> = <span class="ruby-identifier">ending</span>
@@ -214,7 +214,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8767</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8803</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_regexp_literal</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -235,7 +235,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8771</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8807</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">parts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -276,7 +276,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8777</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8813</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">beginning:</span> <span class="ruby-identifier">beginning</span>,
@@ -303,7 +303,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8787</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8823</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">braces</span> = <span class="ruby-identifier">ambiguous?</span>(<span class="ruby-identifier">q</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">include?</span>(<span class="ruby-regexp">%r{\/}</span>)
 
@@ -360,7 +360,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8827</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8863</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;regexp_literal&quot;</span>)
@@ -388,7 +388,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8838</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8874</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:regexp_literal</span>,

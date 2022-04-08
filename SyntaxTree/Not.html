@@ -167,7 +167,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10521</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10557</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">statement:</span>, <span class="ruby-value">parentheses:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@statement</span> = <span class="ruby-identifier">statement</span>
   <span class="ruby-ivar">@parentheses</span> = <span class="ruby-identifier">parentheses</span>
@@ -198,7 +198,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10528</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10564</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_not</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -219,7 +219,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10532</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10568</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">statement</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -260,7 +260,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10538</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10574</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">statement:</span> <span class="ruby-identifier">statement</span>,
@@ -286,7 +286,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10547</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10583</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">parentheses</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;not(&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;not &quot;</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statement</span>)
@@ -309,7 +309,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10553</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10589</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;not&quot;</span>)
@@ -337,7 +337,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10564</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10600</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:not</span>,
