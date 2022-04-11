@@ -151,6 +151,19 @@
 </dd></dl>
         </div>
       </div>
+      <div id="attribute-i-keyword" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">keyword</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt><a href="Kw.html"><code>Kw</code></a>
+<dd>
+<p>the rescue keyword</p>
+</dd></dl>
+        </div>
+      </div>
       <div id="attribute-i-statements" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">statements</span><span
@@ -175,7 +188,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">( exception:, statements:, consequent:, location:, comments: [] )</span>
+            class="method-args">( keyword:, exception:, statements:, consequent:, location:, comments: [] )</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -183,14 +196,16 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9008</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9028</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
+  <span class="ruby-value">keyword:</span>,
   <span class="ruby-value">exception:</span>,
   <span class="ruby-value">statements:</span>,
   <span class="ruby-value">consequent:</span>,
   <span class="ruby-value">location:</span>,
   <span class="ruby-value">comments:</span> []
 )
+  <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">keyword</span>
   <span class="ruby-ivar">@exception</span> = <span class="ruby-identifier">exception</span>
   <span class="ruby-ivar">@statements</span> = <span class="ruby-identifier">statements</span>
   <span class="ruby-ivar">@consequent</span> = <span class="ruby-identifier">consequent</span>
@@ -221,7 +236,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9039</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9061</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_rescue</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -242,7 +257,7 @@
           
 
           <div class="method-source-code" id="bind_end-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9022</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9044</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind_end</span>(<span class="ruby-identifier">end_char</span>)
   <span class="ruby-ivar">@location</span> =
     <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(
@@ -276,9 +291,9 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9043</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9065</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
-  [<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">statements</span>, <span class="ruby-identifier">consequent</span>]
+  [<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">statements</span>, <span class="ruby-identifier">consequent</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -317,9 +332,10 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9049</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9071</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
+    <span class="ruby-value">keyword:</span> <span class="ruby-identifier">keyword</span>,
     <span class="ruby-value">exception:</span> <span class="ruby-identifier">exception</span>,
     <span class="ruby-value">statements:</span> <span class="ruby-identifier">statements</span>,
     <span class="ruby-value">consequent:</span> <span class="ruby-identifier">consequent</span>,
@@ -344,13 +360,13 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9059</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9082</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;rescue&quot;</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">keyword</span>)
 
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">nest</span>(<span class="ruby-string">&quot;rescue &quot;</span>.<span class="ruby-identifier">length</span>) { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">exception</span>) }
+      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">nest</span>(<span class="ruby-identifier">keyword</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>) { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">exception</span>) }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; StandardError&quot;</span>)
     <span class="ruby-keyword">end</span>
@@ -385,7 +401,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9083</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;rescue&quot;</span>)
@@ -423,7 +439,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9104</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9127</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:rescue</span>,

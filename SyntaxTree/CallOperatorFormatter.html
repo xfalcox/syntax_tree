@@ -137,7 +137,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2731</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2739</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">operator</span>)
   <span class="ruby-ivar">@operator</span> = <span class="ruby-identifier">operator</span>
 <span class="ruby-keyword">end</span></pre>
@@ -165,7 +165,7 @@
           
 
           <div class="method-source-code" id="comments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2735</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2743</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comments</span>
   <span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-value">:&quot;::&quot;</span> <span class="ruby-operator">?</span> [] <span class="ruby-operator">:</span> <span class="ruby-identifier">operator</span>.<span class="ruby-identifier">comments</span>
 <span class="ruby-keyword">end</span></pre>
@@ -186,7 +186,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2739</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2747</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-value">:&quot;::&quot;</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">operator</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Op</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">operator</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;::&quot;</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;.&quot;</span>)

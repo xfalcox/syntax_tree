@@ -167,7 +167,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11065</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11088</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">statement:</span>, <span class="ruby-value">predicate:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@statement</span> = <span class="ruby-identifier">statement</span>
   <span class="ruby-ivar">@predicate</span> = <span class="ruby-identifier">predicate</span>
@@ -198,7 +198,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11072</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11095</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_until_mod</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -219,7 +219,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11076</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11099</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">predicate</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -260,7 +260,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11082</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">statement:</span> <span class="ruby-identifier">statement</span>,
@@ -286,7 +286,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11091</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-comment"># If we&#39;re in the modifier form and we&#39;re modifying a `begin`, then this</span>
   <span class="ruby-comment"># is a special case where we need to explicitly use the modifier form</span>
@@ -327,7 +327,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11115</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11138</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;until_mod&quot;</span>)
@@ -358,7 +358,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11129</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:until_mod</span>,

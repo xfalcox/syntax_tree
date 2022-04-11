@@ -134,6 +134,19 @@
 </dd></dl>
         </div>
       </div>
+      <div id="attribute-i-else_keyword" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">else_keyword</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>nil | <a href="Kw.html"><code>Kw</code></a>
+<dd>
+<p>the optional else keyword</p>
+</dd></dl>
+        </div>
+      </div>
       <div id="attribute-i-ensure_clause" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">ensure_clause</span><span
@@ -184,7 +197,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">( statements:, rescue_clause:, else_clause:, ensure_clause:, location:, comments: [] )</span>
+            class="method-args">( statements:, rescue_clause:, else_keyword:, else_clause:, ensure_clause:, location:, comments: [] )</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -192,10 +205,11 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2245</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2248</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">statements:</span>,
   <span class="ruby-value">rescue_clause:</span>,
+  <span class="ruby-value">else_keyword:</span>,
   <span class="ruby-value">else_clause:</span>,
   <span class="ruby-value">ensure_clause:</span>,
   <span class="ruby-value">location:</span>,
@@ -203,6 +217,7 @@
 )
   <span class="ruby-ivar">@statements</span> = <span class="ruby-identifier">statements</span>
   <span class="ruby-ivar">@rescue_clause</span> = <span class="ruby-identifier">rescue_clause</span>
+  <span class="ruby-ivar">@else_keyword</span> = <span class="ruby-identifier">else_keyword</span>
   <span class="ruby-ivar">@else_clause</span> = <span class="ruby-identifier">else_clause</span>
   <span class="ruby-ivar">@ensure_clause</span> = <span class="ruby-identifier">ensure_clause</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -232,7 +247,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2292</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2297</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_bodystmt</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -253,7 +268,7 @@
           
 
           <div class="method-source-code" id="bind-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2261</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2266</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-identifier">start_char</span>, <span class="ruby-identifier">end_char</span>)
   <span class="ruby-ivar">@location</span> =
     <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(
@@ -297,9 +312,9 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2296</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2301</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
-  [<span class="ruby-identifier">statements</span>, <span class="ruby-identifier">rescue_clause</span>, <span class="ruby-identifier">else_clause</span>, <span class="ruby-identifier">ensure_clause</span>]
+  [<span class="ruby-identifier">statements</span>, <span class="ruby-identifier">rescue_clause</span>, <span class="ruby-identifier">else_keyword</span>, <span class="ruby-identifier">else_clause</span>, <span class="ruby-identifier">ensure_clause</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -338,7 +353,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2302</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2307</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">statements:</span> <span class="ruby-identifier">statements</span>,
@@ -366,7 +381,7 @@
           
 
           <div class="method-source-code" id="empty-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2288</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2293</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span>
   <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">rescue_clause</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">else_clause</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ensure_clause</span>
 <span class="ruby-keyword">end</span></pre>
@@ -387,7 +402,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2313</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2318</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span>
@@ -402,10 +417,13 @@
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">else_clause</span>
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">nest</span>(<span class="ruby-value">-2</span>) <span class="ruby-keyword">do</span>
         <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;else&quot;</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">else_keyword</span>)
       <span class="ruby-keyword">end</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">else_clause</span>)
+
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">else_clause</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">else_clause</span>)
+      <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span>
 
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">ensure_clause</span>
@@ -433,7 +451,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2342</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2350</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;bodystmt&quot;</span>)
@@ -476,7 +494,7 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2368</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2376</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:bodystmt</span>,
