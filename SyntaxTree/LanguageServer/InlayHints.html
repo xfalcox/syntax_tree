@@ -75,7 +75,6 @@
     <li ><a href="#method-c-find">::find</a>
     <li ><a href="#method-c-new">::new</a>
     <li ><a href="#method-i-bare_rescue">#bare_rescue</a>
-    <li ><a href="#method-i-missing_hash_value">#missing_hash_value</a>
     <li ><a href="#method-i-precedence_parentheses">#precedence_parentheses</a>
   </ul>
 </div>
@@ -140,7 +139,7 @@
           
 
           <div class="method-source-code" id="find-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">find</span>(<span class="ruby-identifier">program</span>)
   <span class="ruby-identifier">inlay_hints</span> = <span class="ruby-identifier">new</span>
   <span class="ruby-identifier">queue</span> = [[<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">program</span>]]
@@ -155,8 +154,6 @@
     <span class="ruby-keyword">case</span> [<span class="ruby-identifier">parent_node</span>, <span class="ruby-identifier">child_node</span>]
     <span class="ruby-keyword">in</span> <span class="ruby-identifier">_</span>, <span class="ruby-constant">Rescue</span>[<span class="ruby-value">exception:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">location:</span>]
       <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">bare_rescue</span>(<span class="ruby-identifier">location</span>)
-    <span class="ruby-keyword">in</span> <span class="ruby-identifier">_</span>, <span class="ruby-constant">Assoc</span>[<span class="ruby-value">key:</span> <span class="ruby-constant">Label</span>[<span class="ruby-value">value:</span> <span class="ruby-identifier">key</span>], <span class="ruby-value">value:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">location:</span>]
-      <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">missing_hash_value</span>(<span class="ruby-identifier">key</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-1</span>], <span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Binary</span> <span class="ruby-operator">|</span> <span class="ruby-constant">IfOp</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>, <span class="ruby-constant">IfOp</span>[<span class="ruby-value">location:</span>]
       <span class="ruby-identifier">inlay_hints</span>.<span class="ruby-identifier">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>, <span class="ruby-constant">Binary</span>[<span class="ruby-value">location:</span>]
@@ -242,35 +239,6 @@
 
       </div>
 
-      <div id="method-i-missing_hash_value" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">missing_hash_value</span><span
-            class="method-args">(key, location)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Adds the implicitly referenced value (local variable or method call) that is added into a hash when the value of a key-value pair is omitted. <a href="../For.html"><code>For</code></a> example,</p>
-
-<pre class="ruby">{ <span class="ruby-value">value:</span> }
-</pre>
-
-<p>becomes</p>
-
-<pre class="ruby">{ <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span> }
-</pre>
-
-          <div class="method-source-code" id="missing_hash_value-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 40</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">missing_hash_value</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">location</span>)
-  <span class="ruby-identifier">after</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_char</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{key}&quot;</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
       <div id="method-i-precedence_parentheses" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">precedence_parentheses</span><span
@@ -290,7 +258,7 @@
 </pre>
 
           <div class="method-source-code" id="precedence_parentheses-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 53</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">precedence_parentheses</span>(<span class="ruby-identifier">location</span>)
   <span class="ruby-identifier">before</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;₍&quot;</span>
   <span class="ruby-identifier">after</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_char</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;₎&quot;</span>
