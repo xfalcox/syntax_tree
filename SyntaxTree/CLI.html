@@ -130,11 +130,6 @@
     <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
-    <span class="ruby-identifier">warn</span>(<span class="ruby-constant">HELP</span>)
-    <span class="ruby-keyword">return</span> <span class="ruby-value">1</span>
-  <span class="ruby-keyword">end</span>
-
   <span class="ruby-identifier">action</span> =
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">name</span>
     <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;ast&quot;</span>
@@ -154,6 +149,13 @@
       <span class="ruby-keyword">return</span> <span class="ruby-value">1</span>
     <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># If we&#39;re not reading from stdin and the user didn&#39;t supply and</span>
+  <span class="ruby-comment"># filepaths to be read, then we exit with the usage message.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">warn</span>(<span class="ruby-constant">HELP</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+
   <span class="ruby-comment"># If there are any plugins specified on the command line, then load them</span>
   <span class="ruby-comment"># by requiring them here. We do this by transforming something like</span>
   <span class="ruby-comment">#</span>
@@ -163,40 +165,34 @@
   <span class="ruby-comment">#</span>
   <span class="ruby-comment">#     require &quot;syntax_tree/haml&quot;</span>
   <span class="ruby-comment">#</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;--plugins=&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>&amp;.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;--plugins=&quot;</span>)
     <span class="ruby-identifier">plugins</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span>[<span class="ruby-regexp">/^--plugins=(.*)$/</span>, <span class="ruby-value">1</span>]
     <span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">plugin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;syntax_tree/#{plugin}&quot;</span> }
   <span class="ruby-keyword">end</span>
 
+  <span class="ruby-comment"># Track whether or not there are any errors from any of the files that</span>
+  <span class="ruby-comment"># we take action on so that we can properly clean up and exit.</span>
   <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">false</span>
-  <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span>
-    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">pattern</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filepath</span><span class="ruby-operator">|</span>
-      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">filepath</span>)
 
-      <span class="ruby-identifier">handler</span> = <span class="ruby-constant">HANDLERS</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">filepath</span>)]
-      <span class="ruby-identifier">source</span> = <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filepath</span>)
+  <span class="ruby-identifier">each_file</span>(<span class="ruby-identifier">arguments</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">action</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
+    <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Error: #{error.message}&quot;</span>)
 
-      <span class="ruby-keyword">begin</span>
-        <span class="ruby-identifier">action</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
-      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
-        <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Error: #{error.message}&quot;</span>)
-
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">lineno</span>
-          <span class="ruby-identifier">highlight_error</span>(<span class="ruby-identifier">error</span>, <span class="ruby-identifier">source</span>)
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
-          <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
-        <span class="ruby-keyword">end</span>
-
-        <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
-      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Check</span><span class="ruby-operator">::</span><span class="ruby-constant">UnformattedError</span>, <span class="ruby-constant">Debug</span><span class="ruby-operator">::</span><span class="ruby-constant">NonIdempotentFormatError</span>
-        <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
-      <span class="ruby-keyword">rescue</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
-        <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
-        <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
-        <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
-      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">lineno</span>
+      <span class="ruby-identifier">highlight_error</span>(<span class="ruby-identifier">error</span>, <span class="ruby-identifier">source</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
+      <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
     <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Check</span><span class="ruby-operator">::</span><span class="ruby-constant">UnformattedError</span>, <span class="ruby-constant">Debug</span><span class="ruby-operator">::</span><span class="ruby-constant">NonIdempotentFormatError</span>
+    <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
+    <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
+    <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
+    <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">errored</span>

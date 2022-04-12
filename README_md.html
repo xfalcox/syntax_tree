@@ -60,7 +60,27 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-SyntaxTree">SyntaxTree</a>
     <li><a href="#label-Installation">Installation</a>
-    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-CLI">CLI</a>
+    <li><a href="#label-ast">ast</a>
+    <li><a href="#label-check">check</a>
+    <li><a href="#label-format">format</a>
+    <li><a href="#label-write">write</a>
+    <li><a href="#label-Library">Library</a>
+    <li><a href="#label-SyntaxTree.read-28filepath-29">SyntaxTree.read(filepath)</a>
+    <li><a href="#label-SyntaxTree.parse-28source-29">SyntaxTree.parse(source)</a>
+    <li><a href="#label-SyntaxTree.format-28source-29">SyntaxTree.format(source)</a>
+    <li><a href="#label-Nodes">Nodes</a>
+    <li><a href="#label-child_nodes">child_nodes</a>
+    <li><a href="#label-Pattern+matching">Pattern matching</a>
+    <li><a href="#label-pretty_print-28q-29">pretty_print(q)</a>
+    <li><a href="#label-to_json-28-2Aopts-29">to_json(*opts)</a>
+    <li><a href="#label-format-28q-29">format(q)</a>
+    <li><a href="#label-Visitor">Visitor</a>
+    <li><a href="#label-visit_method">visit_method</a>
+    <li><a href="#label-Language+server">Language server</a>
+    <li><a href="#label-textDocument-2Fformatting">textDocument/formatting</a>
+    <li><a href="#label-textDocument-2FinlayHints">textDocument/inlayHints</a>
+    <li><a href="#label-syntaxTree-2Fvisualizing">syntaxTree/visualizing</a>
     <li><a href="#label-Development">Development</a>
     <li><a href="#label-Contributing">Contributing</a>
     <li><a href="#label-License">License</a>
@@ -92,50 +112,297 @@
 
 <p><a href="https://github.com/ruby-syntax-tree/syntax_tree/actions/workflows/main.yml"><img src="https://github.com/ruby-syntax-tree/syntax_tree/actions/workflows/main.yml/badge.svg"></a> <a href="https://rubygems.org/gems/syntax_tree"><img src="https://img.shields.io/gem/v/syntax_tree.svg"></a></p>
 
-<p>A fast Ruby parser and formatter with only standard library dependencies.</p>
+<p>Syntax Tree is a suite of tools built on top of the internal CRuby parser. It provides the ability to generate a syntax tree from source, as well as the tools necessary to inspect and manipulate that syntax tree. It can be used to build formatters, linters, language servers, and more.</p>
+
+<p>It is built with only standard library dependencies. It additionally ships with a plugin system so that you can build your own syntax trees from other languages and incorporate these tools.</p>
+<ul><li>
+<p><a href="#installation">Installation</a></p>
+</li><li>
+<p><a href="#cli">CLI</a></p>
+</li><li>
+<p><a href="#ast">ast</a></p>
+</li><li>
+<p><a href="#check">check</a></p>
+</li><li>
+<p><a href="#format">format</a></p>
+</li><li>
+<p><a href="#write">write</a></p>
+</li><li>
+<p><a href="#library">Library</a></p>
+</li><li>
+<p><a href="#syntaxtreereadfilepath">SyntaxTree.read(filepath)</a></p>
+</li><li>
+<p><a href="#syntaxtreeparsesource">SyntaxTree.parse(source)</a></p>
+</li><li>
+<p><a href="#syntaxtreeformatsource">SyntaxTree.format(source)</a></p>
+</li><li>
+<p><a href="#nodes">Nodes</a></p>
+</li><li>
+<p><a href="#child_nodes">child_nodes</a></p>
+</li><li>
+<p><a href="#pattern-matching">Pattern matching</a></p>
+</li><li>
+<p><a href="#pretty_printq">pretty_print(q)</a></p>
+</li><li>
+<p><a href="#to_jsonopts">to_json(*opts)</a></p>
+</li><li>
+<p><a href="#formatq">format(q)</a></p>
+</li><li>
+<p><a href="#visitor">Visitor</a></p>
+</li><li>
+<p><a href="#visit_method">visit_method</a></p>
+</li><li>
+<p><a href="#language-server">Language server</a></p>
+</li><li>
+<p><a href="#textdocumentformatting">textDocument/formatting</a></p>
+</li><li>
+<p><a href="#textdocumentinlayhints">textDocument/inlayHints</a></p>
+</li><li>
+<p><a href="#syntaxtreevisualizing">syntaxTree/visualizing</a></p>
+</li></ul>
 
 <h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Add this line to your application’s Gemfile:</p>
+<p>Syntax Tree is both a command-line interface and a library. If you’re only looking to use the command-line interface, then we recommend installing the gem globally, as in:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">syntax_tree</span>
+</pre>
+
+<p>To run the CLI with the gem installed globally, you would run:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">version</span>
+</pre>
+
+<p>If you’re planning on using Syntax Tree as a library within your own project, we recommend installing it as part of your gem bundle. First, add this line to your application’s Gemfile:</p>
 
 <pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;syntax_tree&quot;</span>
 </pre>
 
 <p>And then execute:</p>
 
-<pre>$ bundle install</pre>
-
-<p>Or install it yourself as:</p>
-
-<pre>$ gem install syntax_tree</pre>
-
-<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
-
-<p>From code:</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;syntax_tree&quot;</span>
-
-<span class="ruby-identifier">pp</span> <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>) <span class="ruby-comment"># print out the AST</span>
-<span class="ruby-identifier">puts</span> <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>) <span class="ruby-comment"># format the AST</span>
+<pre class="ruby"><span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span>
 </pre>
 
-<p>From the CLI:</p>
+<p>To run the CLI with the gem installed in your gem bundle, you would run:</p>
 
-<pre>$ stree ast program.rb
-(program
-  (statements
-    ...</pre>
+<pre class="ruby"><span class="ruby-identifier">bundle</span> <span class="ruby-identifier">exec</span> <span class="ruby-identifier">stree</span> <span class="ruby-identifier">version</span>
+</pre>
 
-<p>or</p>
+<h2 id="label-CLI">CLI<span><a href="#label-CLI">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<pre>$ stree format program.rb
-class MyClass
-  ...</pre>
+<p>Syntax Tree ships with the <code>stree</code> CLI, which can be used to inspect and manipulate Ruby code. Below are listed all of the commands built into the CLI that you can use. Note that for all commands that operate on files, you can also pass in content through STDIN.</p>
 
-<p>or</p>
+<h3 id="label-ast">ast<span><a href="#label-ast">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<pre>$ stree write program.rb
-program.rb 1ms</pre>
+<p>This command will print out a textual representation of the syntax tree associated with each of the files it finds. To execute, run:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">ast</span> <span class="ruby-identifier">path</span><span class="ruby-operator">/</span><span class="ruby-identifier">to</span><span class="ruby-operator">/</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>For a file that contains <code>1 + 1</code>, you will receive:</p>
+
+<pre class="ruby">(<span class="ruby-identifier">program</span> (<span class="ruby-identifier">statements</span> (<span class="ruby-identifier">binary</span> (<span class="ruby-identifier">int</span> <span class="ruby-string">&quot;1&quot;</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">int</span> <span class="ruby-string">&quot;1&quot;</span>))))
+</pre>
+
+<h3 id="label-check">check<span><a href="#label-check">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This command is meant to be used in the context of a continuous integration or git hook. It checks each file given to make sure that it matches the expected format. It can be used to ensure unformatted content never makes it into a codebase.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">check</span> <span class="ruby-identifier">path</span><span class="ruby-operator">/</span><span class="ruby-identifier">to</span><span class="ruby-operator">/</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>For a file that matches the expected format, you will receive:</p>
+
+<pre>All files matched expected format.</pre>
+
+<p>If there are files with unformatted code, you will receive:</p>
+
+<pre>[warn] path/to/file.rb
+The listed files did not match the expected format.</pre>
+
+<h3 id="label-format">format<span><a href="#label-format">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This command will output the formatted version of each of the listed files. Importantly, it will not write that content back to the source files. It is meant to display the formatted version only.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">format</span> <span class="ruby-identifier">path</span><span class="ruby-operator">/</span><span class="ruby-identifier">to</span><span class="ruby-operator">/</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>For a file that contains <code>1 + 1</code>, you will receive:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+</pre>
+
+<h3 id="label-write">write<span><a href="#label-write">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This command will format the listed files and write that formatted version back to the source files. Note that this overwrites the original content, to be sure to be using a version control system.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">write</span> <span class="ruby-identifier">path</span><span class="ruby-operator">/</span><span class="ruby-identifier">to</span><span class="ruby-operator">/</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>This will list every file that is being formatted. It will output light gray if the file already matches the expected format. It will output in regular color if it does not.</p>
+
+<pre>path/to/file.rb 0ms</pre>
+
+<h2 id="label-Library">Library<span><a href="#label-Library">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Syntax Tree can be used as a library to access the syntax tree underlying Ruby source code.</p>
+
+<h3 id="label-SyntaxTree.read-28filepath-29"><a href="SyntaxTree.html#method-c-read"><code>SyntaxTree.read(filepath)</code></a><span><a href="#label-SyntaxTree.read-28filepath-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This function takes a filepath and returns a string associated with the content of that file. It is similar in functionality to <code>File.read</code>, except htat it takes into account Ruby-level file encoding (through magic comments at the top of the file).</p>
+
+<h3 id="label-SyntaxTree.parse-28source-29"><a href="SyntaxTree.html#method-c-parse"><code>SyntaxTree.parse(source)</code></a><span><a href="#label-SyntaxTree.parse-28source-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This function takes an input string containing Ruby code and returns the syntax tree associated with it. The top-level node is always a <code>SyntaxTree::Program</code>, which contains a list of top-level expression nodes.</p>
+
+<h3 id="label-SyntaxTree.format-28source-29"><a href="SyntaxTree.html#method-c-format"><code>SyntaxTree.format(source)</code></a><span><a href="#label-SyntaxTree.format-28source-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This function takes an input string containing Ruby code, parses it into its underlying syntax tree, and formats it back out to a string.</p>
+
+<h2 id="label-Nodes">Nodes<span><a href="#label-Nodes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>There are many different node types in the syntax tree. They are meant to be treated as immutable structs containing links to child nodes with minimal logic contained within their implementation. However, for the most part they are respond to a set of APIs, listed below.</p>
+
+<h3 id="label-child_nodes">child_nodes<span><a href="#label-child_nodes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>One of the easiest ways to descend the tree is to use the <code>child_nodes</code> function. It is implemented on every node type (leaf nodes return an empty array). If the goal is to simply walk through the tree, this is the easiest way to go.</p>
+
+<pre class="ruby"><span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
+<span class="ruby-identifier">program</span>.<span class="ruby-identifier">child_nodes</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">child_nodes</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-comment"># =&gt; (binary (int &quot;1&quot;) :+ (int &quot;1&quot;))</span>
+</pre>
+
+<h3 id="label-Pattern+matching">Pattern matching<span><a href="#label-Pattern+matching">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Pattern matching is another way to descend the tree which is more specific than using <code>child_nodes</code>. Using Ruby’s built-in pattern matching, you can extract the same information but be as specific about your constraints as you like. For example, with minimal constraints:</p>
+
+<pre class="ruby"><span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
+<span class="ruby-identifier">program</span> <span class="ruby-operator">=&gt;</span> { <span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [<span class="ruby-identifier">binary</span>] } }
+<span class="ruby-identifier">binary</span>
+<span class="ruby-comment"># =&gt; (binary (int &quot;1&quot;) :+ (int &quot;1&quot;))</span>
+</pre>
+
+<p>Or, with more constraints on the types to ensure we’re getting exactly what we expect:</p>
+
+<pre class="ruby"><span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
+<span class="ruby-identifier">program</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Program</span>[<span class="ruby-value">statements:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Statements</span>[<span class="ruby-value">body:</span> [<span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Binary</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">binary</span>]]]
+<span class="ruby-identifier">binary</span>
+<span class="ruby-comment"># =&gt; (binary (int &quot;1&quot;) :+ (int &quot;1&quot;))</span>
+</pre>
+
+<h3 id="label-pretty_print-28q-29">pretty_print(q)<span><a href="#label-pretty_print-28q-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Every node responds to the <code>pretty_print</code> Ruby interface, which makes it usable by the <code>pp</code> library. You <em>can</em> use this API manually, but it’s mostly there for compatibility and not meant to be directly invoked. For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">pp</span> <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
+<span class="ruby-comment"># (program (statements (binary (int &quot;1&quot;) + (int &quot;1&quot;))))</span>
+</pre>
+
+<h3 id="label-to_json-28-2Aopts-29">to_json(*opts)<span><a href="#label-to_json-28-2Aopts-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Every node responds to the <code>to_json</code> Ruby interface, which makes it usable by the <code>json</code> library. Much like <code>pretty_print</code>, you could use this API manually, but it’s mostly used by <code>JSON</code> to dump the nodes to a serialized format. For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
+<span class="ruby-identifier">program</span> <span class="ruby-operator">=&gt;</span> { <span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [{ <span class="ruby-value">left:</span> }] } }
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">left</span>)
+<span class="ruby-comment"># {&quot;type&quot;:&quot;int&quot;,&quot;value&quot;:&quot;1&quot;,&quot;loc&quot;:[1,0,1,1],&quot;cmts&quot;:[]}</span>
+</pre>
+
+<h3 id="label-format-28q-29">format(q)<span><a href="#label-format-28q-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Every node responds to <code>format</code>, which formats the content nicely. The API mirrors that used by the <code>pretty_print</code> gem in that it accepts a formatter object and calls methods on it to generate its own internal representation of the text that will be outputted. Because of this, it’s easier to not use this API directly and instead to call <code>SyntaxTree.format</code>. You <em>can</em> however use this directly if you create the formatter yourself, as in:</p>
+
+<pre class="ruby"><span class="ruby-identifier">source</span> = <span class="ruby-string">&quot;1+1&quot;</span>
+<span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>)
+<span class="ruby-identifier">program</span> <span class="ruby-operator">=&gt;</span> { <span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [<span class="ruby-identifier">binary</span>] } }
+
+<span class="ruby-identifier">formatter</span> = <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, [])
+<span class="ruby-identifier">binary</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatter</span>)
+
+<span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">output</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-comment"># =&gt; &quot;1 + 1&quot;</span>
+</pre>
+
+<h2 id="label-Visitor">Visitor<span><a href="#label-Visitor">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>If you want to operate over a set of nodes in the tree but don’t want to walk the tree manually, the <code>Visitor</code> class makes it easy. <code>SyntaxTree::Visitor</code> is an implementation of the double dispatch visitor pattern. It works by the user defining visit methods that process nodes in the tree, which then call back to other visit methods to continue the descent. This is easier shown in code.</p>
+
+<p>Let’s say, for instance, that you wanted to find every place in source where you have an arithmetic problem between two integers (this is pretty contrived, but it’s just for illustration). You could define a visitor that only explicitly visited the <code>SyntaxTree::Binary</code> node, as in:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ArithmeticVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Visitor</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binary</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword">in</span> { <span class="ruby-value">left:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>, <span class="ruby-value">operator:</span> <span class="ruby-value">:+</span> <span class="ruby-operator">|</span> <span class="ruby-value">:-</span> <span class="ruby-operator">|</span> <span class="ruby-value">:*</span> <span class="ruby-operator">|</span> <span class="ruby-value">:/</span>, <span class="ruby-value">right:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span> }
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;The result is: #{node.left.value.to_i.public_send(node.operator, node.right.value.to_i)}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">visitor</span> = <span class="ruby-constant">ArithmeticVisitor</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>))
+<span class="ruby-comment"># The result is: 2</span>
+</pre>
+
+<p>With visitors, you only define handlers for the nodes that you need. You can find the names of the methods that you will need to define within the base visitor, as they’re all aliased to the default behavior (visiting the child nodes). Note that when you define a handler for a node, you have to tell Syntax Tree how to walk further. In the example above, we don’t need to go any further because we already know the child nodes are <code>SyntaxTree::Int</code>, so they can’t possibly contain more <code>SyntaxTree::Binary</code> nodes. In other circumstances you may not know though, so you can either:</p>
+<ul><li>
+<p>call <code>super</code> (which will do the default and visit all child nodes)</p>
+</li><li>
+<p>call <code>visit_child_nodes</code> manually</p>
+</li><li>
+<p>call <code>visit(child)</code> with each child that you want to visit</p>
+</li><li>
+<p>call nothing if you’re sure you don’t want to descend further</p>
+</li></ul>
+
+<h3 id="label-visit_method">visit_method<span><a href="#label-visit_method">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>When you’re creating a visitor, it’s very easy to accidentally mistype a visit method. Unfortunately, there’s no way to tell Ruby to explicitly override a parent method, so it would then be easy to define a method that never gets called. To mitigate this risk, there’s <code>Visitor.visit_method(name)</code>. This method accepts a symbol that is checked against the list of know visit methods. If it’s not in the list, then an error will be raised. It’s meant to be used like:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ArithmeticVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Visitor</span>
+  <span class="ruby-identifier">visit_method</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binar</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This will only be checked once when the file is first required. If there is a typo in your method name (or the method no longer exists for whatever reason), you will receive an error like so:</p>
+
+<pre>~/syntax_tree/lib/syntax_tree/visitor.rb:46:in `visit_method&#39;: Invalid visit method: visit_binar (SyntaxTree::Visitor::VisitMethodError)
+Did you mean?  visit_binary
+               visit_in
+               visit_ivar
+        from (irb):2:in `&lt;class:ArithmeticVisitor&gt;&#39;
+        from (irb):1:in `&lt;main&gt;&#39;
+        from bin/console:8:in `&lt;main&gt;&#39;</pre>
+
+<h2 id="label-Language+server">Language server<span><a href="#label-Language+server">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Syntax Tree additionally ships with a language server conforming to the <a href="https://microsoft.github.io/language-server-protocol/">language server protocol</a>. It can be invoked through the CLI by running:</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">lsp</span>
+</pre>
+
+<p>By default, the language server is relatively minimal, mostly meant to provide a registered formatter for the Ruby language. However there are a couple of additional niceties baked in. There are related projects that configure and use this language server within IDEs. For example, to use this code with VSCode, see <a href="https://github.com/ruby-syntax-tree/vscode-syntax-tree">ruby-syntax-tree/vscode-syntax-tree</a>.</p>
+
+<h3 id="label-textDocument-2Fformatting">textDocument/formatting<span><a href="#label-textDocument-2Fformatting">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>As mentioned above, the language server responds to formatting requests with the formatted document. It typically responds on the order of tens of milliseconds, so it should be fast enough for any IDE.</p>
+
+<h3 id="label-textDocument-2FinlayHints">textDocument/inlayHints<span><a href="#label-textDocument-2FinlayHints">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The language server also responds to the relatively new inlay hints request. This request allows the language server to define additional information that should exist in the source code as helpful hints to the developer. In our case we use it to display things like implicit parentheses. For example, if you had the following code:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span>
+</pre>
+
+<p>Implicity, the <code>2 * 3</code> is going to be executed first because the <code>*</code> operator has higher precedence than the <code>+</code> operator. However, to ease mental overhead, our language server includes small parentheses to make this explicit, as in:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">₍2</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span><span class="ruby-identifier">₎</span>
+</pre>
+
+<h3 id="label-syntaxTree-2Fvisualizing">syntaxTree/visualizing<span><a href="#label-syntaxTree-2Fvisualizing">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The language server additionally includes this custom request to return a textual representation of the syntax tree underlying the source code of a file. Language server clients can use this to (for example) open an additional tab with this information displayed.</p>
 
 <h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
