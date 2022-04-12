@@ -244,7 +244,8 @@
           <div class="method-source-code" id="pretty_print-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+  <span class="ruby-identifier">visitor</span> = <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">PrettyPrintVisitor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -263,9 +264,9 @@
           
 
           <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
-  <span class="ruby-identifier">visitor</span> = <span class="ruby-constant">JSONVisitor</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">visitor</span> = <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">JSONVisitor</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>

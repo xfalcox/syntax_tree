@@ -78,7 +78,6 @@
     <li ><a href="#method-i-deconstruct">#deconstruct</a>
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
     <li ><a href="#method-i-format">#format</a>
-    <li ><a href="#method-i-pretty_print">#pretty_print</a>
   </ul>
 </div>
 
@@ -180,7 +179,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10173</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8324</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">predicate:</span>,
   <span class="ruby-value">statements:</span>,
@@ -218,7 +217,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10187</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8338</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_unless</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -239,7 +238,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10191</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8342</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">predicate</span>, <span class="ruby-identifier">statements</span>, <span class="ruby-identifier">consequent</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -280,7 +279,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10197</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8348</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">predicate:</span> <span class="ruby-identifier">predicate</span>,
@@ -307,45 +306,9 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10207</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8358</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-constant">ConditionalFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;unless&quot;</span>, <span class="ruby-keyword">self</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-pretty_print" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">pretty_print</span><span
-            class="method-args">(q)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10211</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;unless&quot;</span>)
-
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">predicate</span>)
-
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">statements</span>)
-
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">consequent</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">consequent</span>)
-    <span class="ruby-keyword">end</span>
-
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-constant">Comment</span><span class="ruby-operator">::</span><span class="ruby-constant">List</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">comments</span>))
-  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
