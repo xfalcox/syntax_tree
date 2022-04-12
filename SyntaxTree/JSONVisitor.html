@@ -269,7 +269,7 @@
           
 
           <div class="method-source-code" id="visit_BEGIN-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 125</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_BEGIN</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:BEGIN</span>,
@@ -344,7 +344,7 @@
           
 
           <div class="method-source-code" id="visit___end__-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 474</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1305</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit___end__</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:__end__</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -706,7 +706,7 @@
           
 
           <div class="method-source-code" id="visit_backref-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 135</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_backref</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:backref</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -727,7 +727,7 @@
           
 
           <div class="method-source-code" id="visit_backtick-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 139</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_backtick</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:backtick</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -748,7 +748,7 @@
           
 
           <div class="method-source-code" id="visit_bare_assoc_hash-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 143</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_bare_assoc_hash</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:bare_assoc_hash</span>,
@@ -1643,7 +1643,7 @@
           
 
           <div class="method-source-code" id="visit_ensure-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 478</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 474</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_ensure</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:ensure</span>,
@@ -1670,7 +1670,7 @@
           
 
           <div class="method-source-code" id="visit_excessed_comma-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 488</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 484</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_excessed_comma</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:excessed_comma</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1691,7 +1691,7 @@
           
 
           <div class="method-source-code" id="visit_fcall-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 492</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 488</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_fcall</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:fcall</span>,
@@ -1718,7 +1718,7 @@
           
 
           <div class="method-source-code" id="visit_field-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 502</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 498</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_field</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:field</span>,
@@ -1746,7 +1746,7 @@
           
 
           <div class="method-source-code" id="visit_float-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 513</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 509</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_float</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:float</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1767,7 +1767,7 @@
           
 
           <div class="method-source-code" id="visit_fndptn-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 517</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 513</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_fndptn</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:fndptn</span>,
@@ -1796,7 +1796,7 @@
           
 
           <div class="method-source-code" id="visit_for-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 529</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 525</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_for</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:for</span>,
@@ -1824,7 +1824,7 @@
           
 
           <div class="method-source-code" id="visit_gvar-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 540</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 536</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_gvar</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:gvar</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1845,7 +1845,7 @@
           
 
           <div class="method-source-code" id="visit_hash-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 544</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 540</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_hash</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:hash</span>,
@@ -1871,7 +1871,7 @@
           
 
           <div class="method-source-code" id="visit_heredoc-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 553</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 549</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_heredoc</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:heredoc</span>,
@@ -1899,7 +1899,7 @@
           
 
           <div class="method-source-code" id="visit_heredoc_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 564</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 560</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_heredoc_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:heredoc_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1920,7 +1920,7 @@
           
 
           <div class="method-source-code" id="visit_hshptn-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 568</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 564</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_hshptn</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:hshptn</span>,
@@ -1948,7 +1948,7 @@
           
 
           <div class="method-source-code" id="visit_ident-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 579</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 575</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_ident</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:ident</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -1969,7 +1969,7 @@
           
 
           <div class="method-source-code" id="visit_if-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 583</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 579</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_if</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:if</span>,
@@ -1997,7 +1997,7 @@
           
 
           <div class="method-source-code" id="visit_if_mod-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 594</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 590</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_if_mod</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:if_mod</span>,
@@ -2024,7 +2024,7 @@
           
 
           <div class="method-source-code" id="visit_if_op-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 604</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 600</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_if_op</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:ifop</span>,
@@ -2052,7 +2052,7 @@
           
 
           <div class="method-source-code" id="visit_imaginary-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 615</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 611</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_imaginary</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:imaginary</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2073,7 +2073,7 @@
           
 
           <div class="method-source-code" id="visit_in-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 619</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 615</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_in</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:in</span>,
@@ -2101,7 +2101,7 @@
           
 
           <div class="method-source-code" id="visit_int-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 630</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 626</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_int</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:int</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2122,7 +2122,7 @@
           
 
           <div class="method-source-code" id="visit_ivar-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 634</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 630</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_ivar</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:ivar</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2143,7 +2143,7 @@
           
 
           <div class="method-source-code" id="visit_kw-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 638</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 634</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_kw</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:kw</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2164,7 +2164,7 @@
           
 
           <div class="method-source-code" id="visit_kwrest_param-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 642</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 638</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_kwrest_param</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:kwrest_param</span>,
@@ -2190,7 +2190,7 @@
           
 
           <div class="method-source-code" id="visit_label-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 651</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 647</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_label</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:label</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2211,7 +2211,7 @@
           
 
           <div class="method-source-code" id="visit_label_end-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 655</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 651</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_label_end</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:label_end</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2232,7 +2232,7 @@
           
 
           <div class="method-source-code" id="visit_lambda-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 659</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 655</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_lambda</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:lambda</span>,
@@ -2259,7 +2259,7 @@
           
 
           <div class="method-source-code" id="visit_lbrace-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 669</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 665</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_lbrace</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:lbrace</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2280,7 +2280,7 @@
           
 
           <div class="method-source-code" id="visit_lbracket-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 673</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 669</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_lbracket</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:lbracket</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2301,7 +2301,7 @@
           
 
           <div class="method-source-code" id="visit_lparen-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 677</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 673</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_lparen</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:lparen</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2322,7 +2322,7 @@
           
 
           <div class="method-source-code" id="visit_massign-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 681</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 677</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_massign</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:massign</span>,
@@ -2349,7 +2349,7 @@
           
 
           <div class="method-source-code" id="visit_method_add_block-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 691</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 687</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_method_add_block</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:method_add_block</span>,
@@ -2376,7 +2376,7 @@
           
 
           <div class="method-source-code" id="visit_mlhs-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 701</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 697</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_mlhs</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:mlhs</span>,
@@ -2403,7 +2403,7 @@
           
 
           <div class="method-source-code" id="visit_mlhs_paren-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 711</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 707</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_mlhs_paren</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:mlhs_paren</span>,
@@ -2429,7 +2429,7 @@
           
 
           <div class="method-source-code" id="visit_module-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 720</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 716</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_module</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:module</span>,
@@ -2456,7 +2456,7 @@
           
 
           <div class="method-source-code" id="visit_mrhs-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 730</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 726</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_mrhs</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:mrhs</span>,
@@ -2482,7 +2482,7 @@
           
 
           <div class="method-source-code" id="visit_next-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 739</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 735</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_next</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:next</span>,
@@ -2508,7 +2508,7 @@
           
 
           <div class="method-source-code" id="visit_not-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 748</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 744</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_not</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:not</span>,
@@ -2535,7 +2535,7 @@
           
 
           <div class="method-source-code" id="visit_op-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 758</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 754</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_op</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:op</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2556,7 +2556,7 @@
           
 
           <div class="method-source-code" id="visit_op_assign-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 762</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 758</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_op_assign</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:opassign</span>,
@@ -2584,7 +2584,7 @@
           
 
           <div class="method-source-code" id="visit_params-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 773</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 769</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_params</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:params</span>,
@@ -2616,7 +2616,7 @@
           
 
           <div class="method-source-code" id="visit_paren-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 788</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 784</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_paren</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:paren</span>,
@@ -2643,7 +2643,7 @@
           
 
           <div class="method-source-code" id="visit_period-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 798</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 794</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_period</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:period</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2664,7 +2664,7 @@
           
 
           <div class="method-source-code" id="visit_pinned_begin-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 802</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 798</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_pinned_begin</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:pinned_begin</span>,
@@ -2690,7 +2690,7 @@
           
 
           <div class="method-source-code" id="visit_pinned_var_ref-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 811</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 807</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_pinned_var_ref</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:pinned_var_ref</span>,
@@ -2716,7 +2716,7 @@
           
 
           <div class="method-source-code" id="visit_program-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 820</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 816</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_program</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:program</span>,
@@ -2742,7 +2742,7 @@
           
 
           <div class="method-source-code" id="visit_qsymbols-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 829</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 825</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_qsymbols</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:qsymbols</span>,
@@ -2768,7 +2768,7 @@
           
 
           <div class="method-source-code" id="visit_qsymbols_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 838</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 834</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_qsymbols_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:qsymbols_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2789,7 +2789,7 @@
           
 
           <div class="method-source-code" id="visit_qwords-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 842</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 838</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_qwords</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:qwords</span>,
@@ -2815,7 +2815,7 @@
           
 
           <div class="method-source-code" id="visit_qwords_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 851</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 847</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_qwords_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:qwords_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2836,7 +2836,7 @@
           
 
           <div class="method-source-code" id="visit_rassign-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 855</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 851</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rassign</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:rassign</span>,
@@ -2864,7 +2864,7 @@
           
 
           <div class="method-source-code" id="visit_rational-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 866</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 862</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rational</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:rational</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2885,7 +2885,7 @@
           
 
           <div class="method-source-code" id="visit_rbrace-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 870</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 866</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rbrace</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:rbrace</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2906,7 +2906,7 @@
           
 
           <div class="method-source-code" id="visit_rbracket-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 874</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 870</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rbracket</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:rbracket</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2927,7 +2927,7 @@
           
 
           <div class="method-source-code" id="visit_redo-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 878</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 874</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_redo</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:redo</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2948,7 +2948,7 @@
           
 
           <div class="method-source-code" id="visit_regexp_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 882</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 878</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_regexp_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:regexp_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -2969,7 +2969,7 @@
           
 
           <div class="method-source-code" id="visit_regexp_content-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 886</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 882</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_regexp_content</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:regexp_content</span>,
@@ -2995,7 +2995,7 @@
           
 
           <div class="method-source-code" id="visit_regexp_end-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 895</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 891</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_regexp_end</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:regexp_end</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3016,7 +3016,7 @@
           
 
           <div class="method-source-code" id="visit_regexp_literal-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 899</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 895</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_regexp_literal</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:regexp_literal</span>,
@@ -3044,7 +3044,7 @@
           
 
           <div class="method-source-code" id="visit_rescue-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 910</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 906</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rescue</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:rescue</span>,
@@ -3072,7 +3072,7 @@
           
 
           <div class="method-source-code" id="visit_rescue_ex-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 921</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 917</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rescue_ex</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:rescue_ex</span>,
@@ -3099,7 +3099,7 @@
           
 
           <div class="method-source-code" id="visit_rescue_mod-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 931</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 927</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rescue_mod</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:rescue_mod</span>,
@@ -3126,7 +3126,7 @@
           
 
           <div class="method-source-code" id="visit_rest_param-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 941</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 937</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rest_param</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:rest_param</span>,
@@ -3152,7 +3152,7 @@
           
 
           <div class="method-source-code" id="visit_retry-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 950</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 946</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_retry</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:retry</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3173,7 +3173,7 @@
           
 
           <div class="method-source-code" id="visit_return-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 954</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 950</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_return</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:return</span>,
@@ -3199,7 +3199,7 @@
           
 
           <div class="method-source-code" id="visit_return0-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 963</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 959</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_return0</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:return0</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3220,7 +3220,7 @@
           
 
           <div class="method-source-code" id="visit_rparen-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 967</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 963</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rparen</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:rparen</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3241,7 +3241,7 @@
           
 
           <div class="method-source-code" id="visit_sclass-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 971</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 967</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_sclass</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:sclass</span>,
@@ -3268,7 +3268,7 @@
           
 
           <div class="method-source-code" id="visit_statements-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 981</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 977</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_statements</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:statements</span>,
@@ -3294,7 +3294,7 @@
           
 
           <div class="method-source-code" id="visit_string_concat-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 990</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 986</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_string_concat</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:string_concat</span>,
@@ -3321,7 +3321,7 @@
           
 
           <div class="method-source-code" id="visit_string_content-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1000</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 996</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_string_content</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:string_content</span>,
@@ -3346,7 +3346,7 @@
           
 
           <div class="method-source-code" id="visit_string_dvar-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1008</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1004</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_string_dvar</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:string_dvar</span>,
@@ -3372,7 +3372,7 @@
           
 
           <div class="method-source-code" id="visit_string_embexpr-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1017</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1013</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_string_embexpr</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:string_embexpr</span>,
@@ -3398,7 +3398,7 @@
           
 
           <div class="method-source-code" id="visit_string_literal-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1026</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1022</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_string_literal</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:string_literal</span>,
@@ -3425,7 +3425,7 @@
           
 
           <div class="method-source-code" id="visit_super-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1036</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1032</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_super</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:super</span>,
@@ -3451,7 +3451,7 @@
           
 
           <div class="method-source-code" id="visit_symbeg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1045</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1041</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_symbeg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:symbeg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3472,7 +3472,7 @@
           
 
           <div class="method-source-code" id="visit_symbol_content-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1049</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1045</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_symbol_content</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:symbol_content</span>,
@@ -3497,7 +3497,7 @@
           
 
           <div class="method-source-code" id="visit_symbol_literal-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1057</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1053</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_symbol_literal</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:symbol_literal</span>,
@@ -3523,7 +3523,7 @@
           
 
           <div class="method-source-code" id="visit_symbols-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1066</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1062</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_symbols</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:symbols</span>,
@@ -3549,7 +3549,7 @@
           
 
           <div class="method-source-code" id="visit_symbols_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1075</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1071</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_symbols_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:symbols_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3570,7 +3570,7 @@
           
 
           <div class="method-source-code" id="visit_tlambda-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1079</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1075</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_tlambda</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:tlambda</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3591,7 +3591,7 @@
           
 
           <div class="method-source-code" id="visit_tlambeg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1083</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1079</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_tlambeg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:tlambeg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3612,7 +3612,7 @@
           
 
           <div class="method-source-code" id="visit_top_const_field-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1099</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1095</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_top_const_field</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:top_const_field</span>,
@@ -3638,7 +3638,7 @@
           
 
           <div class="method-source-code" id="visit_top_const_ref-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1108</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1104</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_top_const_ref</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:top_const_ref</span>,
@@ -3664,7 +3664,7 @@
           
 
           <div class="method-source-code" id="visit_tstring_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1087</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1083</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_tstring_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:tstring_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3685,7 +3685,7 @@
           
 
           <div class="method-source-code" id="visit_tstring_content-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1091</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1087</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_tstring_content</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:tstring_content</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3706,7 +3706,7 @@
           
 
           <div class="method-source-code" id="visit_tstring_end-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1095</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1091</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_tstring_end</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:tstring_end</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -3727,7 +3727,7 @@
           
 
           <div class="method-source-code" id="visit_unary-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1117</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_unary</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:unary</span>,
@@ -3754,7 +3754,7 @@
           
 
           <div class="method-source-code" id="visit_undef-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1127</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1123</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_undef</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:undef</span>,
@@ -3780,7 +3780,7 @@
           
 
           <div class="method-source-code" id="visit_unless-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1136</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_unless</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:unless</span>,
@@ -3808,7 +3808,7 @@
           
 
           <div class="method-source-code" id="visit_unless_mod-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1147</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_unless_mod</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:unless_mod</span>,
@@ -3835,7 +3835,7 @@
           
 
           <div class="method-source-code" id="visit_until-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1157</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1153</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_until</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:until</span>,
@@ -3862,7 +3862,7 @@
           
 
           <div class="method-source-code" id="visit_until_mod-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1167</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1163</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_until_mod</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:until_mod</span>,
@@ -3889,7 +3889,7 @@
           
 
           <div class="method-source-code" id="visit_var_alias-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1177</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1173</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_var_alias</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:var_alias</span>,
@@ -3916,7 +3916,7 @@
           
 
           <div class="method-source-code" id="visit_var_field-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1187</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1183</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_var_field</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:var_field</span>,
@@ -3942,7 +3942,7 @@
           
 
           <div class="method-source-code" id="visit_var_ref-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1196</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1192</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_var_ref</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:var_ref</span>,
@@ -3968,7 +3968,7 @@
           
 
           <div class="method-source-code" id="visit_vcall-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1205</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_vcall</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:vcall</span>,
@@ -3994,7 +3994,7 @@
           
 
           <div class="method-source-code" id="visit_void_stmt-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1214</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1210</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_void_stmt</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:void_stmt</span>,
@@ -4019,7 +4019,7 @@
           
 
           <div class="method-source-code" id="visit_when-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1222</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1218</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_when</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:when</span>,
@@ -4047,7 +4047,7 @@
           
 
           <div class="method-source-code" id="visit_while-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1233</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1229</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_while</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:while</span>,
@@ -4074,7 +4074,7 @@
           
 
           <div class="method-source-code" id="visit_while_mod-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1243</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1239</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_while_mod</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:while_mod</span>,
@@ -4101,7 +4101,7 @@
           
 
           <div class="method-source-code" id="visit_word-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1253</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1249</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_word</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:word</span>,
@@ -4127,7 +4127,7 @@
           
 
           <div class="method-source-code" id="visit_words-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1262</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1258</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_words</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:words</span>,
@@ -4153,7 +4153,7 @@
           
 
           <div class="method-source-code" id="visit_words_beg-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1271</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1267</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_words_beg</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:words_beg</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4174,7 +4174,7 @@
           
 
           <div class="method-source-code" id="visit_xstring-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1275</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1271</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_xstring</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:xstring</span>,
@@ -4199,7 +4199,7 @@
           
 
           <div class="method-source-code" id="visit_xstring_literal-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1283</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1279</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_xstring_literal</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:xstring_literal</span>,
@@ -4225,7 +4225,7 @@
           
 
           <div class="method-source-code" id="visit_yield-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1292</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1288</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_yield</span>(<span class="ruby-identifier">node</span>)
   {
     <span class="ruby-value">type:</span> <span class="ruby-value">:yield</span>,
@@ -4251,7 +4251,7 @@
           
 
           <div class="method-source-code" id="visit_yield0-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1301</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1297</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_yield0</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:yield0</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -4272,7 +4272,7 @@
           
 
           <div class="method-source-code" id="visit_zsuper-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1305</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/json_visitor.rb, line 1301</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_zsuper</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">visit_token</span>(<span class="ruby-value">:zsuper</span>, <span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>
