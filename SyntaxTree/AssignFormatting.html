@@ -106,7 +106,7 @@
           
 
           <div class="method-source-code" id="skip_indent-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1327</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1206</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">skip_indent?</span>(<span class="ruby-identifier">value</span>)
   (<span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Call</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">skip_indent?</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">receiver</span>)) <span class="ruby-operator">||</span>
     [

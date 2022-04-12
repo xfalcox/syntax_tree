@@ -79,7 +79,6 @@
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
     <li ><a href="#method-i-format">#format</a>
     <li ><a href="#method-i-pretty_print">#pretty_print</a>
-    <li ><a href="#method-i-to_json">#to_json</a>
   </ul>
 </div>
 
@@ -180,7 +179,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6270</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5750</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">predicate:</span>, <span class="ruby-value">truthy:</span>, <span class="ruby-value">falsy:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@predicate</span> = <span class="ruby-identifier">predicate</span>
   <span class="ruby-ivar">@truthy</span> = <span class="ruby-identifier">truthy</span>
@@ -212,7 +211,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6278</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5758</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_if_op</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -233,7 +232,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6282</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5762</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">predicate</span>, <span class="ruby-identifier">truthy</span>, <span class="ruby-identifier">falsy</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -274,7 +273,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6288</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5768</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">predicate:</span> <span class="ruby-identifier">predicate</span>,
@@ -301,7 +300,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6298</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5778</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">force_flat</span> = [
     <span class="ruby-constant">Alias</span>, <span class="ruby-constant">Assign</span>, <span class="ruby-constant">Break</span>, <span class="ruby-constant">Command</span>, <span class="ruby-constant">CommandCall</span>, <span class="ruby-constant">Heredoc</span>, <span class="ruby-constant">If</span>, <span class="ruby-constant">IfMod</span>, <span class="ruby-constant">IfOp</span>,
@@ -334,7 +333,7 @@
           
 
           <div class="method-source-code" id="pretty_print-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6314</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5794</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;ifop&quot;</span>)
@@ -350,34 +349,6 @@
 
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-constant">Comment</span><span class="ruby-operator">::</span><span class="ruby-constant">List</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">comments</span>))
   <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-to_json" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">to_json</span><span
-            class="method-args">(*opts)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6331</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
-  {
-    <span class="ruby-value">type:</span> <span class="ruby-value">:ifop</span>,
-    <span class="ruby-value">pred:</span> <span class="ruby-identifier">predicate</span>,
-    <span class="ruby-value">tthy:</span> <span class="ruby-identifier">truthy</span>,
-    <span class="ruby-value">flsy:</span> <span class="ruby-identifier">falsy</span>,
-    <span class="ruby-value">loc:</span> <span class="ruby-identifier">location</span>,
-    <span class="ruby-value">cmts:</span> <span class="ruby-identifier">comments</span>
-  }.<span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

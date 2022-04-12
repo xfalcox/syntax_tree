@@ -74,6 +74,10 @@
   <ul class="link-list" role="directory">
     <li ><a href="#method-c-new">::new</a>
     <li ><a href="#method-i-accept">#accept</a>
+    <li ><a href="#method-i-child_nodes">#child_nodes</a>
+    <li ><a href="#method-i-deconstruct">#deconstruct</a>
+    <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
+    <li ><a href="#method-i-pretty_print">#pretty_print</a>
   </ul>
 </div>
 
@@ -137,7 +141,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11954</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11192</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">value:</span>, <span class="ruby-value">location:</span>)
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -166,9 +170,97 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11950</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11197</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_words_beg</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-child_nodes" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">child_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="child_nodes-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+        <div class="aliases">
+          Also aliased as: <a href="WordsBeg.html#method-i-deconstruct">deconstruct</a>
+        </div>
+
+      </div>
+
+      <div id="method-i-deconstruct" class="method-detail method-alias">
+        <div class="method-heading">
+          <span class="method-name">deconstruct</span><span
+            class="method-args">()</span>
+        </div>
+
+        <div class="method-description">
+          
+
+        </div>
+
+
+        <div class="aliases">
+          Alias for: <a href="WordsBeg.html#method-i-child_nodes">child_nodes</a>
+        </div>
+      </div>
+
+      <div id="method-i-deconstruct_keys" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">deconstruct_keys</span><span
+            class="method-args">(keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="deconstruct_keys-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+  { <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-pretty_print" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">pretty_print</span><span
+            class="method-args">(q)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="pretty_print-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 11211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;words_beg&quot;</span>)
+
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

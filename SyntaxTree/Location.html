@@ -78,7 +78,6 @@
     <li ><a href="#method-i-3D-3D">#==</a>
     <li ><a href="#method-i-lines">#lines</a>
     <li ><a href="#method-i-to">#to</a>
-    <li ><a href="#method-i-to_json">#to_json</a>
   </ul>
 </div>
 
@@ -164,7 +163,7 @@
           
 
           <div class="method-source-code" id="fixed-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">fixed</span>(<span class="ruby-value">line:</span>, <span class="ruby-value">char:</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-value">start_line:</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">start_char:</span> <span class="ruby-identifier">char</span>, <span class="ruby-value">end_line:</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">end_char:</span> <span class="ruby-identifier">char</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -185,7 +184,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 10</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">start_line:</span>, <span class="ruby-value">start_char:</span>, <span class="ruby-value">end_line:</span>, <span class="ruby-value">end_char:</span>)
   <span class="ruby-ivar">@start_line</span> = <span class="ruby-identifier">start_line</span>
   <span class="ruby-ivar">@start_char</span> = <span class="ruby-identifier">start_char</span>
@@ -209,7 +208,7 @@
           
 
           <div class="method-source-code" id="token-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">token</span>(<span class="ruby-value">line:</span>, <span class="ruby-value">char:</span>, <span class="ruby-value">size:</span>)
   <span class="ruby-identifier">new</span>(
     <span class="ruby-value">start_line:</span> <span class="ruby-identifier">line</span>,
@@ -242,7 +241,7 @@
           
 
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Location</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">start_line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">start_line</span> <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">start_char</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">end_line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end_line</span> <span class="ruby-operator">&amp;&amp;</span>
@@ -265,7 +264,7 @@
           
 
           <div class="method-source-code" id="lines-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lines</span>
   <span class="ruby-identifier">start_line</span><span class="ruby-operator">..</span><span class="ruby-identifier">end_line</span>
 <span class="ruby-keyword">end</span></pre>
@@ -286,7 +285,7 @@
           
 
           <div class="method-source-code" id="to-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 27</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(
     <span class="ruby-value">start_line:</span> <span class="ruby-identifier">start_line</span>,
@@ -294,27 +293,6 @@
     <span class="ruby-value">end_line:</span> [<span class="ruby-identifier">end_line</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end_line</span>].<span class="ruby-identifier">max</span>,
     <span class="ruby-value">end_char:</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end_char</span>
   )
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-to_json" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">to_json</span><span
-            class="method-args">(*opts)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="to_json-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 36</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
-  [<span class="ruby-identifier">start_line</span>, <span class="ruby-identifier">start_char</span>, <span class="ruby-identifier">end_line</span>, <span class="ruby-identifier">end_char</span>].<span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
