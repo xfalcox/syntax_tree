@@ -564,7 +564,7 @@ The listed files did not match the expected format.</pre>
 <p>When you’re creating a visitor, it’s very easy to accidentally mistype a visit method. Unfortunately, there’s no way to tell Ruby to explicitly override a parent method, so it would then be easy to define a method that never gets called. To mitigate this risk, there’s <code>Visitor.visit_method(name)</code>. This method accepts a symbol that is checked against the list of known visit methods. If it’s not in the list, then an error will be raised. It’s meant to be used like:</p>
 
 <pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ArithmeticVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Visitor</span>
-  <span class="ruby-identifier">visit_method</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binar</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">visit_method</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binary</span>(<span class="ruby-identifier">node</span>)
     <span class="ruby-comment"># ...</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span>
