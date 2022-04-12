@@ -328,7 +328,7 @@ The listed files did not match the expected format.</pre>
 
 <p>If you want to operate over a set of nodes in the tree but don’t want to walk the tree manually, the <code>Visitor</code> class makes it easy. <code>SyntaxTree::Visitor</code> is an implementation of the double dispatch visitor pattern. It works by the user defining visit methods that process nodes in the tree, which then call back to other visit methods to continue the descent. This is easier shown in code.</p>
 
-<p>Let’s say, for instance, that you wanted to find every place in source where you have an arithmetic problem between two integers (this is pretty contrived, but it’s just for illustration). You could define a visitor that only explicitly visited the <code>SyntaxTree::Binary</code> node, as in:</p>
+<p>Let’s say, for instance, that you wanted to find every place in source where you have an arithmetic problem between two integers (this is pretty contrived, but it’s just for illustration). You could define a visitor that only explicitly visits the <code>SyntaxTree::Binary</code> node, as in:</p>
 
 <pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ArithmeticVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Visitor</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binary</span>(<span class="ruby-identifier">node</span>)
