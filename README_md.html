@@ -109,7 +109,7 @@
 </div>
 <h1 id="label-SyntaxTree"><a href="SyntaxTree.html"><code>SyntaxTree</code></a><span><a href="#label-SyntaxTree">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p><a href="https://github.com/ruby*syntax*tree/syntax_tree/actions/workflows/main.yml"><img src="https://github.com/ruby*syntax*tree/syntax_tree/actions/workflows/main.yml/badge.svg"></a> <a href="https://rubygems.org/gems/syntax_tree"><img src="https://img.shields.io/gem/v/syntax_tree.svg"></a></p>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/actions/workflows/main.yml"><img src="https://github.com/ruby-syntax-tree/syntax_tree/actions/workflows/main.yml/badge.svg"></a> <a href="https://rubygems.org/gems/syntax_tree"><img src="https://img.shields.io/gem/v/syntax_tree.svg"></a></p>
 
 <p>Syntax Tree is a suite of tools built on top of the internal CRuby parser. It provides the ability to generate a syntax tree from source, as well as the tools necessary to inspect and manipulate that syntax tree. It can be used to build formatters, linters, language servers, and more.</p>
 
@@ -139,7 +139,7 @@
 </li><li>
 <p><a href="#child_nodes">child_nodes</a></p>
 </li><li>
-<p><a href="#pattern*matching">Pattern matching</a></p>
+<p><a href="#pattern-matching">Pattern matching</a></p>
 </li><li>
 <p><a href="#pretty_printq">pretty_print(q)</a></p>
 </li><li>
@@ -151,7 +151,7 @@
 </li><li>
 <p><a href="#visit_method">visit_method</a></p>
 </li><li>
-<p><a href="#language*server">Language server</a></p>
+<p><a href="#language-server">Language server</a></p>
 </li><li>
 <p><a href="#textdocumentformatting">textDocument/formatting</a></p>
 </li><li>
@@ -166,7 +166,7 @@
 
 <h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Syntax Tree is both a command<em>line interface and a library. If you’re only looking to use the command</em>line interface, then we recommend installing the gem globally, as in:</p>
+<p>Syntax Tree is both a command-line interface and a library. If you’re only looking to use the command-line interface, then we recommend installing the gem globally, as in:</p>
 
 <pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">syntax_tree</span>
 </pre>
@@ -252,11 +252,11 @@ The listed files did not match the expected format.</pre>
 
 <h3 id="label-SyntaxTree.read-28filepath-29"><a href="SyntaxTree.html#method-c-read"><code>SyntaxTree.read(filepath)</code></a><span><a href="#label-SyntaxTree.read-28filepath-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>This function takes a filepath and returns a string associated with the content of that file. It is similar in functionality to <code>File.read</code>, except htat it takes into account Ruby*level file encoding (through magic comments at the top of the file).</p>
+<p>This function takes a filepath and returns a string associated with the content of that file. It is similar in functionality to <code>File.read</code>, except htat it takes into account Ruby-level file encoding (through magic comments at the top of the file).</p>
 
 <h3 id="label-SyntaxTree.parse-28source-29"><a href="SyntaxTree.html#method-c-parse"><code>SyntaxTree.parse(source)</code></a><span><a href="#label-SyntaxTree.parse-28source-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>This function takes an input string containing Ruby code and returns the syntax tree associated with it. The top<em>level node is always a <code>SyntaxTree::Program</code>, which contains a list of top</em>level expression nodes.</p>
+<p>This function takes an input string containing Ruby code and returns the syntax tree associated with it. The top-level node is always a <code>SyntaxTree::Program</code>, which contains a list of top-level expression nodes.</p>
 
 <h3 id="label-SyntaxTree.format-28source-29"><a href="SyntaxTree.html#method-c-format"><code>SyntaxTree.format(source)</code></a><span><a href="#label-SyntaxTree.format-28source-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -277,7 +277,7 @@ The listed files did not match the expected format.</pre>
 
 <h3 id="label-Pattern+matching">Pattern matching<span><a href="#label-Pattern+matching">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>Pattern matching is another way to descend the tree which is more specific than using <code>child_nodes</code>. Using Ruby’s built*in pattern matching, you can extract the same information but be as specific about your constraints as you like. For example, with minimal constraints:</p>
+<p>Pattern matching is another way to descend the tree which is more specific than using <code>child_nodes</code>. Using Ruby’s built-in pattern matching, you can extract the same information but be as specific about your constraints as you like. For example, with minimal constraints:</p>
 
 <pre class="ruby"><span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
 <span class="ruby-identifier">program</span> <span class="ruby-operator">=&gt;</span> { <span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [<span class="ruby-identifier">binary</span>] } }
@@ -335,7 +335,7 @@ The listed files did not match the expected format.</pre>
 
 <pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ArithmeticVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Visitor</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binary</span>(<span class="ruby-identifier">node</span>)
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword">in</span> { <span class="ruby-value">left:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>, <span class="ruby-value">operator:</span> <span class="ruby-value">:+</span> <span class="ruby-operator">|</span> <span class="ruby-value">:*</span> <span class="ruby-operator">|</span> <span class="ruby-value">:*</span> <span class="ruby-operator">|</span> <span class="ruby-value">:/</span>, <span class="ruby-value">right:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span> }
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword">in</span> { <span class="ruby-value">left:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>, <span class="ruby-value">operator:</span> <span class="ruby-value">:+</span> <span class="ruby-operator">|</span> <span class="ruby-value">:-</span> <span class="ruby-operator">|</span> <span class="ruby-value">:*</span> <span class="ruby-operator">|</span> <span class="ruby-value">:/</span>, <span class="ruby-value">right:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span> }
       <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;The result is: #{node.left.value.to_i.public_send(node.operator, node.right.value.to_i)}&quot;</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
@@ -382,12 +382,12 @@ Did you mean?  visit_binary
 
 <h2 id="label-Language+server">Language server<span><a href="#label-Language+server">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Syntax Tree additionally ships with a language server conforming to the <a href="https://microsoft.github.io/language*server*protocol/">language server protocol</a>. It can be invoked through the CLI by running:</p>
+<p>Syntax Tree additionally ships with a language server conforming to the <a href="https://microsoft.github.io/language-server-protocol/">language server protocol</a>. It can be invoked through the CLI by running:</p>
 
 <pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">lsp</span>
 </pre>
 
-<p>By default, the language server is relatively minimal, mostly meant to provide a registered formatter for the Ruby language. However there are a couple of additional niceties baked in. There are related projects that configure and use this language server within IDEs. For example, to use this code with VSCode, see <a href="https://github.com/ruby*syntax*tree/vscode*syntax*tree">ruby_syntax_tree/vscode_syntax_tree</a>.</p>
+<p>By default, the language server is relatively minimal, mostly meant to provide a registered formatter for the Ruby language. However there are a couple of additional niceties baked in. There are related projects that configure and use this language server within IDEs. For example, to use this code with VSCode, see <a href="https://github.com/ruby-syntax-tree/vscode-syntax-tree">ruby-syntax-tree/vscode-syntax-tree</a>.</p>
 
 <h3 id="label-textDocument-2Fformatting">textDocument/formatting<span><a href="#label-textDocument-2Fformatting">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
@@ -411,7 +411,7 @@ Did you mean?  visit_binary
 
 <h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/ruby_syntax_tree/syntax_tree">github.com/ruby_syntax_tree/syntax_tree</a>.</p>
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/ruby-syntax-tree/syntax_tree">github.com/ruby-syntax-tree/syntax_tree</a>.</p>
 
 <h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
