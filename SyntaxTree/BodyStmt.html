@@ -203,7 +203,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1707</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1713</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">statements:</span>,
   <span class="ruby-value">rescue_clause:</span>,
@@ -245,7 +245,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1756</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1767</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_bodystmt</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -258,7 +258,7 @@
       <div id="method-i-bind" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">bind</span><span
-            class="method-args">(start_char, end_char)</span>
+            class="method-args">(start_char, start_column, end_char, end_column)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -266,14 +266,16 @@
           
 
           <div class="method-source-code" id="bind-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1725</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-identifier">start_char</span>, <span class="ruby-identifier">end_char</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1731</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>(<span class="ruby-identifier">start_char</span>, <span class="ruby-identifier">start_column</span>, <span class="ruby-identifier">end_char</span>, <span class="ruby-identifier">end_column</span>)
   <span class="ruby-ivar">@location</span> =
     <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(
       <span class="ruby-value">start_line:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_line</span>,
       <span class="ruby-value">start_char:</span> <span class="ruby-identifier">start_char</span>,
+      <span class="ruby-value">start_column:</span> <span class="ruby-identifier">start_column</span>,
       <span class="ruby-value">end_line:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_line</span>,
-      <span class="ruby-value">end_char:</span> <span class="ruby-identifier">end_char</span>
+      <span class="ruby-value">end_char:</span> <span class="ruby-identifier">end_char</span>,
+      <span class="ruby-value">end_column:</span> <span class="ruby-identifier">end_column</span>
     )
 
   <span class="ruby-identifier">parts</span> = [<span class="ruby-identifier">rescue_clause</span>, <span class="ruby-identifier">else_clause</span>, <span class="ruby-identifier">ensure_clause</span>]
@@ -282,14 +284,17 @@
   <span class="ruby-identifier">consequent</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">first</span>
   <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">bind</span>(
     <span class="ruby-identifier">start_char</span>,
-    <span class="ruby-identifier">consequent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_char</span>
+    <span class="ruby-identifier">start_column</span>,
+    <span class="ruby-identifier">consequent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_char</span>,
+    <span class="ruby-identifier">consequent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_column</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_column</span>
   )
 
   <span class="ruby-comment"># Next we&#39;re going to determine the rescue clause if there is one</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">rescue_clause</span>
     <span class="ruby-identifier">consequent</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">drop</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">first</span>
     <span class="ruby-identifier">rescue_clause</span>.<span class="ruby-identifier">bind_end</span>(
-      <span class="ruby-identifier">consequent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_char</span>
+      <span class="ruby-identifier">consequent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_char</span>,
+      <span class="ruby-identifier">consequent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_column</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_column</span>
     )
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -310,7 +315,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1760</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1771</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">statements</span>, <span class="ruby-identifier">rescue_clause</span>, <span class="ruby-identifier">else_keyword</span>, <span class="ruby-identifier">else_clause</span>, <span class="ruby-identifier">ensure_clause</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -351,7 +356,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1766</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1777</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">statements:</span> <span class="ruby-identifier">statements</span>,
@@ -379,7 +384,7 @@
           
 
           <div class="method-source-code" id="empty-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1752</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1763</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span>
   <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">rescue_clause</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">else_clause</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ensure_clause</span>
 <span class="ruby-keyword">end</span></pre>
@@ -400,7 +405,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1777</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1788</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span>

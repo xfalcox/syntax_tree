@@ -117,7 +117,7 @@
           <p><a href="If.html"><code>If</code></a> there is some part of this string that matches an escape sequence or that contains the interpolation pattern (“#{”), then we are locked into whichever quote the user chose. (<a href="If.html"><code>If</code></a> they chose single quotes, then double quoting would activate the escape sequence, and if they chose double quotes, then single quotes would deactivate it.)</p>
 
           <div class="method-source-code" id="locked-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3435</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3446</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">locked?</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">node</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">part</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">TStringContent</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-regexp">/#[@${]|[\\]/</span>)
@@ -140,7 +140,7 @@
           <p>Find the matching closing quote for the given opening quote.</p>
 
           <div class="method-source-code" id="matching-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3442</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3453</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">matching</span>(<span class="ruby-identifier">quote</span>)
   <span class="ruby-constant">PAIRS</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">quote</span>) { <span class="ruby-identifier">quote</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -161,7 +161,7 @@
           <p>Escape and unescape single and double quotes as needed to be able to enclose <code>content</code> with <code>enclosing</code>.</p>
 
           <div class="method-source-code" id="normalize-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3448</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3459</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">normalize</span>(<span class="ruby-identifier">content</span>, <span class="ruby-identifier">enclosing</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">content</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">enclosing</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;\&quot;&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">enclosing</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&#39;&quot;</span>
 

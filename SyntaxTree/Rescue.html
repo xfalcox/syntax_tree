@@ -194,7 +194,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6885</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6896</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">keyword:</span>,
   <span class="ruby-value">exception:</span>,
@@ -234,7 +234,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6918</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6931</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_rescue</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -247,7 +247,7 @@
       <div id="method-i-bind_end" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">bind_end</span><span
-            class="method-args">(end_char)</span>
+            class="method-args">(end_char, end_column)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -255,21 +255,23 @@
           
 
           <div class="method-source-code" id="bind_end-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6901</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind_end</span>(<span class="ruby-identifier">end_char</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6912</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind_end</span>(<span class="ruby-identifier">end_char</span>, <span class="ruby-identifier">end_column</span>)
   <span class="ruby-ivar">@location</span> =
     <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(
       <span class="ruby-value">start_line:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_line</span>,
       <span class="ruby-value">start_char:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span>,
+      <span class="ruby-value">start_column:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_column</span>,
       <span class="ruby-value">end_line:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_line</span>,
-      <span class="ruby-value">end_char:</span> <span class="ruby-identifier">end_char</span>
+      <span class="ruby-value">end_char:</span> <span class="ruby-identifier">end_char</span>,
+      <span class="ruby-value">end_column:</span> <span class="ruby-identifier">end_column</span>
     )
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">consequent</span>
-    <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">bind_end</span>(<span class="ruby-identifier">end_char</span>)
-    <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">bind_end</span>(<span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span>)
+    <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">bind_end</span>(<span class="ruby-identifier">end_char</span>, <span class="ruby-identifier">end_column</span>)
+    <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">bind_end</span>(<span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span>, <span class="ruby-identifier">consequent</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_column</span>)
   <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">bind_end</span>(<span class="ruby-identifier">end_char</span>)
+    <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">bind_end</span>(<span class="ruby-identifier">end_char</span>, <span class="ruby-identifier">end_column</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -289,7 +291,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6922</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6935</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">statements</span>, <span class="ruby-identifier">consequent</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -330,7 +332,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6928</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6941</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">keyword:</span> <span class="ruby-identifier">keyword</span>,
@@ -358,7 +360,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6939</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6952</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">keyword</span>)

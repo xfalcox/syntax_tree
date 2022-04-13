@@ -191,7 +191,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2153</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2164</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">receiver:</span>,
   <span class="ruby-value">operator:</span>,
@@ -231,7 +231,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2169</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2180</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_call</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -252,7 +252,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2173</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2184</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [
     <span class="ruby-identifier">receiver</span>,
@@ -298,7 +298,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2184</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2195</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">receiver:</span> <span class="ruby-identifier">receiver</span>,
@@ -326,7 +326,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2195</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2206</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">call_operator</span> = <span class="ruby-constant">CallOperatorFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">operator</span>)
 
