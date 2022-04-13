@@ -1,18 +1,18 @@
-Wed, 13 Apr 2022 01:06:18 +0000
-CHANGELOG.md	Wed, 13 Apr 2022 01:06:13 +0000
-CODE_OF_CONDUCT.md	Wed, 13 Apr 2022 01:06:13 +0000
-LICENSE	Wed, 13 Apr 2022 01:06:13 +0000
-README.md	Wed, 13 Apr 2022 01:06:13 +0000
-exe/stree	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/cli.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/formatter.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/language_server/inlay_hints.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/language_server.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/node.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/parser.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/prettyprint.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/version.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/visitor/json_visitor.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/visitor/pretty_print_visitor.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree/visitor.rb	Wed, 13 Apr 2022 01:06:13 +0000
-lib/syntax_tree.rb	Wed, 13 Apr 2022 01:06:13 +0000
+Wed, 13 Apr 2022 01:44:19 +0000
+CHANGELOG.md	Wed, 13 Apr 2022 01:44:14 +0000
+CODE_OF_CONDUCT.md	Wed, 13 Apr 2022 01:44:14 +0000
+LICENSE	Wed, 13 Apr 2022 01:44:14 +0000
+README.md	Wed, 13 Apr 2022 01:44:14 +0000
+exe/stree	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/cli.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/formatter.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/language_server/inlay_hints.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/language_server.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/node.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/parser.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/prettyprint.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/version.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/visitor/json_visitor.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/visitor/pretty_print_visitor.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree/visitor.rb	Wed, 13 Apr 2022 01:44:14 +0000
+lib/syntax_tree.rb	Wed, 13 Apr 2022 01:44:14 +0000

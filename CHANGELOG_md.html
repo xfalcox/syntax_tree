@@ -60,6 +60,9 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Changelog">Changelog</a>
     <li><a href="#label-5BUnreleased-5D">[Unreleased]</a>
+    <li><a href="#label-2.1.0+-+2022-04-12"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.0.1...v2.1.0">2.1.0</a> - 2022-04-12</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Removed">Removed</a>
     <li><a href="#label-2.0.1+-+2022-03-31"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.0.0...v2.0.1">2.0.1</a> - 2022-03-31</a>
     <li><a href="#label-Changed">Changed</a>
     <li><a href="#label-2.0.0+-+2022-03-31"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v1.2.0...v2.0.0">2.0.0</a> - 2022-03-31</a>
@@ -107,6 +110,28 @@
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
 <h2 id="label-5BUnreleased-5D">[Unreleased]<span><a href="#label-5BUnreleased-5D">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-2.1.0+-+2022-04-12"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.0.1...v2.1.0">2.1.0</a> - 2022-04-12<span><a href="#label-2.1.0+-+2022-04-12">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The <code>SyntaxTree::Visitor</code> class now implements the visitor pattern for Ruby nodes.</p>
+</li><li>
+<p>The <code>SyntaxTree::Visitor.visit_method(name)</code> method.</p>
+</li><li>
+<p>Support for Ruby 2.7.</p>
+</li><li>
+<p>Support for comments on <code>rescue</code> and <code>else</code> keywords.</p>
+</li><li>
+<p><code>SyntaxTree::Location</code> now additionally has <code>start_column</code> and <code>end_column</code>.</p>
+</li><li>
+<p>The CLI now accepts content over STDIN for the <code>ast</code>, <code>check</code>, <code>debug</code>, <code>doc</code>, <code>format</code>, and <code>write</code> commands.</p>
+</li></ul>
+
+<h3 id="label-Removed">Removed<span><a href="#label-Removed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>The missing hash value inlay hints have been removed.</p>
+</li></ul>
 
 <h2 id="label-2.0.1+-+2022-03-31"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.0.0...v2.0.1">2.0.1</a> - 2022-03-31<span><a href="#label-2.0.1+-+2022-03-31">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
