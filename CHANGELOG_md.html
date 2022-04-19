@@ -60,6 +60,9 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Changelog">Changelog</a>
     <li><a href="#label-5BUnreleased-5D">[Unreleased]</a>
+    <li><a href="#label-2.2.0+-+2022-04-19"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.1.1...v2.2.0">2.2.0</a> - 2022-04-19</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
     <li><a href="#label-2.1.1+-+2022-04-16"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.1.0...v2.1.1">2.1.1</a> - 2022-04-16</a>
     <li><a href="#label-Changed">Changed</a>
     <li><a href="#label-2.1.0+-+2022-04-12"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.0.1...v2.1.0">2.1.0</a> - 2022-04-12</a>
@@ -112,6 +115,24 @@
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
 <h2 id="label-5BUnreleased-5D">[Unreleased]<span><a href="#label-5BUnreleased-5D">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-2.2.0+-+2022-04-19"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.1.1...v2.2.0">2.2.0</a> - 2022-04-19<span><a href="#label-2.2.0+-+2022-04-19">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/51">#51</a> - <code>SyntaxTree::Location</code> nodes now have pattern matching.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/51">#51</a> - <code>SyntaxTree::Heredoc</code> now have a <code>dedent</code> field that indicates the number of spaces to strip from the beginning of the string content.</p>
+</li></ul>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/51">#51</a> - <code>SyntaxTree::HshPtn</code> will now add a <code>then</code> if you use a bare <code>**</code> and <code>SyntaxTree::AryPtn</code> will do the same for a bare <code>*</code> on the end.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/51">#51</a> - <code>SyntaxTree::MLHSParen</code> now has a comma field in case a trailing comma has been added to a parenthesis destructuring, as in <code>((foo,))</code>.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/51">#51</a> - <code>SyntaxTree::FndPtn</code> has much improved parsing now.</p>
+</li></ul>
 
 <h2 id="label-2.1.1+-+2022-04-16"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.1.0...v2.1.1">2.1.1</a> - 2022-04-16<span><a href="#label-2.1.1+-+2022-04-16">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
