@@ -107,6 +107,21 @@
         <h3>Attributes</h3>
       </header>
 
+      <div id="attribute-i-comma" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">comma</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <dl class="rdoc-list label-list"><dt>boolean
+<dd>
+<p>whether or not there is a trailing comma at the end of this</p>
+</dd></dl>
+
+<p>list, which impacts destructuring. It’s an attr_accessor so that while the syntax tree is being built it can be set by its parent node</p>
+        </div>
+      </div>
       <div id="attribute-i-comments" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">comments</span><span
@@ -144,7 +159,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(contents:, location:, comments: [])</span>
+            class="method-args">(contents:, comma: false, location:, comments: [])</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -152,9 +167,10 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5600</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">contents:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5629</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">contents:</span>, <span class="ruby-value">comma:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@contents</span> = <span class="ruby-identifier">contents</span>
+  <span class="ruby-ivar">@comma</span> = <span class="ruby-identifier">comma</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
   <span class="ruby-ivar">@comments</span> = <span class="ruby-identifier">comments</span>
 <span class="ruby-keyword">end</span></pre>
@@ -182,7 +198,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5606</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5636</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_mlhs_paren</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -203,7 +219,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5610</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5640</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">contents</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -244,7 +260,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5616</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5646</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">contents:</span> <span class="ruby-identifier">contents</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -265,12 +281,13 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5620</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5650</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">MAssign</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">MLHSParen</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">contents</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;,&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">comma</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">do</span>
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
@@ -278,6 +295,7 @@
         <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">contents</span>)
       <span class="ruby-keyword">end</span>
 
+      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;,&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">comma</span>
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-string">&quot;&quot;</span>)
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>

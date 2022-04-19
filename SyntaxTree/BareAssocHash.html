@@ -151,7 +151,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1356</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1371</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">assocs:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@assocs</span> = <span class="ruby-identifier">assocs</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -181,7 +181,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1362</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1377</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_bare_assoc_hash</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -202,7 +202,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1366</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1381</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">assocs</span>
 <span class="ruby-keyword">end</span></pre>
@@ -243,7 +243,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1372</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1387</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">assocs:</span> <span class="ruby-identifier">assocs</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -264,7 +264,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1376</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1391</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">seplist</span>(<span class="ruby-identifier">assocs</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">assoc</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">assoc</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -285,7 +285,7 @@
           
 
           <div class="method-source-code" id="format_key-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1380</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1395</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_key</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">key</span>)
   (<span class="ruby-ivar">@key_formatter</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">HashKeyFormatter</span>.<span class="ruby-identifier">for</span>(<span class="ruby-keyword">self</span>)).<span class="ruby-identifier">format_key</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">key</span>)
 <span class="ruby-keyword">end</span></pre>
