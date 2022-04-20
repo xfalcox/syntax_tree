@@ -1,18 +1,18 @@
-Wed, 20 Apr 2022 19:10:34 +0000
-CHANGELOG.md	Wed, 20 Apr 2022 19:10:28 +0000
-CODE_OF_CONDUCT.md	Wed, 20 Apr 2022 19:10:28 +0000
-LICENSE	Wed, 20 Apr 2022 19:10:28 +0000
-README.md	Wed, 20 Apr 2022 19:10:28 +0000
-exe/stree	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/cli.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/formatter.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/language_server/inlay_hints.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/language_server.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/node.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/parser.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/prettyprint.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/version.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/visitor/json_visitor.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/visitor/pretty_print_visitor.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree/visitor.rb	Wed, 20 Apr 2022 19:10:28 +0000
-lib/syntax_tree.rb	Wed, 20 Apr 2022 19:10:28 +0000
+Wed, 20 Apr 2022 19:13:37 +0000
+CHANGELOG.md	Wed, 20 Apr 2022 19:13:33 +0000
+CODE_OF_CONDUCT.md	Wed, 20 Apr 2022 19:13:33 +0000
+LICENSE	Wed, 20 Apr 2022 19:13:33 +0000
+README.md	Wed, 20 Apr 2022 19:13:33 +0000
+exe/stree	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/cli.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/formatter.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/language_server/inlay_hints.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/language_server.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/node.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/parser.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/prettyprint.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/version.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/visitor/json_visitor.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/visitor/pretty_print_visitor.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree/visitor.rb	Wed, 20 Apr 2022 19:13:33 +0000
+lib/syntax_tree.rb	Wed, 20 Apr 2022 19:13:33 +0000
