@@ -145,7 +145,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4652</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4668</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">keyword</span>
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
@@ -174,13 +174,18 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4657</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4673</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-comment"># If the predicate of the conditional contains an assignment (in which</span>
   <span class="ruby-comment"># case we can&#39;t know for certain that that assignment doesn&#39;t impact the</span>
   <span class="ruby-comment"># statements inside the conditional) then we can&#39;t use the modifier form</span>
   <span class="ruby-comment"># and we must use the block form.</span>
   <span class="ruby-keyword">if</span> <span class="ruby-constant">ContainsAssignment</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">predicate</span>)
+    <span class="ruby-identifier">format_break</span>(<span class="ruby-identifier">q</span>, <span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">contains_conditional?</span>
     <span class="ruby-identifier">format_break</span>(<span class="ruby-identifier">q</span>, <span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
     <span class="ruby-keyword">return</span>
   <span class="ruby-keyword">end</span>
