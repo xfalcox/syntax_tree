@@ -145,7 +145,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2086</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2053</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">keyword</span>
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
@@ -174,7 +174,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2091</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2058</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">arguments</span>
 
@@ -188,13 +188,19 @@
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Paren</span>)
           <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">skip_parens?</span>(<span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">first</span>)
             <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
-            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">first</span>)
+            <span class="ruby-identifier">contents</span> = <span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">first</span>
+            <span class="ruby-identifier">contents</span> = <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">contents</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ArrayLiteral</span>)
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">contents</span>)
           <span class="ruby-keyword">else</span>
             <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">arguments</span>)
           <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ArrayLiteral</span>)
           <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
-          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">arguments</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">part</span>.<span class="ruby-identifier">contents</span>)
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">arguments</span>)
+          <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">else</span>
           <span class="ruby-identifier">format_arguments</span>(<span class="ruby-identifier">q</span>, <span class="ruby-string">&quot;(&quot;</span>, <span class="ruby-string">&quot;)&quot;</span>)
         <span class="ruby-keyword">end</span>

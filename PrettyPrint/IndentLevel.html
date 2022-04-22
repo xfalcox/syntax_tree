@@ -185,7 +185,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 505</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 501</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">genspace:</span>,
   <span class="ruby-value">value:</span> <span class="ruby-identifier">genspace</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">0</span>),
@@ -223,7 +223,7 @@
           <p>This can accept a whole lot of different kinds of objects, due to the nature of the flexibility of the <a href="Align.html"><code>Align</code></a> node.</p>
 
           <div class="method-source-code" id="align-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 521</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 517</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">align</span>(<span class="ruby-identifier">n</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">n</span>
   <span class="ruby-keyword">when</span> <span class="ruby-constant">NilClass</span>
@@ -251,7 +251,7 @@
           
 
           <div class="method-source-code" id="indent-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 532</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 528</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indent</span>(<span class="ruby-identifier">part</span> = <span class="ruby-constant">IndentPart</span>)
   <span class="ruby-identifier">next_value</span> = <span class="ruby-identifier">genspace</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">0</span>)
   <span class="ruby-identifier">next_length</span> = <span class="ruby-value">0</span>

@@ -180,7 +180,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7173</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6794</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">beginning:</span>, <span class="ruby-value">ending:</span>, <span class="ruby-value">parts:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@beginning</span> = <span class="ruby-identifier">beginning</span>
   <span class="ruby-ivar">@ending</span> = <span class="ruby-identifier">ending</span>
@@ -212,7 +212,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7181</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6802</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_regexp_literal</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -233,7 +233,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7185</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6806</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">parts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -274,7 +274,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7191</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6812</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">beginning:</span> <span class="ruby-identifier">beginning</span>,
@@ -301,7 +301,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7201</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6822</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">braces</span> = <span class="ruby-identifier">ambiguous?</span>(<span class="ruby-identifier">q</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">include?</span>(<span class="ruby-regexp">%r{\/}</span>)
 

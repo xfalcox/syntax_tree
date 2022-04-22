@@ -145,7 +145,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4993</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4675</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">keyword</span>
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
@@ -174,15 +174,8 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4998</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4680</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-comment"># If we can transform this node into a ternary, then we&#39;re going to print</span>
-  <span class="ruby-comment"># a special version that uses the ternary operator if it fits on one line.</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-constant">Ternaryable</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">node</span>)
-    <span class="ruby-identifier">format_ternary</span>(<span class="ruby-identifier">q</span>)
-    <span class="ruby-keyword">return</span>
-  <span class="ruby-keyword">end</span>
-
   <span class="ruby-comment"># If the predicate of the conditional contains an assignment (in which</span>
   <span class="ruby-comment"># case we can&#39;t know for certain that that assignment doesn&#39;t impact the</span>
   <span class="ruby-comment"># statements inside the conditional) then we can&#39;t use the modifier form</span>
@@ -192,7 +185,12 @@
     <span class="ruby-keyword">return</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">consequent</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">contains_conditional?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">contains_conditional?</span>
+    <span class="ruby-identifier">format_break</span>(<span class="ruby-identifier">q</span>, <span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">consequent</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">format_break</span>(<span class="ruby-identifier">q</span>, <span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>) }
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
