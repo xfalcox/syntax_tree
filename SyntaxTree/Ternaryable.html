@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module SyntaxTree::AssignFormatting - RDoc Documentation</title>
+<title>module SyntaxTree::Ternaryable - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -66,21 +66,21 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-skip_indent-3F">::skip_indent?</a>
+    <li ><a href="#method-c-call">::call</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="module-SyntaxTree::AssignFormatting">
-  <h1 id="module-SyntaxTree::AssignFormatting" class="module">
-    module SyntaxTree::AssignFormatting
+<main role="main" aria-labelledby="module-SyntaxTree::Ternaryable">
+  <h1 id="module-SyntaxTree::Ternaryable" class="module">
+    module SyntaxTree::Ternaryable
   </h1>
 
   <section class="description">
     
-<p>Determins if the following value should be indented or not.</p>
+<p><a href="In.html"><code>In</code></a> order for an ‘if` or `unless` expression to be shortened to a ternary, there has to be one and only one consequent clause which is an <a href="Else.html"><code>Else</code></a>. Both the body of the main node and the body of the <a href="Else.html"><code>Else</code></a> node must have only one statement, and that statement must not be on the denied list of potential statements.</p>
 
   </section>
 
@@ -95,26 +95,24 @@
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-skip_indent-3F" class="method-detail ">
+      <div id="method-c-call" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">skip_indent?</span><span
-            class="method-args">(value)</span>
+          <span class="method-name">call</span><span
+            class="method-args">(node)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
           
 
-          <div class="method-source-code" id="skip_indent-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1078</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">skip_indent?</span>(<span class="ruby-identifier">value</span>)
-  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
-  <span class="ruby-keyword">in</span> <span class="ruby-constant">ArrayLiteral</span> <span class="ruby-operator">|</span> <span class="ruby-constant">HashLiteral</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Heredoc</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Lambda</span> <span class="ruby-operator">|</span> <span class="ruby-constant">QSymbols</span> <span class="ruby-operator">|</span> <span class="ruby-constant">QWords</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Symbols</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Words</span>
-    <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span>[<span class="ruby-value">receiver:</span>]
-    <span class="ruby-identifier">skip_indent?</span>(<span class="ruby-identifier">receiver</span>)
-  <span class="ruby-keyword">in</span> <span class="ruby-constant">DynaSymbol</span>[<span class="ruby-value">quote:</span>]
-    <span class="ruby-identifier">quote</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;%s&quot;</span>)
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4953</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">call</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">in</span> { <span class="ruby-value">predicate:</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Command</span> <span class="ruby-operator">|</span> <span class="ruby-constant">CommandCall</span> <span class="ruby-operator">|</span> <span class="ruby-constant">MAssign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span> }
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">in</span> { <span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [<span class="ruby-identifier">truthy</span>] }, <span class="ruby-value">consequent:</span> <span class="ruby-constant">Else</span>[<span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [<span class="ruby-identifier">falsy</span>] }] }
+    <span class="ruby-identifier">ternaryable?</span>(<span class="ruby-identifier">truthy</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ternaryable?</span>(<span class="ruby-identifier">falsy</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-keyword">false</span>
   <span class="ruby-keyword">end</span>

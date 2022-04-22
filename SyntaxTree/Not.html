@@ -165,7 +165,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8247</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8634</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">statement:</span>, <span class="ruby-value">parentheses:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@statement</span> = <span class="ruby-identifier">statement</span>
   <span class="ruby-ivar">@parentheses</span> = <span class="ruby-identifier">parentheses</span>
@@ -196,7 +196,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8254</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8641</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_not</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -217,7 +217,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8258</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8645</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">statement</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -258,7 +258,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8264</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8651</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">statement:</span> <span class="ruby-identifier">statement</span>,
@@ -284,11 +284,28 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8273</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8660</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">parentheses</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;not(&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;not &quot;</span>)
+  <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parents</span>.<span class="ruby-identifier">take</span>(<span class="ruby-value">2</span>)[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">ternary</span> = (<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">If</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Unless</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Ternaryable</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">parent</span>)
+
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;not&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parentheses</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;(&quot;</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">ternary</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_break</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>) }.<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;(&quot;</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
+  <span class="ruby-keyword">end</span>
+
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statement</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">statement</span>
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;)&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">parentheses</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parentheses</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;)&quot;</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">ternary</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;)&quot;</span>) }
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

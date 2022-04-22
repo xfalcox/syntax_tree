@@ -251,7 +251,7 @@
     <span class="ruby-comment"># Print all comments that were found after the node.</span>
     <span class="ruby-identifier">trailing</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">comment</span><span class="ruby-operator">|</span>
       <span class="ruby-identifier">line_suffix</span>(<span class="ruby-value">priority:</span> <span class="ruby-constant">COMMENT_PRIORITY</span>) <span class="ruby-keyword">do</span>
-        <span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
+        <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">inline?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">breakable</span>
         <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">format</span>(<span class="ruby-keyword">self</span>)
         <span class="ruby-identifier">break_parent</span>
       <span class="ruby-keyword">end</span>

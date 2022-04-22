@@ -208,6 +208,9 @@
     <a href="SyntaxTree/ArrayLiteral.html">SyntaxTree::ArrayLiteral</a>
   </li>
   <li class="class">
+    <a href="SyntaxTree/ArrayLiteral/EmptyWithCommentsFormatter.html">SyntaxTree::ArrayLiteral::EmptyWithCommentsFormatter</a>
+  </li>
+  <li class="class">
     <a href="SyntaxTree/ArrayLiteral/QSymbolsFormatter.html">SyntaxTree::ArrayLiteral::QSymbolsFormatter</a>
   </li>
   <li class="class">
@@ -314,6 +317,9 @@
   </li>
   <li class="class">
     <a href="SyntaxTree/Call.html">SyntaxTree::Call</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/CallChainFormatter.html">SyntaxTree::CallChainFormatter</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/CallOperatorFormatter.html">SyntaxTree::CallOperatorFormatter</a>
@@ -449,6 +455,9 @@
   </li>
   <li class="class">
     <a href="SyntaxTree/HashLiteral.html">SyntaxTree::HashLiteral</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/HashLiteral/EmptyWithCommentsFormatter.html">SyntaxTree::HashLiteral::EmptyWithCommentsFormatter</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/Heredoc.html">SyntaxTree::Heredoc</a>
@@ -723,6 +732,9 @@
   <li class="class">
     <a href="SyntaxTree/TStringEnd.html">SyntaxTree::TStringEnd</a>
   </li>
+  <li class="module">
+    <a href="SyntaxTree/Ternaryable.html">SyntaxTree::Ternaryable</a>
+  </li>
   <li class="class">
     <a href="SyntaxTree/TopConstField.html">SyntaxTree::TopConstField</a>
   </li>
@@ -837,6 +849,16 @@
     <a href="SyntaxTree/ContainsAssignment.html#method-c-call">::call</a>
     &mdash;
     <span class="container">SyntaxTree::ContainsAssignment</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Ternaryable.html#method-c-call">::call</a>
+    &mdash;
+    <span class="container">SyntaxTree::Ternaryable</span>
+
+  <li class="method">
+    <a href="SyntaxTree/CallChainFormatter.html#method-c-chained-3F">::chained?</a>
+    &mdash;
+    <span class="container">SyntaxTree::CallChainFormatter</span>
 
   <li class="method">
     <a href="SyntaxTree/LanguageServer/InlayHints.html#method-c-find">::find</a>
@@ -1004,6 +1026,11 @@
     <span class="container">SyntaxTree::ArrayLiteral::VarRefsFormatter</span>
 
   <li class="method">
+    <a href="SyntaxTree/ArrayLiteral/EmptyWithCommentsFormatter.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::ArrayLiteral::EmptyWithCommentsFormatter</span>
+
+  <li class="method">
     <a href="SyntaxTree/AryPtn.html#method-c-new">::new</a>
     &mdash;
     <span class="container">SyntaxTree::AryPtn</span>
@@ -1102,6 +1129,11 @@
     <a href="SyntaxTree/CallOperatorFormatter.html#method-c-new">::new</a>
     &mdash;
     <span class="container">SyntaxTree::CallOperatorFormatter</span>
+
+  <li class="method">
+    <a href="SyntaxTree/CallChainFormatter.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::CallChainFormatter</span>
 
   <li class="method">
     <a href="SyntaxTree/Call.html#method-c-new">::new</a>
@@ -1287,6 +1319,11 @@
     <a href="SyntaxTree/HashLiteral.html#method-c-new">::new</a>
     &mdash;
     <span class="container">SyntaxTree::HashLiteral</span>
+
+  <li class="method">
+    <a href="SyntaxTree/HashLiteral/EmptyWithCommentsFormatter.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::HashLiteral::EmptyWithCommentsFormatter</span>
 
   <li class="method">
     <a href="SyntaxTree/Heredoc.html#method-c-new">::new</a>
@@ -5514,6 +5551,11 @@
     <span class="container">SyntaxTree::ArrayLiteral::VarRefsFormatter</span>
 
   <li class="method">
+    <a href="SyntaxTree/ArrayLiteral/EmptyWithCommentsFormatter.html#method-i-format">#format</a>
+    &mdash;
+    <span class="container">SyntaxTree::ArrayLiteral::EmptyWithCommentsFormatter</span>
+
+  <li class="method">
     <a href="SyntaxTree/AryPtn.html#method-i-format">#format</a>
     &mdash;
     <span class="container">SyntaxTree::AryPtn</span>
@@ -5612,6 +5654,11 @@
     <a href="SyntaxTree/CallOperatorFormatter.html#method-i-format">#format</a>
     &mdash;
     <span class="container">SyntaxTree::CallOperatorFormatter</span>
+
+  <li class="method">
+    <a href="SyntaxTree/CallChainFormatter.html#method-i-format">#format</a>
+    &mdash;
+    <span class="container">SyntaxTree::CallChainFormatter</span>
 
   <li class="method">
     <a href="SyntaxTree/Call.html#method-i-format">#format</a>
@@ -5777,6 +5824,11 @@
     <a href="SyntaxTree/HashLiteral.html#method-i-format">#format</a>
     &mdash;
     <span class="container">SyntaxTree::HashLiteral</span>
+
+  <li class="method">
+    <a href="SyntaxTree/HashLiteral/EmptyWithCommentsFormatter.html#method-i-format">#format</a>
+    &mdash;
+    <span class="container">SyntaxTree::HashLiteral::EmptyWithCommentsFormatter</span>
 
   <li class="method">
     <a href="SyntaxTree/Heredoc.html#method-i-format">#format</a>
@@ -6209,6 +6261,26 @@
     <span class="container">SyntaxTree::ZSuper</span>
 
   <li class="method">
+    <a href="SyntaxTree/Call.html#method-i-format_arguments">#format_arguments</a>
+    &mdash;
+    <span class="container">SyntaxTree::Call</span>
+
+  <li class="method">
+    <a href="SyntaxTree/CallChainFormatter.html#method-i-format_chain">#format_chain</a>
+    &mdash;
+    <span class="container">SyntaxTree::CallChainFormatter</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Call.html#method-i-format_contents">#format_contents</a>
+    &mdash;
+    <span class="container">SyntaxTree::Call</span>
+
+  <li class="method">
+    <a href="SyntaxTree/MethodAddBlock.html#method-i-format_contents">#format_contents</a>
+    &mdash;
+    <span class="container">SyntaxTree::MethodAddBlock</span>
+
+  <li class="method">
     <a href="SyntaxTree/Formatter.html#method-i-format_each">#format_each</a>
     &mdash;
     <span class="container">SyntaxTree::Formatter</span>
@@ -6250,6 +6322,16 @@
 
   <li class="method">
     <a href="PrettyPrint/SingleLine.html#method-i-if_break">#if_break</a>
+    &mdash;
+    <span class="container">PrettyPrint::SingleLine</span>
+
+  <li class="method">
+    <a href="PrettyPrint.html#method-i-if_flat">#if_flat</a>
+    &mdash;
+    <span class="container">PrettyPrint</span>
+
+  <li class="method">
+    <a href="PrettyPrint/SingleLine.html#method-i-if_flat">#if_flat</a>
     &mdash;
     <span class="container">PrettyPrint::SingleLine</span>
 
