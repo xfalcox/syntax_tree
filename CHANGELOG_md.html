@@ -60,6 +60,9 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Changelog">Changelog</a>
     <li><a href="#label-5BUnreleased-5D">[Unreleased]</a>
+    <li><a href="#label-2.3.0+-+2022-04-22"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.2.0...v2.3.0">2.3.0</a> - 2022-04-22</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
     <li><a href="#label-2.2.0+-+2022-04-19"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.1.1...v2.2.0">2.2.0</a> - 2022-04-19</a>
     <li><a href="#label-Added">Added</a>
     <li><a href="#label-Changed">Changed</a>
@@ -115,6 +118,40 @@
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
 <h2 id="label-5BUnreleased-5D">[Unreleased]<span><a href="#label-5BUnreleased-5D">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-2.3.0+-+2022-04-22"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.2.0...v2.3.0">2.3.0</a> - 2022-04-22<span><a href="#label-2.3.0+-+2022-04-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/52">#52</a> - <code>SyntaxTree::Formatter.format</code> for formatting an already parsed node.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - <code>if</code> and <code>unless</code> can now be transformed into ternaries if they’re simple enough.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - Nicely format call chains by one indentation.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - Handle trailing operators in call chains when they are necessary because of comments.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - Add some specialized formatting for Sorbet <code>sig</code> blocks to make them appear nicer.</p>
+</li></ul>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/53">#53</a> - Optional keyword arguments on method declarations have a value of <code>nil</code> now instead of <code>false</code>. This makes it easier to use the visitor.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/54">#54</a> - Flow control operators can now skip parentheses for simple, individual arguments. e.g., <code>break(1)</code> becomes <code>break 1</code>.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/54">#54</a> - Don’t allow modifier conditionals to modify ternaries.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/55">#55</a> - Skip parentheses and brackets on arrays for flow control operators. e.g., <code>break([1, 2, 3])</code> becomes <code>break 1, 2, 3</code>.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - Don’t add parentheses to method calls if you don’t need them.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - Format comments on empty parameter sets. e.g., <code>def foo # bar</code> should keeps its comment.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - <code>%s[]</code> symbols on assignments should not indent to the next line.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/56">#56</a> - Empty hash and array literals with comments inside of them should be formatted correctly.</p>
+</li></ul>
 
 <h2 id="label-2.2.0+-+2022-04-19"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.1.1...v2.2.0">2.2.0</a> - 2022-04-19<span><a href="#label-2.2.0+-+2022-04-19">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
