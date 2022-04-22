@@ -132,7 +132,7 @@
           
 
           <div class="method-source-code" id="chained-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2311</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2332</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">chained?</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>
   <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span> <span class="ruby-operator">|</span> <span class="ruby-constant">MethodAddBlock</span>[<span class="ruby-value">call:</span> <span class="ruby-constant">Call</span>]
@@ -189,6 +189,7 @@
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2216</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">children</span> = [<span class="ruby-identifier">node</span>]
+  <span class="ruby-identifier">threshold</span> = <span class="ruby-value">3</span>
 
   <span class="ruby-comment"># First, walk down the chain until we get to the point where we&#39;re not</span>
   <span class="ruby-comment"># longer at a chainable node.</span>
@@ -205,7 +206,27 @@
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+  <span class="ruby-comment"># Here, we have very specialized behavior where if we&#39;re within a sig</span>
+  <span class="ruby-comment"># block, then we&#39;re going to assume we&#39;re creating a Sorbet type</span>
+  <span class="ruby-comment"># signature. In that case, we really want the threshold to be lowered so</span>
+  <span class="ruby-comment"># that we create method chains off of any two method calls within the</span>
+  <span class="ruby-comment"># block. For more details, see</span>
+  <span class="ruby-comment"># https://github.com/prettier/plugin-ruby/issues/863.</span>
+  <span class="ruby-identifier">parents</span> = <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parents</span>.<span class="ruby-identifier">take</span>(<span class="ruby-value">4</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">parents</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-comment"># If we&#39;re at a do_block, then we want to go one more level up. This is</span>
+    <span class="ruby-comment"># because do blocks have BodyStmt nodes instead of just Statements</span>
+    <span class="ruby-comment"># nodes.</span>
+    <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">parents</span>[<span class="ruby-value">3</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">DoBlock</span>)
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">parent</span>
+    <span class="ruby-keyword">in</span> <span class="ruby-constant">MethodAddBlock</span>[<span class="ruby-value">call:</span> <span class="ruby-constant">FCall</span>[<span class="ruby-value">value:</span> { <span class="ruby-value">value:</span> <span class="ruby-string">&quot;sig&quot;</span> }]]
+      <span class="ruby-identifier">threshold</span> = <span class="ruby-value">2</span>
+    <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">threshold</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_break</span> { <span class="ruby-identifier">format_chain</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">children</span>) }.<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">node</span>.<span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>) } }
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>)
@@ -228,7 +249,7 @@
           
 
           <div class="method-source-code" id="format_chain-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2241</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2262</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_chain</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">children</span>)
   <span class="ruby-comment"># We&#39;re going to have some specialized behavior for if it&#39;s an entire</span>
   <span class="ruby-comment"># chain of calls without arguments except for the last one. This is common</span>

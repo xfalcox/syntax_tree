@@ -145,7 +145,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5247</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5270</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">keyword</span>
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
@@ -174,7 +174,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5252</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5275</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-constant">ContainsAssignment</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">statement</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">In</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">format_flat</span>(<span class="ruby-identifier">q</span>) }
