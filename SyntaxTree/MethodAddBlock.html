@@ -78,6 +78,7 @@
     <li ><a href="#method-i-deconstruct">#deconstruct</a>
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
     <li ><a href="#method-i-format">#format</a>
+    <li ><a href="#method-i-format_contents">#format_contents</a>
   </ul>
 </div>
 
@@ -165,7 +166,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5566</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5918</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">call:</span>, <span class="ruby-value">block:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@call</span> = <span class="ruby-identifier">call</span>
   <span class="ruby-ivar">@block</span> = <span class="ruby-identifier">block</span>
@@ -196,7 +197,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5573</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5925</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_method_add_block</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -217,7 +218,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5577</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5929</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">call</span>, <span class="ruby-identifier">block</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -258,7 +259,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5583</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5935</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   { <span class="ruby-value">call:</span> <span class="ruby-identifier">call</span>, <span class="ruby-value">block:</span> <span class="ruby-identifier">block</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -279,8 +280,36 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5587</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5939</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-comment"># If we&#39;re at the top of a call chain, then we&#39;re going to do some</span>
+  <span class="ruby-comment"># specialized printing in case we can print it nicely. We _only_ do this</span>
+  <span class="ruby-comment"># at the top of the chain to avoid weird recursion issues.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">chained?</span>(<span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">chained?</span>(<span class="ruby-identifier">call</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_break</span> { <span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>) }.<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>) } }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-format_contents" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">format_contents</span><span
+            class="method-args">(q)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="format_contents-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5950</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_contents</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">call</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>

@@ -195,7 +195,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4140</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4362</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">constant:</span>, <span class="ruby-value">left:</span>, <span class="ruby-value">values:</span>, <span class="ruby-value">right:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@constant</span> = <span class="ruby-identifier">constant</span>
   <span class="ruby-ivar">@left</span> = <span class="ruby-identifier">left</span>
@@ -228,7 +228,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4149</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4371</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_fndptn</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -249,7 +249,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4153</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4375</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">constant</span>, <span class="ruby-identifier">left</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>, <span class="ruby-identifier">right</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -290,7 +290,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4159</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4381</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">constant:</span> <span class="ruby-identifier">constant</span>,
@@ -318,7 +318,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4170</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4392</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">constant</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">constant</span>
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot;[&quot;</span>, <span class="ruby-string">&quot;]&quot;</span>) <span class="ruby-keyword">do</span>

@@ -167,7 +167,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3993</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4207</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">value:</span>, <span class="ruby-value">arguments:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
   <span class="ruby-ivar">@arguments</span> = <span class="ruby-identifier">arguments</span>
@@ -198,7 +198,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4000</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4214</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_fcall</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -219,7 +219,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4004</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4218</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">value</span>, <span class="ruby-identifier">arguments</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -260,7 +260,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4010</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4224</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>,
@@ -286,10 +286,18 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4019</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4233</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">value</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">arguments</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ArgParen</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Const</span>)
+    <span class="ruby-comment"># If you&#39;re using an explicit set of parentheses on something that looks</span>
+    <span class="ruby-comment"># like a constant, then we need to match that in order to maintain valid</span>
+    <span class="ruby-comment"># Ruby. For example, you could do something like Foo(), on which we</span>
+    <span class="ruby-comment"># would need to keep the parentheses to make it look like a method call.</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">arguments</span>)
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

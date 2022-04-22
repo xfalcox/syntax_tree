@@ -178,7 +178,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4805</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5157</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">predicate:</span>, <span class="ruby-value">truthy:</span>, <span class="ruby-value">falsy:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@predicate</span> = <span class="ruby-identifier">predicate</span>
   <span class="ruby-ivar">@truthy</span> = <span class="ruby-identifier">truthy</span>
@@ -210,7 +210,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4813</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5165</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_if_op</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -231,7 +231,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4817</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5169</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">predicate</span>, <span class="ruby-identifier">truthy</span>, <span class="ruby-identifier">falsy</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -272,7 +272,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4823</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5175</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">predicate:</span> <span class="ruby-identifier">predicate</span>,
@@ -299,7 +299,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4833</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5185</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">force_flat</span> = [
     <span class="ruby-constant">Alias</span>, <span class="ruby-constant">Assign</span>, <span class="ruby-constant">Break</span>, <span class="ruby-constant">Command</span>, <span class="ruby-constant">CommandCall</span>, <span class="ruby-constant">Heredoc</span>, <span class="ruby-constant">If</span>, <span class="ruby-constant">IfMod</span>, <span class="ruby-constant">IfOp</span>,

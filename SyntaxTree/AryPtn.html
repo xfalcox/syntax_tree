@@ -206,7 +206,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 978</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1012</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">constant:</span>,
   <span class="ruby-value">requireds:</span>,
@@ -246,7 +246,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 994</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1028</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_aryptn</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -267,7 +267,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 998</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1032</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">constant</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">requireds</span>, <span class="ruby-identifier">rest</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">posts</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -308,7 +308,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1004</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1038</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">constant:</span> <span class="ruby-identifier">constant</span>,
@@ -336,7 +336,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1015</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1049</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">parts</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">requireds</span>]
   <span class="ruby-identifier">parts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">RestFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rest</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest</span>

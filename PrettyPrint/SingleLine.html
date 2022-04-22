@@ -79,6 +79,7 @@
     <li ><a href="#method-i-flush">#flush</a>
     <li ><a href="#method-i-group">#group</a>
     <li ><a href="#method-i-if_break">#if_break</a>
+    <li ><a href="#method-i-if_flat">#if_flat</a>
     <li ><a href="#method-i-indent">#indent</a>
     <li ><a href="#method-i-line_suffix">#line_suffix</a>
     <li ><a href="#method-i-nest">#nest</a>
@@ -350,6 +351,26 @@
 
       </div>
 
+      <div id="method-i-if_flat" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">if_flat</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          <p>Also effectively unnecessary, but here for compatibility.</p>
+
+          <div class="method-source-code" id="if_flat-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 462</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">if_flat</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-i-indent" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">indent</span><span
@@ -361,7 +382,7 @@
           <p>A noop that immediately yields.</p>
 
           <div class="method-source-code" id="indent-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 462</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 466</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indent</span>
   <span class="ruby-keyword">yield</span>
 <span class="ruby-keyword">end</span></pre>
@@ -382,7 +403,7 @@
           <p>Changes the target output buffer to the line suffix output buffer which will get flushed at the end of printing.</p>
 
           <div class="method-source-code" id="line_suffix-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 468</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 472</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_suffix</span>
   <span class="ruby-identifier">previous_target</span>, <span class="ruby-ivar">@target</span> = <span class="ruby-ivar">@target</span>, <span class="ruby-identifier">line_suffixes</span>
   <span class="ruby-keyword">yield</span>
@@ -407,7 +428,7 @@
 <p>Yields to a block.</p>
 
           <div class="method-source-code" id="nest-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 477</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 481</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nest</span>(<span class="ruby-identifier">indent</span>)
   <span class="ruby-keyword">yield</span>
 <span class="ruby-keyword">end</span></pre>
@@ -430,7 +451,7 @@
 <p><code>width</code> argument is here for compatibility. It is a noop argument.</p>
 
           <div class="method-source-code" id="text-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 484</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 488</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text</span>(<span class="ruby-identifier">object</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object</span>
 <span class="ruby-keyword">end</span></pre>
