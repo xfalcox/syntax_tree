@@ -170,7 +170,7 @@
           <div class="method-source-code" id="pretty_print-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-string">&quot;align([&quot;</span>, <span class="ruby-string">&quot;])&quot;</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">2</span>, <span class="ruby-node">&quot;align#{indent}([&quot;</span>, <span class="ruby-string">&quot;])&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">seplist</span>(<span class="ruby-identifier">contents</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">content</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">pp</span>(<span class="ruby-identifier">content</span>) }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

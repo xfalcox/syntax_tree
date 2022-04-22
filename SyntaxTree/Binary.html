@@ -313,12 +313,12 @@
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">power</span>
 
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-value">:&lt;&lt;</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">operator</span>)
+      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">operator</span>.<span class="ruby-identifier">to_s</span>)
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">right</span>)
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">operator</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">operator</span>.<span class="ruby-identifier">to_s</span>)
 
         <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
           <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-identifier">power</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot; &quot;</span>)

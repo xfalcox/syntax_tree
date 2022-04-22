@@ -191,7 +191,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2854</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2933</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">receiver:</span>,
   <span class="ruby-value">operator:</span>,
@@ -231,7 +231,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2870</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2949</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_command_call</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -252,7 +252,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2874</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2953</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">receiver</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">arguments</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -293,7 +293,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2880</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2959</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
   {
     <span class="ruby-value">receiver:</span> <span class="ruby-identifier">receiver</span>,
@@ -321,7 +321,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2891</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2970</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">doc</span> =

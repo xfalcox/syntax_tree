@@ -416,7 +416,7 @@
           <p>This inserts a <a href="PrettyPrint/BreakParent.html"><code>BreakParent</code></a> node into the print tree which forces the surrounding and all parent group nodes to break.</p>
 
           <div class="method-source-code" id="break_parent-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 905</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 903</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">break_parent</span>
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">BreakParent</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -453,7 +453,7 @@
 <p>By default, when you insert a <a href="PrettyPrint/Breakable.html"><code>Breakable</code></a> into the print tree, it only breaks the surrounding group when the group’s contents cannot fit onto the remaining space of the current line. You can force it to break the surrounding group instead if you always want the newline with the <code>force</code> argument.</p>
 
           <div class="method-source-code" id="breakable-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 889</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 887</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">breakable</span>(
   <span class="ruby-identifier">separator</span> = <span class="ruby-string">&quot; &quot;</span>,
   <span class="ruby-identifier">width</span> = <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">length</span>,
@@ -542,7 +542,7 @@ q.group {
 <p>If <code>width</code> is not specified, <code>separator.length</code> is used. You will have to specify this when <code>separator</code> is a multibyte character, for example.</p>
 
           <div class="method-source-code" id="fill_breakable-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 931</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 929</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_breakable</span>(<span class="ruby-identifier">separator</span> = <span class="ruby-string">&quot; &quot;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">length</span>)
   <span class="ruby-identifier">group</span> { <span class="ruby-identifier">breakable</span>(<span class="ruby-identifier">separator</span>, <span class="ruby-identifier">width</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -595,9 +595,7 @@ q.group {
 
   <span class="ruby-comment"># This is a linear stack instead of a mutually recursive call defined on</span>
   <span class="ruby-comment"># the individual doc nodes for efficiency.</span>
-  <span class="ruby-keyword">while</span> <span class="ruby-identifier">commands</span>.<span class="ruby-identifier">any?</span>
-    <span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">commands</span>.<span class="ruby-identifier">pop</span>
-
+  <span class="ruby-keyword">while</span> (<span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">commands</span>.<span class="ruby-identifier">pop</span>)
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">doc</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">Text</span>
       <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">objects</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">object</span><span class="ruby-operator">|</span> <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object</span> }
@@ -625,10 +623,10 @@ q.group {
         <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">IfBreak</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-constant">MODE_BREAK</span>
-        <span class="ruby-identifier">commands</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">break_contents</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">break_contents</span>
-      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-constant">MODE_FLAT</span>
-        <span class="ruby-identifier">commands</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">flat_contents</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">flat_contents</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-constant">MODE_BREAK</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">break_contents</span>.<span class="ruby-identifier">any?</span>
+        <span class="ruby-identifier">commands</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">break_contents</span>]
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-constant">MODE_FLAT</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">flat_contents</span>.<span class="ruby-identifier">any?</span>
+        <span class="ruby-identifier">commands</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">flat_contents</span>]
       <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">LineSuffix</span>
       <span class="ruby-identifier">line_suffixes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">indent</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">contents</span>, <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">priority</span>]
@@ -716,7 +714,7 @@ q.group {
 <p>If <code>open_object</code> is specified, <code>text(open_object, open_width)</code> is called before grouping. If <code>close_object</code> is specified, <code>text(close_object, close_width)</code> is called after grouping.</p>
 
           <div class="method-source-code" id="group-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 959</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 957</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">group</span>(
   <span class="ruby-identifier">indent</span> = <span class="ruby-value">0</span>,
   <span class="ruby-identifier">open_object</span> = <span class="ruby-string">&quot;&quot;</span>,
@@ -765,7 +763,7 @@ q.group {
 <p>In the example above, if the surrounding group is broken it will print ‘do’ and if it is not it will print ‘{’.</p>
 
           <div class="method-source-code" id="if_break-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1010</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1008</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">if_break</span>
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">IfBreak</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -790,7 +788,7 @@ q.group {
           <p>This is similar to <a href="PrettyPrint.html#method-i-if_break"><code>if_break</code></a> in that it also inserts an <a href="PrettyPrint/IfBreak.html"><code>IfBreak</code></a> node into the print tree, however it’s starting from the flat contents, and cannot be used to build the break contents.</p>
 
           <div class="method-source-code" id="if_flat-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1021</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1019</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">if_flat</span>
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">IfBreak</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -814,7 +812,7 @@ q.group {
           <p>Very similar to the <a href="PrettyPrint.html#method-i-nest"><code>nest</code></a> method, this indents the nested content by one level by inserting an <a href="PrettyPrint/Indent.html"><code>Indent</code></a> node into the print tree. The contents of the node are determined by the block.</p>
 
           <div class="method-source-code" id="indent-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1031</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1029</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indent</span>
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Indent</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -839,7 +837,7 @@ q.group {
           <p>Inserts a <a href="PrettyPrint/LineSuffix.html"><code>LineSuffix</code></a> node into the print tree. The contents of the node are determined by the block.</p>
 
           <div class="method-source-code" id="line_suffix-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1041</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1039</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">line_suffix</span>(<span class="ruby-value">priority:</span> <span class="ruby-constant">LineSuffix</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_PRIORITY</span>)
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">LineSuffix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">priority:</span> <span class="ruby-identifier">priority</span>)
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -864,7 +862,7 @@ q.group {
           <p>Increases left margin after newline with <code>indent</code> for line breaks added in the block.</p>
 
           <div class="method-source-code" id="nest-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1051</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1049</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nest</span>(<span class="ruby-identifier">indent</span>)
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Align</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">indent:</span> <span class="ruby-identifier">indent</span>)
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -891,7 +889,7 @@ q.group {
 <p>If <code>width</code> is not specified, object.length is used.</p>
 
           <div class="method-source-code" id="text-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1062</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1060</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text</span>(<span class="ruby-identifier">object</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-identifier">object</span>.<span class="ruby-identifier">length</span>)
   <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">target</span>.<span class="ruby-identifier">last</span>
 
@@ -920,7 +918,7 @@ q.group {
           <p>This inserts a <a href="PrettyPrint/Trim.html"><code>Trim</code></a> node into the print tree which, when printed, will clear all whitespace at the end of the output buffer. This is useful for the rare case where you need to delete printed indentation and force the next node to start at the beginning of the line.</p>
 
           <div class="method-source-code" id="trim-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 939</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 937</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">trim</span>
   <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Trim</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doc</span>
@@ -944,7 +942,7 @@ q.group {
           <p>A convenience method used by a lot of the print tree node builders that temporarily changes the target that the builders will append to.</p>
 
           <div class="method-source-code" id="with_target-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1080</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 1078</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_target</span>(<span class="ruby-identifier">target</span>)
   <span class="ruby-identifier">previous_target</span>, <span class="ruby-ivar">@target</span> = <span class="ruby-ivar">@target</span>, <span class="ruby-identifier">target</span>
   <span class="ruby-keyword">yield</span>
