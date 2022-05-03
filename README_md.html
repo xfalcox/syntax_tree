@@ -64,6 +64,8 @@
     <li><a href="#label-ast">ast</a>
     <li><a href="#label-check">check</a>
     <li><a href="#label-format">format</a>
+    <li><a href="#label-json">json</a>
+    <li><a href="#label-match">match</a>
     <li><a href="#label-write">write</a>
     <li><a href="#label-Library">Library</a>
     <li><a href="#label-SyntaxTree.read-28filepath-29">SyntaxTree.read(filepath)</a>
@@ -236,6 +238,69 @@ The listed files did not match the expected format.</pre>
 <p>For a file that contains <code>1 + 1</code>, you will receive:</p>
 
 <pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+</pre>
+
+<h3 id="label-json">json<span><a href="#label-json">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This command will output a JSON representation of the syntax tree that is functionally equivalent to the input. This is mostly used in contexts where you need to access the tree from JavaScript or serialize it over a network.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">json</span> <span class="ruby-identifier">path</span><span class="ruby-operator">/</span><span class="ruby-identifier">to</span><span class="ruby-operator">/</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>For a file that contains <code>1 + 1</code>, you will receive:</p>
+
+<pre class="ruby">{
+  <span class="ruby-value">&quot;type&quot;:</span> <span class="ruby-string">&quot;program&quot;</span>,
+  <span class="ruby-value">&quot;location&quot;:</span> [<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">6</span>],
+  <span class="ruby-value">&quot;statements&quot;:</span> {
+    <span class="ruby-value">&quot;type&quot;:</span> <span class="ruby-string">&quot;statements&quot;</span>,
+    <span class="ruby-value">&quot;location&quot;:</span> [<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">6</span>],
+    <span class="ruby-value">&quot;body&quot;:</span> [
+      {
+        <span class="ruby-value">&quot;type&quot;:</span> <span class="ruby-string">&quot;binary&quot;</span>,
+        <span class="ruby-value">&quot;location&quot;:</span> [<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">5</span>],
+        <span class="ruby-value">&quot;left&quot;:</span> {
+          <span class="ruby-value">&quot;type&quot;:</span> <span class="ruby-string">&quot;int&quot;</span>,
+          <span class="ruby-value">&quot;location&quot;:</span> [<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>],
+          <span class="ruby-value">&quot;value&quot;:</span> <span class="ruby-string">&quot;1&quot;</span>,
+          <span class="ruby-value">&quot;comments&quot;:</span> []
+        },
+        <span class="ruby-value">&quot;operator&quot;:</span> <span class="ruby-string">&quot;+&quot;</span>,
+        <span class="ruby-value">&quot;right&quot;:</span> {
+          <span class="ruby-value">&quot;type&quot;:</span> <span class="ruby-string">&quot;int&quot;</span>,
+          <span class="ruby-value">&quot;location&quot;:</span> [<span class="ruby-value">1</span>, <span class="ruby-value">4</span>, <span class="ruby-value">1</span>, <span class="ruby-value">5</span>],
+          <span class="ruby-value">&quot;value&quot;:</span> <span class="ruby-string">&quot;1&quot;</span>,
+          <span class="ruby-value">&quot;comments&quot;:</span> []
+        },
+        <span class="ruby-value">&quot;comments&quot;:</span> []
+      }
+    ],
+    <span class="ruby-value">&quot;comments&quot;:</span> []
+  },
+  <span class="ruby-value">&quot;comments&quot;:</span> []
+}
+</pre>
+
+<h3 id="label-match">match<span><a href="#label-match">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This command will output a Ruby case-match expression that would match correctly against the input.</p>
+
+<pre class="ruby"><span class="ruby-identifier">stree</span> <span class="ruby-identifier">match</span> <span class="ruby-identifier">path</span><span class="ruby-operator">/</span><span class="ruby-identifier">to</span><span class="ruby-operator">/</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p>For a file that contains <code>1 + 1</code>, you will receive:</p>
+
+<pre class="ruby"><span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Program</span>[
+  <span class="ruby-value">statements:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Statements</span>[
+    <span class="ruby-value">body:</span> [
+      <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Binary</span>[
+        <span class="ruby-value">left:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">value:</span> <span class="ruby-string">&quot;1&quot;</span>],
+        <span class="ruby-value">operator:</span> <span class="ruby-value">:+</span>,
+        <span class="ruby-value">right:</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">value:</span> <span class="ruby-string">&quot;1&quot;</span>]
+      ]
+    ]
+  ]
+]
 </pre>
 
 <h3 id="label-write">write<span><a href="#label-write">&para;</a> <a href="#top">&uarr;</a></span></h3>
