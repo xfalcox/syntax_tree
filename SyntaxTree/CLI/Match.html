@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::Visitor::JSONVisitor - RDoc Documentation</title>
+<title>class SyntaxTree::CLI::Match - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link"><a href="FieldVisitor.html">SyntaxTree::Visitor::FieldVisitor</a>
+  <p class="link"><a href="Action.html">SyntaxTree::CLI::Action</a>
 </div>
 
     
@@ -72,21 +72,21 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-run">#run</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::Visitor::JSONVisitor">
-  <h1 id="class-SyntaxTree::Visitor::JSONVisitor" class="class">
-    class SyntaxTree::Visitor::JSONVisitor
+<main role="main" aria-labelledby="class-SyntaxTree::CLI::Match">
+  <h1 id="class-SyntaxTree::CLI::Match" class="class">
+    class SyntaxTree::CLI::Match
   </h1>
 
   <section class="description">
     
-<p>This visitor transforms the AST into a hash that contains only primitives that can be easily serialized into JSON.</p>
+<p>An action of the <a href="../CLI.html"><code>CLI</code></a> that outputs a pattern-matching Ruby expression that would match the input given.</p>
 
   </section>
 
@@ -94,43 +94,30 @@
 
 
 
-    <section class="attribute-method-details" class="method-section">
-      <header>
-        <h3>Attributes</h3>
-      </header>
-
-      <div id="attribute-i-target" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">target</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        
-        </div>
-      </div>
-    </section>
 
 
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
-         <h3>Public Class Methods</h3>
+         <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-c-new" class="method-detail ">
+      <div id="method-i-run" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">new</span><span
-            class="method-args">()</span>
+          <span class="method-name">run</span><span
+            class="method-args">(handler, filepath, source)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
           
 
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor/json_visitor.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
-  <span class="ruby-ivar">@target</span> = <span class="ruby-keyword">nil</span>
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, [])
+  <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">MatchVisitor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">formatter</span>).<span class="ruby-identifier">visit</span>(<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>))
+  <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">output</span>.<span class="ruby-identifier">join</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

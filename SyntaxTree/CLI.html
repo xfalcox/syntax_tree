@@ -113,7 +113,7 @@
           <p>Run the <a href="CLI.html"><code>CLI</code></a> over the given array of strings that make up the arguments passed to the invocation.</p>
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 178</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 204</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">argv</span>)
   <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">argv</span>
 
@@ -140,6 +140,10 @@
       <span class="ruby-constant">Debug</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;doc&quot;</span>
       <span class="ruby-constant">Doc</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;j&quot;</span>, <span class="ruby-string">&quot;json&quot;</span>
+      <span class="ruby-constant">Json</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;m&quot;</span>, <span class="ruby-string">&quot;match&quot;</span>
+      <span class="ruby-constant">Match</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;f&quot;</span>, <span class="ruby-string">&quot;format&quot;</span>
       <span class="ruby-constant">Format</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;w&quot;</span>, <span class="ruby-string">&quot;write&quot;</span>

@@ -114,7 +114,7 @@
           <div class="method-source-code" id="run-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
-  <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>([])
+  <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, [])
   <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatter</span>)
   <span class="ruby-identifier">pp</span> <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">groups</span>.<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>

@@ -315,6 +315,12 @@
     <a href="SyntaxTree/CLI/Format.html">SyntaxTree::CLI::Format</a>
   </li>
   <li class="class">
+    <a href="SyntaxTree/CLI/Json.html">SyntaxTree::CLI::Json</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/CLI/Match.html">SyntaxTree::CLI::Match</a>
+  </li>
+  <li class="class">
     <a href="SyntaxTree/CLI/Write.html">SyntaxTree::CLI::Write</a>
   </li>
   <li class="class">
@@ -783,7 +789,13 @@
     <a href="SyntaxTree/Visitor.html">SyntaxTree::Visitor</a>
   </li>
   <li class="class">
+    <a href="SyntaxTree/Visitor/FieldVisitor.html">SyntaxTree::Visitor::FieldVisitor</a>
+  </li>
+  <li class="class">
     <a href="SyntaxTree/Visitor/JSONVisitor.html">SyntaxTree::Visitor::JSONVisitor</a>
+  </li>
+  <li class="class">
+    <a href="SyntaxTree/Visitor/MatchVisitor.html">SyntaxTree::Visitor::MatchVisitor</a>
   </li>
   <li class="class">
     <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html">SyntaxTree::Visitor::PrettyPrintVisitor</a>
@@ -1956,6 +1968,16 @@
     <span class="container">SyntaxTree::Visitor::VisitMethodChecker</span>
 
   <li class="method">
+    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Visitor/MatchVisitor.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">SyntaxTree::Visitor::MatchVisitor</span>
+
+  <li class="method">
     <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-c-new">::new</a>
     &mdash;
     <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
@@ -2854,11 +2876,6 @@
     <a href="PrettyPrint/IndentLevel.html#method-i-align">#align</a>
     &mdash;
     <span class="container">PrettyPrint::IndentLevel</span>
-
-  <li class="method">
-    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-bare_rescue">#bare_rescue</a>
-    &mdash;
-    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/BodyStmt.html#method-i-bind">#bind</a>
@@ -6441,11 +6458,6 @@
     <span class="container">SyntaxTree::Formatter</span>
 
   <li class="method">
-    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-precedence_parentheses">#precedence_parentheses</a>
-    &mdash;
-    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
-
-  <li class="method">
     <a href="SyntaxTree/Node.html#method-i-pretty_print">#pretty_print</a>
     &mdash;
     <span class="container">SyntaxTree::Node</span>
@@ -6529,6 +6541,16 @@
     <a href="SyntaxTree/CLI/Format.html#method-i-run">#run</a>
     &mdash;
     <span class="container">SyntaxTree::CLI::Format</span>
+
+  <li class="method">
+    <a href="SyntaxTree/CLI/Json.html#method-i-run">#run</a>
+    &mdash;
+    <span class="container">SyntaxTree::CLI::Json</span>
+
+  <li class="method">
+    <a href="SyntaxTree/CLI/Match.html#method-i-run">#run</a>
+    &mdash;
+    <span class="container">SyntaxTree::CLI::Match</span>
 
   <li class="method">
     <a href="SyntaxTree/CLI/Write.html#method-i-run">#run</a>
@@ -6616,9 +6638,19 @@
     <span class="container">PrettyPrint::Buffer::ArrayBuffer</span>
 
   <li class="method">
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-visit">#visit</a>
+    &mdash;
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
+
+  <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit">#visit</a>
     &mdash;
     <span class="container">SyntaxTree::Visitor</span>
+
+  <li class="method">
+    <a href="SyntaxTree/Visitor/MatchVisitor.html#method-i-visit">#visit</a>
+    &mdash;
+    <span class="container">SyntaxTree::Visitor::MatchVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_BEGIN">#visit_BEGIN</a>
@@ -6626,14 +6658,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_BEGIN">#visit_BEGIN</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_BEGIN">#visit_BEGIN</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_BEGIN">#visit_BEGIN</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_CHAR">#visit_CHAR</a>
@@ -6641,14 +6668,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_CHAR">#visit_CHAR</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_CHAR">#visit_CHAR</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_CHAR">#visit_CHAR</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_END">#visit_END</a>
@@ -6656,14 +6678,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_END">#visit_END</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_END">#visit_END</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_END">#visit_END</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit___end__">#visit___end__</a>
@@ -6671,14 +6688,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit___end__">#visit___end__</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit___end__">#visit___end__</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit___end__">#visit___end__</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_alias">#visit_alias</a>
@@ -6686,14 +6698,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_alias">#visit_alias</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_alias">#visit_alias</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_alias">#visit_alias</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_all">#visit_all</a>
@@ -6706,14 +6713,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_aref">#visit_aref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_aref">#visit_aref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_aref">#visit_aref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_aref_field">#visit_aref_field</a>
@@ -6721,14 +6723,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_aref_field">#visit_aref_field</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_aref_field">#visit_aref_field</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_aref_field">#visit_aref_field</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_arg_block">#visit_arg_block</a>
@@ -6736,14 +6733,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_arg_block">#visit_arg_block</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_arg_block">#visit_arg_block</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_arg_block">#visit_arg_block</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_arg_paren">#visit_arg_paren</a>
@@ -6751,14 +6743,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_arg_paren">#visit_arg_paren</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_arg_paren">#visit_arg_paren</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_arg_paren">#visit_arg_paren</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_arg_star">#visit_arg_star</a>
@@ -6766,14 +6753,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_arg_star">#visit_arg_star</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_arg_star">#visit_arg_star</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_arg_star">#visit_arg_star</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_args">#visit_args</a>
@@ -6781,14 +6763,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_args">#visit_args</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_args">#visit_args</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_args">#visit_args</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_args_forward">#visit_args_forward</a>
@@ -6796,14 +6773,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_args_forward">#visit_args_forward</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_args_forward">#visit_args_forward</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_args_forward">#visit_args_forward</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_array">#visit_array</a>
@@ -6811,14 +6783,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_array">#visit_array</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_array">#visit_array</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_array">#visit_array</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_aryptn">#visit_aryptn</a>
@@ -6826,14 +6793,14 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_aryptn">#visit_aryptn</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_aryptn">#visit_aryptn</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_aryptn">#visit_aryptn</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-visit_assign">#visit_assign</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_assign">#visit_assign</a>
@@ -6841,14 +6808,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_assign">#visit_assign</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_assign">#visit_assign</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_assign">#visit_assign</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_assoc">#visit_assoc</a>
@@ -6856,14 +6818,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_assoc">#visit_assoc</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_assoc">#visit_assoc</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_assoc">#visit_assoc</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_assoc_splat">#visit_assoc_splat</a>
@@ -6871,14 +6828,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_assoc_splat">#visit_assoc_splat</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_assoc_splat">#visit_assoc_splat</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_assoc_splat">#visit_assoc_splat</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_backref">#visit_backref</a>
@@ -6886,14 +6838,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_backref">#visit_backref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_backref">#visit_backref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_backref">#visit_backref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_backtick">#visit_backtick</a>
@@ -6901,14 +6848,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_backtick">#visit_backtick</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_backtick">#visit_backtick</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_backtick">#visit_backtick</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_bare_assoc_hash">#visit_bare_assoc_hash</a>
@@ -6916,14 +6858,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_bare_assoc_hash">#visit_bare_assoc_hash</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_bare_assoc_hash">#visit_bare_assoc_hash</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_bare_assoc_hash">#visit_bare_assoc_hash</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_begin">#visit_begin</a>
@@ -6931,14 +6868,14 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_begin">#visit_begin</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_begin">#visit_begin</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_begin">#visit_begin</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-visit_binary">#visit_binary</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_binary">#visit_binary</a>
@@ -6946,14 +6883,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_binary">#visit_binary</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_binary">#visit_binary</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_binary">#visit_binary</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_block_var">#visit_block_var</a>
@@ -6961,14 +6893,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_block_var">#visit_block_var</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_block_var">#visit_block_var</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_block_var">#visit_block_var</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_blockarg">#visit_blockarg</a>
@@ -6976,14 +6903,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_blockarg">#visit_blockarg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_blockarg">#visit_blockarg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_blockarg">#visit_blockarg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_bodystmt">#visit_bodystmt</a>
@@ -6991,14 +6913,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_bodystmt">#visit_bodystmt</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_bodystmt">#visit_bodystmt</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_bodystmt">#visit_bodystmt</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_brace_block">#visit_brace_block</a>
@@ -7006,14 +6923,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_brace_block">#visit_brace_block</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_brace_block">#visit_brace_block</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_brace_block">#visit_brace_block</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_break">#visit_break</a>
@@ -7021,14 +6933,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_break">#visit_break</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_break">#visit_break</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_break">#visit_break</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_call">#visit_call</a>
@@ -7036,14 +6943,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_call">#visit_call</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_call">#visit_call</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_call">#visit_call</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_case">#visit_case</a>
@@ -7051,14 +6953,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_case">#visit_case</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_case">#visit_case</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_case">#visit_case</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_child_nodes">#visit_child_nodes</a>
@@ -7071,14 +6968,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_class">#visit_class</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_class">#visit_class</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_class">#visit_class</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_comma">#visit_comma</a>
@@ -7086,14 +6978,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_comma">#visit_comma</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_comma">#visit_comma</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_comma">#visit_comma</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_command">#visit_command</a>
@@ -7101,14 +6988,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_command">#visit_command</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_command">#visit_command</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_command">#visit_command</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_command_call">#visit_command_call</a>
@@ -7116,14 +6998,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_command_call">#visit_command_call</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_command_call">#visit_command_call</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_command_call">#visit_command_call</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_comment">#visit_comment</a>
@@ -7131,14 +7008,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_comment">#visit_comment</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_comment">#visit_comment</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_comment">#visit_comment</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_const">#visit_const</a>
@@ -7146,14 +7018,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_const">#visit_const</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_const">#visit_const</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_const">#visit_const</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_const_path_field">#visit_const_path_field</a>
@@ -7161,14 +7028,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_const_path_field">#visit_const_path_field</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_const_path_field">#visit_const_path_field</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_const_path_field">#visit_const_path_field</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_const_path_ref">#visit_const_path_ref</a>
@@ -7176,14 +7038,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_const_path_ref">#visit_const_path_ref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_const_path_ref">#visit_const_path_ref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_const_path_ref">#visit_const_path_ref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_const_ref">#visit_const_ref</a>
@@ -7191,14 +7048,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_const_ref">#visit_const_ref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_const_ref">#visit_const_ref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_const_ref">#visit_const_ref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_cvar">#visit_cvar</a>
@@ -7206,14 +7058,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_cvar">#visit_cvar</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_cvar">#visit_cvar</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_cvar">#visit_cvar</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_def">#visit_def</a>
@@ -7221,14 +7068,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_def">#visit_def</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_def">#visit_def</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_def">#visit_def</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_def_endless">#visit_def_endless</a>
@@ -7236,14 +7078,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_def_endless">#visit_def_endless</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_def_endless">#visit_def_endless</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_def_endless">#visit_def_endless</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_defined">#visit_defined</a>
@@ -7251,14 +7088,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_defined">#visit_defined</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_defined">#visit_defined</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_defined">#visit_defined</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_defs">#visit_defs</a>
@@ -7266,14 +7098,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_defs">#visit_defs</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_defs">#visit_defs</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_defs">#visit_defs</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_do_block">#visit_do_block</a>
@@ -7281,14 +7108,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_do_block">#visit_do_block</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_do_block">#visit_do_block</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_do_block">#visit_do_block</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_dot2">#visit_dot2</a>
@@ -7296,14 +7118,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_dot2">#visit_dot2</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_dot2">#visit_dot2</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_dot2">#visit_dot2</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_dot3">#visit_dot3</a>
@@ -7311,14 +7128,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_dot3">#visit_dot3</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_dot3">#visit_dot3</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_dot3">#visit_dot3</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_dyna_symbol">#visit_dyna_symbol</a>
@@ -7326,14 +7138,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_dyna_symbol">#visit_dyna_symbol</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_dyna_symbol">#visit_dyna_symbol</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_dyna_symbol">#visit_dyna_symbol</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_else">#visit_else</a>
@@ -7341,14 +7148,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_else">#visit_else</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_else">#visit_else</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_else">#visit_else</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_elsif">#visit_elsif</a>
@@ -7356,14 +7158,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_elsif">#visit_elsif</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_elsif">#visit_elsif</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_elsif">#visit_elsif</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_embdoc">#visit_embdoc</a>
@@ -7371,14 +7168,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_embdoc">#visit_embdoc</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_embdoc">#visit_embdoc</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_embdoc">#visit_embdoc</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_embexpr_beg">#visit_embexpr_beg</a>
@@ -7386,14 +7178,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_embexpr_beg">#visit_embexpr_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_embexpr_beg">#visit_embexpr_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_embexpr_beg">#visit_embexpr_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_embexpr_end">#visit_embexpr_end</a>
@@ -7401,14 +7188,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_embexpr_end">#visit_embexpr_end</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_embexpr_end">#visit_embexpr_end</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_embexpr_end">#visit_embexpr_end</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_embvar">#visit_embvar</a>
@@ -7416,14 +7198,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_embvar">#visit_embvar</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_embvar">#visit_embvar</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_embvar">#visit_embvar</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_ensure">#visit_ensure</a>
@@ -7431,14 +7208,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_ensure">#visit_ensure</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_ensure">#visit_ensure</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_ensure">#visit_ensure</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_excessed_comma">#visit_excessed_comma</a>
@@ -7446,14 +7218,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_excessed_comma">#visit_excessed_comma</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_excessed_comma">#visit_excessed_comma</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_excessed_comma">#visit_excessed_comma</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_fcall">#visit_fcall</a>
@@ -7461,14 +7228,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_fcall">#visit_fcall</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_fcall">#visit_fcall</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_fcall">#visit_fcall</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_field">#visit_field</a>
@@ -7476,14 +7238,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_field">#visit_field</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_field">#visit_field</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_field">#visit_field</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_float">#visit_float</a>
@@ -7491,14 +7248,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_float">#visit_float</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_float">#visit_float</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_float">#visit_float</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_fndptn">#visit_fndptn</a>
@@ -7506,14 +7258,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_fndptn">#visit_fndptn</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_fndptn">#visit_fndptn</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_fndptn">#visit_fndptn</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_for">#visit_for</a>
@@ -7521,14 +7268,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_for">#visit_for</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_for">#visit_for</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_for">#visit_for</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_gvar">#visit_gvar</a>
@@ -7536,14 +7278,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_gvar">#visit_gvar</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_gvar">#visit_gvar</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_gvar">#visit_gvar</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_hash">#visit_hash</a>
@@ -7551,14 +7288,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_hash">#visit_hash</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_hash">#visit_hash</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_hash">#visit_hash</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_heredoc">#visit_heredoc</a>
@@ -7566,14 +7298,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_heredoc">#visit_heredoc</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_heredoc">#visit_heredoc</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_heredoc">#visit_heredoc</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_heredoc_beg">#visit_heredoc_beg</a>
@@ -7581,14 +7308,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_heredoc_beg">#visit_heredoc_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_heredoc_beg">#visit_heredoc_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_heredoc_beg">#visit_heredoc_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_hshptn">#visit_hshptn</a>
@@ -7596,14 +7318,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_hshptn">#visit_hshptn</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_hshptn">#visit_hshptn</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_hshptn">#visit_hshptn</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_ident">#visit_ident</a>
@@ -7611,14 +7328,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_ident">#visit_ident</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_ident">#visit_ident</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_ident">#visit_ident</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_if">#visit_if</a>
@@ -7626,14 +7338,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_if">#visit_if</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_if">#visit_if</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_if">#visit_if</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_if_mod">#visit_if_mod</a>
@@ -7641,14 +7348,14 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_if_mod">#visit_if_mod</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_if_mod">#visit_if_mod</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_if_mod">#visit_if_mod</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-visit_if_op">#visit_if_op</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_if_op">#visit_if_op</a>
@@ -7656,14 +7363,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_if_op">#visit_if_op</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_if_op">#visit_if_op</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_if_op">#visit_if_op</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_imaginary">#visit_imaginary</a>
@@ -7671,14 +7373,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_imaginary">#visit_imaginary</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_imaginary">#visit_imaginary</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_imaginary">#visit_imaginary</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_in">#visit_in</a>
@@ -7686,14 +7383,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_in">#visit_in</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_in">#visit_in</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_in">#visit_in</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_int">#visit_int</a>
@@ -7701,14 +7393,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_int">#visit_int</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_int">#visit_int</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_int">#visit_int</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_ivar">#visit_ivar</a>
@@ -7716,14 +7403,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_ivar">#visit_ivar</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_ivar">#visit_ivar</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_ivar">#visit_ivar</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_kw">#visit_kw</a>
@@ -7731,14 +7413,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_kw">#visit_kw</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_kw">#visit_kw</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_kw">#visit_kw</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_kwrest_param">#visit_kwrest_param</a>
@@ -7746,14 +7423,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_kwrest_param">#visit_kwrest_param</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_kwrest_param">#visit_kwrest_param</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_kwrest_param">#visit_kwrest_param</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_label">#visit_label</a>
@@ -7761,9 +7433,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_label">#visit_label</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_label">#visit_label</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_label">#visit_label</a>
@@ -7776,14 +7448,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_label_end">#visit_label_end</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_label_end">#visit_label_end</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_label_end">#visit_label_end</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_lambda">#visit_lambda</a>
@@ -7791,14 +7458,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_lambda">#visit_lambda</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_lambda">#visit_lambda</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_lambda">#visit_lambda</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_lbrace">#visit_lbrace</a>
@@ -7806,14 +7468,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_lbrace">#visit_lbrace</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_lbrace">#visit_lbrace</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_lbrace">#visit_lbrace</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_lbracket">#visit_lbracket</a>
@@ -7821,14 +7478,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_lbracket">#visit_lbracket</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_lbracket">#visit_lbracket</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_lbracket">#visit_lbracket</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_lparen">#visit_lparen</a>
@@ -7836,14 +7488,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_lparen">#visit_lparen</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_lparen">#visit_lparen</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_lparen">#visit_lparen</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_massign">#visit_massign</a>
@@ -7851,14 +7498,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_massign">#visit_massign</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_massign">#visit_massign</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_massign">#visit_massign</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_method_add_block">#visit_method_add_block</a>
@@ -7866,14 +7508,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_method_add_block">#visit_method_add_block</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_method_add_block">#visit_method_add_block</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_method_add_block">#visit_method_add_block</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_mlhs">#visit_mlhs</a>
@@ -7881,14 +7518,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_mlhs">#visit_mlhs</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_mlhs">#visit_mlhs</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_mlhs">#visit_mlhs</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_mlhs_paren">#visit_mlhs_paren</a>
@@ -7896,14 +7528,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_mlhs_paren">#visit_mlhs_paren</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_mlhs_paren">#visit_mlhs_paren</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_mlhs_paren">#visit_mlhs_paren</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_module">#visit_module</a>
@@ -7911,14 +7538,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_module">#visit_module</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_module">#visit_module</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_module">#visit_module</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_mrhs">#visit_mrhs</a>
@@ -7926,14 +7548,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_mrhs">#visit_mrhs</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_mrhs">#visit_mrhs</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_mrhs">#visit_mrhs</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_next">#visit_next</a>
@@ -7941,14 +7558,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_next">#visit_next</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_next">#visit_next</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_next">#visit_next</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_not">#visit_not</a>
@@ -7956,14 +7568,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_not">#visit_not</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_not">#visit_not</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_not">#visit_not</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_op">#visit_op</a>
@@ -7971,14 +7578,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_op">#visit_op</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_op">#visit_op</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_op">#visit_op</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_opassign">#visit_opassign</a>
@@ -7986,14 +7588,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_opassign">#visit_opassign</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_opassign">#visit_opassign</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_opassign">#visit_opassign</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_params">#visit_params</a>
@@ -8001,14 +7598,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_params">#visit_params</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_params">#visit_params</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_params">#visit_params</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_paren">#visit_paren</a>
@@ -8016,14 +7608,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_paren">#visit_paren</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_paren">#visit_paren</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_paren">#visit_paren</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_period">#visit_period</a>
@@ -8031,14 +7618,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_period">#visit_period</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_period">#visit_period</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_period">#visit_period</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_pinned_begin">#visit_pinned_begin</a>
@@ -8046,14 +7628,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_pinned_begin">#visit_pinned_begin</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_pinned_begin">#visit_pinned_begin</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_pinned_begin">#visit_pinned_begin</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_pinned_var_ref">#visit_pinned_var_ref</a>
@@ -8061,14 +7638,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_pinned_var_ref">#visit_pinned_var_ref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_pinned_var_ref">#visit_pinned_var_ref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_pinned_var_ref">#visit_pinned_var_ref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_program">#visit_program</a>
@@ -8076,14 +7648,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_program">#visit_program</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_program">#visit_program</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_program">#visit_program</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_qsymbols">#visit_qsymbols</a>
@@ -8091,14 +7658,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_qsymbols">#visit_qsymbols</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_qsymbols">#visit_qsymbols</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_qsymbols">#visit_qsymbols</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_qsymbols_beg">#visit_qsymbols_beg</a>
@@ -8106,14 +7668,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_qsymbols_beg">#visit_qsymbols_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_qsymbols_beg">#visit_qsymbols_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_qsymbols_beg">#visit_qsymbols_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_qwords">#visit_qwords</a>
@@ -8121,14 +7678,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_qwords">#visit_qwords</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_qwords">#visit_qwords</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_qwords">#visit_qwords</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_qwords_beg">#visit_qwords_beg</a>
@@ -8136,14 +7688,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_qwords_beg">#visit_qwords_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_qwords_beg">#visit_qwords_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_qwords_beg">#visit_qwords_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rassign">#visit_rassign</a>
@@ -8151,14 +7698,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rassign">#visit_rassign</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rassign">#visit_rassign</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rassign">#visit_rassign</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rational">#visit_rational</a>
@@ -8166,14 +7708,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rational">#visit_rational</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rational">#visit_rational</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rational">#visit_rational</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rbrace">#visit_rbrace</a>
@@ -8181,14 +7718,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rbrace">#visit_rbrace</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rbrace">#visit_rbrace</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rbrace">#visit_rbrace</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rbracket">#visit_rbracket</a>
@@ -8196,14 +7728,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rbracket">#visit_rbracket</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rbracket">#visit_rbracket</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rbracket">#visit_rbracket</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_redo">#visit_redo</a>
@@ -8211,14 +7738,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_redo">#visit_redo</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_redo">#visit_redo</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_redo">#visit_redo</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_regexp_beg">#visit_regexp_beg</a>
@@ -8226,14 +7748,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_regexp_beg">#visit_regexp_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_regexp_beg">#visit_regexp_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_regexp_beg">#visit_regexp_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_regexp_content">#visit_regexp_content</a>
@@ -8241,14 +7758,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_regexp_content">#visit_regexp_content</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_regexp_content">#visit_regexp_content</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_regexp_content">#visit_regexp_content</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_regexp_end">#visit_regexp_end</a>
@@ -8256,14 +7768,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_regexp_end">#visit_regexp_end</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_regexp_end">#visit_regexp_end</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_regexp_end">#visit_regexp_end</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_regexp_literal">#visit_regexp_literal</a>
@@ -8271,14 +7778,14 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_regexp_literal">#visit_regexp_literal</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_regexp_literal">#visit_regexp_literal</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_regexp_literal">#visit_regexp_literal</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-visit_rescue">#visit_rescue</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rescue">#visit_rescue</a>
@@ -8286,14 +7793,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rescue">#visit_rescue</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rescue">#visit_rescue</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rescue">#visit_rescue</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rescue_ex">#visit_rescue_ex</a>
@@ -8301,14 +7803,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rescue_ex">#visit_rescue_ex</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rescue_ex">#visit_rescue_ex</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rescue_ex">#visit_rescue_ex</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rescue_mod">#visit_rescue_mod</a>
@@ -8316,14 +7813,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rescue_mod">#visit_rescue_mod</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rescue_mod">#visit_rescue_mod</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rescue_mod">#visit_rescue_mod</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rest_param">#visit_rest_param</a>
@@ -8331,14 +7823,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rest_param">#visit_rest_param</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rest_param">#visit_rest_param</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rest_param">#visit_rest_param</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_retry">#visit_retry</a>
@@ -8346,14 +7833,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_retry">#visit_retry</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_retry">#visit_retry</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_retry">#visit_retry</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_return">#visit_return</a>
@@ -8361,14 +7843,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_return">#visit_return</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_return">#visit_return</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_return">#visit_return</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_return0">#visit_return0</a>
@@ -8376,14 +7853,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_return0">#visit_return0</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_return0">#visit_return0</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_return0">#visit_return0</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_rparen">#visit_rparen</a>
@@ -8391,14 +7863,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_rparen">#visit_rparen</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_rparen">#visit_rparen</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_rparen">#visit_rparen</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_sclass">#visit_sclass</a>
@@ -8406,14 +7873,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_sclass">#visit_sclass</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_sclass">#visit_sclass</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_sclass">#visit_sclass</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_statements">#visit_statements</a>
@@ -8421,14 +7883,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_statements">#visit_statements</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_statements">#visit_statements</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_statements">#visit_statements</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_string_concat">#visit_string_concat</a>
@@ -8436,14 +7893,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_string_concat">#visit_string_concat</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_string_concat">#visit_string_concat</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_string_concat">#visit_string_concat</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_string_content">#visit_string_content</a>
@@ -8451,14 +7903,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_string_content">#visit_string_content</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_string_content">#visit_string_content</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_string_content">#visit_string_content</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_string_dvar">#visit_string_dvar</a>
@@ -8466,14 +7913,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_string_dvar">#visit_string_dvar</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_string_dvar">#visit_string_dvar</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_string_dvar">#visit_string_dvar</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_string_embexpr">#visit_string_embexpr</a>
@@ -8481,14 +7923,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_string_embexpr">#visit_string_embexpr</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_string_embexpr">#visit_string_embexpr</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_string_embexpr">#visit_string_embexpr</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_string_literal">#visit_string_literal</a>
@@ -8496,14 +7933,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_string_literal">#visit_string_literal</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_string_literal">#visit_string_literal</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_string_literal">#visit_string_literal</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_super">#visit_super</a>
@@ -8511,14 +7943,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_super">#visit_super</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_super">#visit_super</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_super">#visit_super</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_symbeg">#visit_symbeg</a>
@@ -8526,14 +7953,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_symbeg">#visit_symbeg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_symbeg">#visit_symbeg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_symbeg">#visit_symbeg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_symbol_content">#visit_symbol_content</a>
@@ -8541,14 +7963,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_symbol_content">#visit_symbol_content</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_symbol_content">#visit_symbol_content</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_symbol_content">#visit_symbol_content</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_symbol_literal">#visit_symbol_literal</a>
@@ -8556,14 +7973,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_symbol_literal">#visit_symbol_literal</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_symbol_literal">#visit_symbol_literal</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_symbol_literal">#visit_symbol_literal</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_symbols">#visit_symbols</a>
@@ -8571,14 +7983,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_symbols">#visit_symbols</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_symbols">#visit_symbols</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_symbols">#visit_symbols</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_symbols_beg">#visit_symbols_beg</a>
@@ -8586,14 +7993,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_symbols_beg">#visit_symbols_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_symbols_beg">#visit_symbols_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_symbols_beg">#visit_symbols_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_tlambda">#visit_tlambda</a>
@@ -8601,14 +8003,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_tlambda">#visit_tlambda</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_tlambda">#visit_tlambda</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_tlambda">#visit_tlambda</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_tlambeg">#visit_tlambeg</a>
@@ -8616,14 +8013,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_tlambeg">#visit_tlambeg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_tlambeg">#visit_tlambeg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_tlambeg">#visit_tlambeg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_top_const_field">#visit_top_const_field</a>
@@ -8631,14 +8023,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_top_const_field">#visit_top_const_field</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_top_const_field">#visit_top_const_field</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_top_const_field">#visit_top_const_field</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_top_const_ref">#visit_top_const_ref</a>
@@ -8646,14 +8033,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_top_const_ref">#visit_top_const_ref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_top_const_ref">#visit_top_const_ref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_top_const_ref">#visit_top_const_ref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_tstring_beg">#visit_tstring_beg</a>
@@ -8661,14 +8043,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_tstring_beg">#visit_tstring_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_tstring_beg">#visit_tstring_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_tstring_beg">#visit_tstring_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_tstring_content">#visit_tstring_content</a>
@@ -8676,14 +8053,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_tstring_content">#visit_tstring_content</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_tstring_content">#visit_tstring_content</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_tstring_content">#visit_tstring_content</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_tstring_end">#visit_tstring_end</a>
@@ -8691,14 +8063,14 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_tstring_end">#visit_tstring_end</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_tstring_end">#visit_tstring_end</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_tstring_end">#visit_tstring_end</a>
+    <a href="SyntaxTree/LanguageServer/InlayHints.html#method-i-visit_unary">#visit_unary</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::LanguageServer::InlayHints</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_unary">#visit_unary</a>
@@ -8706,14 +8078,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_unary">#visit_unary</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_unary">#visit_unary</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_unary">#visit_unary</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_undef">#visit_undef</a>
@@ -8721,14 +8088,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_undef">#visit_undef</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_undef">#visit_undef</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_undef">#visit_undef</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_unless">#visit_unless</a>
@@ -8736,14 +8098,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_unless">#visit_unless</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_unless">#visit_unless</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_unless">#visit_unless</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_unless_mod">#visit_unless_mod</a>
@@ -8751,14 +8108,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_unless_mod">#visit_unless_mod</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_unless_mod">#visit_unless_mod</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_unless_mod">#visit_unless_mod</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_until">#visit_until</a>
@@ -8766,14 +8118,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_until">#visit_until</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_until">#visit_until</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_until">#visit_until</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_until_mod">#visit_until_mod</a>
@@ -8781,14 +8128,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_until_mod">#visit_until_mod</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_until_mod">#visit_until_mod</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_until_mod">#visit_until_mod</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_var_alias">#visit_var_alias</a>
@@ -8796,14 +8138,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_var_alias">#visit_var_alias</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_var_alias">#visit_var_alias</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_var_alias">#visit_var_alias</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_var_field">#visit_var_field</a>
@@ -8811,14 +8148,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_var_field">#visit_var_field</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_var_field">#visit_var_field</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_var_field">#visit_var_field</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_var_ref">#visit_var_ref</a>
@@ -8826,14 +8158,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_var_ref">#visit_var_ref</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_var_ref">#visit_var_ref</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_var_ref">#visit_var_ref</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_vcall">#visit_vcall</a>
@@ -8841,14 +8168,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_vcall">#visit_vcall</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_vcall">#visit_vcall</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_vcall">#visit_vcall</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_void_stmt">#visit_void_stmt</a>
@@ -8856,14 +8178,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_void_stmt">#visit_void_stmt</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_void_stmt">#visit_void_stmt</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_void_stmt">#visit_void_stmt</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_when">#visit_when</a>
@@ -8871,14 +8188,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_when">#visit_when</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_when">#visit_when</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_when">#visit_when</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_while">#visit_while</a>
@@ -8886,14 +8198,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_while">#visit_while</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_while">#visit_while</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_while">#visit_while</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_while_mod">#visit_while_mod</a>
@@ -8901,14 +8208,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_while_mod">#visit_while_mod</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_while_mod">#visit_while_mod</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_while_mod">#visit_while_mod</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_word">#visit_word</a>
@@ -8916,14 +8218,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_word">#visit_word</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_word">#visit_word</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_word">#visit_word</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_words">#visit_words</a>
@@ -8931,14 +8228,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_words">#visit_words</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_words">#visit_words</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_words">#visit_words</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_words_beg">#visit_words_beg</a>
@@ -8946,14 +8238,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_words_beg">#visit_words_beg</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_words_beg">#visit_words_beg</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_words_beg">#visit_words_beg</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_xstring">#visit_xstring</a>
@@ -8961,14 +8248,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_xstring">#visit_xstring</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_xstring">#visit_xstring</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_xstring">#visit_xstring</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_xstring_literal">#visit_xstring_literal</a>
@@ -8976,14 +8258,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_xstring_literal">#visit_xstring_literal</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_xstring_literal">#visit_xstring_literal</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_xstring_literal">#visit_xstring_literal</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_yield">#visit_yield</a>
@@ -8991,14 +8268,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_yield">#visit_yield</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_yield">#visit_yield</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_yield">#visit_yield</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_yield0">#visit_yield0</a>
@@ -9006,14 +8278,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_yield0">#visit_yield0</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_yield0">#visit_yield0</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_yield0">#visit_yield0</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="SyntaxTree/Visitor.html#method-i-visit_zsuper">#visit_zsuper</a>
@@ -9021,14 +8288,9 @@
     <span class="container">SyntaxTree::Visitor</span>
 
   <li class="method">
-    <a href="SyntaxTree/Visitor/JSONVisitor.html#method-i-visit_zsuper">#visit_zsuper</a>
+    <a href="SyntaxTree/Visitor/FieldVisitor.html#method-i-visit_zsuper">#visit_zsuper</a>
     &mdash;
-    <span class="container">SyntaxTree::Visitor::JSONVisitor</span>
-
-  <li class="method">
-    <a href="SyntaxTree/Visitor/PrettyPrintVisitor.html#method-i-visit_zsuper">#visit_zsuper</a>
-    &mdash;
-    <span class="container">SyntaxTree::Visitor::PrettyPrintVisitor</span>
+    <span class="container">SyntaxTree::Visitor::FieldVisitor</span>
 
   <li class="method">
     <a href="PrettyPrint.html#method-i-with_target">#with_target</a>

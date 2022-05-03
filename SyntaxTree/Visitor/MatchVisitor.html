@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::Visitor::JSONVisitor - RDoc Documentation</title>
+<title>class SyntaxTree::Visitor::MatchVisitor - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -73,20 +73,21 @@
 
   <ul class="link-list" role="directory">
     <li ><a href="#method-c-new">::new</a>
+    <li class="calls-super" ><a href="#method-i-visit">#visit</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::Visitor::JSONVisitor">
-  <h1 id="class-SyntaxTree::Visitor::JSONVisitor" class="class">
-    class SyntaxTree::Visitor::JSONVisitor
+<main role="main" aria-labelledby="class-SyntaxTree::Visitor::MatchVisitor">
+  <h1 id="class-SyntaxTree::Visitor::MatchVisitor" class="class">
+    class SyntaxTree::Visitor::MatchVisitor
   </h1>
 
   <section class="description">
     
-<p>This visitor transforms the AST into a hash that contains only primitives that can be easily serialized into JSON.</p>
+<p>This visitor transforms the AST into a Ruby pattern matching expression that would match correctly against the AST.</p>
 
   </section>
 
@@ -99,9 +100,9 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-target" class="method-detail">
+      <div id="attribute-i-q" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">target</span><span
+          <span class="method-name">q</span><span
             class="attribute-access-type">[R]</span>
         </div>
 
@@ -120,7 +121,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">()</span>
+            class="method-args">(q)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -128,9 +129,45 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor/json_visitor.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
-  <span class="ruby-ivar">@target</span> = <span class="ruby-keyword">nil</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor/match_visitor.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-ivar">@q</span> = <span class="ruby-identifier">q</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+      <div id="method-i-visit" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">visit</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="../Visitor.html#method-i-visit"><code>SyntaxTree::Visitor#visit</code></a>
+            </div>
+
+          <div class="method-source-code" id="visit-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor/match_visitor.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Node</span>)
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">pretty_print</span>(<span class="ruby-identifier">q</span>)
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
