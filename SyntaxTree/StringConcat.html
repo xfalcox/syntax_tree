@@ -166,7 +166,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8020</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8197</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">left:</span>, <span class="ruby-value">right:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@left</span> = <span class="ruby-identifier">left</span>
   <span class="ruby-ivar">@right</span> = <span class="ruby-identifier">right</span>
@@ -197,7 +197,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8027</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8204</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_string_concat</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -218,7 +218,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8031</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8208</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -251,7 +251,7 @@
       <div id="method-i-deconstruct_keys" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">deconstruct_keys</span><span
-            class="method-args">(keys)</span>
+            class="method-args">(_keys)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -259,8 +259,8 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8037</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   { <span class="ruby-value">left:</span> <span class="ruby-identifier">left</span>, <span class="ruby-value">right:</span> <span class="ruby-identifier">right</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -280,11 +280,11 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8041</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8218</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">left</span>)
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&#39; \\&#39;</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; \\&quot;</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-value">force:</span> <span class="ruby-keyword">true</span>)
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">right</span>)

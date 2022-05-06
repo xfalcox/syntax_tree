@@ -185,9 +185,16 @@
           
 
           <div class="method-source-code" id="fixed-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 64</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">fixed</span>(<span class="ruby-value">line:</span>, <span class="ruby-value">char:</span>, <span class="ruby-value">column:</span>)
-  <span class="ruby-identifier">new</span>(<span class="ruby-value">start_line:</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">start_char:</span> <span class="ruby-identifier">char</span>, <span class="ruby-value">start_column:</span> <span class="ruby-identifier">column</span>, <span class="ruby-value">end_line:</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">end_char:</span> <span class="ruby-identifier">char</span>, <span class="ruby-value">end_column:</span> <span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">new</span>(
+    <span class="ruby-value">start_line:</span> <span class="ruby-identifier">line</span>,
+    <span class="ruby-value">start_char:</span> <span class="ruby-identifier">char</span>,
+    <span class="ruby-value">start_column:</span> <span class="ruby-identifier">column</span>,
+    <span class="ruby-value">end_line:</span> <span class="ruby-identifier">line</span>,
+    <span class="ruby-value">end_char:</span> <span class="ruby-identifier">char</span>,
+    <span class="ruby-value">end_column:</span> <span class="ruby-identifier">column</span>
+  )
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -198,7 +205,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(start_line:, start_char:, start_column:, end_line:, end_char:, end_column:)</span>
+            class="method-args">( start_line:, start_char:, start_column:, end_line:, end_char:, end_column: )</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -206,8 +213,15 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">start_line:</span>, <span class="ruby-value">start_char:</span>, <span class="ruby-value">start_column:</span>, <span class="ruby-value">end_line:</span>, <span class="ruby-value">end_char:</span>, <span class="ruby-value">end_column:</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
+  <span class="ruby-value">start_line:</span>,
+  <span class="ruby-value">start_char:</span>,
+  <span class="ruby-value">start_column:</span>,
+  <span class="ruby-value">end_line:</span>,
+  <span class="ruby-value">end_char:</span>,
+  <span class="ruby-value">end_column:</span>
+)
   <span class="ruby-ivar">@start_line</span> = <span class="ruby-identifier">start_line</span>
   <span class="ruby-ivar">@start_char</span> = <span class="ruby-identifier">start_char</span>
   <span class="ruby-ivar">@start_column</span> = <span class="ruby-identifier">start_column</span>
@@ -232,7 +246,7 @@
           
 
           <div class="method-source-code" id="token-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 53</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">token</span>(<span class="ruby-value">line:</span>, <span class="ruby-value">char:</span>, <span class="ruby-value">column:</span>, <span class="ruby-value">size:</span>)
   <span class="ruby-identifier">new</span>(
     <span class="ruby-value">start_line:</span> <span class="ruby-identifier">line</span>,
@@ -267,7 +281,7 @@
           
 
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Location</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">start_line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">start_line</span> <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">start_char</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">end_line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">end_line</span> <span class="ruby-operator">&amp;&amp;</span>
@@ -290,7 +304,7 @@
           
 
           <div class="method-source-code" id="deconstruct-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 38</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct</span>
   [<span class="ruby-identifier">start_line</span>, <span class="ruby-identifier">start_char</span>, <span class="ruby-identifier">start_column</span>, <span class="ruby-identifier">end_line</span>, <span class="ruby-identifier">end_char</span>, <span class="ruby-identifier">end_column</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -303,7 +317,7 @@
       <div id="method-i-deconstruct_keys" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">deconstruct_keys</span><span
-            class="method-args">(keys)</span>
+            class="method-args">(_keys)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -311,8 +325,8 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 42</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">start_line:</span> <span class="ruby-identifier">start_line</span>,
     <span class="ruby-value">start_char:</span> <span class="ruby-identifier">start_char</span>,
@@ -339,7 +353,7 @@
           
 
           <div class="method-source-code" id="lines-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lines</span>
   <span class="ruby-identifier">start_line</span><span class="ruby-operator">..</span><span class="ruby-identifier">end_line</span>
 <span class="ruby-keyword">end</span></pre>
@@ -360,7 +374,7 @@
           
 
           <div class="method-source-code" id="to-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 27</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>(
     <span class="ruby-value">start_line:</span> <span class="ruby-identifier">start_line</span>,

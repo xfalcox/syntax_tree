@@ -193,7 +193,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2485</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2575</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">receiver:</span>,
   <span class="ruby-value">operator:</span>,
@@ -233,7 +233,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2501</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2591</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_call</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -254,7 +254,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2505</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2595</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [
     <span class="ruby-identifier">receiver</span>,
@@ -292,7 +292,7 @@
       <div id="method-i-deconstruct_keys" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">deconstruct_keys</span><span
-            class="method-args">(keys)</span>
+            class="method-args">(_keys)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -300,8 +300,8 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2516</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2606</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">receiver:</span> <span class="ruby-identifier">receiver</span>,
     <span class="ruby-value">operator:</span> <span class="ruby-identifier">operator</span>,
@@ -328,13 +328,18 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2527</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2617</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-comment"># If we&#39;re at the top of a call chain, then we&#39;re going to do some</span>
   <span class="ruby-comment"># specialized printing in case we can print it nicely. We _only_ do this</span>
   <span class="ruby-comment"># at the top of the chain to avoid weird recursion issues.</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">chained?</span>(<span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">chained?</span>(<span class="ruby-identifier">receiver</span>)
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_break</span> { <span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>) }.<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>) } }
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">chained?</span>(<span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>) <span class="ruby-operator">&amp;&amp;</span>
+       <span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">chained?</span>(<span class="ruby-identifier">receiver</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">q</span>
+        .<span class="ruby-identifier">if_break</span> { <span class="ruby-constant">CallChainFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>) }
+        .<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>) }
+    <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">end</span>
@@ -356,7 +361,7 @@
           
 
           <div class="method-source-code" id="format_arguments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2538</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2633</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_arguments</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">arguments</span>
   <span class="ruby-keyword">in</span> <span class="ruby-constant">ArgParen</span>
@@ -385,7 +390,7 @@
           
 
           <div class="method-source-code" id="format_contents-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2550</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2645</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_contents</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">call_operator</span> = <span class="ruby-constant">CallOperatorFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">operator</span>)
 

@@ -87,6 +87,30 @@
 
   <section class="description">
     
+<p>Formats an array that contains only a list of variable references. To make things simpler, if there are a bunch, we format them all using the “fill” algorithm as opposed to breaking them into a ton of lines. <a href="../For.html"><code>For</code></a> example,</p>
+
+<pre class="ruby">[<span class="ruby-identifier">foo</span>, <span class="ruby-identifier">bar</span>, <span class="ruby-identifier">baz</span>]
+</pre>
+
+<p>instead of becoming:</p>
+
+<pre class="ruby">[
+  <span class="ruby-identifier">foo</span>,
+  <span class="ruby-identifier">bar</span>,  
+  <span class="ruby-identifier">baz</span>
+]
+</pre>
+
+<p>would instead become:</p>
+
+<pre class="ruby">[
+  <span class="ruby-identifier">foo</span>, <span class="ruby-identifier">bar</span>,
+  <span class="ruby-identifier">baz</span>
+]
+</pre>
+
+<p>provided the line length was hit between ‘bar` and `baz`.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -130,7 +154,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 798</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 843</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">contents</span>)
   <span class="ruby-ivar">@contents</span> = <span class="ruby-identifier">contents</span>
 <span class="ruby-keyword">end</span></pre>
@@ -158,7 +182,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 802</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 847</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot;[&quot;</span>, <span class="ruby-string">&quot;]&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>

@@ -152,7 +152,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5564</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5714</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">value:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -182,7 +182,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5570</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5720</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_int</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -203,7 +203,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5574</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5724</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   []
 <span class="ruby-keyword">end</span></pre>
@@ -236,7 +236,7 @@
       <div id="method-i-deconstruct_keys" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">deconstruct_keys</span><span
-            class="method-args">(keys)</span>
+            class="method-args">(_keys)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -244,8 +244,8 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5580</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5730</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   { <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>, <span class="ruby-value">comments:</span> <span class="ruby-identifier">comments</span> }
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -265,14 +265,14 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5584</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5734</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-regexp">/\+?0/</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">5</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;_&quot;</span>)
     <span class="ruby-comment"># If it&#39;s a plain integer and it doesn&#39;t have any underscores separating</span>
     <span class="ruby-comment"># the values, then we&#39;re going to insert them every 3 characters</span>
     <span class="ruby-comment"># starting from the right.</span>
     <span class="ruby-identifier">index</span> = (<span class="ruby-identifier">value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span>) <span class="ruby-operator">%</span> <span class="ruby-value">3</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-node">&quot;  #{value}&quot;</span>[<span class="ruby-identifier">index</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/.../</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">strip</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-node">&quot;  #{value}&quot;</span>[<span class="ruby-identifier">index</span><span class="ruby-operator">..</span>].<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/.../</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">strip</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-keyword">end</span>

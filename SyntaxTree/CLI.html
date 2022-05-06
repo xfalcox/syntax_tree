@@ -80,6 +80,8 @@
 
   <section class="description">
     
+<p>Syntax Tree ships with the ‘stree` <a href="CLI.html"><code>CLI</code></a>, which can be used to inspect and manipulate Ruby code. This module is responsible for powering that <a href="CLI.html"><code>CLI</code></a>.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -155,7 +157,7 @@
 
   <span class="ruby-comment"># If we&#39;re not reading from stdin and the user didn&#39;t supply and</span>
   <span class="ruby-comment"># filepaths to be read, then we exit with the usage message.</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
     <span class="ruby-identifier">warn</span>(<span class="ruby-constant">HELP</span>)
     <span class="ruby-keyword">return</span> <span class="ruby-value">1</span>
   <span class="ruby-keyword">end</span>
@@ -193,7 +195,7 @@
     <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
   <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Check</span><span class="ruby-operator">::</span><span class="ruby-constant">UnformattedError</span>, <span class="ruby-constant">Debug</span><span class="ruby-operator">::</span><span class="ruby-constant">NonIdempotentFormatError</span>
     <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">rescue</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
     <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
     <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
     <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>

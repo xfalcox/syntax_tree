@@ -129,7 +129,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">error</span>)
   <span class="ruby-ivar">@visit_method</span> = <span class="ruby-identifier">error</span>.<span class="ruby-identifier">visit_method</span>
 <span class="ruby-keyword">end</span></pre>
@@ -157,10 +157,12 @@
           
 
           <div class="method-source-code" id="corrections-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">corrections</span>
   <span class="ruby-ivar">@corrections</span> <span class="ruby-operator">||=</span>
-    <span class="ruby-constant">DidYouMean</span><span class="ruby-operator">::</span><span class="ruby-constant">SpellChecker</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">dictionary:</span> <span class="ruby-constant">Visitor</span>.<span class="ruby-identifier">visit_methods</span>).<span class="ruby-identifier">correct</span>(<span class="ruby-identifier">visit_method</span>)
+    <span class="ruby-constant">DidYouMean</span><span class="ruby-operator">::</span><span class="ruby-constant">SpellChecker</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-value">dictionary:</span> <span class="ruby-constant">Visitor</span>.<span class="ruby-identifier">visit_methods</span>
+    ).<span class="ruby-identifier">correct</span>(<span class="ruby-identifier">visit_method</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

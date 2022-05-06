@@ -96,6 +96,8 @@
 
   <section class="description">
     
+<p><a href="Parser.html"><code>Parser</code></a> is a subclass of the Ripper library that subscribes to the stream of tokens and nodes coming from the parser and builds up a syntax tree.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -201,7 +203,7 @@
             </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/parser.rb, line 75</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/parser.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span>)
   <span class="ruby-keyword">super</span>
 
@@ -260,10 +262,10 @@
   <span class="ruby-identifier">last_index</span> = <span class="ruby-value">0</span>
 
   <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">bytesize</span>
-      <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>)
+    <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">bytesize</span>
+      <span class="ruby-constant">SingleByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>)
     <span class="ruby-keyword">else</span>
-      <span class="ruby-ivar">@line_counts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MultiByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>, <span class="ruby-identifier">line</span>)
+      <span class="ruby-constant">MultiByteString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">last_index</span>, <span class="ruby-identifier">line</span>)
     <span class="ruby-keyword">end</span>
 
     <span class="ruby-identifier">last_index</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span>

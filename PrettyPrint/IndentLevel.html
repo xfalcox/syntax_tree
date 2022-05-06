@@ -269,17 +269,17 @@
     <span class="ruby-identifier">last_spaces</span> = <span class="ruby-value">0</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-identifier">next_queue</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">case</span> <span class="ruby-identifier">part</span>
+  <span class="ruby-identifier">next_queue</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">next_part</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">next_part</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">IndentPart</span>
       <span class="ruby-identifier">flush_spaces</span>.<span class="ruby-identifier">call</span>
       <span class="ruby-identifier">add_spaces</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">2</span>)
     <span class="ruby-keyword">when</span> <span class="ruby-constant">StringAlignPart</span>
       <span class="ruby-identifier">flush_spaces</span>.<span class="ruby-identifier">call</span>
-      <span class="ruby-identifier">next_value</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">n</span>
-      <span class="ruby-identifier">next_length</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">n</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-identifier">next_value</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">next_part</span>.<span class="ruby-identifier">n</span>
+      <span class="ruby-identifier">next_length</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">next_part</span>.<span class="ruby-identifier">n</span>.<span class="ruby-identifier">length</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">NumberAlignPart</span>
-      <span class="ruby-identifier">last_spaces</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">n</span>
+      <span class="ruby-identifier">last_spaces</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">next_part</span>.<span class="ruby-identifier">n</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 

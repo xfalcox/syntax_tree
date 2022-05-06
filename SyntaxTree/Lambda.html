@@ -165,7 +165,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5806</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5956</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">params:</span>, <span class="ruby-value">statements:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@params</span> = <span class="ruby-identifier">params</span>
   <span class="ruby-ivar">@statements</span> = <span class="ruby-identifier">statements</span>
@@ -196,7 +196,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5813</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5963</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_lambda</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -217,7 +217,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5817</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5967</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">params</span>, <span class="ruby-identifier">statements</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -250,7 +250,7 @@
       <div id="method-i-deconstruct_keys" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">deconstruct_keys</span><span
-            class="method-args">(keys)</span>
+            class="method-args">(_keys)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -258,8 +258,8 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5823</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">keys</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5973</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">params:</span> <span class="ruby-identifier">params</span>,
     <span class="ruby-value">statements:</span> <span class="ruby-identifier">statements</span>,
@@ -284,7 +284,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5832</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 5982</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot;-&gt;&quot;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Paren</span>)
@@ -298,25 +298,27 @@
     <span class="ruby-keyword">end</span>
 
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_break</span> <span class="ruby-keyword">do</span>
-      <span class="ruby-identifier">force_parens</span> =
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parents</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
-          <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Command</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">CommandCall</span>)
+    <span class="ruby-identifier">q</span>
+      .<span class="ruby-identifier">if_break</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">force_parens</span> =
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parents</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Command</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">CommandCall</span>)
+          <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">force_parens</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;{&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;do&quot;</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
         <span class="ruby-keyword">end</span>
 
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">force_parens</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;{&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;do&quot;</span>)
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
         <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">force_parens</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;end&quot;</span>)
       <span class="ruby-keyword">end</span>
-
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">force_parens</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;end&quot;</span>)
-    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">if_flat</span> <span class="ruby-keyword">do</span>
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;{ &quot;</span>)
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
-      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; }&quot;</span>)
-    <span class="ruby-keyword">end</span>
+      .<span class="ruby-identifier">if_flat</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;{ &quot;</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; }&quot;</span>)
+      <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>

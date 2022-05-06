@@ -84,6 +84,9 @@
     <li><a href="#label-textDocument-2FinlayHints">textDocument/inlayHints</a>
     <li><a href="#label-syntaxTree-2Fvisualizing">syntaxTree/visualizing</a>
     <li><a href="#label-Plugins">Plugins</a>
+    <li><a href="#label-Integration">Integration</a>
+    <li><a href="#label-RuboCop">RuboCop</a>
+    <li><a href="#label-VSCode">VSCode</a>
     <li><a href="#label-Contributing">Contributing</a>
     <li><a href="#label-License">License</a>
   </ul>
@@ -128,6 +131,10 @@
 </li><li>
 <p><a href="#format">format</a></p>
 </li><li>
+<p><a href="#json">json</a></p>
+</li><li>
+<p><a href="#match">match</a></p>
+</li><li>
 <p><a href="#write">write</a></p>
 </li><li>
 <p><a href="#library">Library</a></p>
@@ -163,6 +170,12 @@
 <p><a href="#syntaxtreevisualizing">syntaxTree/visualizing</a></p>
 </li><li>
 <p><a href="#plugins">Plugins</a></p>
+</li><li>
+<p><a href="#integration">Integration</a></p>
+</li><li>
+<p><a href="#rubocop">RuboCop</a></p>
+</li><li>
+<p><a href="#vscode">VSCode</a></p>
 </li><li>
 <p><a href="#contributing">Contributing</a></p>
 </li><li>
@@ -501,6 +514,23 @@ Did you mean?  visit_binary
 </li><li>
 <p><a href="https://github.com/ruby-syntax-tree/syntax_tree-rbs">SyntaxTree::RBS</a> for the <a href="https://github.com/ruby/rbs">RBS type language</a>.</p>
 </li></ul>
+
+<p>When invoking the CLI, you pass through the list of plugins with the <code>--plugins</code> options to the commands that accept them. They should be a comma-delimited list. When the CLI first starts, it will require the files corresponding to those names.</p>
+
+<h2 id="label-Integration">Integration<span><a href="#label-Integration">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Syntax Tree’s goal is to seemlessly integrate into your workflow. To this end, it provides a couple of additional tools beyond the CLI and the Ruby library.</p>
+
+<h3 id="label-RuboCop">RuboCop<span><a href="#label-RuboCop">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>RuboCop and Syntax Tree serve different purposes, but there is overlap with some of RuboCop’s functionality. Syntax Tree provides a RuboCop configuration file to disable rules that are redundant with Syntax Tree. To use this configuration file, add the following snippet to the top of your project’s <code>.rubocop.yml</code>:</p>
+
+<pre>inherit_gem:
+  syntax_tree: config/rubocop.yml</pre>
+
+<h3 id="label-VSCode">VSCode<span><a href="#label-VSCode">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To integrate Syntax Tree into VSCode, you should use the official VSCode extension <a href="https://github.com/ruby-syntax-tree/vscode-syntax-tree">ruby-syntax-tree/vscode-syntax-tree</a>.</p>
 
 <h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
 

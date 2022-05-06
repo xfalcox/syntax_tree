@@ -89,6 +89,20 @@
 
   <section class="description">
     
+<p>This is probably the most complicated formatter in this file. It’s responsible for formatting chains of method calls, with or without arguments or blocks. <a href="In.html"><code>In</code></a> general, we want to go from something like</p>
+
+<pre class="ruby"><span class="ruby-identifier">foo</span>.<span class="ruby-identifier">bar</span>.<span class="ruby-identifier">baz</span>
+</pre>
+
+<p>to</p>
+
+<pre class="ruby"><span class="ruby-identifier">foo</span>
+  .<span class="ruby-identifier">bar</span>
+  .<span class="ruby-identifier">baz</span>
+</pre>
+
+<p>Of course there are a lot of caveats to that, including trailing operators when necessary, where comments are places, how blocks are aligned, etc.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -132,7 +146,7 @@
           
 
           <div class="method-source-code" id="chained-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2420</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2501</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">chained?</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>
   <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span> <span class="ruby-operator">|</span> <span class="ruby-constant">MethodAddBlock</span>[<span class="ruby-value">call:</span> <span class="ruby-constant">Call</span>]
@@ -158,7 +172,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2294</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2368</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
 <span class="ruby-keyword">end</span></pre>
@@ -186,14 +200,14 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2298</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2372</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">children</span> = [<span class="ruby-identifier">node</span>]
   <span class="ruby-identifier">threshold</span> = <span class="ruby-value">3</span>
 
   <span class="ruby-comment"># First, walk down the chain until we get to the point where we&#39;re not</span>
   <span class="ruby-comment"># longer at a chainable node.</span>
-  <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">last</span>
     <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span>[<span class="ruby-value">receiver:</span> <span class="ruby-constant">Call</span>]
       <span class="ruby-identifier">children</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">receiver</span>
@@ -213,7 +227,7 @@
   <span class="ruby-comment"># block. For more details, see</span>
   <span class="ruby-comment"># https://github.com/prettier/plugin-ruby/issues/863.</span>
   <span class="ruby-identifier">parents</span> = <span class="ruby-identifier">q</span>.<span class="ruby-identifier">parents</span>.<span class="ruby-identifier">take</span>(<span class="ruby-value">4</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">parents</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">parent</span> = <span class="ruby-identifier">parents</span>[<span class="ruby-value">2</span>])
     <span class="ruby-comment"># If we&#39;re at a do_block, then we want to go one more level up. This is</span>
     <span class="ruby-comment"># because do blocks have BodyStmt nodes instead of just Statements</span>
     <span class="ruby-comment"># nodes.</span>
@@ -227,7 +241,11 @@
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">children</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">threshold</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">if_break</span> { <span class="ruby-identifier">format_chain</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">children</span>) }.<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">node</span>.<span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>) } }
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">q</span>
+        .<span class="ruby-identifier">if_break</span> { <span class="ruby-identifier">format_chain</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">children</span>) }
+        .<span class="ruby-identifier">if_flat</span> { <span class="ruby-identifier">node</span>.<span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>) }
+    <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">format_contents</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-keyword">end</span>
@@ -249,15 +267,15 @@
           
 
           <div class="method-source-code" id="format_chain-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2344</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2422</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_chain</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">children</span>)
   <span class="ruby-comment"># We&#39;re going to have some specialized behavior for if it&#39;s an entire</span>
   <span class="ruby-comment"># chain of calls without arguments except for the last one. This is common</span>
   <span class="ruby-comment"># enough in Ruby source code that it&#39;s worth the extra complexity here.</span>
   <span class="ruby-identifier">empty_except_last</span> =
-    <span class="ruby-identifier">children</span>.<span class="ruby-identifier">drop</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">all?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
-      <span class="ruby-identifier">child</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Call</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">nil?</span>
-    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">children</span>
+      .<span class="ruby-identifier">drop</span>(<span class="ruby-value">1</span>)
+      .<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Call</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">nil?</span> }
 
   <span class="ruby-comment"># Here, we&#39;re going to add all of the children onto the stack of the</span>
   <span class="ruby-comment"># formatter so it&#39;s as if we had descending normally into them. This is</span>
@@ -277,9 +295,12 @@
       <span class="ruby-comment"># and a trailing operator.</span>
       <span class="ruby-identifier">skip_operator</span> = <span class="ruby-keyword">false</span>
 
-      <span class="ruby-keyword">while</span> <span class="ruby-identifier">child</span> = <span class="ruby-identifier">children</span>.<span class="ruby-identifier">pop</span>
+      <span class="ruby-keyword">while</span> (<span class="ruby-identifier">child</span> = <span class="ruby-identifier">children</span>.<span class="ruby-identifier">pop</span>)
         <span class="ruby-keyword">case</span> <span class="ruby-identifier">child</span>
-        <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span>[<span class="ruby-value">receiver:</span> <span class="ruby-constant">Call</span>[<span class="ruby-value">message:</span> { <span class="ruby-value">value:</span> <span class="ruby-string">&quot;where&quot;</span> }], <span class="ruby-value">message:</span> { <span class="ruby-value">value:</span> <span class="ruby-string">&quot;not&quot;</span> }]
+        <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span>[
+             <span class="ruby-value">receiver:</span> <span class="ruby-constant">Call</span>[<span class="ruby-value">message:</span> { <span class="ruby-value">value:</span> <span class="ruby-string">&quot;where&quot;</span> }],
+             <span class="ruby-value">message:</span> { <span class="ruby-value">value:</span> <span class="ruby-string">&quot;not&quot;</span> }
+           ]
           <span class="ruby-comment"># This is very specialized behavior wherein we group</span>
           <span class="ruby-comment"># .where.not calls together because it looks better. For more</span>
           <span class="ruby-comment"># information, see</span>

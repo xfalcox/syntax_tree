@@ -88,6 +88,8 @@
 
   <section class="description">
     
+<p><a href="../Undef.html"><code>Undef</code></a> accepts a variable number of arguments that can be either <a href="../DynaSymbol.html"><code>DynaSymbol</code></a> or <a href="../SymbolLiteral.html"><code>SymbolLiteral</code></a> objects. <a href="../For.html"><code>For</code></a> <a href="../SymbolLiteral.html"><code>SymbolLiteral</code></a> objects we descend directly into the value in order to have it come out as bare words.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -131,7 +133,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8830</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9012</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
 <span class="ruby-keyword">end</span></pre>
@@ -159,7 +161,7 @@
           
 
           <div class="method-source-code" id="comments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8834</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9016</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comments</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SymbolLiteral</span>)
     <span class="ruby-identifier">node</span>.<span class="ruby-identifier">comments</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">comments</span>
@@ -184,7 +186,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 8842</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 9024</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SymbolLiteral</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">value</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">node</span>)
 <span class="ruby-keyword">end</span></pre>

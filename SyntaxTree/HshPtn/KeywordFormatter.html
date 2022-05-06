@@ -88,6 +88,8 @@
 
   <section class="description">
     
+<p>Formats a key-value pair in a hash pattern. The value is optional.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -144,7 +146,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4859</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4975</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
   <span class="ruby-ivar">@key</span> = <span class="ruby-identifier">key</span>
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
@@ -173,7 +175,7 @@
           
 
           <div class="method-source-code" id="comments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4864</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4980</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comments</span>
   []
 <span class="ruby-keyword">end</span></pre>
@@ -194,7 +196,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4868</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4984</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">key</span>)
 

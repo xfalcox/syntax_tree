@@ -88,6 +88,8 @@
 
   <section class="description">
     
+<p>Formats the keyword_rest position of the parameters. This can be the **nil syntax, the … syntax, or the ** syntax.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -131,7 +133,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6563</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6735</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
 <span class="ruby-keyword">end</span></pre>
@@ -159,7 +161,7 @@
           
 
           <div class="method-source-code" id="comments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6567</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6739</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comments</span>
   []
 <span class="ruby-keyword">end</span></pre>
@@ -180,13 +182,9 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6571</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6743</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-value">:nil</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;**nil&quot;</span>)
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">value</span>)
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-value">:nil</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;**nil&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

@@ -156,7 +156,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(output, maxwidth = nil, newline = nil)</span>
+            class="method-args">(output, _maxwidth = nil, _newline = nil)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -180,7 +180,7 @@
 
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 378</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">maxwidth</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">newline</span> = <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">_maxwidth</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">_newline</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-ivar">@output</span> = <span class="ruby-constant">Buffer</span>.<span class="ruby-identifier">for</span>(<span class="ruby-identifier">output</span>)
   <span class="ruby-ivar">@target</span> = <span class="ruby-ivar">@output</span>
   <span class="ruby-ivar">@line_suffixes</span> = <span class="ruby-constant">Buffer</span><span class="ruby-operator">::</span><span class="ruby-constant">ArrayBuffer</span>.<span class="ruby-identifier">new</span>
@@ -221,7 +221,7 @@
       <div id="method-i-breakable" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">breakable</span><span
-            class="method-args">( separator = &quot; &quot;, width = separator.length, indent: nil, force: nil )</span>
+            class="method-args">( separator = &quot; &quot;, _width = separator.length, indent: nil, force: nil )</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -234,7 +234,7 @@
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 398</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">breakable</span>(
   <span class="ruby-identifier">separator</span> = <span class="ruby-string">&quot; &quot;</span>,
-  <span class="ruby-identifier">width</span> = <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">length</span>,
+  <span class="ruby-identifier">_width</span> = <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">length</span>,
   <span class="ruby-value">indent:</span> <span class="ruby-keyword">nil</span>,
   <span class="ruby-value">force:</span> <span class="ruby-keyword">nil</span>
 )
@@ -249,7 +249,7 @@
       <div id="method-i-fill_breakable" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">fill_breakable</span><span
-            class="method-args">(separator = &quot; &quot;, width = separator.length)</span>
+            class="method-args">(separator = &quot; &quot;, _width = separator.length)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -258,7 +258,7 @@
 
           <div class="method-source-code" id="fill_breakable-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 413</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_breakable</span>(<span class="ruby-identifier">separator</span> = <span class="ruby-string">&quot; &quot;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">length</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_breakable</span>(<span class="ruby-identifier">separator</span> = <span class="ruby-string">&quot; &quot;</span>, <span class="ruby-identifier">_width</span> = <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">length</span>)
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">separator</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -291,7 +291,7 @@
       <div id="method-i-group" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">group</span><span
-            class="method-args">( indent = nil, open_object = &quot;&quot;, close_object = &quot;&quot;, open_width = nil, close_width = nil ) { || ... }</span>
+            class="method-args">( _indent = nil, open_object = &quot;&quot;, close_object = &quot;&quot;, _open_width = nil, _close_width = nil ) { || ... }</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -314,11 +314,11 @@
           <div class="method-source-code" id="group-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 434</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">group</span>(
-  <span class="ruby-identifier">indent</span> = <span class="ruby-keyword">nil</span>,
+  <span class="ruby-identifier">_indent</span> = <span class="ruby-keyword">nil</span>,
   <span class="ruby-identifier">open_object</span> = <span class="ruby-string">&quot;&quot;</span>,
   <span class="ruby-identifier">close_object</span> = <span class="ruby-string">&quot;&quot;</span>,
-  <span class="ruby-identifier">open_width</span> = <span class="ruby-keyword">nil</span>,
-  <span class="ruby-identifier">close_width</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">_open_width</span> = <span class="ruby-keyword">nil</span>,
+  <span class="ruby-identifier">_close_width</span> = <span class="ruby-keyword">nil</span>
 )
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">open_object</span>
   <span class="ruby-keyword">yield</span>
@@ -418,7 +418,7 @@
       <div id="method-i-nest" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">nest</span><span
-            class="method-args">(indent) { || ... }</span>
+            class="method-args">(_indent) { || ... }</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -429,7 +429,7 @@
 
           <div class="method-source-code" id="nest-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 481</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nest</span>(<span class="ruby-identifier">indent</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nest</span>(<span class="ruby-identifier">_indent</span>)
   <span class="ruby-keyword">yield</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -441,7 +441,7 @@
       <div id="method-i-text" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">text</span><span
-            class="method-args">(object = &quot;&quot;, width = nil)</span>
+            class="method-args">(object = &quot;&quot;, _width = nil)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -452,7 +452,7 @@
 
           <div class="method-source-code" id="text-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/prettyprint.rb, line 488</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text</span>(<span class="ruby-identifier">object</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text</span>(<span class="ruby-identifier">object</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">_width</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
