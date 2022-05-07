@@ -365,6 +365,8 @@
 </li><li>
 <p><a href="#formatq">format(q)</a></p>
 </li><li>
+<p><a href="#construct_keys">construct_keys</a></p>
+</li><li>
 <p><a href="#visitor">Visitor</a></p>
 </li><li>
 <p><a href="#visit_method">visit_method</a></p>
@@ -614,6 +616,26 @@ The listed files did not match the expected format.</pre>
 <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">flush</span>
 <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">output</span>.<span class="ruby-identifier">join</span>
 <span class="ruby-comment"># =&gt; &quot;1 + 1&quot;</span>
+</pre>
+
+<h3 id="label-construct_keys">construct_keys<span><a href="#label-construct_keys">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Every node responds to <code>construct_keys</code>, which will return a string that contains a Ruby pattern-matching expression that could be used to match against the current node. It’s meant to be used in tooling and through the CLI mostly.</p>
+
+<pre class="ruby"><span class="ruby-identifier">program</span> = <span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;1 + 1&quot;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">program</span>.<span class="ruby-identifier">construct_keys</span>
+
+<span class="ruby-comment"># SyntaxTree::Program[</span>
+<span class="ruby-comment">#   statements: SyntaxTree::Statements[</span>
+<span class="ruby-comment">#     body: [</span>
+<span class="ruby-comment">#       SyntaxTree::Binary[</span>
+<span class="ruby-comment">#         left: SyntaxTree::Int[value: &quot;1&quot;],</span>
+<span class="ruby-comment">#         operator: :+,</span>
+<span class="ruby-comment">#         right: SyntaxTree::Int[value: &quot;1&quot;]</span>
+<span class="ruby-comment">#       ]</span>
+<span class="ruby-comment">#     ]</span>
+<span class="ruby-comment">#   ]</span>
+<span class="ruby-comment"># ]</span>
 </pre>
 
 <h2 id="label-Visitor">Visitor<span><a href="#label-Visitor">&para;</a> <a href="#top">&uarr;</a></span></h2>

@@ -170,7 +170,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 442</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 446</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">collection:</span>, <span class="ruby-value">index:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@collection</span> = <span class="ruby-identifier">collection</span>
   <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">index</span>
@@ -201,7 +201,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 449</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 453</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_aref</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -222,7 +222,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 453</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 457</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">index</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -263,7 +263,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 459</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 463</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">collection:</span> <span class="ruby-identifier">collection</span>,
@@ -289,7 +289,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 468</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 472</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">collection</span>)

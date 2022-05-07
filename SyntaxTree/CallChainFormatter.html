@@ -146,7 +146,7 @@
           
 
           <div class="method-source-code" id="chained-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2501</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2510</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">chained?</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>
   <span class="ruby-keyword">in</span> <span class="ruby-constant">Call</span> <span class="ruby-operator">|</span> <span class="ruby-constant">MethodAddBlock</span>[<span class="ruby-value">call:</span> <span class="ruby-constant">Call</span>]
@@ -172,7 +172,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2368</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2377</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
 <span class="ruby-keyword">end</span></pre>
@@ -200,7 +200,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2372</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2381</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">children</span> = [<span class="ruby-identifier">node</span>]
   <span class="ruby-identifier">threshold</span> = <span class="ruby-value">3</span>
@@ -267,7 +267,7 @@
           
 
           <div class="method-source-code" id="format_chain-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2422</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 2431</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_chain</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">children</span>)
   <span class="ruby-comment"># We&#39;re going to have some specialized behavior for if it&#39;s an entire</span>
   <span class="ruby-comment"># chain of calls without arguments except for the last one. This is common</span>

@@ -93,6 +93,15 @@
   <section id="5Buntitled-5D" class="documentation-section">
 
 
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+        <dt id="LABEL">LABEL
+        <dd>
+      </dl>
+    </section>
 
 
 
@@ -112,15 +121,18 @@
           
 
           <div class="method-source-code" id="format_key-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1387</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 1393</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_key</span>(<span class="ruby-identifier">q</span>, <span class="ruby-identifier">key</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">key</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-constant">Label</span>
+  <span class="ruby-keyword">in</span> <span class="ruby-constant">Label</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">key</span>)
-  <span class="ruby-keyword">when</span> <span class="ruby-constant">SymbolLiteral</span>
+  <span class="ruby-keyword">in</span> <span class="ruby-constant">SymbolLiteral</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">value</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;:&quot;</span>)
-  <span class="ruby-keyword">when</span> <span class="ruby-constant">DynaSymbol</span>
+  <span class="ruby-keyword">in</span> <span class="ruby-constant">DynaSymbol</span>[<span class="ruby-value">parts:</span> [<span class="ruby-constant">TStringContent</span>[<span class="ruby-value">value:</span> <span class="ruby-constant">LABEL</span>] <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">part</span>]]
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">part</span>)
+    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;:&quot;</span>)
+  <span class="ruby-keyword">in</span> <span class="ruby-constant">DynaSymbol</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">key</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;:&quot;</span>)
   <span class="ruby-keyword">end</span>

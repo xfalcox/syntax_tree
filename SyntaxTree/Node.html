@@ -74,6 +74,7 @@
   <ul class="link-list" role="directory">
     <li ><a href="#method-i-accept">#accept</a>
     <li ><a href="#method-i-child_nodes">#child_nodes</a>
+    <li ><a href="#method-i-construct_keys">#construct_keys</a>
     <li ><a href="#method-i-deconstruct">#deconstruct</a>
     <li ><a href="#method-i-deconstruct_keys">#deconstruct_keys</a>
     <li ><a href="#method-i-format">#format</a>
@@ -161,6 +162,27 @@
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="method-i-construct_keys" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">construct_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="construct_keys-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">construct_keys</span>
+  <span class="ruby-constant">PP</span>.<span class="ruby-identifier">format</span>(<span class="ruby-string">+&quot;&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">MatchVisitor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">q</span>).<span class="ruby-identifier">visit</span>(<span class="ruby-keyword">self</span>) }
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
