@@ -180,6 +180,7 @@
     <li><a href="./SyntaxTree/FndPtn.html">SyntaxTree::FndPtn</a>
     <li><a href="./SyntaxTree/For.html">SyntaxTree::For</a>
     <li><a href="./SyntaxTree/Formatter.html">SyntaxTree::Formatter</a>
+    <li><a href="./SyntaxTree/Formatter/SingleQuotes.html">SyntaxTree::Formatter::SingleQuotes</a>
     <li><a href="./SyntaxTree/GVar.html">SyntaxTree::GVar</a>
     <li><a href="./SyntaxTree/HashKeyFormatter.html">SyntaxTree::HashKeyFormatter</a>
     <li><a href="./SyntaxTree/HashKeyFormatter/Labels.html">SyntaxTree::HashKeyFormatter::Labels</a>
@@ -722,7 +723,18 @@ Did you mean?  visit_binary
 
 <h2 id="label-Plugins">Plugins<span><a href="#label-Plugins">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>You can register additional languages that can flow through the same CLI with Syntax Tree’s plugin system. To register a new language, call:</p>
+<p>You can register additional configuration and additional languages that can flow through the same CLI with Syntax Tree’s plugin system. When invoking the CLI, you pass through the list of plugins with the <code>--plugins</code> options to the commands that accept them. They should be a comma-delimited list. When the CLI first starts, it will require the files corresponding to those names.</p>
+
+<h3 id="label-Configuration">Configuration<span><a href="#label-Configuration">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To register additional configuration, define a file somewhere in your load path named <code>syntax_tree/my_plugin</code> directory. Then when invoking the CLI, you will pass <code>--plugins=my_plugin</code>. That will get required. In this way, you can modify Syntax Tree however you would like. Some plugins ship with Syntax Tree itself. They are:</p>
+<ul><li>
+<p><code>plugin/single_quotes</code> - This will change all of your string literals to use single quotes instead of the default double quotes.</p>
+</li></ul>
+
+<h3 id="label-Languages">Languages<span><a href="#label-Languages">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To register a new language, call:</p>
 
 <pre class="ruby"><span class="ruby-constant">SyntaxTree</span>.<span class="ruby-identifier">register_handler</span>(<span class="ruby-string">&quot;.mylang&quot;</span>, <span class="ruby-constant">MyLanguage</span>)
 </pre>
@@ -736,7 +748,7 @@ Did you mean?  visit_binary
 <p><code>MyLanguage.format(source)</code> - this should return the formatted version of the given source.</p>
 </li></ul>
 
-<p>Below are listed all of the “official” plugins hosted under the same GitHub organization, which can be used as references for how to implement other plugins.</p>
+<p>Below are listed all of the “official” language plugins hosted under the same GitHub organization, which can be used as references for how to implement other plugins.</p>
 <ul><li>
 <p><a href="https://github.com/ruby-syntax-tree/syntax_tree-haml">SyntaxTree::Haml</a> for the <a href="https://haml.info/">Haml template language</a>.</p>
 </li><li>
@@ -744,8 +756,6 @@ Did you mean?  visit_binary
 </li><li>
 <p><a href="https://github.com/ruby-syntax-tree/syntax_tree-rbs">SyntaxTree::RBS</a> for the <a href="https://github.com/ruby/rbs">RBS type language</a>.</p>
 </li></ul>
-
-<p>When invoking the CLI, you pass through the list of plugins with the <code>--plugins</code> options to the commands that accept them. They should be a comma-delimited list. When the CLI first starts, it will require the files corresponding to those names.</p>
 
 <h2 id="label-Integration">Integration<span><a href="#label-Integration">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
