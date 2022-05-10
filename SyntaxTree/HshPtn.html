@@ -308,13 +308,16 @@
   <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)<span class="ruby-operator">|</span> <span class="ruby-constant">KeywordFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>) }
   <span class="ruby-identifier">parts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">KeywordRestFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">keyword_rest</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">keyword_rest</span>
 
+  <span class="ruby-identifier">nested</span> = <span class="ruby-constant">PATTERNS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">class</span>)
   <span class="ruby-identifier">contents</span> = <span class="ruby-operator">-&gt;</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> { <span class="ruby-identifier">q</span>.<span class="ruby-identifier">seplist</span>(<span class="ruby-identifier">parts</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">part</span>, <span class="ruby-value">stackable:</span> <span class="ruby-keyword">false</span>) } }
 
     <span class="ruby-comment"># If there isn&#39;t a constant, and there&#39;s a blank keyword_rest, then we</span>
     <span class="ruby-comment"># have an plain ** that needs to have a `then` after it in order to</span>
     <span class="ruby-comment"># parse correctly on the next parse.</span>
-    <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; then&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">constant</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">keyword_rest</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">keyword_rest</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">constant</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">keyword_rest</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">keyword_rest</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">nested</span>
+      <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; then&quot;</span>)
+    <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-comment"># If there is a constant, we&#39;re going to format to have the constant name</span>
@@ -341,7 +344,7 @@
 
   <span class="ruby-comment"># If there&#39;s only one pair, then we&#39;ll just print the contents provided</span>
   <span class="ruby-comment"># we&#39;re not inside another pattern.</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">PATTERNS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">q</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">class</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">nested</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
     <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">call</span>
     <span class="ruby-keyword">return</span>
   <span class="ruby-keyword">end</span>
