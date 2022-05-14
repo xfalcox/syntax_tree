@@ -118,7 +118,9 @@
   <span class="ruby-keyword">else</span>
     <span class="ruby-comment"># Otherwise, we&#39;re going to check the conditional for certain cases.</span>
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">node</span>
-    <span class="ruby-keyword">in</span> <span class="ruby-value">predicate:</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Command</span> <span class="ruby-operator">|</span> <span class="ruby-constant">CommandCall</span> <span class="ruby-operator">|</span> <span class="ruby-constant">MAssign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Not</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>
+    <span class="ruby-keyword">in</span> <span class="ruby-value">predicate:</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Command</span> <span class="ruby-operator">|</span> <span class="ruby-constant">CommandCall</span> <span class="ruby-operator">|</span> <span class="ruby-constant">MAssign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">in</span> <span class="ruby-value">predicate:</span> <span class="ruby-constant">Not</span>[<span class="ruby-value">parentheses:</span> <span class="ruby-keyword">false</span>]
       <span class="ruby-keyword">false</span>
     <span class="ruby-keyword">in</span> {
          <span class="ruby-value">statements:</span> { <span class="ruby-value">body:</span> [<span class="ruby-identifier">truthy</span>] },
