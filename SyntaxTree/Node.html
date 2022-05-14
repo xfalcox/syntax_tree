@@ -182,7 +182,7 @@
           <div class="method-source-code" id="construct_keys-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">construct_keys</span>
-  <span class="ruby-constant">PP</span>.<span class="ruby-identifier">format</span>(<span class="ruby-string">+&quot;&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">MatchVisitor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">q</span>).<span class="ruby-identifier">visit</span>(<span class="ruby-keyword">self</span>) }
+  <span class="ruby-constant">PrettierPrint</span>.<span class="ruby-identifier">format</span>(<span class="ruby-string">+&quot;&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-constant">Visitor</span><span class="ruby-operator">::</span><span class="ruby-constant">MatchVisitor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">q</span>).<span class="ruby-identifier">visit</span>(<span class="ruby-keyword">self</span>) }
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
