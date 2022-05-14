@@ -305,7 +305,7 @@
           <div class="method-source-code" id="format-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7388</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
-  <span class="ruby-identifier">braces</span> = <span class="ruby-identifier">ambiguous?</span>(<span class="ruby-identifier">q</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">include?</span>(<span class="ruby-regexp">%r{/}</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_line</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">end_line</span>)
+  <span class="ruby-identifier">braces</span> = <span class="ruby-identifier">ambiguous?</span>(<span class="ruby-identifier">q</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">include?</span>(<span class="ruby-regexp">%r{/}</span>)
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">braces</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">include?</span>(<span class="ruby-regexp">/[{}]/</span>)
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
