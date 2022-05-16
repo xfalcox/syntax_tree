@@ -204,7 +204,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3470</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3482</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">target:</span>,
   <span class="ruby-value">operator:</span>,
@@ -246,7 +246,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3488</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3500</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_def_endless</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -267,7 +267,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3492</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3504</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">target</span>, <span class="ruby-identifier">operator</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">paren</span>, <span class="ruby-identifier">statement</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -308,7 +308,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3498</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3510</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">target:</span> <span class="ruby-identifier">target</span>,
@@ -337,7 +337,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3510</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3522</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;def &quot;</span>)

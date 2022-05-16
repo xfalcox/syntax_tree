@@ -327,8 +327,20 @@
     <span class="ruby-identifier">doc</span> =
       <span class="ruby-identifier">q</span>.<span class="ruby-identifier">nest</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span>
         <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">receiver</span>)
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-constant">CallOperatorFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">operator</span>), <span class="ruby-value">stackable:</span> <span class="ruby-keyword">false</span>)
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">message</span>)
+
+        <span class="ruby-comment"># If there are leading comments on the message then we know we have</span>
+        <span class="ruby-comment"># a newline in the source that is forcing these things apart. In</span>
+        <span class="ruby-comment"># this case we will have to use a trailing operator.</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">message</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">any?</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:leading?</span>)
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-constant">CallOperatorFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">operator</span>), <span class="ruby-value">stackable:</span> <span class="ruby-keyword">false</span>)
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>(<span class="ruby-string">&quot;&quot;</span>)
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">message</span>)
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-constant">CallOperatorFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">operator</span>), <span class="ruby-value">stackable:</span> <span class="ruby-keyword">false</span>)
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">message</span>)
+        <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span>
 
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">arguments</span>
