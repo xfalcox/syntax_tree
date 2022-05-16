@@ -163,6 +163,7 @@
     <li><a href="./SyntaxTree/For.html">SyntaxTree::For</a>
     <li><a href="./SyntaxTree/Formatter.html">SyntaxTree::Formatter</a>
     <li><a href="./SyntaxTree/Formatter/SingleQuotes.html">SyntaxTree::Formatter::SingleQuotes</a>
+    <li><a href="./SyntaxTree/Formatter/TrailingComma.html">SyntaxTree::Formatter::TrailingComma</a>
     <li><a href="./SyntaxTree/GVar.html">SyntaxTree::GVar</a>
     <li><a href="./SyntaxTree/HashKeyFormatter.html">SyntaxTree::HashKeyFormatter</a>
     <li><a href="./SyntaxTree/HashKeyFormatter/Labels.html">SyntaxTree::HashKeyFormatter::Labels</a>
@@ -365,6 +366,10 @@
 <p><a href="#syntaxtreevisualizing">syntaxTree/visualizing</a></p>
 </li><li>
 <p><a href="#plugins">Plugins</a></p>
+</li><li>
+<p><a href="#configuration">Configuration</a></p>
+</li><li>
+<p><a href="#languages">Languages</a></p>
 </li><li>
 <p><a href="#integration">Integration</a></p>
 </li><li>
@@ -713,10 +718,14 @@ Did you mean?  visit_binary
 
 <h3 id="label-Configuration">Configuration<span><a href="#label-Configuration">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>To register additional configuration, define a file somewhere in your load path named <code>syntax_tree/my_plugin</code> directory. Then when invoking the CLI, you will pass <code>--plugins=my_plugin</code>. That will get required. In this way, you can modify Syntax Tree however you would like. Some plugins ship with Syntax Tree itself. They are:</p>
+<p>To register additional configuration, define a file somewhere in your load path named <code>syntax_tree/my_plugin</code>. Then when invoking the CLI, you will pass <code>--plugins=my_plugin</code>. To require multiple, separate them by a comma. In this way, you can modify Syntax Tree however you would like. Some plugins ship with Syntax Tree itself. They are:</p>
 <ul><li>
 <p><code>plugin/single_quotes</code> - This will change all of your string literals to use single quotes instead of the default double quotes.</p>
+</li><li>
+<p><code>plugin/trailing_comma</code> - This will put trailing commas into multiline array literals, hash literals, and method calls that can support trailing commas.</p>
 </li></ul>
+
+<p>If you’re using Syntax Tree as a library, you should require those files directly.</p>
 
 <h3 id="label-Languages">Languages<span><a href="#label-Languages">&para;</a> <a href="#top">&uarr;</a></span></h3>
 

@@ -145,7 +145,7 @@ second line
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4111</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">value:</span>, <span class="ruby-value">location:</span>)
   <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -174,7 +174,7 @@ second line
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4128</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4150</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_embdoc</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -195,7 +195,7 @@ second line
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4132</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4154</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   []
 <span class="ruby-keyword">end</span></pre>
@@ -219,7 +219,7 @@ second line
           
 
           <div class="method-source-code" id="comments-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4124</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4146</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comments</span>
   []
 <span class="ruby-keyword">end</span></pre>
@@ -257,7 +257,7 @@ second line
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4138</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4160</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   { <span class="ruby-value">value:</span> <span class="ruby-identifier">value</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -278,7 +278,7 @@ second line
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4142</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4164</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">trim</span>
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">value</span>)
@@ -300,7 +300,7 @@ second line
           
 
           <div class="method-source-code" id="ignore-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4120</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ignore?</span>
   <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>
@@ -321,7 +321,7 @@ second line
           
 
           <div class="method-source-code" id="inline-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4116</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4138</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inline?</span>
   <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>
