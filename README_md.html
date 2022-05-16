@@ -570,11 +570,11 @@ Did you mean?  visit_binary
 <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">WriteTask</span>.<span class="ruby-identifier">new</span>
 </pre>
 
-<p>These calls will define <code>rake stree:check</code> and <code>rake stree:write</code> (equivalent to calling <code>stree check</code> and <code>stree write</code> respectively). You can configure them by either passing arguments to the <code>new</code> method or by using a block.</p>
+<p>These calls will define <code>rake stree:check</code> and <code>rake stree:write</code> (equivalent to calling <code>stree check</code> and <code>stree write</code> with the CLI respectively). You can configure them by either passing arguments to the <code>new</code> method or by using a block.</p>
 
 <h4 id="label-name"><code>name</code><span><a href="#label-name">&para;</a> <a href="#top">&uarr;</a></span></h4>
 
-<p>If you’d like to change the default name of the rake task, you can pass that as the first optioon, as in:</p>
+<p>If you’d like to change the default name of the rake task, you can pass that as the first argument, as in:</p>
 
 <pre class="ruby"><span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">WriteTask</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:format</span>)
 </pre>
