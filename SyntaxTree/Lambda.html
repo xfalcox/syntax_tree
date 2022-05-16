@@ -127,7 +127,7 @@
         </div>
 
         <div class="method-description">
-        <dl class="rdoc-list label-list"><dt><a href="Params.html"><code>Params</code></a> | <a href="Paren.html"><code>Paren</code></a>
+        <dl class="rdoc-list label-list"><dt><a href="LambdaVar.html"><code>LambdaVar</code></a> | <a href="Paren.html"><code>Paren</code></a>
 <dd>
 <p>the parameter declaration for this lambda</p>
 </dd></dl>
@@ -305,19 +305,42 @@
             <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Command</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">CommandCall</span>)
           <span class="ruby-keyword">end</span>
 
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">force_parens</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;{&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;do&quot;</span>)
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
-          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
-        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">force_parens</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;{&quot;</span>)
 
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">force_parens</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;end&quot;</span>)
+          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span>
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
+              <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;}&quot;</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;do&quot;</span>)
+
+          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span>
+            <span class="ruby-identifier">q</span>.<span class="ruby-identifier">indent</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
+              <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">breakable</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;end&quot;</span>)
+        <span class="ruby-keyword">end</span>
       <span class="ruby-keyword">end</span>
       .<span class="ruby-identifier">if_flat</span> <span class="ruby-keyword">do</span>
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;{ &quot;</span>)
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; }&quot;</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;{&quot;</span>)
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">statements</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">statements</span>)
+          <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot; &quot;</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-string">&quot;}&quot;</span>)
       <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

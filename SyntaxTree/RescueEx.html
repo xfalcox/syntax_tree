@@ -169,7 +169,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7495</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7571</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">exceptions:</span>, <span class="ruby-value">variable:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@exceptions</span> = <span class="ruby-identifier">exceptions</span>
   <span class="ruby-ivar">@variable</span> = <span class="ruby-identifier">variable</span>
@@ -200,7 +200,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7502</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7578</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_rescue_ex</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -221,7 +221,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7506</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7582</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-operator">*</span><span class="ruby-identifier">exceptions</span>, <span class="ruby-identifier">variable</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -262,7 +262,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7512</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7588</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">exceptions:</span> <span class="ruby-identifier">exceptions</span>,
@@ -288,7 +288,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7521</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7597</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">q</span>.<span class="ruby-identifier">group</span> <span class="ruby-keyword">do</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">exceptions</span>
