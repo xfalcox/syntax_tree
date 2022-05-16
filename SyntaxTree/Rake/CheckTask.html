@@ -120,7 +120,17 @@
         </div>
 
         <div class="method-description">
-        <p>Name of the task. Defaults to :stree_check.</p>
+        <p>Name of the task. Defaults to :“stree:check”.</p>
+        </div>
+      </div>
+      <div id="attribute-i-plugins" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">plugins</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The set of plugins to require. Defaults to [].</p>
         </div>
       </div>
       <div id="attribute-i-source_files" class="method-detail">
@@ -144,7 +154,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(name = :stree_check) { |self| ... }</span>
+            class="method-args">( name = :&quot;stree:check&quot;, source_files = ::Rake::FileList[&quot;lib/**/*.rb&quot;], plugins = [] ) { |self| ... }</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -152,10 +162,15 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/rake/check_task.rb, line 31</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">name</span> = <span class="ruby-value">:stree_check</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/rake/check_task.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
+  <span class="ruby-identifier">name</span> = <span class="ruby-value">:&quot;stree:check&quot;</span>,
+  <span class="ruby-identifier">source_files</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">FileList</span>[<span class="ruby-string">&quot;lib/**/*.rb&quot;</span>],
+  <span class="ruby-identifier">plugins</span> = []
+)
   <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
-  <span class="ruby-ivar">@source_files</span> = <span class="ruby-string">&quot;lib/**/*.rb&quot;</span>
+  <span class="ruby-ivar">@source_files</span> = <span class="ruby-identifier">source_files</span>
+  <span class="ruby-ivar">@plugins</span> = <span class="ruby-identifier">plugins</span>
 
   <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-identifier">define_task</span>
