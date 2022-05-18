@@ -96,9 +96,9 @@
     <li><a href="./SyntaxTree/Backref.html">SyntaxTree::Backref</a>
     <li><a href="./SyntaxTree/Backtick.html">SyntaxTree::Backtick</a>
     <li><a href="./SyntaxTree/BareAssocHash.html">SyntaxTree::BareAssocHash</a>
-    <li><a href="./SyntaxTree/BareVisitor.html">SyntaxTree::BareVisitor</a>
-    <li><a href="./SyntaxTree/BareVisitor/VisitMethodChecker.html">SyntaxTree::BareVisitor::VisitMethodChecker</a>
-    <li><a href="./SyntaxTree/BareVisitor/VisitMethodError.html">SyntaxTree::BareVisitor::VisitMethodError</a>
+    <li><a href="./SyntaxTree/BasicVisitor.html">SyntaxTree::BasicVisitor</a>
+    <li><a href="./SyntaxTree/BasicVisitor/VisitMethodChecker.html">SyntaxTree::BasicVisitor::VisitMethodChecker</a>
+    <li><a href="./SyntaxTree/BasicVisitor/VisitMethodError.html">SyntaxTree::BasicVisitor::VisitMethodError</a>
     <li><a href="./SyntaxTree/Begin.html">SyntaxTree::Begin</a>
     <li><a href="./SyntaxTree/Binary.html">SyntaxTree::Binary</a>
     <li><a href="./SyntaxTree/BlockArg.html">SyntaxTree::BlockArg</a>
@@ -359,7 +359,7 @@
 </li><li>
 <p><a href="#visit_method">visit_method</a></p>
 </li><li>
-<p><a href="#barevisitor">BareVisitor</a></p>
+<p><a href="#basicvisitor">BasicVisitor</a></p>
 </li><li>
 <p><a href="#language-server">Language server</a></p>
 </li><li>
@@ -687,11 +687,11 @@ Did you mean?  visit_binary
         from (irb):1:in `&lt;main&gt;&#39;
         from bin/console:8:in `&lt;main&gt;&#39;</pre>
 
-<h3 id="label-BareVisitor">BareVisitor<span><a href="#label-BareVisitor">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<h3 id="label-BasicVisitor">BasicVisitor<span><a href="#label-BasicVisitor">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>When you’re defining your own visitor, by default it will walk down the tree even if you don’t define <code>visit_*</code> methods. This is to ensure you can define a subset of the necessary methods in order to only interact with the nodes you’re interested in. If you’d like to change this default to instead raise an error if you visit a node you haven’t explicitly handled, you can instead inherit from <code>BareVisitor</code>.</p>
+<p>When you’re defining your own visitor, by default it will walk down the tree even if you don’t define <code>visit_*</code> methods. This is to ensure you can define a subset of the necessary methods in order to only interact with the nodes you’re interested in. If you’d like to change this default to instead raise an error if you visit a node you haven’t explicitly handled, you can instead inherit from <code>BasicVisitor</code>.</p>
 
-<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">BareVisitor</span>
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyVisitor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SyntaxTree</span><span class="ruby-operator">::</span><span class="ruby-constant">BasicVisitor</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_int</span>(<span class="ruby-identifier">node</span>)
     <span class="ruby-comment"># ...</span>
   <span class="ruby-keyword">end</span>

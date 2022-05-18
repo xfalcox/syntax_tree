@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::BareVisitor::VisitMethodChecker - RDoc Documentation</title>
+<title>class SyntaxTree::BasicVisitor::VisitMethodChecker - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -80,9 +80,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::BareVisitor::VisitMethodChecker">
-  <h1 id="class-SyntaxTree::BareVisitor::VisitMethodChecker" class="class">
-    class SyntaxTree::BareVisitor::VisitMethodChecker
+<main role="main" aria-labelledby="class-SyntaxTree::BasicVisitor::VisitMethodChecker">
+  <h1 id="class-SyntaxTree::BasicVisitor::VisitMethodChecker" class="class">
+    class SyntaxTree::BasicVisitor::VisitMethodChecker
   </h1>
 
   <section class="description">
@@ -129,7 +129,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/bare_visitor.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/basic_visitor.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">error</span>)
   <span class="ruby-ivar">@visit_method</span> = <span class="ruby-identifier">error</span>.<span class="ruby-identifier">visit_method</span>
 <span class="ruby-keyword">end</span></pre>
@@ -157,7 +157,7 @@
           
 
           <div class="method-source-code" id="corrections-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/bare_visitor.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/basic_visitor.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">corrections</span>
   <span class="ruby-ivar">@corrections</span> <span class="ruby-operator">||=</span>
     <span class="ruby-constant">DidYouMean</span><span class="ruby-operator">::</span><span class="ruby-constant">SpellChecker</span>.<span class="ruby-identifier">new</span>(

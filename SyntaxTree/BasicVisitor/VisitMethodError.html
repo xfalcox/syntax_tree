@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::BareVisitor::VisitMethodError - RDoc Documentation</title>
+<title>class SyntaxTree::BasicVisitor::VisitMethodError - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -79,14 +79,14 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::BareVisitor::VisitMethodError">
-  <h1 id="class-SyntaxTree::BareVisitor::VisitMethodError" class="class">
-    class SyntaxTree::BareVisitor::VisitMethodError
+<main role="main" aria-labelledby="class-SyntaxTree::BasicVisitor::VisitMethodError">
+  <h1 id="class-SyntaxTree::BasicVisitor::VisitMethodError" class="class">
+    class SyntaxTree::BasicVisitor::VisitMethodError
   </h1>
 
   <section class="description">
     
-<p>This is raised when you use the <a href="../BareVisitor.html#method-c-visit_method"><code>Visitor.visit_method</code></a> method and it fails. It is correctable to through DidYouMean.</p>
+<p>This is raised when you use the <a href="../BasicVisitor.html#method-c-visit_method"><code>Visitor.visit_method</code></a> method and it fails. It is correctable to through DidYouMean.</p>
 
   </section>
 
@@ -132,7 +132,7 @@
             </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/bare_visitor.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/basic_visitor.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">visit_method</span>)
   <span class="ruby-ivar">@visit_method</span> = <span class="ruby-identifier">visit_method</span>
   <span class="ruby-keyword">super</span>(<span class="ruby-node">&quot;Invalid visit method: #{visit_method}&quot;</span>)
