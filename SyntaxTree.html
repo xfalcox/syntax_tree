@@ -122,7 +122,7 @@
           <p>Parses the given source and returns the formatted source.</p>
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 43</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">maxwidth</span> = <span class="ruby-value">80</span>)
   <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, [], <span class="ruby-identifier">maxwidth</span>)
   <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatter</span>)
@@ -147,7 +147,7 @@
           <p>Parses the given source and returns the syntax tree.</p>
 
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">source</span>)
   <span class="ruby-identifier">parser</span> = <span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>
@@ -170,7 +170,7 @@
           <p>Returns the source from the given filepath taking into account any potential magic encoding comments.</p>
 
           <div class="method-source-code" id="read-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 53</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">read</span>(<span class="ruby-identifier">filepath</span>)
   <span class="ruby-identifier">encoding</span> =
     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filepath</span>, <span class="ruby-string">&quot;r&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
@@ -200,7 +200,7 @@
           <p>This is a hook provided so that plugins can register themselves as the handler for a particular file type.</p>
 
           <div class="method-source-code" id="register_handler-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">register_handler</span>(<span class="ruby-identifier">extension</span>, <span class="ruby-identifier">handler</span>)
   <span class="ruby-constant">HANDLERS</span>[<span class="ruby-identifier">extension</span>] = <span class="ruby-identifier">handler</span>
 <span class="ruby-keyword">end</span></pre>

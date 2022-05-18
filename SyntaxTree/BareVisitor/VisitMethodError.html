@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::Visitor::VisitMethodChecker - RDoc Documentation</title>
+<title>class SyntaxTree::BareVisitor::VisitMethodError - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">Object
+  <p class="link">StandardError
 </div>
 
     
@@ -72,22 +72,21 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-new">::new</a>
-    <li ><a href="#method-i-corrections">#corrections</a>
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::Visitor::VisitMethodChecker">
-  <h1 id="class-SyntaxTree::Visitor::VisitMethodChecker" class="class">
-    class SyntaxTree::Visitor::VisitMethodChecker
+<main role="main" aria-labelledby="class-SyntaxTree::BareVisitor::VisitMethodError">
+  <h1 id="class-SyntaxTree::BareVisitor::VisitMethodError" class="class">
+    class SyntaxTree::BareVisitor::VisitMethodError
   </h1>
 
   <section class="description">
     
-<p>This class is used by DidYouMean to offer corrections to invalid visit method names.</p>
+<p>This is raised when you use the <a href="../BareVisitor.html#method-c-visit_method"><code>Visitor.visit_method</code></a> method and it fails. It is correctable to through DidYouMean.</p>
 
   </section>
 
@@ -121,48 +120,22 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(error)</span>
+            class="method-args">(visit_method)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
           
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 24</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">error</span>)
-  <span class="ruby-ivar">@visit_method</span> = <span class="ruby-identifier">error</span>.<span class="ruby-identifier">visit_method</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-    </section>
-
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-      <div id="method-i-corrections" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">corrections</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="corrections-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/visitor.rb, line 28</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">corrections</span>
-  <span class="ruby-ivar">@corrections</span> <span class="ruby-operator">||=</span>
-    <span class="ruby-constant">DidYouMean</span><span class="ruby-operator">::</span><span class="ruby-constant">SpellChecker</span>.<span class="ruby-identifier">new</span>(
-      <span class="ruby-value">dictionary:</span> <span class="ruby-constant">Visitor</span>.<span class="ruby-identifier">visit_methods</span>
-    ).<span class="ruby-identifier">correct</span>(<span class="ruby-identifier">visit_method</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/bare_visitor.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">visit_method</span>)
+  <span class="ruby-ivar">@visit_method</span> = <span class="ruby-identifier">visit_method</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-node">&quot;Invalid visit method: #{visit_method}&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
