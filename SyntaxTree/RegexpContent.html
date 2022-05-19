@@ -155,7 +155,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7366</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7391</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">beginning:</span>, <span class="ruby-value">parts:</span>, <span class="ruby-value">location:</span>)
   <span class="ruby-ivar">@beginning</span> = <span class="ruby-identifier">beginning</span>
   <span class="ruby-ivar">@parts</span> = <span class="ruby-identifier">parts</span>
@@ -185,7 +185,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7372</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7397</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_regexp_content</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -206,7 +206,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7376</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7401</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   <span class="ruby-identifier">parts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -247,7 +247,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7382</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 7407</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   { <span class="ruby-value">beginning:</span> <span class="ruby-identifier">beginning</span>, <span class="ruby-value">parts:</span> <span class="ruby-identifier">parts</span>, <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span> }
 <span class="ruby-keyword">end</span></pre>
