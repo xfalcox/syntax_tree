@@ -289,7 +289,7 @@
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-identifier">opening_quote</span>, <span class="ruby-identifier">closing_quote</span> =
-    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Quotes</span>.<span class="ruby-identifier">locked?</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Quotes</span>.<span class="ruby-identifier">locked?</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">q</span>.<span class="ruby-identifier">quote</span>)
       [<span class="ruby-identifier">q</span>.<span class="ruby-identifier">quote</span>, <span class="ruby-identifier">q</span>.<span class="ruby-identifier">quote</span>]
     <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">quote</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;%&quot;</span>)
       [<span class="ruby-identifier">quote</span>, <span class="ruby-constant">Quotes</span>.<span class="ruby-identifier">matching</span>(<span class="ruby-identifier">quote</span>[<span class="ruby-regexp">/%[qQ]?(.)/</span>, <span class="ruby-value">1</span>])]
