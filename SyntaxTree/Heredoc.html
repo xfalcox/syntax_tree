@@ -195,7 +195,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4845</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4827</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">beginning:</span>,
   <span class="ruby-value">ending:</span> <span class="ruby-keyword">nil</span>,
@@ -235,7 +235,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4861</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4843</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_heredoc</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -256,7 +256,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4865</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4847</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">beginning</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">parts</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -297,7 +297,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4871</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4853</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">beginning:</span> <span class="ruby-identifier">beginning</span>,
@@ -324,7 +324,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4881</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4863</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-comment"># This is a very specific behavior where you want to force a newline, but</span>
   <span class="ruby-comment"># don&#39;t want to force the break parent.</span>

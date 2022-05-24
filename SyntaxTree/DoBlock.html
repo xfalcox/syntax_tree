@@ -179,7 +179,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3716</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3698</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">keyword:</span>, <span class="ruby-value">block_var:</span>, <span class="ruby-value">bodystmt:</span>, <span class="ruby-value">location:</span>, <span class="ruby-value">comments:</span> [])
   <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">keyword</span>
   <span class="ruby-ivar">@block_var</span> = <span class="ruby-identifier">block_var</span>
@@ -211,7 +211,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3724</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3706</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_do_block</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -232,7 +232,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3728</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3710</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [<span class="ruby-identifier">keyword</span>, <span class="ruby-identifier">block_var</span>, <span class="ruby-identifier">bodystmt</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -273,7 +273,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3734</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3716</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">keyword:</span> <span class="ruby-identifier">keyword</span>,
@@ -300,7 +300,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3744</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 3726</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-constant">BlockFormatter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">keyword</span>, <span class="ruby-string">&quot;end&quot;</span>, <span class="ruby-identifier">bodystmt</span>).<span class="ruby-identifier">format</span>(<span class="ruby-identifier">q</span>)
 <span class="ruby-keyword">end</span></pre>
