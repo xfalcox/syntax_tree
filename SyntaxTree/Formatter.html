@@ -107,6 +107,10 @@
         <dd>
         <dt id="HEREDOC_PRIORITY">HEREDOC_PRIORITY
         <dd>
+        <dt id="OPTIONS">OPTIONS
+        <dd><p>We want to minimize as much as possible the number of options that are available in syntax tree. <a href="For.html"><code>For</code></a> the most part, if users want non-default formatting, they should override the format methods on the specific nodes themselves. However, because of some history with prettier and the fact that folks have become entrenched in their ways, we decided to provide a small amount of configurability.</p>
+
+<p>Note that we’re keeping this in a global-ish hash instead of just overriding methods on classes so that other plugins can reference this if necessary. <a href="For.html"><code>For</code></a> example, the RBS plugin references the quote style.</p>
       </dl>
     </section>
 
@@ -184,7 +188,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 26</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">formatter</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, [])
   <span class="ruby-identifier">node</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">formatter</span>)
@@ -200,7 +204,7 @@
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(source, ...)</span>
+            class="method-args">( source, *args, quote: OPTIONS[:quote], trailing_comma: OPTIONS[:trailing_comma] )</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -212,14 +216,21 @@
             </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 17</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">...</span>)
-  <span class="ruby-keyword">super</span>(<span class="ruby-operator">...</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
+  <span class="ruby-identifier">source</span>,
+  <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,
+  <span class="ruby-value">quote:</span> <span class="ruby-constant">OPTIONS</span>[<span class="ruby-value">:quote</span>],
+  <span class="ruby-value">trailing_comma:</span> <span class="ruby-constant">OPTIONS</span>[<span class="ruby-value">:trailing_comma</span>]
+)
+  <span class="ruby-keyword">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 
   <span class="ruby-ivar">@source</span> = <span class="ruby-identifier">source</span>
   <span class="ruby-ivar">@stack</span> = []
-  <span class="ruby-ivar">@quote</span> = <span class="ruby-string">&quot;\&quot;&quot;</span>
-  <span class="ruby-ivar">@trailing_comma</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># Memoizing these values per formatter to make access faster.</span>
+  <span class="ruby-ivar">@quote</span> = <span class="ruby-identifier">quote</span>
+  <span class="ruby-ivar">@trailing_comma</span> = <span class="ruby-identifier">trailing_comma</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -245,7 +256,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">node</span>, <span class="ruby-value">stackable:</span> <span class="ruby-keyword">true</span>)
   <span class="ruby-identifier">stack</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stackable</span>
   <span class="ruby-identifier">doc</span> = <span class="ruby-keyword">nil</span>
@@ -302,7 +313,7 @@
           
 
           <div class="method-source-code" id="format_each-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 73</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_each</span>(<span class="ruby-identifier">nodes</span>)
   <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">format</span>(<span class="ruby-identifier">node</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -323,7 +334,7 @@
           
 
           <div class="method-source-code" id="parent-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parent</span>
   <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -344,7 +355,7 @@
           
 
           <div class="method-source-code" id="parents-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 81</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/formatter.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parents</span>
   <span class="ruby-identifier">stack</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">reverse_each</span>
 <span class="ruby-keyword">end</span></pre>

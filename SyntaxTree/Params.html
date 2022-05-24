@@ -239,7 +239,7 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6827</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6831</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(
   <span class="ruby-value">requireds:</span> [],
   <span class="ruby-value">optionals:</span> [],
@@ -285,7 +285,7 @@
           
 
           <div class="method-source-code" id="accept-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6858</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6862</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">visitor</span>)
   <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit_params</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -306,7 +306,7 @@
           
 
           <div class="method-source-code" id="child_nodes-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6862</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6866</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
   [
     <span class="ruby-operator">*</span><span class="ruby-identifier">requireds</span>,
@@ -355,7 +355,7 @@
           
 
           <div class="method-source-code" id="deconstruct_keys-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6876</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6880</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deconstruct_keys</span>(<span class="ruby-identifier">_keys</span>)
   {
     <span class="ruby-value">location:</span> <span class="ruby-identifier">location</span>,
@@ -386,7 +386,7 @@
           <p><a href="Params.html"><code>Params</code></a> nodes are the most complicated in the tree. Occasionally you want to know if they are “empty”, which means not having any parameters declared. This logic accesses every kind of parameter and determines if it’s missing.</p>
 
           <div class="method-source-code" id="empty-3F-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6853</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6857</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span>
   <span class="ruby-identifier">requireds</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">optionals</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">rest</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-identifier">keywords</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">keyword_rest</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
@@ -408,7 +408,7 @@
           
 
           <div class="method-source-code" id="format-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6890</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 6894</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">q</span>)
   <span class="ruby-identifier">parts</span> = [
     <span class="ruby-operator">*</span><span class="ruby-identifier">requireds</span>,
