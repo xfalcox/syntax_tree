@@ -60,6 +60,9 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Changelog">Changelog</a>
     <li><a href="#label-5BUnreleased-5D">[Unreleased]</a>
+    <li><a href="#label-2.7.1+-+2022-05-25"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.7.0...v2.7.1">2.7.1</a> - 2022-05-25</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
     <li><a href="#label-2.7.0+-+2022-05-19"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.6.0...v2.7.0">2.7.0</a> - 2022-05-19</a>
     <li><a href="#label-Added">Added</a>
     <li><a href="#label-Changed">Changed</a>
@@ -133,6 +136,24 @@
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
 <h2 id="label-5BUnreleased-5D">[Unreleased]<span><a href="#label-5BUnreleased-5D">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-2.7.1+-+2022-05-25"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.7.0...v2.7.1">2.7.1</a> - 2022-05-25<span><a href="#label-2.7.1+-+2022-05-25">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/92">#92</a> - (Internal) Drastically increase test coverage, including many more tests for the language server and the CLI.</p>
+</li></ul>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/87">#87</a> - Don’t convert quotes on strings if it would result in more escapes.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/91">#91</a> - Always use <code>[]</code> with array patterns. There are just too many edge cases where you have to use them anyway. This simplifies the look and makes it more consistent.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/92">#92</a> - Remodel the currently shipped plugins such that they’re modifying an options hash instead of overriding methods. This should make it easier for other plugins to reference the already loaded plugins, e.g., the RBS plugin referencing the quotes.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/92">#92</a> - Fix up the language server inlay hints to continue walking the tree once a pattern is found. This should increase useability.</p>
+</li></ul>
 
 <h2 id="label-2.7.0+-+2022-05-19"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.6.0...v2.7.0">2.7.0</a> - 2022-05-19<span><a href="#label-2.7.0+-+2022-05-19">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
