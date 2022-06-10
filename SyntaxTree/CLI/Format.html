@@ -104,7 +104,7 @@
       <div id="method-i-run" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">run</span><span
-            class="method-args">(item)</span>
+            class="method-args">(handler, _filepath, source)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -112,9 +112,9 @@
           
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 151</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">item</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">item</span>.<span class="ruby-identifier">source</span>)
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">_filepath</span>, <span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
