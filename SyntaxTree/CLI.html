@@ -115,7 +115,7 @@
           <p>Run the <a href="CLI.html"><code>CLI</code></a> over the given array of strings that make up the arguments passed to the invocation.</p>
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 201</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 239</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">argv</span>)
   <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">argv</span>
 
@@ -176,23 +176,40 @@
     <span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">plugin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;syntax_tree/#{plugin}&quot;</span> }
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-comment"># Track whether or not there are any errors from any of the files that</span>
-  <span class="ruby-comment"># we take action on so that we can properly clean up and exit.</span>
-  <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-comment"># We&#39;re going to build up a queue of items to process.</span>
+  <span class="ruby-identifier">queue</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
 
-  <span class="ruby-identifier">each_file</span>(<span class="ruby-identifier">arguments</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">action</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
-  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
-    <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Error: #{error.message}&quot;</span>)
-    <span class="ruby-identifier">highlight_error</span>(<span class="ruby-identifier">error</span>, <span class="ruby-identifier">source</span>)
-    <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Check</span><span class="ruby-operator">::</span><span class="ruby-constant">UnformattedError</span>, <span class="ruby-constant">Debug</span><span class="ruby-operator">::</span><span class="ruby-constant">NonIdempotentFormatError</span>
-    <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
-    <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
-    <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
-    <span class="ruby-identifier">errored</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-comment"># If we&#39;re reading from stdin, then we&#39;ll just add the stdin object to</span>
+  <span class="ruby-comment"># the queue. Otherwise, we&#39;ll add each of the filepaths to the queue.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">any?</span>
+    <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Dir</span>
+        .<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">pattern</span>)
+        .<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filepath</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">FileItem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filepath</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">filepath</span>)
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">STDINItem</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># At the end, we&#39;re going to return whether or not this worker ever</span>
+  <span class="ruby-comment"># encountered an error.</span>
+  <span class="ruby-identifier">errored</span> =
+    <span class="ruby-identifier">with_workers</span>(<span class="ruby-identifier">queue</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">action</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">item</span>)
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
+      <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Error: #{error.message}&quot;</span>)
+      <span class="ruby-identifier">highlight_error</span>(<span class="ruby-identifier">error</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">source</span>)
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Check</span><span class="ruby-operator">::</span><span class="ruby-constant">UnformattedError</span>, <span class="ruby-constant">Debug</span><span class="ruby-operator">::</span><span class="ruby-constant">NonIdempotentFormatError</span>
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
+      <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>)
+      <span class="ruby-identifier">warn</span>(<span class="ruby-identifier">error</span>.<span class="ruby-identifier">backtrace</span>)
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">errored</span>
     <span class="ruby-identifier">action</span>.<span class="ruby-identifier">failure</span>
