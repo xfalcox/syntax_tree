@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class SyntaxTree::CLI::Check - RDoc Documentation</title>
+<title>class SyntaxTree::CLI::FileItem - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link"><a href="Action.html">SyntaxTree::CLI::Action</a>
+  <p class="link">Object
 </div>
 
     
@@ -72,23 +72,23 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-i-failure">#failure</a>
-    <li ><a href="#method-i-run">#run</a>
-    <li ><a href="#method-i-success">#success</a>
+    <li ><a href="#method-c-new">::new</a>
+    <li ><a href="#method-i-handler">#handler</a>
+    <li ><a href="#method-i-source">#source</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-SyntaxTree::CLI::Check">
-  <h1 id="class-SyntaxTree::CLI::Check" class="class">
-    class SyntaxTree::CLI::Check
+<main role="main" aria-labelledby="class-SyntaxTree::CLI::FileItem">
+  <h1 id="class-SyntaxTree::CLI::FileItem" class="class">
+    class SyntaxTree::CLI::FileItem
   </h1>
 
   <section class="description">
     
-<p>An action of the <a href="../CLI.html"><code>CLI</code></a> that ensures that the filepath is formatted as expected.</p>
+<p>An item of work that corresponds to a file to be processed.</p>
 
   </section>
 
@@ -96,16 +96,60 @@
 
 
 
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
 
+      <div id="attribute-i-filepath" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">filepath</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        </div>
+      </div>
+    </section>
+
+
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+      <div id="method-c-new" class="method-detail ">
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(filepath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+
+        <div class="method-description">
+          
+
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">filepath</span>)
+  <span class="ruby-ivar">@filepath</span> = <span class="ruby-identifier">filepath</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
 
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-failure" class="method-detail ">
+      <div id="method-i-handler" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">failure</span><span
+          <span class="method-name">handler</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -113,10 +157,10 @@
         <div class="method-description">
           
 
-          <div class="method-source-code" id="failure-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 106</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">failure</span>
-  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&quot;The listed files did not match the expected format.&quot;</span>)
+          <div class="method-source-code" id="handler-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">handler</span>
+  <span class="ruby-constant">HANDLERS</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">filepath</span>)]
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -124,34 +168,9 @@
 
       </div>
 
-      <div id="method-i-run" class="method-detail ">
+      <div id="method-i-source" class="method-detail ">
         <div class="method-heading">
-          <span class="method-name">run</span><span
-            class="method-args">(item)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 94</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">item</span>)
-  <span class="ruby-identifier">source</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">source</span>
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnformattedError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">source</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>)
-<span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span>
-  <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;[#{Color.yellow(&quot;warn&quot;)}] #{item.filepath}&quot;</span>)
-  <span class="ruby-identifier">raise</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-success" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">success</span><span
+          <span class="method-name">source</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -159,10 +178,10 @@
         <div class="method-description">
           
 
-          <div class="method-source-code" id="success-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 102</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">success</span>
-  <span class="ruby-identifier">puts</span>(<span class="ruby-string">&quot;All files matched expected format.&quot;</span>)
+          <div class="method-source-code" id="source-source">
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">source</span>
+  <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filepath</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

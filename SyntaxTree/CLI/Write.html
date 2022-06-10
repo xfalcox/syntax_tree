@@ -104,7 +104,7 @@
       <div id="method-i-run" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">run</span><span
-            class="method-args">(handler, filepath, source)</span>
+            class="method-args">(item)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
@@ -112,20 +112,21 @@
           
 
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 139</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">handler</span>, <span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">source</span>)
-  <span class="ruby-identifier">print</span> <span class="ruby-identifier">filepath</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/cli.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">item</span>)
+  <span class="ruby-identifier">filepath</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">filepath</span>
   <span class="ruby-identifier">start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
 
-  <span class="ruby-identifier">formatted</span> = <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">source</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">formatted</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">source</span>)
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">filepath</span>, <span class="ruby-identifier">formatted</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">filepath</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:stdin</span>
 
   <span class="ruby-identifier">color</span> = <span class="ruby-identifier">source</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">formatted</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">gray</span>(<span class="ruby-identifier">filepath</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">filepath</span>
   <span class="ruby-identifier">delta</span> = ((<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span>
 
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\r#{color} #{delta}ms&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{color} #{delta}ms&quot;</span>
 <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\r#{filepath}&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">filepath</span>
   <span class="ruby-identifier">raise</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
