@@ -155,7 +155,7 @@
         </div>
 
         <div class="method-description">
-        <dl class="rdoc-list label-list"><dt>String
+        <dl class="rdoc-list label-list"><dt><a href="HeredocEnd.html"><code>HeredocEnd</code></a>
 <dd>
 <p>the ending of the heredoc</p>
 </dd></dl>
@@ -258,7 +258,7 @@
           <div class="method-source-code" id="child_nodes-source">
             <pre><span class="ruby-comment"># File lib/syntax_tree/node.rb, line 4849</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">child_nodes</span>
-  [<span class="ruby-identifier">beginning</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">parts</span>]
+  [<span class="ruby-identifier">beginning</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">parts</span>, <span class="ruby-identifier">ending</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -346,7 +346,7 @@
           <span class="ruby-keyword">end</span>
         <span class="ruby-keyword">end</span>
 
-        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">text</span>(<span class="ruby-identifier">ending</span>)
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">format</span>(<span class="ruby-identifier">ending</span>)
       <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
