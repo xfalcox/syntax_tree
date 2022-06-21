@@ -60,6 +60,9 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Changelog">Changelog</a>
     <li><a href="#label-5BUnreleased-5D">[Unreleased]</a>
+    <li><a href="#label-2.8.0+-+2022-06-21"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.7.1...v2.8.0">2.8.0</a> - 2022-06-21</a>
+    <li><a href="#label-Added">Added</a>
+    <li><a href="#label-Changed">Changed</a>
     <li><a href="#label-2.7.1+-+2022-05-25"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.7.0...v2.7.1">2.7.1</a> - 2022-05-25</a>
     <li><a href="#label-Added">Added</a>
     <li><a href="#label-Changed">Changed</a>
@@ -136,6 +139,24 @@
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 
 <h2 id="label-5BUnreleased-5D">[Unreleased]<span><a href="#label-5BUnreleased-5D">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-2.8.0+-+2022-06-21"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.7.1...v2.8.0">2.8.0</a> - 2022-06-21<span><a href="#label-2.8.0+-+2022-06-21">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Added">Added<span><a href="#label-Added">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/95">#95</a> - The <code>HeredocEnd</code> node has been added which effectively results in the ability to determine the location of the ending of a heredoc from source.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/99">#99</a> - The LSP now allows you to pass the same configuration options as the other CLI commands which allows formatting to be modified in the VSCode extension.</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/100">#100</a> - The LSP now explicitly responds to the shutdown request so that VSCode never deadlocks.</p>
+</li></ul>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/96">#96</a> - The CLI now runs in parallel by default. There is a worker created for each processor on the running machine (as determined by <code>Etc.nprocessors</code>).</p>
+</li><li>
+<p><a href="https://github.com/ruby-syntax-tree/syntax_tree/pull/97">#97</a> - Syntax Tree now handles the case where <code>DidYouMean</code> is not available for whatever reason, as well as handles the newer <code>detailed_message</code> API for errors.</p>
+</li></ul>
 
 <h2 id="label-2.7.1+-+2022-05-25"><a href="https://github.com/ruby-syntax-tree/syntax_tree/compare/v2.7.0...v2.7.1">2.7.1</a> - 2022-05-25<span><a href="#label-2.7.1+-+2022-05-25">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
