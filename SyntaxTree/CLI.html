@@ -119,6 +119,20 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">argv</span>)
   <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">argv</span>
 
+  <span class="ruby-comment"># If there are any plugins specified on the command line, then load them</span>
+  <span class="ruby-comment"># by requiring them here. We do this by transforming something like</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#     stree format --plugins=haml template.haml</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># into</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#     require &quot;syntax_tree/haml&quot;</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>&amp;.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;--plugins=&quot;</span>)
+    <span class="ruby-identifier">plugins</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span>[<span class="ruby-regexp">/^--plugins=(.*)$/</span>, <span class="ruby-value">1</span>]
+    <span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">plugin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;syntax_tree/#{plugin}&quot;</span> }
+  <span class="ruby-keyword">end</span>
+
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">name</span>
   <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;help&quot;</span>
     <span class="ruby-identifier">puts</span> <span class="ruby-constant">HELP</span>
@@ -160,20 +174,6 @@
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">tty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
     <span class="ruby-identifier">warn</span>(<span class="ruby-constant">HELP</span>)
     <span class="ruby-keyword">return</span> <span class="ruby-value">1</span>
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-comment"># If there are any plugins specified on the command line, then load them</span>
-  <span class="ruby-comment"># by requiring them here. We do this by transforming something like</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment">#     stree format --plugins=haml template.haml</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment"># into</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-comment">#     require &quot;syntax_tree/haml&quot;</span>
-  <span class="ruby-comment">#</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>&amp;.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;--plugins=&quot;</span>)
-    <span class="ruby-identifier">plugins</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span>[<span class="ruby-regexp">/^--plugins=(.*)$/</span>, <span class="ruby-value">1</span>]
-    <span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">plugin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;syntax_tree/#{plugin}&quot;</span> }
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-comment"># We&#39;re going to build up a queue of items to process.</span>

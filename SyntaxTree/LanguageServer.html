@@ -188,8 +188,9 @@
       <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">result:</span> { <span class="ruby-value">capabilities:</span> <span class="ruby-identifier">capabilities</span> })
     <span class="ruby-keyword">in</span> <span class="ruby-value">method:</span> <span class="ruby-string">&quot;initialized&quot;</span>
       <span class="ruby-comment"># ignored</span>
-    <span class="ruby-keyword">in</span> <span class="ruby-value">method:</span> <span class="ruby-string">&quot;shutdown&quot;</span>
+    <span class="ruby-keyword">in</span> <span class="ruby-value">method:</span> <span class="ruby-string">&quot;shutdown&quot;</span> <span class="ruby-comment"># tolerate missing ID to be a good citizen</span>
       <span class="ruby-identifier">store</span>.<span class="ruby-identifier">clear</span>
+      <span class="ruby-identifier">write</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">request</span>[<span class="ruby-value">:id</span>], <span class="ruby-value">result:</span> {})
       <span class="ruby-keyword">return</span>
     <span class="ruby-keyword">in</span> {
          <span class="ruby-value">method:</span> <span class="ruby-string">&quot;textDocument/didChange&quot;</span>,
