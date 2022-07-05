@@ -72,7 +72,6 @@
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    <li ><a href="#method-c-find">::find</a>
     <li ><a href="#method-c-new">::new</a>
     <li class="calls-super" ><a href="#method-i-visit">#visit</a>
     <li class="calls-super" ><a href="#method-i-visit_assign">#visit_assign</a>
@@ -93,9 +92,7 @@
 
   <section class="description">
     
-<p>This class provides inlay hints for the language server. It existed before the spec was finalized so, so it provides two result formats: aligned with the spec (‘#all`) and proprietary (`#before` and `#after`).</p>
-
-<p><a href="../For.html"><code>For</code></a> more information, see the spec here: <a href="https://github.com/microsoft/language-server-protocol/issues/956">github.com/microsoft/language-server-protocol/issues/956</a>.</p>
+<p>This class provides inlay hints for the language server. <a href="../For.html"><code>For</code></a> more information, see the spec here: <a href="https://github.com/microsoft/language-server-protocol/issues/956">github.com/microsoft/language-server-protocol/issues/956</a>.</p>
 
   </section>
 
@@ -108,29 +105,9 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-after" class="method-detail">
+      <div id="attribute-i-hints" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">after</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        
-        </div>
-      </div>
-      <div id="attribute-i-all" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">all</span><span
-            class="attribute-access-type">[R]</span>
-        </div>
-
-        <div class="method-description">
-        
-        </div>
-      </div>
-      <div id="attribute-i-before" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">before</span><span
+          <span class="method-name">hints</span><span
             class="attribute-access-type">[R]</span>
         </div>
 
@@ -156,29 +133,6 @@
          <h3>Public Class Methods</h3>
        </header>
 
-      <div id="method-c-find" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">find</span><span
-            class="method-args">(program)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          
-
-          <div class="method-source-code" id="find-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 131</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">find</span>(<span class="ruby-identifier">program</span>)
-  <span class="ruby-identifier">visitor</span> = <span class="ruby-identifier">new</span>
-  <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-identifier">program</span>)
-  <span class="ruby-identifier">visitor</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
       <div id="method-c-new" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">new</span><span
@@ -190,12 +144,10 @@
           
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
   <span class="ruby-ivar">@stack</span> = []
-  <span class="ruby-ivar">@all</span> = []
-  <span class="ruby-ivar">@before</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-string">+&quot;&quot;</span> }
-  <span class="ruby-ivar">@after</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-string">+&quot;&quot;</span> }
+  <span class="ruby-ivar">@hints</span> = []
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -225,7 +177,7 @@
             </div>
 
           <div class="method-source-code" id="visit-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 22</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">stack</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-keyword">super</span>
@@ -263,7 +215,7 @@
             </div>
 
           <div class="method-source-code" id="visit_assign-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_assign</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-identifier">parentheses</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Params</span>)
   <span class="ruby-keyword">super</span>
@@ -297,7 +249,7 @@
             </div>
 
           <div class="method-source-code" id="visit_binary-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 54</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_binary</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>]
   <span class="ruby-keyword">in</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>
@@ -338,7 +290,7 @@
             </div>
 
           <div class="method-source-code" id="visit_if_op-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 76</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_if_op</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>]
   <span class="ruby-keyword">in</span> <span class="ruby-constant">Assign</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Binary</span> <span class="ruby-operator">|</span> <span class="ruby-constant">IfOp</span> <span class="ruby-operator">|</span> <span class="ruby-constant">OpAssign</span>
@@ -381,17 +333,14 @@
             </div>
 
           <div class="method-source-code" id="visit_rescue-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 99</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 115</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_rescue</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">exception</span>.<span class="ruby-identifier">nil?</span>
-    <span class="ruby-identifier">after</span>[<span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_char</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;rescue&quot;</span>.<span class="ruby-identifier">length</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; StandardError&quot;</span>
-    <span class="ruby-identifier">all</span> <span class="ruby-operator">&lt;&lt;</span> {
-      <span class="ruby-value">position:</span> {
-        <span class="ruby-value">line:</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_line</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>,
-        <span class="ruby-value">character:</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_column</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;rescue&quot;</span>.<span class="ruby-identifier">length</span>
-      },
+    <span class="ruby-identifier">hints</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Hint</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-value">line:</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_line</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>,
+      <span class="ruby-value">character:</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">start_column</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;rescue&quot;</span>.<span class="ruby-identifier">length</span>,
       <span class="ruby-value">label:</span> <span class="ruby-string">&quot; StandardError&quot;</span>
-    }
+    )
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-keyword">super</span>
@@ -425,7 +374,7 @@
             </div>
 
           <div class="method-source-code" id="visit_unary-source">
-            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 123</span>
+            <pre><span class="ruby-comment"># File lib/syntax_tree/language_server/inlay_hints.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">visit_unary</span>(<span class="ruby-identifier">node</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Binary</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;-&quot;</span>)
     <span class="ruby-identifier">parentheses</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">location</span>)

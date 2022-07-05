@@ -83,7 +83,7 @@
     <li><a href="#label-BasicVisitor">BasicVisitor</a>
     <li><a href="#label-Language+server">Language server</a>
     <li><a href="#label-textDocument-2Fformatting">textDocument/formatting</a>
-    <li><a href="#label-textDocument-2FinlayHints">textDocument/inlayHints</a>
+    <li><a href="#label-textDocument-2FinlayHint">textDocument/inlayHint</a>
     <li><a href="#label-syntaxTree-2Fvisualizing">syntaxTree/visualizing</a>
     <li><a href="#label-Plugins">Plugins</a>
     <li><a href="#label-Configuration">Configuration</a>
@@ -177,7 +177,7 @@
 </li><li>
 <p><a href="#textdocumentformatting">textDocument/formatting</a></p>
 </li><li>
-<p><a href="#textdocumentinlayhints">textDocument/inlayHints</a></p>
+<p><a href="#textdocumentinlayhint">textDocument/inlayHint</a></p>
 </li><li>
 <p><a href="#syntaxtreevisualizing">syntaxTree/visualizing</a></p>
 </li><li>
@@ -525,14 +525,14 @@ Did you mean?  visit_binary
 
 <p>As mentioned above, the language server responds to formatting requests with the formatted document. It typically responds on the order of tens of milliseconds, so it should be fast enough for any IDE.</p>
 
-<h3 id="label-textDocument-2FinlayHints">textDocument/inlayHints<span><a href="#label-textDocument-2FinlayHints">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<h3 id="label-textDocument-2FinlayHint">textDocument/inlayHint<span><a href="#label-textDocument-2FinlayHint">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The language server also responds to the relatively new inlay hints request. This request allows the language server to define additional information that should exist in the source code as helpful hints to the developer. In our case we use it to display things like implicit parentheses. For example, if you had the following code:</p>
 
 <pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span>
 </pre>
 
-<p>Implicity, the <code>2 * 3</code> is going to be executed first because the <code>*</code> operator has higher precedence than the <code>+</code> operator. However, to ease mental overhead, our language server includes small parentheses to make this explicit, as in:</p>
+<p>Implicity, the <code>2 * 3</code> is going to be executed first because the <code>*</code> operator has higher precedence than the <code>+</code> operator. To ease mental overhead, our language server includes small parentheses to make this explicit, as in:</p>
 
 <pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">₍2</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span><span class="ruby-identifier">₎</span>
 </pre>
