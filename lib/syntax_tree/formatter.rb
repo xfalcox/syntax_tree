@@ -14,7 +14,7 @@ module SyntaxTree
     # Note that we're keeping this in a global-ish hash instead of just
     # overriding methods on classes so that other plugins can reference this if
     # necessary. For example, the RBS plugin references the quote style.
-    OPTIONS = { quote: "\"", trailing_comma: false }
+    OPTIONS = { quote: "\"", trailing_comma: false, line_width: 80 }
 
     COMMENT_PRIORITY = 1
     HEREDOC_PRIORITY = 2
@@ -23,15 +23,18 @@ module SyntaxTree
 
     # These options are overridden in plugins to we need to make sure they are
     # available here.
-    attr_reader :quote, :trailing_comma
+    attr_reader :quote, :trailing_comma, :line_width
     alias trailing_comma? trailing_comma
 
     def initialize(
       source,
       *args,
       quote: OPTIONS[:quote],
-      trailing_comma: OPTIONS[:trailing_comma]
+      trailing_comma: OPTIONS[:trailing_comma],
+      line_width: OPTIONS[:line_width]
     )
+      # Loads custom line_width plugin
+      args[1] = line_width
       super(*args)
 
       @source = source
